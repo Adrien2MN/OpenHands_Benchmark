@@ -406,6 +406,7 @@ def build_image(
     push: bool = False,
     force_build: bool = False,
     cached_sdist: Path | None = None,
+    full_tag_prefix: str | None = None,
 ) -> BuildOutput:
     # Importing here because openhands.agent_server.docker.build runs git checks
     # which fails when installed as a package outside the git repo
@@ -415,9 +416,12 @@ def build_image(
     git_ref, git_sha, sdk_version = _get_sdk_submodule_info()
     remote_check_seconds = 0.0
 
+    # If full_tag_prefix is provided, use it; otherwise use custom_tag
+    tag_for_build = full_tag_prefix if full_tag_prefix else custom_tag
+
     opts = BuildOptions(
         base_image=base_image,
-        custom_tags=custom_tag,
+        custom_tags=tag_for_build,
         image=target_image,
         target=target,
         # SWE-Bench only supports linux/amd64 images
@@ -485,12 +489,21 @@ def ensure_local_image(
     base_image: str,
     custom_tag: str,
     target: TargetType = "source-minimal",
-) -> bool:
+) -> bool | str:
     """Build an agent-server image locally if it doesn't already exist.
 
-    Returns True if a build occurred, False if the image already existed.
+    Returns True if a build occurred, False if the image already existed,
+    or a string containing the actual image tag to use if different from expected.
     Set FORCE_BUILD=1 to skip auto-detection and always rebuild.
+
+    Args:
+        agent_server_image: Full expected image tag (e.g., repo:prefix-customtag-target)
+        base_image: Base image to build from
+        custom_tag: Base custom tag (for backwards compat); full tag prefix extracted from agent_server_image
+        target: Build target type
     """
+    import subprocess
+
     force_build = _force_build_enabled()
     if not force_build and local_image_exists(agent_server_image):
         logger.info(f"Using pre-built image {agent_server_image}")
@@ -500,6 +513,16 @@ def ensure_local_image(
         logger.info(f"FORCE_BUILD set, building image from {base_image}...")
     else:
         logger.info(f"Building image from {base_image}...")
+
+    # Extract full tag prefix from agent_server_image (everything after the colon)
+    # Format: repo:prefix-suffix where prefix may include content hash (e.g., "sha-hash-custom-target")
+    if ":" in agent_server_image:
+        image_repo, image_tag = agent_server_image.rsplit(":", 1)
+    else:
+        image_repo = EVAL_AGENT_SERVER_IMAGE
+        image_tag = custom_tag
+
+    # Pass just the basic custom_tag to build_image for now
     output = build_image(
         base_image=base_image,
         target_image=EVAL_AGENT_SERVER_IMAGE,
@@ -510,11 +533,34 @@ def ensure_local_image(
     logger.info(f"Image build output: {output}")
     if output.error is not None:
         raise RuntimeError(f"Image build failed: {output.error}")
+
+    # If the expected agent_server_image tag wasn't generated, tag the built image with it
     if agent_server_image not in output.tags:
-        raise RuntimeError(
-            f"Built image tags {output.tags} do not include expected tag "
-            f"{agent_server_image}"
+        if not output.tags:
+            raise RuntimeError("Image build produced no tags")
+
+        # Use the first built tag and create an alias with the expected name
+        built_tag = output.tags[0]
+        logger.warning(
+            f"Expected tag {agent_server_image} not in built tags {output.tags}. "
+            f"Creating tag alias: {built_tag} → {agent_server_image}"
         )
+        try:
+            subprocess.run(
+                ["docker", "tag", built_tag, agent_server_image],
+                check=True,
+                capture_output=True,
+            )
+            logger.info(f"Successfully created image tag: {agent_server_image}")
+            return agent_server_image  # Return the expected tag since it now exists
+        except subprocess.CalledProcessError as e:
+            logger.error(
+                f"Failed to create image tag. Error: {e.stderr.decode() if e.stderr else str(e)}"
+            )
+            # Still return the built tag so the process can continue
+            logger.warning(f"Will use built tag instead: {built_tag}")
+            return built_tag
+
     return True
 
 

@@ -1,0 +1,67 @@
+# LiteLLM proxy config for OpenHands Benchmarks
+#
+# Run with:
+#   uv run litellm --config configs/litellm_openhands_proxy.yaml
+#
+# Then configure benchmark LLM JSON with:
+#   base_url: "http://127.0.0.1:4000/v1"
+#   api_key: any non-empty value (or your LITELLM_MASTER_KEY if enabled)
+#   model: one of the model_name aliases below
+
+model_list:
+  - model_name: gpt-4.1
+    litellm_params:
+      model: azure/gpt-4.1
+      api_base: os.environ/GPT41_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-01-01-preview"
+      base_model: gpt-4-turbo
+
+  - model_name: gpt-4.1-mini
+    litellm_params:
+      model: azure/gpt-4.1-mini
+      api_base: os.environ/GPT41_MINI_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-01-01-preview"
+      base_model: gpt-4o-mini
+
+  - model_name: gpt-4.1-nano
+    litellm_params:
+      model: azure/gpt-4.1-nano
+      api_base: os.environ/GPT41_NANO_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-01-01-preview"
+      base_model: gpt-4o-mini
+
+  - model_name: gpt-5.4-2026-03-05
+    litellm_params:
+      model: azure/gpt-5-4-2026-03-05
+      api_base: os.environ/GPT54_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-01-01-preview"
+      base_model: gpt-4-turbo
+
+  - model_name: o1
+    litellm_params:
+      model: azure/o1
+      api_base: os.environ/O1_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-01-01-preview"
+      base_model: o1
+
+  - model_name: mistral-small-2503
+    litellm_params:
+      model: azure_ai/Mistral-Small-2503
+      api_base: os.environ/MISTRAL_SMALL_API_URL
+      api_key: os.environ/API_KEY
+      base_model: mistral-small
+
+  - model_name: llama-3.3-70b-instruct
+    litellm_params:
+      model: azure_ai/Llama-3.3-70B-Instruct
+      api_base: os.environ/LLAMA_33_API_URL
+      api_key: os.environ/API_KEY
+      base_model: llama-3.3-70b-instruct
+
+litellm_settings:
+  drop_params: true

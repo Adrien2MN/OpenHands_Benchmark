@@ -12,8 +12,9 @@ UNDERLINE := \033[4m
 
 # Required uv version
 REQUIRED_UV_VERSION := 0.8.13
+PROXY_ENV_FILE ?= .env
 
-.PHONY: build format lint clean help check-uv-version
+.PHONY: build format lint clean help check-uv-version run-litellm-proxy
 
 # Default target
 .DEFAULT_GOAL := help
@@ -52,6 +53,22 @@ lint:
 	@uv run ruff check --fix
 	@$(ECHO) "$(GREEN)Linting completed.$(RESET)"
 
+run-litellm-proxy:
+	@$(ECHO) "$(CYAN)Starting LiteLLM proxy with Foundry bridge config...$(RESET)"
+	@$(ECHO) "$(YELLOW)Using configs/litellm_openhands_proxy.yaml$(RESET)"
+	@$(ECHO) "$(YELLOW)Using env file: $(PROXY_ENV_FILE)$(RESET)"
+	@if [ -f "$(PROXY_ENV_FILE)" ]; then \
+		set -a; . "$(PROXY_ENV_FILE)"; set +a; \
+	else \
+		$(ECHO) "$(YELLOW)Warning: $(PROXY_ENV_FILE) not found. Using current shell env.$(RESET)"; \
+	fi; \
+	if [ -z "$${API_KEY:-}" ] || [ -z "$${GPT41_MINI_API_URL:-}" ]; then \
+		$(ECHO) "$(RED)Error: Missing required proxy env vars (API_KEY, GPT41_MINI_API_URL).$(RESET)"; \
+		$(ECHO) "$(YELLOW)Set them in your shell or pass PROXY_ENV_FILE=path/to/.env$(RESET)"; \
+		exit 1; \
+	fi; \
+	uv run litellm --config configs/litellm_openhands_proxy.yaml
+
 pre-commit:
 	@$(ECHO) "$(YELLOW)Run pre-commit...$(RESET)"
 	@uv run pre-commit run --all-files
@@ -73,6 +90,7 @@ help:
 	@$(ECHO) "  $(GREEN)build$(RESET)                Set up development environment"
 	@$(ECHO) "  $(GREEN)format$(RESET)               Format code with ruff"
 	@$(ECHO) "  $(GREEN)lint$(RESET)                 Lint code with ruff"
+	@$(ECHO) "  $(GREEN)run-litellm-proxy$(RESET)    Start local LiteLLM proxy for Foundry/OpenHands bridge"
 	@$(ECHO) "  $(GREEN)pre-commit$(RESET)           Run pre-commit hooks"
 	@$(ECHO) "  $(GREEN)clean$(RESET)                Clean up cache files"
 	@$(ECHO) "  $(GREEN)help$(RESET)                 Show this help message"

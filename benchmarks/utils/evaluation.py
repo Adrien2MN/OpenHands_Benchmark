@@ -38,6 +38,7 @@ from benchmarks.utils.litellm_proxy import (
     get_key_spend,
     set_current_virtual_key,
 )
+from benchmarks.utils.llm_config import normalize_llm_base_url_for_workspace
 from benchmarks.utils.models import (
     EvalInstance,
     EvalInstanceID,
@@ -151,6 +152,19 @@ class Evaluation(ABC, BaseModel):
 
     def model_post_init(self, __context) -> None:
         """Stamp openhands_sdk_version on self.metadata and persist metadata.json."""
+        original_base_url = self.metadata.llm.base_url
+        self.metadata.llm = normalize_llm_base_url_for_workspace(
+            self.metadata.llm,
+            self.metadata.workspace_type,
+        )
+        if original_base_url != self.metadata.llm.base_url:
+            logger.info(
+                "Rewrote llm.base_url for %s workspace: %s -> %s",
+                self.metadata.workspace_type,
+                original_base_url,
+                self.metadata.llm.base_url,
+            )
+
         self.metadata.openhands_sdk_version = openhands_sdk_version
         self._save_metadata()
 

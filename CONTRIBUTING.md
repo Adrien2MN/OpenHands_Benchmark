@@ -71,11 +71,14 @@ LLM configs are stored in `.llm_config/` as JSON files matching the [LLM class s
 
 ```json
 {
-  "model": "litellm_proxy/anthropic/claude-sonnet-4-20250514",
-  "base_url": "https://llm-proxy.eval.all-hands.dev",
-  "api_key": "YOUR_API_KEY"
+  "model": "gpt-4.1-mini",
+  "base_url": "http://127.0.0.1:4000/v1",
+  "api_key": "YOUR_PROXY_API_KEY"
 }
 ```
+
+For Azure Foundry models behind a local LiteLLM bridge, use `.llm_config/example.json` and start the proxy with `make run-litellm-proxy`.
+The Foundry-to-alias mappings are defined in `configs/litellm_openhands_proxy.yaml`.
 
 Validate with: `uv run validate-cfg .llm_config/your-config.json`
 

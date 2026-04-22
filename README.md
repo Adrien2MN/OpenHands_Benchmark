@@ -97,11 +97,27 @@ All benchmarks require an LLM configuration file. Define your LLM config as a JS
 
 ```json
 {
-  "model": "litellm_proxy/anthropic/claude-sonnet-4-20250514",
-  "base_url": "https://llm-proxy.eval.all-hands.dev",
-  "api_key": "YOUR_API_KEY_HERE"
+   "model": "gpt-4.1-mini",
+   "base_url": "http://127.0.0.1:4000/v1",
+   "api_key": "YOUR_PROXY_API_KEY"
 }
 ```
+
+Start the local proxy with the preconfigured Foundry mapping:
+
+```bash
+# copy the checked-in template and fill in your values
+cp .env.example .env
+
+# then export or edit the required proxy vars
+export API_KEY="<your-foundry-key>"
+export GPT41_MINI_API_URL="https://<resource>.cognitiveservices.azure.com/openai/deployments/gpt-4.1-mini/chat/completions?api-version=2025-01-01-preview"
+
+# or load vars from a specific env file in this repo
+make run-litellm-proxy PROXY_ENV_FILE=.env
+```
+
+The proxy configuration is in `configs/litellm_openhands_proxy.yaml` and exposes simple aliases (`gpt-4.1`, `gpt-4.1-mini`, `o1`, etc.) so OpenHands can use a standard OpenAI-compatible `base_url` + `api_key` flow. For this repo, the minimum required proxy variables are `API_KEY` and `GPT41_MINI_API_URL`.
 
 Validate your configuration:
 

@@ -171,14 +171,24 @@ class SWEBenchEvaluation(Evaluation):
         agent_server_image = base_agent_image
 
         if self.metadata.workspace_type == "docker":
-            built = ensure_local_image(
+            build_result = ensure_local_image(
                 agent_server_image=base_agent_image,
                 base_image=official_docker_image,
                 custom_tag=custom_tag,
                 target=build_target,
             )
+            # handle case where ensure_local_image returns the actual tag to use instead of True/False
+            built = (
+                True
+                if build_result is True
+                else (False if build_result is False else False)
+            )
+            actual_image_tag = (
+                build_result if isinstance(build_result, str) else base_agent_image
+            )
+
             if built and wrap_needed:
-                wrapped_result = wrap_image(base_agent_image, push=False)
+                wrapped_result = wrap_image(actual_image_tag, push=False)
                 if wrapped_result.error:
                     raise RuntimeError(
                         "Wrapped image build failed: "
@@ -186,12 +196,12 @@ class SWEBenchEvaluation(Evaluation):
                     )
             elif not built and wrap_needed:
                 logger.info(
-                    f"Using pre-built image {base_agent_image} "
+                    f"Using pre-built image {actual_image_tag} "
                     "(assumed already wrapped)"
                 )
 
             workspace = DockerWorkspace(
-                server_image=agent_server_image,
+                server_image=actual_image_tag,
                 working_dir="/workspace",
                 forward_env=forward_env or [],
             )

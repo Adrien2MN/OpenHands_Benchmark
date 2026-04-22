@@ -211,7 +211,7 @@ def _patch_thread_parent_tracking() -> None:
         self: threading.Thread, *args: object, **kwargs: object
     ) -> None:
         _orig_init(self, *args, **kwargs)  # type: ignore[arg-type]
-        self._parent_thread_id = threading.current_thread().ident  # type: ignore[attr-defined]
+        self._parent_thread_id = threading.get_ident()  # type: ignore[attr-defined]
 
     threading.Thread.__init__ = _init_with_parent  # type: ignore[assignment]
 

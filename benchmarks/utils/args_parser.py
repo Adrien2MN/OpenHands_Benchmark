@@ -12,6 +12,15 @@ from pathlib import Path
 from benchmarks.utils.critics import add_critic_args
 
 
+def get_default_output_dir() -> str:
+    """Return the benchmark-local default output directory.
+
+    Output artifacts are written under the benchmarks repo so runs stay
+    grouped with the benchmark code and test fixtures.
+    """
+    return str(Path(__file__).resolve().parents[2] / "outputs")
+
+
 def get_parser(add_llm_config: bool = True) -> argparse.ArgumentParser:
     """Create and return argument parser without defaults.
 
@@ -55,7 +64,7 @@ def get_parser(add_llm_config: bool = True) -> argparse.ArgumentParser:
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="./eval_outputs",
+        default=get_default_output_dir(),
         help="Evaluation output directory",
     )
     parser.add_argument(

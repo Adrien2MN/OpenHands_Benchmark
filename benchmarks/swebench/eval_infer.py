@@ -18,6 +18,7 @@ from pathlib import Path
 
 from benchmarks.swebench import constants
 from benchmarks.swebench.config import EVAL_DEFAULTS
+from benchmarks.swebench.reporting import generate_instance_reports
 from benchmarks.utils.constants import MODEL_NAME_OR_PATH
 from benchmarks.utils.laminar import LaminarService
 from benchmarks.utils.patch_utils import remove_files_from_patch
@@ -257,6 +258,31 @@ Examples:
         help="Timeout in seconds for evaluation",
     )
 
+    parser.add_argument(
+        "--report-dir",
+        help=(
+            "Directory for per-instance reports (default: '<input_file_dir>/report')"
+        ),
+    )
+
+    parser.add_argument(
+        "--model-configs-dir",
+        help=(
+            "Directory containing SWE_bench_agent model YAML configs "
+            "(used to resolve carbon_scenario by model)"
+        ),
+    )
+
+    parser.add_argument(
+        "--scenarios-dir",
+        help="Directory containing carbon scenario JSON files",
+    )
+
+    parser.add_argument(
+        "--js-carbon-bridge",
+        help="Path to JS carbon bridge script used to compute scenario metrics",
+    )
+
     # Apply EVAL_DEFAULTS from config (for dataset, split, workers, modal, timeout)
     parser.set_defaults(**EVAL_DEFAULTS)
 
@@ -287,6 +313,15 @@ Examples:
         # Convert format
         convert_to_swebench_format(str(input_file), str(output_file))
 
+        report_folder_summary = generate_instance_reports(
+            str(input_file),
+            report_dir=args.report_dir,
+            model_configs_dir=args.model_configs_dir,
+            scenarios_dir=args.scenarios_dir,
+            js_bridge_path=args.js_carbon_bridge,
+        )
+        logger.info("Instance reports written to %s", report_folder_summary.parent)
+
         if not args.skip_evaluation:
             # Run evaluation
             run_swebench_evaluation(
@@ -299,14 +334,28 @@ Examples:
                 timeout=args.timeout,
             )
 
-            # Move report file to input file directory with .report.json extension
-            # SWE-Bench creates: {MODEL_NAME_OR_PATH}.{run_id}.json
-            report_filename = f"{MODEL_NAME_OR_PATH}.{args.run_id}.json"
-            report_path = output_file.parent / report_filename
+            # Copy the generated report to the canonical sidecar path next to
+            # the original OpenHands output file.
+            # The current reporting flow writes to output_dir/report/report.json,
+            # while older SWE-Bench harnesses wrote {MODEL_NAME_OR_PATH}.{run_id}.json.
+            report_candidates = [
+                output_file.parent / "report" / "report.json",
+                output_file.parent / f"{MODEL_NAME_OR_PATH}.{args.run_id}.json",
+            ]
+            report_path = next(
+                (path for path in report_candidates if path.exists()), None
+            )
+            if report_path is None:
+                raise FileNotFoundError(
+                    "Could not find SWE-Bench report file. Checked: "
+                    + ", ".join(str(path) for path in report_candidates)
+                )
             dest_report_path = input_file.with_suffix(".report.json")
 
-            shutil.move(str(report_path), str(dest_report_path))
-            logger.info(f"Moved report file to: {dest_report_path}")
+            shutil.copy2(str(report_path), str(dest_report_path))
+            logger.info(
+                "Copied report file from %s to %s", report_path, dest_report_path
+            )
 
             # Update Laminar datapoints with evaluation scores
             LaminarService.get().update_evaluation_scores(

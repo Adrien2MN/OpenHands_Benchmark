@@ -88,11 +88,14 @@ make build  # Rebuild environment
 LLM configs use JSON matching the [LLM class schema](https://github.com/OpenHands/software-agent-sdk/blob/main/openhands/sdk/llm/llm.py#L93):
 ```json
 {
-  "model": "litellm_proxy/anthropic/claude-sonnet-4-20250514",
-  "base_url": "https://llm-proxy.eval.all-hands.dev",
-  "api_key": "YOUR_API_KEY"
+  "model": "gpt-4.1-mini",
+  "base_url": "http://127.0.0.1:4000/v1",
+  "api_key": "YOUR_PROXY_API_KEY"
 }
 ```
+For Azure Foundry models via local LiteLLM proxy, use `.llm_config/example.json` and run `make run-litellm-proxy`.
+Model alias mappings live in `configs/litellm_openhands_proxy.yaml`.
+
 Validate with: `uv run validate-cfg .llm_config/your-config.json`
 
 # Data Format Conversions

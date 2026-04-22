@@ -244,6 +244,19 @@ The evaluation script will:
 2. Run the official SWE-Bench evaluation harness (unless `--skip-evaluation` is used)
 3. Report pass/fail results for each instance
 
+In addition, `swebench-eval` now generates a `report/` folder next to the
+input `output.jsonl` file, with:
+- `report/report.json`: run-level summary (time/tokens/energy/carbon totals)
+- `report/report_<instance_id>.json`: per-instance report files
+
+By default, carbon scenarios are resolved from model configs in
+`SWE_bench_agent/configs/model` and scenario JSON files in
+`carbon-footprint-modeling-tool/scenarios`. You can override these paths with:
+- `--report-dir`
+- `--model-configs-dir`
+- `--scenarios-dir`
+- `--js-carbon-bridge`
+
 ## References
 
 - [SWE-Bench Paper](https://arxiv.org/abs/2310.06770)

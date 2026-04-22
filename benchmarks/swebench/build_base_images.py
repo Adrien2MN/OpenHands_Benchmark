@@ -527,6 +527,8 @@ def assemble_agent_image(
     build_cmd = [
         "docker",
         "build",
+        "--platform",
+        "linux/amd64",
         "--file",
         str(AGENT_LAYER_DOCKERFILE),
         "--build-arg",
