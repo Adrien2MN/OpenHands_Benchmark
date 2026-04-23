@@ -33,12 +33,21 @@ model_list:
       api_version: "2025-01-01-preview"
       base_model: gpt-4o-mini
 
-  - model_name: gpt-5.4-2026-03-05
+  - model_name: gpt-5.4
     litellm_params:
-      model: azure/gpt-5-4-2026-03-05
+      model: azure/gpt-5.4
       api_base: os.environ/GPT54_API_URL
       api_key: os.environ/API_KEY
-      api_version: "2025-01-01-preview"
+      api_version: "2025-04-01-preview"
+      base_model: gpt-4-turbo
+
+  # Backward-compatible alias for older runs/scripts.
+  - model_name: gpt-5.4-2026-03-05
+    litellm_params:
+      model: azure/gpt-5.4
+      api_base: os.environ/GPT54_API_URL
+      api_key: os.environ/API_KEY
+      api_version: "2025-04-01-preview"
       base_model: gpt-4-turbo
 
   - model_name: o1
@@ -70,12 +79,26 @@ model_list:
       api_key: os.environ/API_KEY
       base_model: llama-3.3-70b-instruct
 
-  - model_name: claude-opus-4-7
+  - model_name: claude-opus-4.7
     litellm_params:
       model: azure_ai/claude-opus-4-7
       api_base: os.environ/CLAUDE_OPUS_4_7_API_URL
       api_key: os.environ/API_KEY
       base_model: claude-opus-4-7
+
+  - model_name: deepseek-v3.1
+    litellm_params:
+      model: azure_ai/deepseek-v3.1
+      api_base: os.environ/DEEPSEEK_V31_API_URL
+      api_key: os.environ/API_KEY
+      base_model: deepseek-v3.1
+
+  - model_name: kimi-k2.6
+    litellm_params:
+      model: azure_ai/kimi-k2.6
+      api_base: os.environ/KIMI_K2_6_API_URL
+      api_key: os.environ/API_KEY
+      base_model: kimi-k2.6
 
 litellm_settings:
   drop_params: true

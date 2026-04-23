@@ -15,8 +15,12 @@ if [ $# -lt 2 ]; then
     echo ""
     echo "Available models:"
     echo "  - gpt-4.1-mini"
+    echo "  - gpt-5.4"
     echo "  - gpt-4.1"
     echo "  - mistral-small-2503"
+    echo "  - deepseek-v3.1"
+    echo "  - deepseek-v3-1"
+    echo "  - kimi-k2.6"
     echo "  - o1"
     echo "  - llama-3.3-70b-instruct"
     exit 1

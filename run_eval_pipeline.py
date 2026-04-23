@@ -22,8 +22,12 @@ AVAILABLE_MODELS = [
     "gpt-4.1-mini",
     "gpt-4.1-nano",
     "gpt-4.1",
+    "gpt-5.4",
     "mistral-small-2503",
     "mistral-large-3",
+    "deepseek-v3.1",
+    "deepseek-v3-1",
+    "kimi-k2.6",
     "claude-opus-4-7",
     "o1",
 ]
