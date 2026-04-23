@@ -31,7 +31,11 @@ from benchmarks.utils.buildx_utils import (
     maybe_reset_buildkit,
 )
 from benchmarks.utils.constants import EVAL_AGENT_SERVER_IMAGE
-from benchmarks.utils.image_utils import local_image_exists, remote_image_exists
+from benchmarks.utils.image_utils import (
+    local_image_runnable,
+    remote_image_exists,
+    resolve_local_image_tag,
+)
 from openhands.sdk import get_logger
 
 
@@ -499,36 +503,50 @@ def ensure_local_image(
     Args:
         agent_server_image: Full expected image tag (e.g., repo:prefix-customtag-target)
         base_image: Base image to build from
-        custom_tag: Base custom tag (for backwards compat); full tag prefix extracted from agent_server_image
+        custom_tag: Base custom tag used to derive the expected full prefix
         target: Build target type
     """
     import subprocess
 
     force_build = _force_build_enabled()
-    if not force_build and local_image_exists(agent_server_image):
-        logger.info(f"Using pre-built image {agent_server_image}")
-        return False
+    if not force_build:
+        resolved_image = resolve_local_image_tag(agent_server_image)
+        if resolved_image:
+            if local_image_runnable(resolved_image):
+                logger.info(f"Using pre-built image {resolved_image}")
+                return resolved_image if resolved_image != agent_server_image else False
+            logger.warning(
+                "Local cached image exists but is not runnable for docker workspace: %s. Rebuilding.",
+                resolved_image,
+            )
 
     if force_build:
         logger.info(f"FORCE_BUILD set, building image from {base_image}...")
     else:
         logger.info(f"Building image from {base_image}...")
 
-    # Extract full tag prefix from agent_server_image (everything after the colon)
-    # Format: repo:prefix-suffix where prefix may include content hash (e.g., "sha-hash-custom-target")
+    # Derive the full tag prefix from the expected image tag so local builds
+    # produce the exact same tag format as the runner expects.
+    full_tag_prefix: str | None = None
     if ":" in agent_server_image:
-        image_repo, image_tag = agent_server_image.rsplit(":", 1)
-    else:
-        image_repo = EVAL_AGENT_SERVER_IMAGE
-        image_tag = custom_tag
+        expected_ref = agent_server_image.rsplit(":", 1)[1]
+        suffix = f"-{target}" if target != "binary" else ""
+        expected_tail = f"-{custom_tag}{suffix}"
+        if expected_ref.endswith(expected_tail):
+            parsed_prefix = expected_ref[: -len(expected_tail)]
+            if parsed_prefix:
+                full_tag_prefix = parsed_prefix
 
-    # Pass just the basic custom_tag to build_image for now
+    # We need a real local image when workspace_type=docker. If local image is
+    # missing, force a local build instead of skipping due remote tag existence.
     output = build_image(
         base_image=base_image,
         target_image=EVAL_AGENT_SERVER_IMAGE,
         custom_tag=custom_tag,
         target=target,
         push=False,
+        force_build=True,
+        full_tag_prefix=full_tag_prefix,
     )
     logger.info(f"Image build output: {output}")
     if output.error is not None:

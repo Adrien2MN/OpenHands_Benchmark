@@ -271,3 +271,41 @@ class TestBuildEvalLLM:
 
         assert built is not llm
         assert built.usage_id == "condenser"
+
+    def test_prefixes_provider_for_bare_alias_on_proxy(self):
+        set_current_virtual_key(None)
+        llm = LLM(
+            model="mistral-large-3",
+            base_url="http://127.0.0.1:4000/v1",
+            usage_id="agent",
+        )
+
+        built = build_eval_llm(llm)
+
+        assert built is not llm
+        assert built.model == "openai/mistral-large-3"
+        assert llm.model == "mistral-large-3"
+
+    def test_does_not_prefix_provider_when_model_already_qualified(self):
+        set_current_virtual_key(None)
+        llm = LLM(
+            model="openai/mistral-large-3",
+            base_url="http://127.0.0.1:4000/v1",
+            usage_id="agent",
+        )
+
+        built = build_eval_llm(llm)
+
+        assert built is llm
+
+    def test_does_not_prefix_provider_for_non_proxy_base_url(self):
+        set_current_virtual_key(None)
+        llm = LLM(
+            model="mistral-large-3",
+            base_url="https://example-inference.endpoint/v1",
+            usage_id="agent",
+        )
+
+        built = build_eval_llm(llm)
+
+        assert built is llm

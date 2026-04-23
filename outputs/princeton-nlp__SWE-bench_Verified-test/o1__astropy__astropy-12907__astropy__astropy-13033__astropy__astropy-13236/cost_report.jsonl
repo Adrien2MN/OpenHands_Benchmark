@@ -1,0 +1,62 @@
+{
+  "directory": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/o1_sdk_3e0a3a0_maxiter_100_N_o1_n5_iter100",
+  "timestamp": "2026-04-23T13:18:33.980406",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 3,
+    "cost": 2.8040700000000003,
+    "time_statistics": {
+      "average_duration": 134.581684,
+      "total_duration": 403.745052,
+      "total_lines": 3,
+      "lines_with_duration": 3
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 5,
+      "cost": 2.8040700000000003,
+      "time_statistics": {
+        "average_duration": 134.581684,
+        "total_duration": 403.745052,
+        "total_lines": 5,
+        "lines_with_duration": 3
+      }
+    },
+    {
+      "filename": "output.critic_attempt_2.jsonl",
+      "lines": 2,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 0.0,
+        "total_duration": 0.0,
+        "total_lines": 2,
+        "lines_with_duration": 0
+      }
+    },
+    {
+      "filename": "output.critic_attempt_3.jsonl",
+      "lines": 2,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 0.0,
+        "total_duration": 0.0,
+        "total_lines": 2,
+        "lines_with_duration": 0
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 2.8040700000000003,
+    "total_duration": 403.745052,
+    "only_main_output_cost": 2.8040700000000003,
+    "sum_critic_files": 2.8040700000000003
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

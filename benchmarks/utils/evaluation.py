@@ -12,6 +12,7 @@ import asyncio
 import base64
 import json
 import os
+import shutil
 import threading
 import time
 from abc import ABC, abstractmethod
@@ -452,6 +453,27 @@ class Evaluation(ABC, BaseModel):
         )
 
         all_instances = self.prepare_instances()
+
+        # For single-instance runs, write directly to a stable folder so reruns
+        # on the same model + instance replace the previous output instead of
+        # creating a new SDK-stamped directory.
+        if len(all_instances) == 1:
+            original_eval_dir = Path(self.metadata.eval_output_dir)
+            instance_id = all_instances[0].id
+            model_name = self.metadata.llm.model
+            stable_dir = (
+                Path(self.metadata.eval_output_dir).parent
+                / f"{model_name}__{instance_id}"
+            )
+            if stable_dir.exists():
+                shutil.rmtree(stable_dir)
+            self.metadata.eval_output_dir = str(stable_dir)
+            self._save_metadata()
+            # model_post_init writes metadata to the original SDK-style folder
+            # before we know instance IDs; clean that transient folder up.
+            if original_eval_dir != stable_dir and original_eval_dir.exists():
+                shutil.rmtree(original_eval_dir)
+            logger.info("Using stable single-instance output dir: %s", stable_dir)
 
         # Initialize Laminar
         LaminarService.get().initialize()

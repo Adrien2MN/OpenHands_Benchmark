@@ -29,11 +29,9 @@ def construct_eval_output_dir(
     if eval_note:
         folder += f"_N_{eval_note}"
 
-    # Construct full path
-    eval_output_dir = os.path.join(base_dir, dataset_name, folder)
-    os.makedirs(eval_output_dir, exist_ok=True)
-
-    return eval_output_dir
+    # Construct full path. The caller is responsible for creating the
+    # directory when it is ready to write outputs.
+    return os.path.join(base_dir, dataset_name, folder)
 
 
 def get_default_on_result_writer(

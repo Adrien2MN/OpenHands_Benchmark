@@ -34,7 +34,7 @@ from benchmarks.utils.evaluation_utils import (
     get_default_on_result_writer,
 )
 from benchmarks.utils.fake_user_response import run_conversation_with_fake_user_response
-from benchmarks.utils.image_utils import remote_image_exists
+from benchmarks.utils.image_utils import remote_image_exists, resolve_local_image_tag
 from benchmarks.utils.litellm_proxy import build_eval_llm
 from benchmarks.utils.llm_config import load_llm_config
 from benchmarks.utils.models import (
@@ -186,6 +186,19 @@ class SWEBenchEvaluation(Evaluation):
             actual_image_tag = (
                 build_result if isinstance(build_result, str) else base_agent_image
             )
+
+            resolved_image_tag = resolve_local_image_tag(actual_image_tag)
+            if resolved_image_tag and resolved_image_tag != actual_image_tag:
+                logger.info(
+                    "Resolved local workspace image %s -> %s",
+                    actual_image_tag,
+                    resolved_image_tag,
+                )
+                actual_image_tag = resolved_image_tag
+
+            if self.metadata.details is None:
+                self.metadata.details = {}
+            self.metadata.details["resolved_agent_server_image"] = actual_image_tag
 
             if built and wrap_needed:
                 wrapped_result = wrap_image(actual_image_tag, push=False)

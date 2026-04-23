@@ -19,6 +19,7 @@ Thread-safety:
 
 import os
 import threading
+from urllib.parse import urlparse
 
 import httpx
 from pydantic import SecretStr
@@ -158,6 +159,36 @@ def get_current_virtual_key() -> str | None:
     return getattr(_thread_local, "virtual_key", None)
 
 
+def _is_litellm_proxy_base_url(base_url: str | None) -> bool:
+    """Best-effort detection for LiteLLM proxy OpenAI-compatible endpoints."""
+    if not base_url:
+        return False
+
+    lowered = base_url.lower()
+    if "litellm" in lowered or "llm-proxy" in lowered:
+        return True
+
+    parsed = urlparse(base_url)
+    if parsed.hostname in {"localhost", "127.0.0.1", "host.docker.internal"}:
+        return parsed.port == 4000
+
+    return False
+
+
+def _normalize_proxy_model(model: str, base_url: str | None) -> str:
+    """Ensure bare proxy aliases are provider-qualified for LiteLLM routing.
+
+    LiteLLM raises `LLM Provider NOT provided` for unknown bare model ids like
+    `mistral-large-3`. For proxy-hosted aliases, route them through the OpenAI
+    provider shim while preserving the alias suffix.
+    """
+    if "/" in model:
+        return model
+    if not _is_litellm_proxy_base_url(base_url):
+        return model
+    return f"openai/{model}"
+
+
 def build_eval_llm(llm: LLM, *, usage_id: str | None = None) -> LLM:
     """Return an LLM configured for the current evaluation instance.
 
@@ -173,6 +204,10 @@ def build_eval_llm(llm: LLM, *, usage_id: str | None = None) -> LLM:
     virtual_key = get_current_virtual_key()
     if virtual_key is not None:
         updates["api_key"] = SecretStr(virtual_key)
+
+    normalized_model = _normalize_proxy_model(llm.model, llm.base_url)
+    if normalized_model != llm.model:
+        updates["model"] = normalized_model
 
     if not updates:
         return llm

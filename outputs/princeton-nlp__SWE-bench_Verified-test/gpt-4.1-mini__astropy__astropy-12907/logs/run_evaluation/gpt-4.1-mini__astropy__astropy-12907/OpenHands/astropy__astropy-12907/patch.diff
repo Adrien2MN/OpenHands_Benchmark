@@ -1,0 +1,43 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..6ae6cc5bb 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -170,7 +170,7 @@ def _arith_oper(left, right):
+ 
+ def _coord_matrix(model, pos, noutp):
+     """
+-    Create an array representing inputs and outputs of a simple model.
++    Create an array representing inputs and outputs of a model.
+ 
+     The array has a shape (noutp, model.n_inputs).
+ 
+@@ -186,6 +186,21 @@ def _coord_matrix(model, pos, noutp):
+         is a left or right child.
+ 
+     """
++    from .core import CompoundModel
++
++    if isinstance(model, CompoundModel):
++        nout = _compute_n_outputs(model.left, model.right)
++        if pos == 'left':
++            left = _coord_matrix(model.left, 'left', nout)
++            right = _coord_matrix(model.right, 'left', nout)
++        else:
++            left = _coord_matrix(model.left, 'right', nout)
++            right = _coord_matrix(model.right, 'right', nout)
++        mat = np.zeros((noutp, model.n_inputs))
++        mat[:left.shape[0], :left.shape[1]] = left
++        mat[-right.shape[0]:, -right.shape[1]:] = right
++        return mat
++
+     if isinstance(model, Mapping):
+         axes = []
+         for i in model.mapping:
+@@ -199,6 +214,7 @@ def _coord_matrix(model, pos, noutp):
+         else:
+             mat[-model.n_outputs:, -model.n_inputs:] = m
+         return mat
++
+     if not model.separable:
+         # this does not work for more than 2 coordinates
+         mat = np.zeros((noutp, model.n_inputs))

@@ -36,4 +36,5 @@ SETUP_FILES_TO_REMOVE: Final[tuple[str, ...]] = (
     "pyproject.toml",
     "tox.ini",
     "setup.py",
+    "pytest_out.log",
 )

@@ -65,9 +65,9 @@ def prepare_dataset(
             f"Selected {len(dataset)} instances from {original_size} total instances"
         )
 
-    # Apply limit after filtering completed instances
+    # Apply limit after filtering selected instances, preserving dataset order.
     if n_limit is not None and n_limit > 0:
-        dataset = dataset.sample(n=min(n_limit, len(dataset)), random_state=42)
+        dataset = dataset.head(min(n_limit, len(dataset)))
 
     return dataset
 

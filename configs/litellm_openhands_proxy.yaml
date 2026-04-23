@@ -56,12 +56,26 @@ model_list:
       api_key: os.environ/API_KEY
       base_model: mistral-small
 
+  - model_name: mistral-large-3
+    litellm_params:
+      model: azure_ai/Mistral-Large-3
+      api_base: os.environ/MISTRAL_LARGE_3_API_URL
+      api_key: os.environ/API_KEY
+      base_model: mistral-large-3
+
   - model_name: llama-3.3-70b-instruct
     litellm_params:
       model: azure_ai/Llama-3.3-70B-Instruct
       api_base: os.environ/LLAMA_33_API_URL
       api_key: os.environ/API_KEY
       base_model: llama-3.3-70b-instruct
+
+  - model_name: claude-opus-4-7
+    litellm_params:
+      model: azure_ai/claude-opus-4-7
+      api_base: os.environ/CLAUDE_OPUS_4_7_API_URL
+      api_key: os.environ/API_KEY
+      base_model: claude-opus-4-7
 
 litellm_settings:
   drop_params: true

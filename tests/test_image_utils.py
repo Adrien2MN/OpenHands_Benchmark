@@ -151,9 +151,15 @@ class TestEnsureLocalImage:
     ensure_local_image is exercised against actual data structures.
     """
 
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=True)
+    @patch(
+        "benchmarks.utils.build_utils.resolve_local_image_tag",
+        return_value="server:v1",
+    )
+    @patch("benchmarks.utils.build_utils.local_image_runnable", return_value=True)
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_returns_false_when_image_exists(self, mock_build, _mock_exists):
+    def test_returns_false_when_image_exists(
+        self, mock_build, _mock_runnable, _mock_resolve
+    ):
         from benchmarks.utils.build_utils import ensure_local_image
 
         result = ensure_local_image(
@@ -182,9 +188,31 @@ class TestEnsureLocalImage:
         assert result is True
         mock_build.assert_called_once()
 
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=False)
+    @patch(
+        "benchmarks.utils.build_utils.resolve_local_image_tag",
+        return_value="server:resolved-tag",
+    )
+    @patch("benchmarks.utils.build_utils.local_image_runnable", return_value=True)
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_raises_on_build_failure(self, mock_build, _mock_exists):
+    def test_returns_resolved_tag_when_alias_exists(
+        self, mock_build, _mock_runnable, _mock_resolve
+    ):
+        from benchmarks.utils.build_utils import ensure_local_image
+
+        result = ensure_local_image(
+            agent_server_image="server:v1",
+            base_image="base:latest",
+            custom_tag="mytag",
+        )
+        assert result == "server:resolved-tag"
+        mock_build.assert_not_called()
+
+    @patch(
+        "benchmarks.utils.build_utils.resolve_local_image_tag",
+        return_value=None,
+    )
+    @patch("benchmarks.utils.build_utils.build_image")
+    def test_raises_on_build_failure(self, mock_build, _mock_resolve):
         from benchmarks.utils.build_utils import ensure_local_image
 
         mock_build.return_value = BuildOutput(
@@ -199,9 +227,15 @@ class TestEnsureLocalImage:
                 custom_tag="mytag",
             )
 
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=False)
+    @patch(
+        "benchmarks.utils.build_utils.resolve_local_image_tag",
+        return_value=None,
+    )
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_raises_on_tag_mismatch(self, mock_build, _mock_exists):
+    @patch("benchmarks.utils.build_utils.subprocess.run")
+    def test_returns_built_tag_on_tag_mismatch(
+        self, mock_run, mock_build, _mock_resolve
+    ):
         from benchmarks.utils.build_utils import ensure_local_image
 
         mock_build.return_value = BuildOutput(
@@ -209,12 +243,19 @@ class TestEnsureLocalImage:
             tags=["server:wrong-tag"],
             error=None,
         )
-        with pytest.raises(RuntimeError, match="do not include expected tag"):
-            ensure_local_image(
-                agent_server_image="server:v1",
-                base_image="base:latest",
-                custom_tag="mytag",
-            )
+        mock_run.side_effect = subprocess.CalledProcessError(
+            returncode=1,
+            cmd=["docker", "tag"],
+            stderr=b"No such image",
+        )
+
+        result = ensure_local_image(
+            agent_server_image="server:v1",
+            base_image="base:latest",
+            custom_tag="mytag",
+        )
+
+        assert result == "server:wrong-tag"
 
     @patch.dict(os.environ, {"FORCE_BUILD": "1"})
     @patch("benchmarks.utils.build_utils.local_image_exists", return_value=True)
@@ -257,6 +298,27 @@ class TestEnsureLocalImage:
         _, kwargs = mock_build.call_args
         assert kwargs["target"] == "binary"
         assert kwargs["push"] is False
+
+    @patch("benchmarks.utils.build_utils.resolve_local_image_tag", return_value=None)
+    @patch("benchmarks.utils.build_utils.build_image")
+    def test_passes_full_tag_prefix_from_expected_tag(self, mock_build, _mock_resolve):
+        from benchmarks.utils.build_utils import ensure_local_image
+
+        mock_build.return_value = BuildOutput(
+            base_image="base:latest",
+            tags=["server:abcdef0-35d813f-mytag-source-minimal"],
+            error=None,
+        )
+
+        ensure_local_image(
+            agent_server_image="server:abcdef0-35d813f-mytag-source-minimal",
+            base_image="base:latest",
+            custom_tag="mytag",
+            target="source-minimal",
+        )
+
+        _, kwargs = mock_build.call_args
+        assert kwargs["full_tag_prefix"] == "abcdef0-35d813f"
 
 
 class TestBuildImageTelemetry:

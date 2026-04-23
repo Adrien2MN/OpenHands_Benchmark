@@ -1,0 +1,100 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..43dc42d62 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -220,6 +220,95 @@ def _cstack(left, right):
+     """
+     Function corresponding to '&' operation.
+ 
++    Parameters
++    ----------
++    left, right : `astropy.modeling.Model` or ndarray
++        If input is of an array, it is the output of `coord_matrix`.
++
++    Returns
++    -------
++    result : ndarray
++        Result from this operation.
++
++    """
++    # Check if models are nested CompoundModels
++    import numbers
++    from .core import CompoundModel
++    # Helper function to build block-diagonal of separability matrices
++    def block_diagonal(matrices):
++        """Construct block-diagonal matrix from list of matrices"""
++        total_rows = sum(m.shape[0] for m in matrices)
++        total_cols = sum(m.shape[1] for m in matrices)
++        result = np.zeros((total_rows, total_cols), dtype=bool)
++        r, c = 0, 0
++        for m in matrices:
++            rr, cc = m.shape
++            result[r:r+rr, c:c+cc] = m
++            r += rr
++            c += cc
++        return result
++
++    # Determine if left or right are nested models
++    def is_model(obj):
++        return hasattr(obj, 'n_outputs') and hasattr(obj, 'n_inputs')
++
++    # If left or right are compound models, get their separability matrices
++    def get_separability_or_matrix(model):
++        if isinstance(model, CompoundModel):
++            return _separable(model)
++        elif is_model(model):
++            return _separable(model)
++        else:
++            # For ndarray, treat as fully independent (identity)
++            shape = model.shape if hasattr(model, 'shape') else (model.shape[0], model.shape[1])
++            return np.eye(shape[0], dtype=bool)
++
++    # Compute separability matrices for left and right
++    left_matrix = get_separability_or_matrix(left)
++    right_matrix = get_separability_or_matrix(right)
++
++    # Convert to boolean matrices if not already
++    left_bool = bool(left_matrix)
++    right_bool = bool(right_matrix)
++
++    # If either is a matrix, build block-diagonal separation matrix
++    if isinstance(left, Model) or hasattr(left, 'shape') or isinstance(left, np.ndarray):
++        left_matrices = []
++        if isinstance(left, (np.ndarray, list)):
++            left_matrices.append(np.array(left, dtype=bool))
++        elif isinstance(left, Model):
++            left_matrices.append(_separable(left))
++        else:
++            # Fallback
++            shape = getattr(left, 'shape', (1,))
++            left_matrices.append(np.eye(shape[0], dtype=bool))
++    else:
++        left_matrices = [np.array(left, dtype=bool)]
++
++    if isinstance(right, Model) or hasattr(right, 'shape') or isinstance(right, np.ndarray):
++        right_matrices = []
++        if isinstance(right, (np.ndarray, list)):
++            right_matrices.append(np.array(right, dtype=bool))
++        elif isinstance(right, Model):
++            right_matrices.append(_separable(right))
++        else:
++            shape = getattr(right, 'shape', (1,))
++            right_matrices.append(np.eye(shape[0], dtype=bool))
++    else:
++        right_matrices = [np.array(right, dtype=bool)]
++
++    # Construct block-diagonal matrices
++    block_left = block_diagonal(left_matrices)
++    block_right = block_diagonal(right_matrices)
++
++    # The combined matrix is block-diagonal of both
++    combined_matrix = block_diagonal([block_left, block_right])
++
++    return combined_matrix
++
++    """
++    Function corresponding to '&' operation.
++
+     Parameters
+     ----------
+     left, right : `astropy.modeling.Model` or ndarray

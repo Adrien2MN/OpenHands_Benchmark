@@ -84,6 +84,84 @@ def local_image_exists(image: str) -> bool:
         return False
 
 
+def local_image_runnable(image: str, platform: str = "linux/amd64") -> bool:
+    """Check whether a local image reference is runnable for the requested platform."""
+    try:
+        result = subprocess.run(
+            [
+                "docker",
+                "run",
+                "--rm",
+                "--platform",
+                platform,
+                "--entrypoint",
+                "/bin/sh",
+                image,
+                "-c",
+                "exit 0",
+            ],
+            capture_output=True,
+            check=False,
+            timeout=20,
+        )
+        return result.returncode == 0
+    except (subprocess.TimeoutExpired, FileNotFoundError) as e:
+        logger.warning(f"Failed to validate runnable image {image}: {e}")
+        return False
+
+
+def list_local_image_tags(image_repo: str) -> list[str]:
+    """Return all local tags for a given image repository."""
+    try:
+        result = subprocess.run(
+            ["docker", "image", "ls", "--format", "{{.Repository}}:{{.Tag}}"],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=10,
+        )
+    except (subprocess.TimeoutExpired, FileNotFoundError) as e:
+        logger.warning(f"Failed to list tags for {image_repo}: {e}")
+        return []
+
+    if result.returncode != 0:
+        return []
+
+    prefix = f"{image_repo}:"
+    return [
+        line.strip() for line in result.stdout.splitlines() if line.startswith(prefix)
+    ]
+
+
+def resolve_local_image_tag(image: str) -> str | None:
+    """Resolve the best local tag for an image, allowing alias tags.
+
+    Prefer the exact requested tag. If that is not present, search for another
+    local tag in the same repository that matches the logical tag suffix.
+    """
+    if local_image_exists(image):
+        return image
+
+    _, repo, ref = _parse(image)
+    candidates = list_local_image_tags(repo)
+    if not candidates:
+        return None
+
+    # Many of the phased build tags differ only by a short hash segment. If the
+    # exact requested tag is missing, try a normalized variant that removes a
+    # middle 7-char hash token from the tag reference.
+    normalized_ref = ref
+    parts = ref.split("-")
+    if len(parts) >= 3 and len(parts[1]) == 7:
+        normalized_ref = "-".join([parts[0], *parts[2:]])
+
+    for candidate in candidates:
+        if candidate.endswith(ref) or candidate.endswith(normalized_ref):
+            return candidate
+
+    return None
+
+
 def create_docker_workspace(
     agent_server_image: str,
     base_image: str,
@@ -100,10 +178,13 @@ def create_docker_workspace(
     from openhands.workspace import DockerDevWorkspace, DockerWorkspace
 
     force_build = os.getenv("FORCE_BUILD", "0").lower() in ("1", "true", "yes")
-    if not force_build and local_image_exists(agent_server_image):
-        logger.info(f"Using pre-built image {agent_server_image}")
+    resolved_image = (
+        None if force_build else resolve_local_image_tag(agent_server_image)
+    )
+    if not force_build and resolved_image:
+        logger.info(f"Using pre-built image {resolved_image}")
         return DockerWorkspace(
-            server_image=agent_server_image,
+            server_image=resolved_image,
             working_dir=working_dir,
             forward_env=forward_env or [],
         )

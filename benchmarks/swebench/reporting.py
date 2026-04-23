@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -19,7 +18,7 @@ def _workspace_root() -> Path:
 
 
 def _default_model_configs_dir() -> Path:
-    return _workspace_root() / "SWE_bench_agent" / "configs" / "model"
+    return Path(__file__).resolve().parents[2] / "model_footprint"
 
 
 def _default_scenarios_dir() -> Path:
@@ -42,39 +41,22 @@ def _normalize_model_key(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", value.lower())
 
 
-def _strip_yaml_scalar(value: str) -> str:
-    out = value.strip()
-    if not out:
-        return ""
-    if out[0] in {'"', "'"} and out[-1:] == out[0]:
-        out = out[1:-1].strip()
-    return out
+def _coerce_float(value: Any) -> float | None:
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        try:
+            return float(value)
+        except ValueError:
+            return None
+    return None
 
 
-def _load_model_carbon_scenarios(model_configs_dir: Path) -> dict[str, str]:
-    scenario_map: dict[str, str] = {}
+def _load_model_footprint_files(model_configs_dir: Path) -> list[Path]:
     if not model_configs_dir.exists():
-        logger.warning("Model config directory not found: %s", model_configs_dir)
-        return scenario_map
-
-    for cfg_file in sorted(model_configs_dir.glob("*.yaml")):
-        content = cfg_file.read_text(encoding="utf-8")
-        model_key = _normalize_model_key(cfg_file.stem)
-        for line in content.splitlines():
-            if "carbon_scenario" not in line:
-                continue
-            if line.lstrip().startswith("#"):
-                continue
-            m = re.match(r"\s*carbon_scenario\s*:\s*(.+)\s*$", line)
-            if not m:
-                continue
-            value = _strip_yaml_scalar(m.group(1))
-            if not value or value.startswith("${"):
-                continue
-            scenario_map[model_key] = value
-            break
-
-    return scenario_map
+        logger.warning("Model footprint directory not found: %s", model_configs_dir)
+        return []
+    return sorted(model_configs_dir.glob("*.json"))
 
 
 def _resolve_model_name(output_jsonl_path: Path) -> str:
@@ -98,46 +80,35 @@ def _resolve_model_name(output_jsonl_path: Path) -> str:
     return folder
 
 
-def _pick_scenario_for_model(
-    model_name: str, scenario_map: dict[str, str]
-) -> str | None:
-    if not scenario_map:
+def _pick_footprint_for_model(
+    model_name: str, footprint_files: list[Path]
+) -> Path | None:
+    if not footprint_files:
         return None
 
     model_key = _normalize_model_key(model_name)
-    if model_key in scenario_map:
-        return scenario_map[model_key]
+    aliases = {
+        "gpt41": "gpt41",
+        "gpt41mini": "gpt41mini",
+        "gpt41nano": "gpt41nano",
+        "mistralsmall2503": "mistralsmall3",
+        "o1": "o1",
+    }
+    target_key = aliases.get(model_key, model_key)
 
-    # Fallback: contains-match on normalized keys.
-    for key, value in scenario_map.items():
-        if key and key in model_key:
-            return value
+    stems = [(path, _normalize_model_key(path.stem)) for path in footprint_files]
 
-    return None
+    for path, stem_key in stems:
+        if stem_key == target_key:
+            return path
 
+    for path, stem_key in stems:
+        if stem_key.startswith(target_key):
+            return path
 
-def _resolve_scenario_path(
-    scenarios_dir: Path, scenario_ref: str | None
-) -> Path | None:
-    if not scenario_ref:
-        return None
-
-    ref = scenario_ref.strip()
-    if not ref:
-        return None
-
-    candidate = Path(ref).expanduser()
-    if candidate.is_file():
-        return candidate
-
-    direct = scenarios_dir / ref
-    if direct.is_file():
-        return direct
-
-    if not ref.endswith(".json"):
-        with_ext = scenarios_dir / f"{ref}.json"
-        if with_ext.is_file():
-            return with_ext
+    for path, stem_key in stems:
+        if target_key in stem_key or stem_key in target_key:
+            return path
 
     return None
 
@@ -145,25 +116,71 @@ def _resolve_scenario_path(
 def _extract_metrics_from_scenario(
     scenario_path: Path, js_bridge_path: Path
 ) -> dict[str, Any] | None:
-    if not scenario_path.exists() or not js_bridge_path.exists():
+    if not scenario_path.exists():
         return None
 
     try:
-        proc = subprocess.run(
-            ["node", str(js_bridge_path), "--scenario", str(scenario_path)],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        payload = json.loads(proc.stdout)
+        payload = json.loads(scenario_path.read_text(encoding="utf-8"))
+
+        gpu_kwh = 0.0
+        server_kwh = 0.0
+        total_kwh = 0.0
+        total_co2_kg = 0.0
+
+        scopes = payload.get("scopes")
+        if isinstance(scopes, list):
+            for scope in scopes:
+                if not isinstance(scope, dict):
+                    continue
+                components = scope.get("list")
+                if not isinstance(components, list):
+                    continue
+                for component in components:
+                    if not isinstance(component, dict):
+                        continue
+
+                    consumer = component.get("consumer") or {}
+                    source = component.get("source") or {}
+                    electricity_value = (
+                        (consumer.get("consumptions") or {})
+                        .get("electricity", {})
+                        .get("value")
+                    )
+                    per_unit_kwh = _coerce_float(electricity_value)
+                    if per_unit_kwh is None:
+                        continue
+
+                    quantity_raw = component.get("quantity")
+                    quantity = _coerce_float(quantity_raw)
+                    if quantity is None:
+                        quantity = 1.0
+
+                    component_kwh = per_unit_kwh * quantity
+                    total_kwh += component_kwh
+
+                    co2_factor = (
+                        (source.get("emissions") or {}).get("co2e", {}).get("value")
+                    )
+                    co2_per_kwh = _coerce_float(co2_factor)
+                    if co2_per_kwh is None:
+                        co2_per_kwh = 0.0
+
+                    total_co2_kg += component_kwh * co2_per_kwh
+
+                    consumer_name = str(consumer.get("name") or "").lower()
+                    if "gpu" in consumer_name:
+                        gpu_kwh += component_kwh
+                    elif "server" in consumer_name:
+                        server_kwh += component_kwh
+
         return {
-            "gpu_consumption_kwh": payload.get("gpu_consumption_kwh"),
-            "server_consumption_kwh": payload.get("server_consumption_kwh"),
-            "total_electricity_kwh": payload.get("total_electricity_kwh"),
-            "co2e_operational_kg": payload.get("co2e_operational_kg"),
-            "co2e_embodied_kg": payload.get("co2e_embodied_kg"),
-            "co2e_total_kg": payload.get("co2e_total_kg"),
-            "co2e_factor_per_kwh": payload.get("co2e_factor_per_kwh"),
+            "gpu_consumption_kwh": gpu_kwh,
+            "server_consumption_kwh": server_kwh,
+            "total_electricity_kwh": total_kwh,
+            "co2e_operational_kg": total_co2_kg,
+            "co2e_embodied_kg": None,
+            "co2e_total_kg": total_co2_kg,
+            "co2e_factor_per_kwh": (total_co2_kg / total_kwh) if total_kwh else None,
             "scenario_file": scenario_path.name,
             "scenario_path": str(scenario_path),
             "electricity_grid_source": os.getenv("ELECTRICITY_GRID_SOURCE"),
@@ -176,7 +193,12 @@ def _extract_metrics_from_scenario(
 
 
 def _extract_usage(metrics: dict[str, Any]) -> dict[str, int]:
-    usage = metrics.get("accumulated_usage") or metrics.get("usage") or {}
+    usage = (
+        metrics.get("accumulated_usage")
+        or metrics.get("accumulated_token_usage")
+        or metrics.get("usage")
+        or {}
+    )
     prompt_tokens = int(
         usage.get("prompt_tokens") or metrics.get("accumulated_prompt_tokens") or 0
     )
@@ -282,11 +304,6 @@ def generate_instance_reports(
         if model_configs_dir is not None
         else _default_model_configs_dir()
     )
-    scenario_dir = (
-        Path(scenarios_dir).resolve()
-        if scenarios_dir is not None
-        else _default_scenarios_dir()
-    )
     bridge = (
         Path(js_bridge_path).resolve()
         if js_bridge_path is not None
@@ -294,9 +311,8 @@ def generate_instance_reports(
     )
 
     model_name = _resolve_model_name(input_path)
-    scenario_map = _load_model_carbon_scenarios(model_cfg_dir)
-    scenario_ref = _pick_scenario_for_model(model_name, scenario_map)
-    scenario_path = _resolve_scenario_path(scenario_dir, scenario_ref)
+    footprint_files = _load_model_footprint_files(model_cfg_dir)
+    scenario_path = _pick_footprint_for_model(model_name, footprint_files)
     model_footprint = (
         _extract_metrics_from_scenario(scenario_path, bridge) if scenario_path else None
     )
