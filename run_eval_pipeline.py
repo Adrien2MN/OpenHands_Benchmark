@@ -11,6 +11,7 @@ Usage:
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -175,19 +176,118 @@ def get_stable_run_dir(output_jsonl: str, model: str) -> Path:
     return output_dir.parent / stable_name
 
 
-def finalize_run_directory(output_jsonl: str, model: str) -> Path:
-    """Rename the completed run directory to a stable model+instance folder."""
-    current_dir = Path(output_jsonl).resolve().parent
-    stable_dir = get_stable_run_dir(output_jsonl, model)
+def _collect_instance_ids(run_dir: Path, output_jsonl: str) -> list[str]:
+    """Collect instance ids for a run from output JSONL with fallbacks."""
+    instance_ids: set[str] = set()
 
-    if current_dir == stable_dir:
+    output_path = Path(output_jsonl)
+    if output_path.exists():
+        with open(output_path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    data = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                instance_id = data.get("instance_id")
+                if isinstance(instance_id, str) and instance_id.strip():
+                    instance_ids.add(instance_id.strip())
+
+    conversations_dir = run_dir / "conversations"
+    if conversations_dir.exists():
+        for archive in conversations_dir.glob("*.tar.gz"):
+            name = archive.name.removesuffix(".tar.gz")
+            if name:
+                instance_ids.add(name)
+
+    logs_dir = run_dir / "logs"
+    if logs_dir.exists():
+        for log_file in logs_dir.glob("instance_*.log"):
+            match = re.fullmatch(r"instance_(.+?)(?:\.output)?\.log", log_file.name)
+            if match:
+                instance_ids.add(match.group(1))
+
+    return sorted(instance_ids)
+
+
+def _organize_multi_instance_outputs(model_dir: Path, instance_ids: list[str]) -> None:
+    """Move per-instance artifacts into model/<instance_id>/... folders."""
+    logs_dir = model_dir / "logs"
+    conv_dir = model_dir / "conversations"
+    report_dir = model_dir / "report"
+
+    for instance_id in instance_ids:
+        instance_dir = model_dir / _slug(instance_id)
+        (instance_dir / "logs").mkdir(parents=True, exist_ok=True)
+        (instance_dir / "conversations").mkdir(parents=True, exist_ok=True)
+        (instance_dir / "report").mkdir(parents=True, exist_ok=True)
+
+        if logs_dir.exists():
+            for suffix in (".log", ".output.log"):
+                src = logs_dir / f"instance_{instance_id}{suffix}"
+                if src.exists():
+                    shutil.move(str(src), str(instance_dir / "logs" / src.name))
+
+        if conv_dir.exists():
+            src = conv_dir / f"{instance_id}.tar.gz"
+            if src.exists():
+                shutil.move(str(src), str(instance_dir / "conversations" / src.name))
+
+        if report_dir.exists():
+            src = report_dir / f"report_{instance_id}.json"
+            if src.exists():
+                shutil.move(str(src), str(instance_dir / "report" / src.name))
+
+        if logs_dir.exists():
+            run_eval_root = logs_dir / "run_evaluation"
+            if run_eval_root.exists():
+                for match in run_eval_root.glob(f"**/{instance_id}"):
+                    if match.is_dir():
+                        dest = instance_dir / "logs" / "run_evaluation" / match.name
+                        dest.parent.mkdir(parents=True, exist_ok=True)
+                        if dest.exists():
+                            shutil.rmtree(dest)
+                        shutil.move(str(match), str(dest))
+
+    # Remove empty containers after moves; keep non-empty as shared artifacts.
+    for folder in (conv_dir, report_dir, logs_dir):
+        if folder.exists() and not any(folder.iterdir()):
+            folder.rmdir()
+
+
+def finalize_run_directory(output_jsonl: str, model: str) -> Path:
+    """Finalize output layout.
+
+    - Single instance: keep legacy model__instance folder naming.
+    - Multiple instances: create outputs/<dataset>/<model>/ with per-instance
+      folders and shared run-level artifacts in the model root.
+    """
+    current_dir = Path(output_jsonl).resolve().parent
+    instance_ids = _collect_instance_ids(current_dir, output_jsonl)
+
+    if len(instance_ids) <= 1:
+        stable_dir = get_stable_run_dir(output_jsonl, model)
+
+        if current_dir == stable_dir:
+            return stable_dir
+
+        if stable_dir.exists():
+            shutil.rmtree(stable_dir)
+
+        current_dir.rename(stable_dir)
         return stable_dir
 
-    if stable_dir.exists():
-        shutil.rmtree(stable_dir)
+    model_dir = current_dir.parent / _slug(model)
 
-    current_dir.rename(stable_dir)
-    return stable_dir
+    if current_dir != model_dir:
+        if model_dir.exists():
+            shutil.rmtree(model_dir)
+        current_dir.rename(model_dir)
+
+    _organize_multi_instance_outputs(model_dir, instance_ids)
+    return model_dir
 
 
 def run_eval(output_jsonl: str, model: str) -> None:
