@@ -170,11 +170,13 @@ class TestEnsureLocalImage:
         assert result is False
         mock_build.assert_not_called()
 
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=False)
+    @patch("benchmarks.utils.build_utils.resolve_local_image_tag", return_value=None)
+    @patch("benchmarks.utils.build_utils.subprocess.run")
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_returns_true_when_build_occurs(self, mock_build, _mock_exists):
+    def test_returns_true_when_build_occurs(self, mock_build, mock_run, _mock_resolve):
         from benchmarks.utils.build_utils import ensure_local_image
 
+        mock_run.return_value = MagicMock(returncode=1, stdout="", stderr="not found")
         mock_build.return_value = BuildOutput(
             base_image="base:latest",
             tags=["server:v1"],
@@ -185,6 +187,66 @@ class TestEnsureLocalImage:
             base_image="base:latest",
             custom_tag="mytag",
         )
+        assert result is True
+        mock_build.assert_called_once()
+
+    @patch(
+        "benchmarks.utils.build_utils.resolve_local_image_tag",
+        side_effect=[None, "server:v1"],
+    )
+    @patch("benchmarks.utils.build_utils.local_image_runnable", return_value=True)
+    @patch("benchmarks.utils.build_utils.subprocess.run")
+    @patch("benchmarks.utils.build_utils.build_image")
+    def test_uses_pulled_image_before_rebuild(
+        self,
+        mock_build,
+        mock_run,
+        _mock_runnable,
+        _mock_resolve,
+    ):
+        from benchmarks.utils.build_utils import ensure_local_image
+
+        mock_run.return_value = MagicMock(returncode=0, stdout="ok", stderr="")
+
+        result = ensure_local_image(
+            agent_server_image="server:v1",
+            base_image="base:latest",
+            custom_tag="mytag",
+        )
+
+        assert result is False
+        mock_build.assert_not_called()
+        mock_run.assert_called_once_with(
+            ["docker", "pull", "server:v1"],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+
+    @patch("benchmarks.utils.build_utils.resolve_local_image_tag", return_value=None)
+    @patch("benchmarks.utils.build_utils.subprocess.run")
+    @patch("benchmarks.utils.build_utils.build_image")
+    def test_falls_back_to_build_when_pull_fails(
+        self,
+        mock_build,
+        mock_run,
+        _mock_resolve,
+    ):
+        from benchmarks.utils.build_utils import ensure_local_image
+
+        mock_run.return_value = MagicMock(returncode=1, stdout="", stderr="not found")
+        mock_build.return_value = BuildOutput(
+            base_image="base:latest",
+            tags=["server:v1"],
+            error=None,
+        )
+
+        result = ensure_local_image(
+            agent_server_image="server:v1",
+            base_image="base:latest",
+            custom_tag="mytag",
+        )
+
         assert result is True
         mock_build.assert_called_once()
 
@@ -258,9 +320,10 @@ class TestEnsureLocalImage:
         assert result == "server:wrong-tag"
 
     @patch.dict(os.environ, {"FORCE_BUILD": "1"})
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=True)
+    @patch("benchmarks.utils.build_utils.resolve_local_image_tag", return_value=None)
+    @patch("benchmarks.utils.build_utils.subprocess.run")
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_force_build_skips_detection(self, mock_build, mock_exists):
+    def test_force_build_skips_detection(self, mock_build, mock_run, mock_resolve):
         from benchmarks.utils.build_utils import ensure_local_image
 
         mock_build.return_value = BuildOutput(
@@ -275,15 +338,18 @@ class TestEnsureLocalImage:
         )
         assert result is True
         mock_build.assert_called_once()
-        # local_image_exists should NOT have been called when FORCE_BUILD=1
-        mock_exists.assert_not_called()
+        # Detection and pull path should be skipped entirely when FORCE_BUILD=1.
+        mock_resolve.assert_not_called()
+        mock_run.assert_not_called()
 
-    @patch("benchmarks.utils.build_utils.local_image_exists", return_value=False)
+    @patch("benchmarks.utils.build_utils.resolve_local_image_tag", return_value=None)
+    @patch("benchmarks.utils.build_utils.subprocess.run")
     @patch("benchmarks.utils.build_utils.build_image")
-    def test_passes_target_to_build_image(self, mock_build, _mock_exists):
+    def test_passes_target_to_build_image(self, mock_build, mock_run, _mock_resolve):
         """Verify the target parameter flows through to build_image."""
         from benchmarks.utils.build_utils import ensure_local_image
 
+        mock_run.return_value = MagicMock(returncode=1, stdout="", stderr="not found")
         mock_build.return_value = BuildOutput(
             base_image="base:latest",
             tags=["server:v1"],

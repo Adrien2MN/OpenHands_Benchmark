@@ -2,6 +2,7 @@
 # Quick wrapper for running eval pipeline
 # Usage: ./run-pipeline.sh gpt-4.1-mini 1    # model, instances
 # Usage: ./run-pipeline.sh mistral-small-2503 5 200  # model, instances, max-iterations
+# Usage: ./run-pipeline.sh gpt-4.1-mini 20 100 --num-workers 20 --n-critic-runs 1 --max-retries 1
 
 cd "$(dirname "$0")"
 
@@ -28,6 +29,17 @@ fi
 
 MODEL="$1"
 INSTANCES="$2"
-MAX_ITER="${3:-100}"
 
-python3 run_eval_pipeline.py --model "$MODEL" --instances "$INSTANCES" --max-iterations "$MAX_ITER"
+shift 2
+MAX_ITER="100"
+
+if [ $# -gt 0 ] && [[ "$1" =~ ^[0-9]+$ ]]; then
+    MAX_ITER="$1"
+    shift 1
+fi
+
+python3 run_eval_pipeline.py \
+    --model "$MODEL" \
+    --instances "$INSTANCES" \
+    --max-iterations "$MAX_ITER" \
+    "$@"

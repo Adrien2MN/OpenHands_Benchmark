@@ -14,6 +14,7 @@ import subprocess
 import sys
 from collections.abc import Callable
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
+from functools import lru_cache
 from pathlib import Path
 from threading import Lock
 
@@ -55,15 +56,52 @@ AGENT_LAYER_DOCKERFILE = (
 )
 
 
+def _is_repo_root(path: Path) -> bool:
+    """Return True when *path* looks like the benchmarks repo root."""
+    return (path / "vendor" / "software-agent-sdk").exists()
+
+
+@lru_cache(maxsize=1)
 def _get_repo_root() -> Path:
-    """Get the repository root using git."""
-    result = subprocess.run(
-        ["git", "rev-parse", "--show-toplevel"],
-        capture_output=True,
-        text=True,
-        check=True,
+    """Get the repository root with git-first lookup and filesystem fallback."""
+    # Optional explicit override for constrained CI/sandbox contexts.
+    root_override = os.getenv("OPENHANDS_BENCHMARKS_ROOT")
+    if root_override:
+        root_path = Path(root_override).expanduser().resolve()
+        if _is_repo_root(root_path):
+            return root_path
+        raise FileNotFoundError(
+            f"OPENHANDS_BENCHMARKS_ROOT={root_path} does not contain "
+            "vendor/software-agent-sdk"
+        )
+
+    module_dir = Path(__file__).resolve().parent
+
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--show-toplevel"],
+            cwd=module_dir,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        root = Path(result.stdout.strip()).resolve()
+        if _is_repo_root(root):
+            return root
+    except subprocess.CalledProcessError:
+        # Fall back to filesystem discovery below.
+        pass
+
+    # Fallback: walk up from the module path until we find the vendor submodule.
+    for candidate in [module_dir, *module_dir.parents]:
+        if _is_repo_root(candidate):
+            return candidate
+
+    raise FileNotFoundError(
+        "Could not locate benchmarks repository root. "
+        "Expected a directory containing vendor/software-agent-sdk. "
+        "Set OPENHANDS_BENCHMARKS_ROOT if running outside a git checkout."
     )
-    return Path(result.stdout.strip())
 
 
 def _get_sdk_dockerfile() -> Path:
@@ -87,9 +125,10 @@ def _get_sdk_dockerfile() -> Path:
     return dockerfile
 
 
+@lru_cache(maxsize=1)
 def dockerfile_content_hash() -> str:
     """Return a 7-char SHA-256 hash of the SDK Dockerfile content."""
-    content = _get_sdk_dockerfile().read_text()
+    content = _get_sdk_dockerfile().read_text(encoding="utf-8")
     return hashlib.sha256(content.encode()).hexdigest()[:7]
 
 

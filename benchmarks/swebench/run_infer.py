@@ -369,7 +369,10 @@ class SWEBenchEvaluation(Evaluation):
         with workspace_keepalive(self.metadata.agent_type, workspace):
             conversation.send_message(instruction)
             # Run conversation with fake user responses to handle agent messages
-            run_conversation_with_fake_user_response(conversation)
+            run_conversation_with_fake_user_response(
+                conversation,
+                stop_after_first_finished=True,
+            )
 
         # git add
         workspace.execute_command(f"cd {repo_path} ; git add -A")

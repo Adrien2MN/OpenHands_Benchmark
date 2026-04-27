@@ -82,6 +82,9 @@ def run_infer(
     max_iterations: int,
     model: str,
     force_build: bool,
+    num_workers: int,
+    n_critic_runs: int,
+    max_retries: int,
 ) -> str:
     """Run swebench-infer and return output directory."""
     kwargs_note = f"{model}_n{instances}_iter{max_iterations}"
@@ -101,6 +104,12 @@ def run_infer(
         "docker",
         "--n-limit",
         str(instances),
+        "--num-workers",
+        str(num_workers),
+        "--n-critic-runs",
+        str(n_critic_runs),
+        "--max-retries",
+        str(max_retries),
         "--note",
         kwargs_note,
     ]
@@ -115,6 +124,9 @@ def run_infer(
     if force_build:
         # Build per-instance workspace images locally to avoid missing prebuilt tags.
         env["FORCE_BUILD"] = "1"
+    else:
+        # Avoid inheriting stale FORCE_BUILD from the parent shell.
+        env.pop("FORCE_BUILD", None)
 
     result = subprocess.run(cmd, cwd=SCRIPT_DIR, env=env)
     if result.returncode != 0:
@@ -147,6 +159,58 @@ def run_infer(
     print("\n✓ Infer completed successfully")
     print(f"  Output file: {output_jsonl}")
     return str(output_jsonl)
+
+
+def run_prebuild_images(
+    instances: int,
+    build_max_workers: int,
+    force_build: bool,
+    strict_prebuild: bool,
+) -> bool:
+    """Prebuild SWE-bench Docker images to keep infer workers focused on inference."""
+    cmd = [
+        "uv",
+        "run",
+        "python",
+        "benchmarks/swebench/build_images.py",
+        "--dataset",
+        DATASET,
+        "--split",
+        SPLIT,
+        "--n-limit",
+        str(instances),
+        "--max-workers",
+        str(build_max_workers),
+    ]
+    if force_build:
+        cmd.append("--force-build")
+
+    print(f"\n{'=' * 70}")
+    print("Prebuilding SWE-bench images")
+    print(f"{'=' * 70}")
+    print(f"Command: {' '.join(cmd)}\n")
+
+    env = os.environ.copy()
+    if force_build:
+        env["FORCE_BUILD"] = "1"
+    else:
+        # Avoid inheriting stale FORCE_BUILD from the parent shell.
+        env.pop("FORCE_BUILD", None)
+
+    result = subprocess.run(cmd, cwd=SCRIPT_DIR, env=env)
+    if result.returncode != 0:
+        message = (
+            f"Warning: Prebuild returned exit code {result.returncode}. "
+            "Continuing to infer; missing images will be built on demand."
+        )
+        if strict_prebuild:
+            print(f"Error: {message}")
+            sys.exit(1)
+        print(message)
+        return False
+
+    print("\n✓ Prebuild completed successfully")
+    return True
 
 
 def get_stable_run_dir(output_jsonl: str, model: str) -> Path:
@@ -369,6 +433,48 @@ Available models: {", ".join(AVAILABLE_MODELS)}
         help="Max iterations per instance (default: 100)",
     )
     parser.add_argument(
+        "--num-workers",
+        type=int,
+        default=20,
+        help="Parallel inference workers (default: 20)",
+    )
+    parser.add_argument(
+        "--n-critic-runs",
+        type=int,
+        default=1,
+        help="Number of critic runs (default: 1 for faster throughput)",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=1,
+        help="Retries per instance after failures (default: 1)",
+    )
+    parser.add_argument(
+        "--prebuild-images",
+        action="store_true",
+        default=False,
+        help="Prebuild local SWE-bench images before infer (default: disabled)",
+    )
+    parser.add_argument(
+        "--no-prebuild-images",
+        action="store_false",
+        dest="prebuild_images",
+        help="Skip image prebuild and let infer build on demand",
+    )
+    parser.add_argument(
+        "--build-max-workers",
+        type=int,
+        default=12,
+        help="Parallel workers for prebuilding images (default: 12)",
+    )
+    parser.add_argument(
+        "--strict-prebuild",
+        action="store_true",
+        default=False,
+        help="Fail the pipeline if prebuild is partial/failed",
+    )
+    parser.add_argument(
         "--infer-only",
         action="store_true",
         help="Only run infer, skip eval",
@@ -397,6 +503,24 @@ Available models: {", ".join(AVAILABLE_MODELS)}
 
     args = parser.parse_args()
 
+    if args.instances < 1:
+        print("Error: --instances must be >= 1")
+        sys.exit(1)
+    if args.num_workers < 1:
+        print("Error: --num-workers must be >= 1")
+        sys.exit(1)
+    if args.n_critic_runs < 1:
+        print("Error: --n-critic-runs must be >= 1")
+        sys.exit(1)
+    if args.max_retries < 0:
+        print("Error: --max-retries must be >= 0")
+        sys.exit(1)
+    if args.build_max_workers < 1:
+        print("Error: --build-max-workers must be >= 1")
+        sys.exit(1)
+
+    effective_workers = min(args.num_workers, args.instances)
+
     # Handle eval-only mode
     if args.eval_only:
         if not Path(args.eval_only).exists():
@@ -407,12 +531,44 @@ Available models: {", ".join(AVAILABLE_MODELS)}
 
     # Standard pipeline: infer then eval
     llm_config = get_llm_config_path(args.model)
+    prebuild_succeeded = True
+    infer_force_build = False
+
+    # Guardrail: force-building during infer causes one expensive image rebuild
+    # attempt per instance worker, which can stall throughput at scale.
+    prebuild_enabled = args.prebuild_images or args.force_build
+
+    if prebuild_enabled:
+        if args.force_build and not args.prebuild_images:
+            print(
+                "--force-build detected without --prebuild-images; enabling prebuild "
+                "automatically to avoid infer-time rebuild bottlenecks."
+            )
+
+        prebuild_succeeded = run_prebuild_images(
+            instances=args.instances,
+            build_max_workers=args.build_max_workers,
+            force_build=args.force_build,
+            strict_prebuild=args.strict_prebuild,
+        )
+
+        # Never force a full rebuild during infer.
+        # Let infer build only missing images on demand to avoid duplicate work.
+        if not prebuild_succeeded:
+            print(
+                "Prebuild was partial/failed. Inference will build missing images on demand "
+                "without FORCE_BUILD to avoid rebuilding successful images."
+            )
+
     output_jsonl = run_infer(
         llm_config,
         args.instances,
         args.max_iterations,
         args.model,
-        args.force_build,
+        infer_force_build,
+        effective_workers,
+        args.n_critic_runs,
+        args.max_retries,
     )
 
     if not args.infer_only:

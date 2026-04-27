@@ -520,6 +520,45 @@ def ensure_local_image(
                 resolved_image,
             )
 
+        # Avoid expensive infer-time local rebuilds when a prebuilt image
+        # already exists remotely. Pull first, then validate local runnability.
+        try:
+            logger.info(
+                "Local image %s not found. Attempting docker pull before rebuilding.",
+                agent_server_image,
+            )
+            pull_result = subprocess.run(
+                ["docker", "pull", agent_server_image],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+            if pull_result.returncode == 0:
+                pulled_image = resolve_local_image_tag(agent_server_image)
+                if pulled_image and local_image_runnable(pulled_image):
+                    logger.info("Using pulled image %s", pulled_image)
+                    return pulled_image if pulled_image != agent_server_image else False
+                logger.warning(
+                    "Pulled %s but image is not runnable. Rebuilding.",
+                    agent_server_image,
+                )
+            else:
+                logger.info(
+                    "docker pull for %s failed (exit=%d). Falling back to local build.",
+                    agent_server_image,
+                    pull_result.returncode,
+                )
+        except FileNotFoundError:
+            logger.warning(
+                "Docker CLI not found while pulling %s. Rebuilding.", agent_server_image
+            )
+        except Exception as exc:
+            logger.warning(
+                "Unexpected error while pulling %s: %s. Rebuilding.",
+                agent_server_image,
+                exc,
+            )
+
     if force_build:
         logger.info(f"FORCE_BUILD set, building image from {base_image}...")
     else:

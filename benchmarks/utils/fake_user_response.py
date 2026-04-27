@@ -120,6 +120,7 @@ def run_conversation_with_fake_user_response(
     conversation: RemoteConversation,
     fake_user_response_fn: FakeUserResponseFn = fake_user_response,
     max_fake_responses: int = 10,
+    stop_after_first_finished: bool = False,
 ) -> None:
     """Run a conversation with automatic fake user responses.
 
@@ -138,6 +139,9 @@ def run_conversation_with_fake_user_response(
             Defaults to fake_user_response.
         max_fake_responses: Maximum number of fake responses to send before
             stopping. This prevents infinite loops.
+        stop_after_first_finished: If True, stop immediately when execution
+            status is FINISHED, even when the agent did not explicitly call
+            the finish tool.
     """
     run_timeout = int(os.getenv("CONVERSATION_TIMEOUT", "3600"))
 
@@ -164,6 +168,14 @@ def run_conversation_with_fake_user_response(
         if _agent_finished_with_finish_action(events):
             logger.info(
                 "Agent finished with FinishAction after %d fake responses",
+                fake_response_count,
+            )
+            break
+
+        if stop_after_first_finished:
+            logger.info(
+                "Conversation reached FINISHED status without FinishAction; "
+                "stopping due to stop_after_first_finished=True after %d fake responses",
                 fake_response_count,
             )
             break
