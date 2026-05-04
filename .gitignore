@@ -217,4 +217,13 @@ workspace/
 # Evaluation outputs
 eval_outputs/
 builds/
+
+# Generated evaluation and benchmark outputs
 outputs/
+
+# Vendor or bundled packages (often large)
+vendor/
+unknown-0.0.0/
+
+# Local caches
+.cache/
