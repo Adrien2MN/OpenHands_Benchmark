@@ -12,7 +12,9 @@
     ".venv/**",
     "**/__pycache__",
     "**/.pytest_cache",
-    "legacy/**"
+    "legacy/**",
+    "unknown-0.0.0/**",
+    "outputs/**"
   ],
   "pythonPath": ".venv/bin/python",
   "venvPath": ".",
