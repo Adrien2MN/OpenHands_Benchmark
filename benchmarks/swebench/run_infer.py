@@ -1,5 +1,6 @@
 import json
 import os
+import time
 from typing import Any, List
 
 from jinja2 import Environment, FileSystemLoader
@@ -297,6 +298,8 @@ class SWEBenchEvaluation(Evaluation):
         Create conversation, run agent, collect history and git patch.
         Do not write files here; just return EvalOutput.
         """
+        workspace_generation_started = time.perf_counter()
+
         if is_acp_agent(self.metadata.agent_type):
             agent = build_acp_agent(self.metadata.agent_type, self.metadata.llm.model)
         else:
@@ -361,11 +364,17 @@ class SWEBenchEvaluation(Evaluation):
         git_reset = workspace.execute_command(f"cd {repo_path} ; git reset --hard")
         assert git_reset.exit_code == 0, f"git reset failed: {git_reset.stderr}"
 
+        workspace_generation_seconds = round(
+            time.perf_counter() - workspace_generation_started,
+            3,
+        )
+
         instruction = get_instruction(
             instance=instance.data,
             metadata=self.metadata,
             workspace_path=workspace.working_dir,
         )
+        agent_generation_started = time.perf_counter()
         with workspace_keepalive(self.metadata.agent_type, workspace):
             conversation.send_message(instruction)
             # Run conversation with fake user responses to handle agent messages
@@ -373,6 +382,11 @@ class SWEBenchEvaluation(Evaluation):
                 conversation,
                 stop_after_first_finished=True,
             )
+
+        agent_generation_seconds = round(
+            time.perf_counter() - agent_generation_started,
+            3,
+        )
 
         # git add
         workspace.execute_command(f"cd {repo_path} ; git add -A")
@@ -405,8 +419,19 @@ class SWEBenchEvaluation(Evaluation):
         )
 
         # Build test_result with git patch and optional ACP agent metadata
+        metrics = conversation.conversation_stats.get_combined_metrics()
+        token_usages = getattr(metrics, "token_usages", None) or []
         test_result: dict[str, Any] = {
             "git_patch": git_patch,
+            "iteration_count": len(token_usages),
+            "timings": {
+                "workspace_generation_seconds": workspace_generation_seconds,
+                "agent_generation_seconds": agent_generation_seconds,
+                "total_generation_seconds": round(
+                    workspace_generation_seconds + agent_generation_seconds,
+                    3,
+                ),
+            },
         }
         if isinstance(agent, ACPAgent):
             add_acp_agent_metadata(test_result, conversation)
@@ -419,7 +444,7 @@ class SWEBenchEvaluation(Evaluation):
             instruction=instruction,
             error=None,
             history=list(conversation.state.events),
-            metrics=conversation.conversation_stats.get_combined_metrics(),
+            metrics=metrics,
         )
         return out
 

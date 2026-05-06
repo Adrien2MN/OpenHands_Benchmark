@@ -59,7 +59,13 @@ def get_failed_instances(output_file: str, critic: CriticBase) -> Set[EvalInstan
                     data = json.loads(line.strip())
                     output = EvalOutput.model_validate(data)
 
-                    # Evaluate using the critic
+                    git_patch = str(
+                        (output.test_result or {}).get("git_patch") or ""
+                    ).strip()
+                    if git_patch:
+                        continue
+
+                    # Evaluate using the critic only when no patch was delivered.
                     if not evaluate_output(critic, output):
                         failed_instances.add(output.instance_id)
 

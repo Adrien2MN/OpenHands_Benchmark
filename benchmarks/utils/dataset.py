@@ -65,9 +65,12 @@ def prepare_dataset(
             f"Selected {len(dataset)} instances from {original_size} total instances"
         )
 
-    # Apply limit after filtering selected instances, preserving dataset order.
+    # Apply limit after filtering completed instances.
+    # Use the first-N rows deterministically (preserve dataset order).
     if n_limit is not None and n_limit > 0:
-        dataset = dataset.head(min(n_limit, len(dataset)))
+        dataset = dataset.iloc[: min(n_limit, len(dataset))]
+        # reset index to provide a clean contiguous index after slicing
+        dataset = dataset.reset_index(drop=True)
 
     return dataset
 

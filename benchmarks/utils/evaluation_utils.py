@@ -3,6 +3,8 @@ from __future__ import annotations
 import fcntl
 import json
 import os
+from datetime import datetime
+from pathlib import Path
 from typing import Callable
 
 from benchmarks.utils.models import EvalInstance, EvalOutput
@@ -29,9 +31,15 @@ def construct_eval_output_dir(
     if eval_note:
         folder += f"_N_{eval_note}"
 
-    # Construct full path. The caller is responsible for creating the
-    # directory when it is ready to write outputs.
-    return os.path.join(base_dir, dataset_name, folder)
+    # Add run timestamp suffix so each run gets a unique output directory.
+    # Format example: -30-10-27 (day-hour-minute)
+    folder += f"-{datetime.now().strftime('%d-%H-%M')}"
+
+    # Construct full path
+    eval_output_dir = os.path.join(base_dir, dataset_name, folder)
+    os.makedirs(eval_output_dir, exist_ok=True)
+
+    return eval_output_dir
 
 
 def get_default_on_result_writer(
@@ -49,8 +57,10 @@ def get_default_on_result_writer(
     Returns:
         A callback function that can be passed to evaluator.run(on_result=...)
     """
-    # Derive error output path from main output path
-    error_output_path = output_path.replace(".jsonl", "_errors.jsonl")
+    # Derive the sidecar path from the filename only so parent directories
+    # containing ".jsonl" are not rewritten accidentally.
+    output_file = Path(output_path)
+    error_output_path = str(output_file.with_name(f"{output_file.stem}_errors.jsonl"))
 
     def _cb(instance: EvalInstance, out: EvalOutput) -> None:
         # Choose the appropriate file based on whether there's an error

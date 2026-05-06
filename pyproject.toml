@@ -81,6 +81,10 @@ hybridgym-issuelocalize-infer = "benchmarks.hybridgym_issuelocalize.run_infer:ma
 hybridgym-issuelocalize-eval = "benchmarks.hybridgym_issuelocalize.eval_infer:main"
 swesmith-infer = "benchmarks.swesmith.run_infer:main"
 swesmith-eval = "benchmarks.swesmith.eval_infer:main"
+swebench-lite-infer = "benchmarks.swebench_lite.run_infer:main"
+swebench-lite-eval = "benchmarks.swebench_lite.eval_infer:main"
+swebench-lite-build-images = "benchmarks.swebench_lite.build_images:main"
+swebench-lite-prepare-dataset = "benchmarks.swebench_lite.prepare_dataset:main"
 
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]

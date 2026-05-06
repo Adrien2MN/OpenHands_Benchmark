@@ -189,6 +189,14 @@ def run_swebench_evaluation(
         raise
 
 
+def _find_eval_report(predictions_dir: Path, run_id: str) -> Path | None:
+    report_candidates = [
+        predictions_dir / f"{MODEL_NAME_OR_PATH}.{run_id}.json",
+        predictions_dir / "report" / "report.json",
+    ]
+    return next((path for path in report_candidates if path.exists()), None)
+
+
 def main() -> None:
     """Main entry point for the script."""
     parser = argparse.ArgumentParser(
@@ -336,19 +344,20 @@ Examples:
 
             # Copy the generated report to the canonical sidecar path next to
             # the original OpenHands output file.
-            # The current reporting flow writes to output_dir/report/report.json,
-            # while older SWE-Bench harnesses wrote {MODEL_NAME_OR_PATH}.{run_id}.json.
-            report_candidates = [
-                output_file.parent / "report" / "report.json",
-                output_file.parent / f"{MODEL_NAME_OR_PATH}.{args.run_id}.json",
-            ]
-            report_path = next(
-                (path for path in report_candidates if path.exists()), None
-            )
+            # Prefer the SWE-Bench harness report, then fall back to the local
+            # summary report if the harness report is unavailable.
+            report_path = _find_eval_report(output_file.parent, args.run_id)
             if report_path is None:
                 raise FileNotFoundError(
                     "Could not find SWE-Bench report file. Checked: "
-                    + ", ".join(str(path) for path in report_candidates)
+                    + ", ".join(
+                        str(path)
+                        for path in [
+                            output_file.parent
+                            / f"{MODEL_NAME_OR_PATH}.{args.run_id}.json",
+                            output_file.parent / "report" / "report.json",
+                        ]
+                    )
                 )
             dest_report_path = input_file.with_suffix(".report.json")
 

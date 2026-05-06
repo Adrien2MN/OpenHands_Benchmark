@@ -14,13 +14,17 @@ def test_generate_instance_reports_creates_report_folder(tmp_path: Path) -> None
                         "instance_id": "django__django-1",
                         "attempt": 1,
                         "instruction": "fix bug",
-                        "test_result": {"git_patch": "diff --git a/a.py b/a.py"},
+                        "test_result": {
+                            "git_patch": "diff --git a/a.py b/a.py",
+                            "proxy_cost": 2.5,
+                        },
                         "metrics": {
+                            "accumulated_cost": 1.25,
                             "accumulated_usage": {
                                 "prompt_tokens": 10,
                                 "completion_tokens": 5,
                                 "total_tokens": 15,
-                            }
+                            },
                         },
                         "history": [
                             {"timestamp": "2026-04-20T10:00:00Z"},
@@ -54,6 +58,9 @@ def test_generate_instance_reports_creates_report_folder(tmp_path: Path) -> None
     assert payload["usage"]["total_tokens"] == 15
     assert payload["generation_seconds"] == 3.0
     assert payload["status"] == "ok"
+    assert payload["cost"]["accumulated_cost_usd"] == 1.25
+    assert payload["cost"]["proxy_cost_usd"] == 2.5
+    assert payload["cost"]["effective_cost_usd"] == 1.25
     assert payload["token_footprint"]["energy_consumption_kwh"] is None
 
 
@@ -64,11 +71,12 @@ def test_generate_instance_reports_summary_totals(tmp_path: Path) -> None:
             "instance_id": "repo__1",
             "test_result": {"git_patch": ""},
             "metrics": {
+                "accumulated_cost": 1.5,
                 "accumulated_usage": {
                     "prompt_tokens": 1,
                     "completion_tokens": 2,
                     "total_tokens": 3,
-                }
+                },
             },
             "history": [],
             "error": None,
@@ -77,11 +85,12 @@ def test_generate_instance_reports_summary_totals(tmp_path: Path) -> None:
             "instance_id": "repo__2",
             "test_result": {"git_patch": ""},
             "metrics": {
+                "accumulated_cost": 2.5,
                 "accumulated_usage": {
                     "prompt_tokens": 4,
                     "completion_tokens": 5,
                     "total_tokens": 9,
-                }
+                },
             },
             "history": [],
             "error": "boom",
@@ -182,3 +191,5 @@ def test_generate_instance_reports_uses_direct_model_footprint_json(
     )
     assert summary["totals"]["energy_kwh"] > 0
     assert summary["totals"]["carbon_kg_co2e"] > 0
+    assert summary["totals"]["accumulated_cost_usd"] == 4.0
+    assert summary["totals"]["effective_cost_usd"] == 4.0

@@ -443,3 +443,76 @@ def test_passed_instances_not_retried_in_later_attempts():
         assert result_ids == {"D"}, (
             f"Expected to retry only D (failed in attempt 2), but got: {result_ids}"
         )
+
+
+def test_delivered_patch_is_not_retried_even_if_critic_fails():
+    """Test that a delivered patch blocks retries even when the critic fails."""
+
+    class FailingCritic(PassCritic):
+        def evaluate(self, events, git_patch=None):
+            return CriticResult(score=0.0, message="Always fails")
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        all_instances = [
+            EvalInstance(id=inst_id, data={"test": inst_id}) for inst_id in ["A", "B"]
+        ]
+
+        critic = FailingCritic()
+        llm = LLM(model="test-model", temperature=0.0)
+
+        metadata = EvalMetadata(
+            llm=llm,
+            dataset="test",
+            dataset_split="test",
+            max_iterations=10,
+            eval_output_dir=tmpdir,
+            details={},
+            eval_limit=2,
+            n_critic_runs=3,
+            max_retries=0,
+            critic=critic,
+        )
+
+        evaluation = MockEvaluation(
+            metadata=metadata,
+            num_workers=1,
+            instances=all_instances,
+        )
+
+        attempt1_file = os.path.join(tmpdir, "output.critic_attempt_1.jsonl")
+        with open(attempt1_file, "w") as f:
+            f.write(
+                EvalOutput(
+                    instance_id="A",
+                    test_result={"git_patch": "valid patch"},
+                    instruction="mock",
+                    error=None,
+                    history=[],
+                    instance={"test": "A"},
+                ).model_dump_json()
+                + "\n"
+            )
+            f.write(
+                EvalOutput(
+                    instance_id="B",
+                    test_result={"git_patch": ""},
+                    instruction="mock",
+                    error=None,
+                    history=[],
+                    instance={"test": "B"},
+                ).model_dump_json()
+                + "\n"
+            )
+
+        result = evaluation._get_instances_for_attempt(
+            attempt=2,
+            all_instances=all_instances,
+            critic=critic,
+        )
+
+        result_ids = {inst.id for inst in result}
+
+        assert result_ids == {"B"}, (
+            f"Expected only B to be retried because A already delivered a patch, "
+            f"but got: {result_ids}"
+        )

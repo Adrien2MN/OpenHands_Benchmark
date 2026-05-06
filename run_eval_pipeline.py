@@ -24,6 +24,8 @@ AVAILABLE_MODELS = [
     "gpt-4.1-nano",
     "gpt-4.1",
     "gpt-5.4",
+    "gpt-5.3-codex",
+    "codestrall",
     "mistral-small-2503",
     "mistral-large-3",
     "deepseek-v3.1",

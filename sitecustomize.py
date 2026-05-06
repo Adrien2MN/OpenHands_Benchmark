@@ -8,28 +8,24 @@ this file at the repo root guarantees the patch runs before swebench is used.
 
 import os
 import sys
-from pathlib import Path
 
 
-def _should_apply_modal_patches() -> bool:
-    """Apply heavy benchmark patches only for evaluation-related invocations."""
-    if os.getenv("BENCHMARKS_FORCE_SITECUSTOMIZE") == "1":
-        return True
-
-    entrypoint = Path(sys.argv[0]).name.lower() if sys.argv else ""
-    triggers = (
-        "swebench-infer",
-        "swebench-eval",
-        "run_eval_pipeline.py",
-        "run_infer.py",
+def _is_swebench_context() -> bool:
+    """Only activate benchmark startup patches for SWE-bench invocations."""
+    cmdline = " ".join(sys.argv).lower()
+    swebench_markers = (
+        "swebench",
+        "run_evaluation",
+        "run_infer",
+        "benchmarks.swebench",
     )
-    return any(trigger == entrypoint for trigger in triggers)
+    return any(marker in cmdline for marker in swebench_markers)
 
 
-if os.getenv("BENCHMARKS_SITECUSTOMIZE_VERBOSE") == "1":
+if os.getenv("BENCHMARKS_SITECUSTOMIZE_DEBUG") == "1":
     print("benchmarks sitecustomize imported", file=sys.stderr, flush=True)
 
-if _should_apply_modal_patches():
+if _is_swebench_context():
     try:
         # Reuse the actual patch logic that lives alongside the benchmarks package.
         from benchmarks.utils.sitecustomize import _apply_modal_logging_patch

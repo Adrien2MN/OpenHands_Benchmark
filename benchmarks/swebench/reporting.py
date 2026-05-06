@@ -215,6 +215,44 @@ def _extract_usage(metrics: dict[str, Any]) -> dict[str, int]:
     }
 
 
+def _extract_iteration_token_usage(metrics: dict[str, Any]) -> list[dict[str, Any]]:
+    usages = metrics.get("token_usages") or []
+    normalized: list[dict[str, Any]] = []
+    for usage in usages:
+        if hasattr(usage, "model_dump"):
+            usage = usage.model_dump(exclude_none=True)
+        if isinstance(usage, dict):
+            normalized.append(usage)
+    return normalized
+
+
+def _extract_timings(test_result: dict[str, Any]) -> dict[str, float | None]:
+    timings = test_result.get("timings") or {}
+    return {
+        "workspace_generation_seconds": timings.get("workspace_generation_seconds"),
+        "agent_generation_seconds": timings.get("agent_generation_seconds"),
+        "total_generation_seconds": timings.get("total_generation_seconds"),
+    }
+
+
+def _extract_costs(
+    metrics: dict[str, Any], test_result: dict[str, Any]
+) -> dict[str, Any]:
+    accumulated_cost = metrics.get("accumulated_cost")
+    proxy_cost = test_result.get("proxy_cost")
+    effective_cost = accumulated_cost if accumulated_cost is not None else proxy_cost
+
+    return {
+        "accumulated_cost_usd": float(accumulated_cost)
+        if accumulated_cost is not None
+        else None,
+        "proxy_cost_usd": float(proxy_cost) if proxy_cost is not None else None,
+        "effective_cost_usd": float(effective_cost)
+        if effective_cost is not None
+        else 0.0,
+    }
+
+
 def _compute_generation_seconds(history: list[dict[str, Any]]) -> float:
     timestamps: list[datetime] = []
     for event in history:
@@ -322,9 +360,15 @@ def generate_instance_reports(
     totals: dict[str, Any] = {
         "instances": len(rows),
         "generation_seconds": 0.0,
+        "workspace_generation_seconds": 0.0,
+        "agent_generation_seconds": 0.0,
+        "iterations": 0,
         "prompt_tokens": 0,
         "completion_tokens": 0,
         "total_tokens": 0,
+        "accumulated_cost_usd": 0.0,
+        "proxy_cost_usd": 0.0,
+        "effective_cost_usd": 0.0,
         "energy_kwh": 0.0,
         "carbon_kg_co2e": 0.0,
     }
@@ -336,15 +380,33 @@ def generate_instance_reports(
         metrics = row.get("metrics") or {}
         history = row.get("history") or []
         usage = _extract_usage(metrics)
+        iteration_token_usage = _extract_iteration_token_usage(metrics)
+        timings = _extract_timings(test_result)
+        costs = _extract_costs(metrics, test_result)
         generation_seconds = _compute_generation_seconds(history)
+        iteration_count = int(
+            test_result.get("iteration_count") or len(iteration_token_usage)
+        )
         token_footprint = _compute_token_footprint(
             usage["completion_tokens"], model_footprint
         )
 
         totals["generation_seconds"] += generation_seconds
+        totals["workspace_generation_seconds"] += float(
+            timings.get("workspace_generation_seconds") or 0.0
+        )
+        totals["agent_generation_seconds"] += float(
+            timings.get("agent_generation_seconds") or 0.0
+        )
+        totals["iterations"] += iteration_count
         totals["prompt_tokens"] += usage["prompt_tokens"]
         totals["completion_tokens"] += usage["completion_tokens"]
         totals["total_tokens"] += usage["total_tokens"]
+        totals["accumulated_cost_usd"] += float(
+            costs.get("accumulated_cost_usd") or 0.0
+        )
+        totals["proxy_cost_usd"] += float(costs.get("proxy_cost_usd") or 0.0)
+        totals["effective_cost_usd"] += float(costs.get("effective_cost_usd") or 0.0)
         totals["energy_kwh"] += float(
             token_footprint.get("energy_consumption_kwh") or 0.0
         )
@@ -367,7 +429,11 @@ def generate_instance_reports(
                 "has_patch": bool(git_patch.strip()),
                 "patch_chars": len(git_patch),
             },
+            "cost": costs,
             "generation_seconds": generation_seconds,
+            "timings": timings,
+            "iterations": iteration_count,
+            "iteration_token_usage": iteration_token_usage,
             "usage": usage,
             "token_footprint": token_footprint,
             "attempt": row.get("attempt"),
@@ -384,6 +450,9 @@ def generate_instance_reports(
             "benchmark": "SWE-bench",
             "secondary_metrics": [
                 "generation_seconds",
+                "iterations",
+                "workspace_generation_seconds",
+                "agent_generation_seconds",
                 "token_usage",
                 "energy_kwh",
                 "carbon_kg_co2e",

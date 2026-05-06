@@ -8,6 +8,16 @@
 #   api_key: any non-empty value (or your LITELLM_MASTER_KEY if enabled)
 #   model: one of the model_name aliases below
 
+# LiteLLM proxy config for OpenHands Benchmarks
+#
+# Run with:
+#   uv run litellm --config configs/litellm_openhands_proxy.yaml
+#
+# Then configure benchmark LLM JSON with:
+#   base_url: "http://127.0.0.1:4000/v1"
+#   api_key: any non-empty value (or your LITELLM_MASTER_KEY if enabled)
+#   model: one of the model_name aliases below
+
 model_list:
   - model_name: gpt-4.1
     litellm_params:
@@ -41,11 +51,10 @@ model_list:
       api_version: "2025-04-01-preview"
       base_model: gpt-4-turbo
 
-  # Backward-compatible alias for older runs/scripts.
-  - model_name: gpt-5.4-2026-03-05
+  - model_name: gpt-5.3-codex
     litellm_params:
-      model: azure/gpt-5.4
-      api_base: os.environ/GPT54_API_URL
+      model: azure/gpt-5.3-codex
+      api_base: os.environ/GPT53_CODEX_API_URL
       api_key: os.environ/API_KEY
       api_version: "2025-04-01-preview"
       base_model: gpt-4-turbo
@@ -64,6 +73,13 @@ model_list:
       api_base: os.environ/MISTRAL_SMALL_API_URL
       api_key: os.environ/API_KEY
       base_model: mistral-small
+
+  - model_name: codestral-2501
+    litellm_params:
+      model: azure_ai/Codestral-2501
+      api_base: os.environ/CODESTRAL_2501_API_URL
+      api_key: os.environ/API_KEY
+      base_model: codestral-2501
 
   - model_name: mistral-large-3
     litellm_params:

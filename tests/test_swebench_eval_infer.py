@@ -2,8 +2,9 @@
 
 import json
 import tempfile
+from pathlib import Path
 
-from benchmarks.swebench.eval_infer import convert_to_swebench_format
+from benchmarks.swebench.eval_infer import _find_eval_report, convert_to_swebench_format
 from benchmarks.utils.constants import MODEL_NAME_OR_PATH
 
 
@@ -60,3 +61,14 @@ class TestConvertToSwebenchFormat:
             result = json.loads(f.readline())
 
         assert result["model_name_or_path"] == MODEL_NAME_OR_PATH
+
+    def test_find_eval_report_prefers_harness_report(self, tmp_path: Path) -> None:
+        harness_report = tmp_path / f"{MODEL_NAME_OR_PATH}.run-1.json"
+        local_summary = tmp_path / "report" / "report.json"
+        local_summary.parent.mkdir(parents=True, exist_ok=True)
+        local_summary.write_text("{}", encoding="utf-8")
+        harness_report.write_text("{}", encoding="utf-8")
+
+        found = _find_eval_report(tmp_path, "run-1")
+
+        assert found == harness_report
