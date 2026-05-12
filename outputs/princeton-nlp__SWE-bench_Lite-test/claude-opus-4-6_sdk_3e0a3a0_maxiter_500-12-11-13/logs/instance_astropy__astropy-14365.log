@@ -1,0 +1,50 @@
+2026-05-12 11:13:22,448 - INFO - root - === Evaluation Started (instance astropy__astropy-14365) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-14365.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-14365.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 11:13:22,449 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14365
+2026-05-12 11:13:23,185 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal
+2026-05-12 11:13:23,255 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 11:13:23,290 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-24ca2505-bb15-428f-a431-b9368516dd7d -e LMNR_SPAN_CONTEXT=null -p 37595:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 11:13:23,427 - INFO - openhands.workspace.docker.workspace - Started container: 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:23,444 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:24,503 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:25,545 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:26,587 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:27,618 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:28,711 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:29,756 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:30,814 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:30,852 - INFO - openhands.sdk.utils.command - $ docker logs 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:30,880 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14365: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-12 11:13:30,881 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14365 failed after 1 attempts. Last error: Container stopped unexpectedly. Logs:
+
+Error response from daemon: No such container: 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 254, in prepare_workspace
+    workspace = DockerWorkspace(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/utils/models.py", line 132, in _validate_subtype
+    return handler(data)
+           ^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/_internal/_model_construction.py", line 146, in wrapped_model_post_init
+    original_model_post_init(self, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 154, in model_post_init
+    self._start_container(image, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 279, in _start_container
+    self._wait_for_health()
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 345, in _wait_for_health
+    raise RuntimeError(msg)
+RuntimeError: Container stopped unexpectedly. Logs:
+
+Error response from daemon: No such container: 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+
+2026-05-12 11:13:30,890 - INFO - openhands.workspace.docker.workspace - Stopping container: 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47
+2026-05-12 11:13:30,890 - INFO - openhands.sdk.utils.command - $ docker stop 729517de11f8d61e7918be4b425c96508c3f4b306cb51026fe8572232aed7b47

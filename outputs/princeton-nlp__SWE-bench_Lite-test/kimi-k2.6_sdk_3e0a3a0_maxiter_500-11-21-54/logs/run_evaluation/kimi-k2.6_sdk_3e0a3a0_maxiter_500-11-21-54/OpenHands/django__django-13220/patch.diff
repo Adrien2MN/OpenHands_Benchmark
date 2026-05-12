@@ -1,0 +1,33 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..2ef0b4e7ec 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,28 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return NotImplemented
++        return self._get_comparison_key() == other._get_comparison_key()
++
++    def _get_comparison_key(self):
++        if hasattr(self, 'error_dict'):
++            # Dict form: normalize to dict of sorted comparison keys
++            return ('dict', tuple(sorted(
++                (field, tuple(sorted(e._get_comparison_key() for e in error_list)))
++                for field, error_list in self.error_dict.items()
++            )))
++        elif hasattr(self, 'message'):
++            # Single message form
++            params_key = tuple(sorted(self.params.items())) if self.params else None
++            return ('single', self.message, self.code, params_key)
++        else:
++            # List form: normalize to sorted comparison keys
++            return ('list', tuple(sorted(
++                e._get_comparison_key() for e in self.error_list
++            )))
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""

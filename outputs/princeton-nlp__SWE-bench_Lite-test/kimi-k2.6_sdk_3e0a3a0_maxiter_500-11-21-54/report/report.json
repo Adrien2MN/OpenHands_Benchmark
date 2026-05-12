@@ -1,0 +1,57 @@
+{
+  "protocol": {
+    "benchmark": "SWE-bench",
+    "secondary_metrics": [
+      "generation_seconds",
+      "iterations",
+      "workspace_generation_seconds",
+      "agent_generation_seconds",
+      "token_usage",
+      "energy_kwh",
+      "carbon_kg_co2e"
+    ]
+  },
+  "model": "kimi-k2.6",
+  "instances_total": 19,
+  "totals": {
+    "instances": 19,
+    "generation_seconds": 21989.317000000003,
+    "workspace_generation_seconds": 44.788999999999994,
+    "agent_generation_seconds": 20728.592,
+    "iterations": 967,
+    "prompt_tokens": 25962038,
+    "completion_tokens": 266429,
+    "total_tokens": 26228467,
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": 0.0,
+    "effective_cost_usd": 0.0,
+    "energy_kwh": 0.0,
+    "carbon_kg_co2e": 0.0
+  },
+  "model_footprint": null,
+  "artifacts": {
+    "input_output_jsonl": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/output.jsonl",
+    "reports_dir": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report",
+    "instance_reports": [
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_astropy__astropy-14365.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_astropy__astropy-12907.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_astropy__astropy-14995.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_astropy__astropy-7746.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11039.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11099.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11133.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11179.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11422.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11583.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11848.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-11999.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-12308.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-12908.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-12915.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-13220.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-13158.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_astropy__astropy-14182.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/report/report_django__django-10924.json"
+    ]
+  }
+}

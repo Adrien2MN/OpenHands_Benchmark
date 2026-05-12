@@ -1,0 +1,85 @@
+2026-05-12 10:35:01,170 - INFO - Creating container for django__django-10924...
+2026-05-12 10:35:01,218 - INFO - Container for django__django-10924 created: 39be98b9105ad79af414ee0869a1f8f8027b031a08e4b0a2a586c535527a15e5
+2026-05-12 10:35:01,293 - INFO - Container for django__django-10924 started: 39be98b9105ad79af414ee0869a1f8f8027b031a08e4b0a2a586c535527a15e5
+2026-05-12 10:35:01,293 - INFO - Intermediate patch for django__django-10924 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-10924/patch.diff, now applying to container...
+2026-05-12 10:35:01,469 - INFO - >>>>> Applied Patch:
+Checking patch django/forms/fields.py...
+Applied patch django/forms/fields.py cleanly.
+
+2026-05-12 10:35:04,282 - INFO - Git diff before:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..c5e8b7b13a 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1082,6 +1082,9 @@ class FilePathField(ChoiceField):
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+ 
++        if callable(path):
++            path = path()
++
+         if self.required:
+             self.choices = []
+         else:
+@@ -1091,7 +1094,7 @@ class FilePathField(ChoiceField):
+             self.match_re = re.compile(self.match)
+ 
+         if recursive:
+-            for root, dirs, files in sorted(os.walk(self.path)):
++            for root, dirs, files in sorted(os.walk(path)):
+                 if self.allow_files:
+                     for f in sorted(files):
+                         if self.match is None or self.match_re.search(f):
+@@ -1106,7 +1109,7 @@ class FilePathField(ChoiceField):
+                             self.choices.append((f, f.replace(path, "", 1)))
+         else:
+             choices = []
+-            for f in os.scandir(self.path):
++            for f in os.scandir(path):
+                 if f.name == '__pycache__':
+                     continue
+                 if (((self.allow_files and f.is_file()) or
+2026-05-12 10:35:04,282 - INFO - Eval script for django__django-10924 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-10924/eval.sh; copying to container...
+2026-05-12 10:35:27,165 - INFO - Test runtime: 22.81 seconds
+2026-05-12 10:35:27,166 - INFO - Test output for django__django-10924 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-10924/test_output.txt
+2026-05-12 10:35:27,315 - INFO - Git diff after:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..c5e8b7b13a 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1082,6 +1082,9 @@ class FilePathField(ChoiceField):
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+ 
++        if callable(path):
++            path = path()
++
+         if self.required:
+             self.choices = []
+         else:
+@@ -1091,7 +1094,7 @@ class FilePathField(ChoiceField):
+             self.match_re = re.compile(self.match)
+ 
+         if recursive:
+-            for root, dirs, files in sorted(os.walk(self.path)):
++            for root, dirs, files in sorted(os.walk(path)):
+                 if self.allow_files:
+                     for f in sorted(files):
+                         if self.match is None or self.match_re.search(f):
+@@ -1106,7 +1109,7 @@ class FilePathField(ChoiceField):
+                             self.choices.append((f, f.replace(path, "", 1)))
+         else:
+             choices = []
+-            for f in os.scandir(self.path):
++            for f in os.scandir(path):
+                 if f.name == '__pycache__':
+                     continue
+                 if (((self.allow_files and f.is_file()) or
+2026-05-12 10:35:27,315 - INFO - Grading answer for django__django-10924...
+2026-05-12 10:35:27,317 - INFO - report: {'django__django-10924': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_callable_path (model_fields.test_filepathfield.FilePathFieldTests)']}, 'PASS_TO_PASS': {'success': ['test_path (model_fields.test_filepathfield.FilePathFieldTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-10924: resolved: False
+2026-05-12 10:35:27,317 - INFO - Attempting to stop container sweb.eval.django__django-10924.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54...
+2026-05-12 10:35:42,456 - INFO - Attempting to remove container sweb.eval.django__django-10924.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54...
+2026-05-12 10:35:42,502 - INFO - Container sweb.eval.django__django-10924.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54 removed.
+2026-05-12 10:35:42,502 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-10924:latest...
+2026-05-12 10:35:42,534 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-10924:latest removed.

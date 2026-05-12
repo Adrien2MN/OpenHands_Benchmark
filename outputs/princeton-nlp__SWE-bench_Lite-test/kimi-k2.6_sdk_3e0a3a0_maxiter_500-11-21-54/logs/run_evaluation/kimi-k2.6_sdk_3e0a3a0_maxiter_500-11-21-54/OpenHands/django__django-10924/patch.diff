@@ -1,0 +1,32 @@
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..c5e8b7b13a 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1082,6 +1082,9 @@ class FilePathField(ChoiceField):
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+ 
++        if callable(path):
++            path = path()
++
+         if self.required:
+             self.choices = []
+         else:
+@@ -1091,7 +1094,7 @@ class FilePathField(ChoiceField):
+             self.match_re = re.compile(self.match)
+ 
+         if recursive:
+-            for root, dirs, files in sorted(os.walk(self.path)):
++            for root, dirs, files in sorted(os.walk(path)):
+                 if self.allow_files:
+                     for f in sorted(files):
+                         if self.match is None or self.match_re.search(f):
+@@ -1106,7 +1109,7 @@ class FilePathField(ChoiceField):
+                             self.choices.append((f, f.replace(path, "", 1)))
+         else:
+             choices = []
+-            for f in os.scandir(self.path):
++            for f in os.scandir(path):
+                 if f.name == '__pycache__':
+                     continue
+                 if (((self.allow_files and f.is_file()) or

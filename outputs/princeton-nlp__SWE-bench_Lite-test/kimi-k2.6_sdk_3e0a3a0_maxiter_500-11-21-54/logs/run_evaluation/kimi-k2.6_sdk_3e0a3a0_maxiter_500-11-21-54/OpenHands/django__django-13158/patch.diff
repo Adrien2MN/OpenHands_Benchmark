@@ -1,0 +1,51 @@
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index c913267476..e5507d0211 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -1777,6 +1777,10 @@ class Query(BaseExpression):
+ 
+     def set_empty(self):
+         self.where.add(NothingNode(), AND)
++        # Clear combinator data since an empty query shouldn't execute combined queries
++        self.combinator = None
++        self.combinator_all = False
++        self.combined_queries = ()
+ 
+     def is_empty(self):
+         return any(isinstance(c, NothingNode) for c in self.where.children)
+diff --git a/tests/queries/test_qs_combinators.py b/tests/queries/test_qs_combinators.py
+index 9c6fd474ca..808e9f1e5b 100644
+--- a/tests/queries/test_qs_combinators.py
++++ b/tests/queries/test_qs_combinators.py
+@@ -314,3 +314,31 @@ class QuerySetSetOperationTests(TestCase):
+                         msg % (operation, combinator),
+                     ):
+                         getattr(getattr(qs, combinator)(qs), operation)()
++
++class TestNoneOnCombinedQueries(TestCase):
++    @classmethod
++    def setUpTestData(cls):
++        Number.objects.bulk_create(Number(num=i, other_num=10 - i) for i in range(10))
++
++    def test_none_on_union_query(self):
++        """Test that .none() returns empty queryset on a union query"""
++        qs = Number.objects.filter(num__lte=1).union(Number.objects.filter(num__gte=8))
++        self.assertEqual(qs.count(), 4)
++        empty_qs = qs.none()
++        self.assertEqual(empty_qs.count(), 0)
++
++    def test_none_on_difference_query(self):
++        """Test that .none() returns empty queryset on a difference query"""
++        qs = Number.objects.all().difference(Number.objects.filter(num__lt=5))
++        self.assertEqual(qs.count(), 5)
++        empty_qs = qs.none()
++        self.assertEqual(empty_qs.count(), 0)
++
++    @skipUnlessDBFeature("supports_select_intersection")
++    def test_none_on_intersection_query(self):
++        """Test that .none() returns empty queryset on an intersection query"""
++        qs = Number.objects.filter(num__gte=5).intersection(Number.objects.filter(num__lte=7))
++        self.assertEqual(qs.count(), 3)
++        empty_qs = qs.none()
++        self.assertEqual(empty_qs.count(), 0)
++

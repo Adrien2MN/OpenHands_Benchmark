@@ -1,0 +1,51 @@
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..eff160fee0 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -4,11 +4,14 @@ from collections import defaultdict
+ from itertools import chain
+ 
+ from django.apps import apps
++from django.conf import settings
+ from django.core.checks import Error, Tags, register
+ 
+ 
+ @register(Tags.models)
+ def check_all_models(app_configs=None, **kwargs):
++    from django.db import router
++
+     db_table_models = defaultdict(list)
+     indexes = defaultdict(list)
+     constraints = defaultdict(list)
+@@ -37,14 +40,24 @@ def check_all_models(app_configs=None, **kwargs):
+             constraints[model_constraint.name].append(model._meta.label)
+     for db_table, model_labels in db_table_models.items():
+         if len(model_labels) != 1:
+-            errors.append(
+-                Error(
+-                    "db_table '%s' is used by multiple models: %s."
+-                    % (db_table, ', '.join(db_table_models[db_table])),
+-                    obj=db_table,
+-                    id='models.E028',
++            model_labels_set = set(model_labels)
++            colliding_labels = set()
++            for db in settings.DATABASES:
++                model_labels_for_db = {
++                    label for label in model_labels_set
++                    if router.allow_migrate_model(db, apps.get_model(label))
++                }
++                if len(model_labels_for_db) > 1:
++                    colliding_labels.update(model_labels_for_db)
++            if colliding_labels:
++                errors.append(
++                    Error(
++                        "db_table '%s' is used by multiple models: %s."
++                        % (db_table, ', '.join(sorted(colliding_labels))),
++                        obj=db_table,
++                        id='models.E028',
++                    )
+                 )
+-            )
+     for index_name, model_labels in indexes.items():
+         if len(model_labels) > 1:
+             model_labels = set(model_labels)

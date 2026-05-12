@@ -87,6 +87,16 @@ def _pick_footprint_for_model(
         return None
 
     model_key = _normalize_model_key(model_name)
+    # Strip common provider prefixes (e.g. openai/, azure/, anthropic/) so
+    # footprint filenames which are provider-agnostic (e.g. "claudeopus46-...")
+    # match even when metadata contains a provider namespace like
+    # "openai/claude-opus-4-6" or "azure_ai/claude-opus-4-6".
+    for _pref in ("openai", "azureai", "azure", "anthropic", "openrouter"):
+        if model_key.startswith(_pref) and len(model_key) > len(_pref):
+            stripped = model_key[len(_pref) :]
+            if stripped:
+                model_key = stripped
+                break
     aliases = {
         "gpt41": "gpt41",
         "gpt41mini": "gpt41mini",
@@ -127,6 +137,7 @@ def _extract_metrics_from_scenario(
         server_kwh = 0.0
         total_kwh = 0.0
         total_co2_kg = 0.0
+        embodied_co2_kg = 0.0
 
         scopes = payload.get("scopes")
         if isinstance(scopes, list):
@@ -139,6 +150,88 @@ def _extract_metrics_from_scenario(
                 for component in components:
                     if not isinstance(component, dict):
                         continue
+                    # Handle linked scenario entries which reference another
+                    # scenario by id. This allows model footprint files to
+                    # include `type: link` entries that point to a detailed
+                    # scenario in the central scenarios directory.
+                    if component.get("type") == "link" and component.get("scenario_id"):
+                        linked_id = str(component.get("scenario_id"))
+                        quantity_raw = component.get("quantity")
+                        quantity = _coerce_float(quantity_raw) or 1.0
+                        # Locate linked scenario JSON in default scenarios dir
+                        linked_path = (
+                            Path(__file__).resolve().parents[4]
+                            / "AICarbonFootprintScenarios"
+                            / "scenarios"
+                        )
+                        if not linked_path.exists():
+                            linked_path = (
+                                Path(__file__).resolve().parents[4]
+                                / "carbon-footprint-modeling-tool"
+                                / "scenarios"
+                            )
+                        linked_file = linked_path / f"{linked_id}.json"
+                        submetrics = None
+                        if linked_file.exists():
+                            submetrics = _extract_metrics_from_scenario(
+                                linked_file, js_bridge_path
+                            )
+                        else:
+                            # Attempt to fetch linked scenario from the canonical
+                            # GitHub repo if it's not present locally.
+                            try:
+                                import urllib.request
+
+                                gh_url = (
+                                    "https://raw.githubusercontent.com/borisruf/carbon-footprint-modeling-tool/main/scenarios/"
+                                    + f"{linked_id}.json"
+                                )
+                                with urllib.request.urlopen(gh_url, timeout=5) as resp:
+                                    if resp.status == 200:
+                                        data = resp.read().decode("utf-8")
+                                        # write to a temp file in-memory by using
+                                        # the existing extractor via a patched
+                                        # Path-like object isn't trivial, so
+                                        # instead, compute metrics directly here
+                                        # by invoking a small helper that mirrors
+                                        # the logic in _extract_metrics_from_scenario.
+                                        # For simplicity, write to a temp file on disk
+                                        import tempfile
+
+                                        tf = tempfile.NamedTemporaryFile(
+                                            mode="w", delete=False, suffix=".json"
+                                        )
+                                        tf.write(data)
+                                        tf.flush()
+                                        tf.close()
+                                        submetrics = _extract_metrics_from_scenario(
+                                            Path(tf.name), js_bridge_path
+                                        )
+                            except Exception:
+                                submetrics = None
+                            if submetrics:
+                                # Scale linked metrics by quantity (e.g., PUE)
+                                total_kwh += (
+                                    float(
+                                        submetrics.get("total_electricity_kwh") or 0.0
+                                    )
+                                    * quantity
+                                )
+                                total_co2_kg += (
+                                    float(submetrics.get("co2e_operational_kg") or 0.0)
+                                    * quantity
+                                )
+                                gpu_kwh += (
+                                    float(submetrics.get("gpu_consumption_kwh") or 0.0)
+                                    * quantity
+                                )
+                                server_kwh += (
+                                    float(
+                                        submetrics.get("server_consumption_kwh") or 0.0
+                                    )
+                                    * quantity
+                                )
+                        continue
 
                     consumer = component.get("consumer") or {}
                     source = component.get("source") or {}
@@ -148,31 +241,51 @@ def _extract_metrics_from_scenario(
                         .get("value")
                     )
                     per_unit_kwh = _coerce_float(electricity_value)
-                    if per_unit_kwh is None:
-                        continue
 
                     quantity_raw = component.get("quantity")
                     quantity = _coerce_float(quantity_raw)
                     if quantity is None:
                         quantity = 1.0
 
-                    component_kwh = per_unit_kwh * quantity
-                    total_kwh += component_kwh
+                    # If electricity consumption is provided, compute kWh and
+                    # operational CO2 (via co2 per kWh if available).
+                    if per_unit_kwh is not None:
+                        component_kwh = per_unit_kwh * quantity
+                        total_kwh += component_kwh
 
-                    co2_factor = (
-                        (source.get("emissions") or {}).get("co2e", {}).get("value")
-                    )
-                    co2_per_kwh = _coerce_float(co2_factor)
-                    if co2_per_kwh is None:
-                        co2_per_kwh = 0.0
+                        co2_factor = (
+                            (source.get("emissions") or {}).get("co2e", {}).get("value")
+                        )
+                        co2_per_kwh = _coerce_float(co2_factor)
+                        if co2_per_kwh is None:
+                            co2_per_kwh = 0.0
 
-                    total_co2_kg += component_kwh * co2_per_kwh
+                        total_co2_kg += component_kwh * co2_per_kwh
 
-                    consumer_name = str(consumer.get("name") or "").lower()
-                    if "gpu" in consumer_name:
-                        gpu_kwh += component_kwh
-                    elif "server" in consumer_name:
-                        server_kwh += component_kwh
+                        consumer_name = str(consumer.get("name") or "").lower()
+                        if "gpu" in consumer_name:
+                            gpu_kwh += component_kwh
+                        elif "server" in consumer_name:
+                            server_kwh += component_kwh
+                    else:
+                        # No electricity specified. Try to read per-unit CO2
+                        # (e.g. embodied emissions given as kg per token).
+                        co2_entry = (source.get("emissions") or {}).get("co2e", {})
+                        co2_per_unit = _coerce_float(co2_entry.get("value"))
+                        base_unit = (co2_entry.get("base_unit") or "").lower()
+                        if co2_per_unit is not None:
+                            if base_unit in ("token", "tokens", "per_token"):
+                                # Embodied / per-token emissions
+                                embodied_co2_kg += co2_per_unit * quantity
+                                total_co2_kg += co2_per_unit * quantity
+                            elif base_unit in ("kwh", "per_kwh"):
+                                # CO2 expressed per kWh but no electricity given
+                                # can't convert, skip
+                                pass
+                            else:
+                                # Unknown base unit: treat as per-unit CO2
+                                embodied_co2_kg += co2_per_unit * quantity
+                                total_co2_kg += co2_per_unit * quantity
 
         return {
             "gpu_consumption_kwh": gpu_kwh,

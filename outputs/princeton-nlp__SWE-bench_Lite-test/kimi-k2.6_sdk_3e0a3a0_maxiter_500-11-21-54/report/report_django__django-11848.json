@@ -1,0 +1,433 @@
+{
+  "instance_id": "django__django-11848",
+  "model": "kimi-k2.6",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1164
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 922.406,
+  "timings": {
+    "workspace_generation_seconds": 3.078,
+    "agent_generation_seconds": 920.339,
+    "total_generation_seconds": 923.417
+  },
+  "iterations": 35,
+  "iteration_token_usage": [
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 482,
+      "completion_tokens": 510,
+      "cache_read_tokens": 2,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 992,
+      "response_id": "10a8467a0881421e990b92e0e29415fd"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 13549,
+      "completion_tokens": 732,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 14281,
+      "response_id": "c3324eb9f4954606834a0e2d81cbfc17"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 14105,
+      "completion_tokens": 100,
+      "cache_read_tokens": 18,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 14205,
+      "response_id": "991b6e3203eb4651807b78e33c4e0ac1"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 14224,
+      "completion_tokens": 69,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 14293,
+      "response_id": "1ed5cf7bba8247ddac3e1533119d854e"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 14389,
+      "completion_tokens": 52,
+      "cache_read_tokens": 14223,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 14441,
+      "response_id": "bbe019fee7b0454baf3a000934bdb0a3"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 19866,
+      "completion_tokens": 167,
+      "cache_read_tokens": 18,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 20033,
+      "response_id": "96d9dab79c924bf3941b2eaab537df45"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 19978,
+      "completion_tokens": 60,
+      "cache_read_tokens": 14388,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 20038,
+      "response_id": "63f74dcd806f46bbb6f295d74abc132e"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 24518,
+      "completion_tokens": 1432,
+      "cache_read_tokens": 13548,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 25950,
+      "response_id": "51c2ea5f21d24887ad34c0724f1d270d"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 25860,
+      "completion_tokens": 35,
+      "cache_read_tokens": 24517,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 25895,
+      "response_id": "60afce11fd244c83adecc319079cf371"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 26517,
+      "completion_tokens": 2734,
+      "cache_read_tokens": 25859,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 29251,
+      "response_id": "4bd2f388fc2c454dbf742f1f7ba1b3a2"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 26648,
+      "completion_tokens": 75,
+      "cache_read_tokens": 26516,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 26723,
+      "response_id": "da4bdb5109de4ae7935d1dded3921ab1"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 27234,
+      "completion_tokens": 71,
+      "cache_read_tokens": 19977,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 27305,
+      "response_id": "ed65199aed72482f8a25bf9317bf53e9"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 27371,
+      "completion_tokens": 53,
+      "cache_read_tokens": 26647,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 27424,
+      "response_id": "4c3ea5f782084906a68891e6c10d3c23"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 27876,
+      "completion_tokens": 45,
+      "cache_read_tokens": 27233,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 27921,
+      "response_id": "a50a504f298041f8a263bc239780347c"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 27993,
+      "completion_tokens": 185,
+      "cache_read_tokens": 27370,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 28178,
+      "response_id": "83d8aacddf8e4499a62116a5e23579ba"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 28444,
+      "completion_tokens": 1484,
+      "cache_read_tokens": 27992,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 29928,
+      "response_id": "86fd191afb1f4d70baaf262c2bbe61bb"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 29518,
+      "completion_tokens": 62,
+      "cache_read_tokens": 27875,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 29580,
+      "response_id": "191015ffcc5c49aea814fd5160df771d"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 29925,
+      "completion_tokens": 853,
+      "cache_read_tokens": 29517,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 30778,
+      "response_id": "8b51b57f75b5414f8c85f54ac8f07ff8"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 30324,
+      "completion_tokens": 78,
+      "cache_read_tokens": 28443,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 30402,
+      "response_id": "ee90d0aa734a4eb0b64fbf788cd7e034"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 30443,
+      "completion_tokens": 282,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 30725,
+      "response_id": "c127f983a55547dea7135ffe6bc70bd3"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 31090,
+      "completion_tokens": 63,
+      "cache_read_tokens": 30323,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 31153,
+      "response_id": "b863036037d14735856441395a750105"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 31456,
+      "completion_tokens": 273,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 31729,
+      "response_id": "3f919266e18e45298e0324cbe6fb9d23"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 31855,
+      "completion_tokens": 79,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 31934,
+      "response_id": "3369d386e58a461f9a4bdf5a6b71a654"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 32525,
+      "completion_tokens": 1221,
+      "cache_read_tokens": 31854,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 33746,
+      "response_id": "93832d480c2b4053b6f9ffe7740d49b4"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 33694,
+      "completion_tokens": 82,
+      "cache_read_tokens": 6508,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 33776,
+      "response_id": "f8017830cb1344afb7101e6d7faf2f91"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 34189,
+      "completion_tokens": 76,
+      "cache_read_tokens": 33693,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 34265,
+      "response_id": "6fe962b06cfc47b1a8ea8d0dbe8c6dfe"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 34354,
+      "completion_tokens": 90,
+      "cache_read_tokens": 34188,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 34444,
+      "response_id": "ac8f6a7dc4454e718e102f6b01eb38cc"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 34846,
+      "completion_tokens": 70,
+      "cache_read_tokens": 32524,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 34916,
+      "response_id": "f99562b881144d12992f3870fc3a7d95"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 35455,
+      "completion_tokens": 61,
+      "cache_read_tokens": 34353,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 35516,
+      "response_id": "531e9dcf5ee14c61bfeb8f376403efff"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 35872,
+      "completion_tokens": 73,
+      "cache_read_tokens": 18,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 35945,
+      "response_id": "576a5a59c2dc4c089099f02b3052d9f6"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 36126,
+      "completion_tokens": 103,
+      "cache_read_tokens": 35871,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 36229,
+      "response_id": "7a2d5df4d2264b5596870734fd9f2eab"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 36259,
+      "completion_tokens": 122,
+      "cache_read_tokens": 34845,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 36381,
+      "response_id": "15a466e2a25f4a68b6f1114415fede0c"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 37087,
+      "completion_tokens": 78,
+      "cache_read_tokens": 35454,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 37165,
+      "response_id": "ff08197184394d6e938cb6bc2332a96a"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 37212,
+      "completion_tokens": 267,
+      "cache_read_tokens": 36258,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 37479,
+      "response_id": "87004c77e59a45e59abccd57df32d02d"
+    },
+    {
+      "model": "openai/kimi-k2.6",
+      "prompt_tokens": 37375,
+      "completion_tokens": 942,
+      "cache_read_tokens": 37086,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 38317,
+      "response_id": "a4b95662970b4faeba4082ceb2f3132a"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 978659,
+    "completion_tokens": 12679,
+    "total_tokens": 991338
+  },
+  "token_footprint": {
+    "output_tokens_used": 12679,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\ndjango.utils.http.parse_http_date two digit year check is incorrect\nDescription\n\t \n\t\t(last modified by Ad Timmering)\n\t \nRFC 850 does not mention this, but in RFC 7231 (and there's something similar in RFC 2822), there's the following quote:\nRecipients of a timestamp value in rfc850-date format, which uses a\ntwo-digit year, MUST interpret a timestamp that appears to be more\nthan 50 years in the future as representing the most recent year in\nthe past that had the same last two digits.\nCurrent logic is hard coded to consider 0-69 to be in 2000-2069, and 70-99 to be 1970-1999, instead of comparing versus the current year.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nFollow these phases to resolve the issue:\n\nPhase 1. READING: read the problem and reword it in clearer terms\n   1.1 If there are code or config snippets. Express in words any best practices or conventions in them.\n   1.2 Hightlight message errors, method names, variables, file names, stack traces, and technical details.\n   1.3 Explain the problem in clear terms.\n   1.4 Enumerate the steps to reproduce the problem.\n   1.5 Hightlight any best practices to take into account when testing and fixing the issue\n\nPhase 2. RUNNING: install and run the tests on the repository\n   2.1 Activate the environment by running  \n       ./opt/miniconda3/etc/profile.d/conda.sh ; conda activate testbed\n   2.2 Follow the readme\n   2.3 Install the environment and anything needed\n   2.4 Iterate and figure out how to run the tests\n\nPhase 3. EXPLORATION: find the files that are related to the problem and possible solutions\n   3.1 Use `grep` to search for relevant methods, classes, keywords and error messages.\n   3.2 Identify all files related to the problem statement.\n   3.3 Propose the methods and files to fix the issue and explain why.\n   3.4 From the possible file locations, select the most likely location to fix the issue.\n\nPhase 4. TEST CREATION: before implementing any fix, create a script to reproduce and verify the issue.\n   4.1 Look at existing test files in the repository to understand the test format/structure.\n   4.2 Create a minimal reproduction script that reproduces the located issue.\n   4.3 Run the reproduction script to confirm you are reproducing the issue.\n   4.4 Adjust the reproduction script as necessary.\n\nPhase 5. FIX ANALYSIS: state clearly the problem and how to fix it\n   5.1 State clearly what the problem is.\n   5.2 State clearly where the problem is located.\n   5.3 State clearly how the test reproduces the issue.\n   5.4 State clearly the best practices to take into account in the fix.\n   5.5 State clearly how to fix the problem.\n\nPhase 6. FIX IMPLEMENTATION: Edit the source code to implement your chosen solution.\n   6.1 Make minimal, focused changes to fix the issue.\n\nPhase 7. VERIFICATION: Test your implementation thoroughly.\n   7.1 Run your reproduction script to verify the fix works.\n   7.2 Add edge cases to your test script to ensure comprehensive coverage.\n   7.3 Run existing tests related to the modified code to ensure you haven't broken anything.\n\n8. FINAL REVIEW: Carefully re-read the problem description and compare your changes with the base commit f0adf3b9b7a19cdee05368ff0c0c2d087f011180.\n   8.1 Ensure you've fully addressed all requirements.\n   8.2 Run any tests in the repository related to:\n     8.2.1 The issue you are fixing\n     8.2.2 The files you modified\n     8.2.3 The functions you changed\n   8.3 If any tests fail, revise your implementation until all tests pass\n\nBe thorough in your exploration, testing, and reasoning. It's fine if your thinking process is lengthy - quality and completeness are more important than brevity.",
+  "test_result": {
+    "git_patch": "diff --git a/django/utils/http.py b/django/utils/http.py\nindex 572cfb4347..cc170ef4c8 100644\n--- a/django/utils/http.py\n+++ b/django/utils/http.py\n@@ -176,10 +176,17 @@ def parse_http_date(date):\n     try:\n         year = int(m.group('year'))\n         if year < 100:\n-            if year < 70:\n-                year += 2000\n-            else:\n-                year += 1900\n+            # RFC 7231 section 7.1.1.1: Recipients of a timestamp value in\n+            # rfc850-date format, which uses a two-digit year, MUST interpret\n+            # a timestamp that appears to be more than 50 years in the future\n+            # as representing the most recent year in the past that had the\n+            # same last two digits.\n+            current_year = datetime.datetime.now().year\n+            # Assume two-digit year is in current century\n+            year = (current_year // 100) * 100 + year\n+            # If more than 50 years in the future, go to past century\n+            if year > current_year + 50:\n+                year -= 100\n         month = MONTHS.index(m.group('mon').lower()) + 1\n         day = int(m.group('day'))\n         hour = int(m.group('hour'))\n",
+    "iteration_count": 35,
+    "timings": {
+      "workspace_generation_seconds": 3.078,
+      "agent_generation_seconds": 920.339,
+      "total_generation_seconds": 923.417
+    }
+  }
+}

@@ -102,6 +102,13 @@ model_list:
       api_key: os.environ/API_KEY
       base_model: claude-opus-4-7
 
+  - model_name: claude-opus-4-6
+    litellm_params:
+      model: azure_ai/claude-opus-4-6
+      api_base: os.environ/CLAUDE_OPUS_4_6_API_URL
+      api_key: os.environ/API_KEY
+      base_model: claude-opus-4-6
+
   - model_name: deepseek-v3.1
     litellm_params:
       model: azure_ai/deepseek-v3.1

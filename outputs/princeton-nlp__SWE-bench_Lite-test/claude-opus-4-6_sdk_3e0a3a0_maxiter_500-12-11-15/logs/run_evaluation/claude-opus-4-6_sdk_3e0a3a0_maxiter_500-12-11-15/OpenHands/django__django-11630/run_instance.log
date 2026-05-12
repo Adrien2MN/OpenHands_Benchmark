@@ -1,0 +1,123 @@
+2026-05-12 14:23:08,144 - INFO - Creating container for django__django-11630...
+2026-05-12 14:23:08,233 - INFO - Container for django__django-11630 created: b0db4bf9ddbe06ed079e3a99a1092181ab0898cf64a59dcb2496c7ca7c9aecea
+2026-05-12 14:23:08,373 - INFO - Container for django__django-11630 started: b0db4bf9ddbe06ed079e3a99a1092181ab0898cf64a59dcb2496c7ca7c9aecea
+2026-05-12 14:23:08,374 - INFO - Intermediate patch for django__django-11630 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11630/patch.diff, now applying to container...
+2026-05-12 14:23:08,607 - INFO - >>>>> Applied Patch:
+Checking patch django/core/checks/model_checks.py...
+Applied patch django/core/checks/model_checks.py cleanly.
+
+2026-05-12 14:23:11,564 - INFO - Git diff before:
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..eff160fee0 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -4,11 +4,14 @@ from collections import defaultdict
+ from itertools import chain
+ 
+ from django.apps import apps
++from django.conf import settings
+ from django.core.checks import Error, Tags, register
+ 
+ 
+ @register(Tags.models)
+ def check_all_models(app_configs=None, **kwargs):
++    from django.db import router
++
+     db_table_models = defaultdict(list)
+     indexes = defaultdict(list)
+     constraints = defaultdict(list)
+@@ -37,14 +40,24 @@ def check_all_models(app_configs=None, **kwargs):
+             constraints[model_constraint.name].append(model._meta.label)
+     for db_table, model_labels in db_table_models.items():
+         if len(model_labels) != 1:
+-            errors.append(
+-                Error(
+-                    "db_table '%s' is used by multiple models: %s."
+-                    % (db_table, ', '.join(db_table_models[db_table])),
+-                    obj=db_table,
+-                    id='models.E028',
++            model_labels_set = set(model_labels)
++            colliding_labels = set()
++            for db in settings.DATABASES:
++                model_labels_for_db = {
++                    label for label in model_labels_set
++                    if router.allow_migrate_model(db, apps.get_model(label))
++                }
++                if len(model_labels_for_db) > 1:
++                    colliding_labels.update(model_labels_for_db)
++            if colliding_labels:
++                errors.append(
++                    Error(
++                        "db_table '%s' is used by multiple models: %s."
++                        % (db_table, ', '.join(sorted(colliding_labels))),
++                        obj=db_table,
++                        id='models.E028',
++                    )
+                 )
+-            )
+     for index_name, model_labels in indexes.items():
+         if len(model_labels) > 1:
+             model_labels = set(model_labels)
+2026-05-12 14:23:11,564 - INFO - Eval script for django__django-11630 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11630/eval.sh; copying to container...
+2026-05-12 14:23:32,417 - INFO - Test runtime: 20.79 seconds
+2026-05-12 14:23:32,418 - INFO - Test output for django__django-11630 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11630/test_output.txt
+2026-05-12 14:23:32,574 - INFO - Git diff after:
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..eff160fee0 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -4,11 +4,14 @@ from collections import defaultdict
+ from itertools import chain
+ 
+ from django.apps import apps
++from django.conf import settings
+ from django.core.checks import Error, Tags, register
+ 
+ 
+ @register(Tags.models)
+ def check_all_models(app_configs=None, **kwargs):
++    from django.db import router
++
+     db_table_models = defaultdict(list)
+     indexes = defaultdict(list)
+     constraints = defaultdict(list)
+@@ -37,14 +40,24 @@ def check_all_models(app_configs=None, **kwargs):
+             constraints[model_constraint.name].append(model._meta.label)
+     for db_table, model_labels in db_table_models.items():
+         if len(model_labels) != 1:
+-            errors.append(
+-                Error(
+-                    "db_table '%s' is used by multiple models: %s."
+-                    % (db_table, ', '.join(db_table_models[db_table])),
+-                    obj=db_table,
+-                    id='models.E028',
++            model_labels_set = set(model_labels)
++            colliding_labels = set()
++            for db in settings.DATABASES:
++                model_labels_for_db = {
++                    label for label in model_labels_set
++                    if router.allow_migrate_model(db, apps.get_model(label))
++                }
++                if len(model_labels_for_db) > 1:
++                    colliding_labels.update(model_labels_for_db)
++            if colliding_labels:
++                errors.append(
++                    Error(
++                        "db_table '%s' is used by multiple models: %s."
++                        % (db_table, ', '.join(sorted(colliding_labels))),
++                        obj=db_table,
++                        id='models.E028',
++                    )
+                 )
+-            )
+     for index_name, model_labels in indexes.items():
+         if len(model_labels) > 1:
+             model_labels = set(model_labels)
+2026-05-12 14:23:32,574 - INFO - Grading answer for django__django-11630...
+2026-05-12 14:23:32,576 - INFO - report: {'django__django-11630': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_collision_across_apps_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_collision_in_same_app_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests)']}, 'PASS_TO_PASS': {'success': ['test_collision_abstract_model (check_framework.test_model_checks.IndexNameTests)', 'test_collision_across_apps (check_framework.test_model_checks.IndexNameTests)', 'test_collision_in_different_models (check_framework.test_model_checks.IndexNameTests)', 'test_collision_in_same_model (check_framework.test_model_checks.IndexNameTests)', 'test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.IndexNameTests)', 'test_no_collision_across_apps_interpolation (check_framework.test_model_checks.IndexNameTests)', 'test_collision_abstract_model (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_across_apps (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_in_different_models (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_in_same_model (check_framework.test_model_checks.ConstraintNameTests)', 'test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.ConstraintNameTests)', 'test_no_collision_across_apps_interpolation (check_framework.test_model_checks.ConstraintNameTests)', 'test_no_collision_for_proxy_models (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_no_collision_for_unmanaged_models (check_framework.test_model_checks.DuplicateDBTableTests)'], 'failure': ['test_collision_across_apps (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_collision_in_same_app (check_framework.test_model_checks.DuplicateDBTableTests)']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11630: resolved: False
+2026-05-12 14:23:32,577 - INFO - Attempting to stop container sweb.eval.django__django-11630.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:47,715 - INFO - Attempting to remove container sweb.eval.django__django-11630.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:47,763 - INFO - Container sweb.eval.django__django-11630.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15 removed.
+2026-05-12 14:23:47,763 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11630:latest...
+2026-05-12 14:23:47,803 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11630:latest removed.

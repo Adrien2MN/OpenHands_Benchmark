@@ -1,0 +1,21 @@
+2026-05-12 11:13:22,448 - INFO - root - === Evaluation Started (instance astropy__astropy-12907) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-12907.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-12907.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 11:13:22,449 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-12907
+2026-05-12 11:13:23,152 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-12907-source-minimal
+2026-05-12 11:13:23,232 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 11:13:23,263 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-7e1433ea-ca56-4318-bee8-88bc34447502 -e LMNR_SPAN_CONTEXT=null -p 33163:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-12907-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 11:13:23,435 - INFO - openhands.workspace.docker.workspace - Started container: 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:23,452 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:24,503 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:25,545 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:26,581 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:27,618 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:28,699 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:29,756 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:30,815 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:31,872 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:32,913 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7b9fbdd2a2dc96cd274c0dbcfad93f6006e794d7121131950f930d8cf036487c
+2026-05-12 11:13:33,964 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:33163

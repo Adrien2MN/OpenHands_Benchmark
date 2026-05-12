@@ -1,0 +1,36 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 9ce46e3f73..d23c116bbb 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -207,6 +207,7 @@ class Field(RegisterLookupMixin):
+             *self._check_backend_specific_checks(**kwargs),
+             *self._check_validators(),
+             *self._check_deprecation_details(),
++            *self._check_max_length_warning(),
+         ]
+ 
+     def _check_field_name(self):
+@@ -291,6 +292,23 @@ class Field(RegisterLookupMixin):
+             )
+         ]
+ 
++    def _check_max_length_warning(self):
++        if self.max_length is not None and self.choices:
++            longest_choice = max(
++                (len(choice) for choice, _ in self.flatchoices if isinstance(choice, str)),
++                default=0,
++            )
++            if longest_choice > self.max_length:
++                return [
++                    checks.Error(
++                        "'max_length' is too small to fit the longest value "
++                        "in 'choices' (%d characters)." % longest_choice,
++                        obj=self,
++                        id='fields.E009',
++                    )
++                ]
++        return []
++
+     def _check_db_index(self):
+         if self.db_index not in (None, True, False):
+             return [

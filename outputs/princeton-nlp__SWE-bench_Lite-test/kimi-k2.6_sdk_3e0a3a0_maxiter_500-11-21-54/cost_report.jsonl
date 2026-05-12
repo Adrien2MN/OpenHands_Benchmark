@@ -1,0 +1,51 @@
+{
+  "directory": "outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54",
+  "timestamp": "2026-05-12T10:37:44.315916",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 19,
+    "cost": 0.0,
+    "time_statistics": {
+      "average_duration": 1157.3324533157895,
+      "total_duration": 21989.316613,
+      "total_lines": 19,
+      "lines_with_duration": 19
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 50,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 1096.162778882353,
+        "total_duration": 18634.767241,
+        "total_lines": 50,
+        "lines_with_duration": 17
+      }
+    },
+    {
+      "filename": "output.critic_attempt_2.jsonl",
+      "lines": 11,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 1677.274686,
+        "total_duration": 3354.549372,
+        "total_lines": 11,
+        "lines_with_duration": 2
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 0.0,
+    "total_duration": 21989.316613000003,
+    "only_main_output_cost": 0.0,
+    "sum_critic_files": 0.0
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

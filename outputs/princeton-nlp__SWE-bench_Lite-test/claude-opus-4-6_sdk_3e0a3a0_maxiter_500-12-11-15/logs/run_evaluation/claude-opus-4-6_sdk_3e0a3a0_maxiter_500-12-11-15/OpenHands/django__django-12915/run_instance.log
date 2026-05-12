@@ -1,0 +1,55 @@
+2026-05-12 14:24:40,539 - INFO - Creating container for django__django-12915...
+2026-05-12 14:24:40,594 - INFO - Container for django__django-12915 created: 7a151bddbd06c3ac9471a9200c57ca4b86a0182e8e8e2b1f38c11b8a85898a6f
+2026-05-12 14:24:40,684 - INFO - Container for django__django-12915 started: 7a151bddbd06c3ac9471a9200c57ca4b86a0182e8e8e2b1f38c11b8a85898a6f
+2026-05-12 14:24:40,685 - INFO - Intermediate patch for django__django-12915 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-12915/patch.diff, now applying to container...
+2026-05-12 14:24:40,853 - INFO - >>>>> Applied Patch:
+Checking patch django/contrib/staticfiles/handlers.py...
+Applied patch django/contrib/staticfiles/handlers.py cleanly.
+
+2026-05-12 14:24:42,675 - INFO - Git diff before:
+diff --git a/django/contrib/staticfiles/handlers.py b/django/contrib/staticfiles/handlers.py
+index 711d8864ad..9db4d33b33 100644
+--- a/django/contrib/staticfiles/handlers.py
++++ b/django/contrib/staticfiles/handlers.py
+@@ -52,6 +52,12 @@ class StaticFilesHandlerMixin:
+         except Http404 as e:
+             return response_for_exception(request, e)
+ 
++    async def get_response_async(self, request):
++        try:
++            return self.serve(request)
++        except Http404 as e:
++            return response_for_exception(request, e)
++
+ 
+ class StaticFilesHandler(StaticFilesHandlerMixin, WSGIHandler):
+     """
+2026-05-12 14:24:42,676 - INFO - Eval script for django__django-12915 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-12915/eval.sh; copying to container...
+2026-05-12 14:25:03,056 - INFO - Test runtime: 20.28 seconds
+2026-05-12 14:25:03,057 - INFO - Test output for django__django-12915 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-12915/test_output.txt
+2026-05-12 14:25:03,155 - INFO - Git diff after:
+diff --git a/django/contrib/staticfiles/handlers.py b/django/contrib/staticfiles/handlers.py
+index 711d8864ad..9db4d33b33 100644
+--- a/django/contrib/staticfiles/handlers.py
++++ b/django/contrib/staticfiles/handlers.py
+@@ -52,6 +52,12 @@ class StaticFilesHandlerMixin:
+         except Http404 as e:
+             return response_for_exception(request, e)
+ 
++    async def get_response_async(self, request):
++        try:
++            return self.serve(request)
++        except Http404 as e:
++            return response_for_exception(request, e)
++
+ 
+ class StaticFilesHandler(StaticFilesHandlerMixin, WSGIHandler):
+     """
+2026-05-12 14:25:03,155 - INFO - Grading answer for django__django-12915...
+2026-05-12 14:25:03,156 - INFO - report: {'django__django-12915': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_get_async_response (staticfiles_tests.test_handlers.TestASGIStaticFilesHandler)', 'test_get_async_response_not_found (staticfiles_tests.test_handlers.TestASGIStaticFilesHandler)', 'test_static_file_response (asgi.tests.ASGITest)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_disconnect (asgi.tests.ASGITest)', 'test_file_response (asgi.tests.ASGITest)', 'test_get_asgi_application (asgi.tests.ASGITest)', 'test_get_query_string (asgi.tests.ASGITest)', 'test_headers (asgi.tests.ASGITest)', 'test_non_unicode_query_string (asgi.tests.ASGITest)', 'test_request_lifecycle_signals_dispatched_with_thread_sensitive (asgi.tests.ASGITest)', 'test_wrong_connection_type (asgi.tests.ASGITest)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12915: resolved: True
+2026-05-12 14:25:03,156 - INFO - Attempting to stop container sweb.eval.django__django-12915.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:25:18,304 - INFO - Attempting to remove container sweb.eval.django__django-12915.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:25:18,366 - INFO - Container sweb.eval.django__django-12915.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15 removed.
+2026-05-12 14:25:18,367 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-12915:latest...
+2026-05-12 14:25:18,405 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-12915:latest removed.

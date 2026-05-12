@@ -53,3 +53,24 @@
 2026-05-12 09:30:42,277 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
 2026-05-12 09:30:42,366 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
 2026-05-12 09:30:44,765 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-12 10:30:45,021 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11620: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-12 10:30:45,021 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11620 failed after 1 attempts. Last error: Conversation run failed for id=b28308b2-cb1b-4043-b005-936d5166b0e2: Run timed out after 3600 seconds. The conversation may still be running on the server.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 1011, in _execute_single_attempt
+    out = self.evaluate_instance(instance, workspace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 416, in evaluate_instance
+    conversation.send_message(instruction)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/fake_user_response.py", line 152, in run_conversation_with_fake_user_response
+    conversation.run(timeout=run_timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/lmnr/opentelemetry_lib/decorators/__init__.py", line 186, in wrap
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 986, in run
+    self._wait_for_run_completion(poll_interval, timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1027, in _wait_for_run_completion
+    raise ConversationRunError(
+openhands.sdk.conversation.exceptions.ConversationRunError: Conversation run failed for id=b28308b2-cb1b-4043-b005-936d5166b0e2: Run timed out after 3600 seconds. The conversation may still be running on the server.
+2026-05-12 10:30:45,150 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11620 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/conversations/django__django-11620.tar.gz
+2026-05-12 10:30:47,155 - INFO - openhands.workspace.docker.workspace - Stopping container: 33ccbc57e09d1506c103d98319ba7f4757ab8e7a5cc75cd11a8a6e8c29aa74b0
+2026-05-12 10:30:47,155 - INFO - openhands.sdk.utils.command - $ docker stop 33ccbc57e09d1506c103d98319ba7f4757ab8e7a5cc75cd11a8a6e8c29aa74b0

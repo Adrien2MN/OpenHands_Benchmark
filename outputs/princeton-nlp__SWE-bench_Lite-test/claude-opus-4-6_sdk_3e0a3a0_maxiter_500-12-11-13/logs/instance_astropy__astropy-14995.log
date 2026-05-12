@@ -1,0 +1,13 @@
+2026-05-12 11:13:30,917 - INFO - root - === Evaluation Started (instance astropy__astropy-14995) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-14995.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-13/logs/instance_astropy__astropy-14995.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 11:13:30,917 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14995
+2026-05-12 11:13:31,302 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-12 11:13:31,370 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 11:13:31,394 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-990b7b82-acfa-428d-a2dd-5c804679b914 -e LMNR_SPAN_CONTEXT=null -p 36957:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 11:13:31,558 - INFO - openhands.workspace.docker.workspace - Started container: 5bbb01fd02a8be936a3e1c29e673b4f71ea9a1b99f418c49f5784772108d3cd4
+2026-05-12 11:13:31,563 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5bbb01fd02a8be936a3e1c29e673b4f71ea9a1b99f418c49f5784772108d3cd4
+2026-05-12 11:13:32,599 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5bbb01fd02a8be936a3e1c29e673b4f71ea9a1b99f418c49f5784772108d3cd4
+2026-05-12 11:13:33,624 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5bbb01fd02a8be936a3e1c29e673b4f71ea9a1b99f418c49f5784772108d3cd4

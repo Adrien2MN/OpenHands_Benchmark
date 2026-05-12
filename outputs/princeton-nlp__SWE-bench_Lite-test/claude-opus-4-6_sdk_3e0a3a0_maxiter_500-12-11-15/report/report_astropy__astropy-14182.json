@@ -1,0 +1,532 @@
+{
+  "instance_id": "astropy__astropy-14182",
+  "model": "claude-opus-4-6",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1025
+  },
+  "cost": {
+    "accumulated_cost_usd": 5.6081,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 5.6081
+  },
+  "generation_seconds": 1466.967,
+  "timings": {
+    "workspace_generation_seconds": 2.36,
+    "agent_generation_seconds": 1466.061,
+    "total_generation_seconds": 1468.421
+  },
+  "iterations": 44,
+  "iteration_token_usage": [
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 622,
+      "completion_tokens": 16,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 638,
+      "response_id": "chatcmpl-53260c88-147e-4602-87ba-dcbbb2998d34"
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 14340,
+      "completion_tokens": 522,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 167,
+      "context_window": 1000000,
+      "per_turn_token": 14862,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROVEU1TlRJNU0yTXRNRGcyTXkwME9UWTRMV0l5Wm1JdE5qTmpZak0xTVROa09EUXc="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 14645,
+      "completion_tokens": 318,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 14963,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNak14TkRsak5Ea3RZelZqTVMwME9UaGxMV0kxWldRdE1XTmpNVGM0TURCaE9UUmo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 14980,
+      "completion_tokens": 139,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 15119,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaVFJpWlRZNU0ySXRNV00yTWkwME56YzFMVGxrWTJFdE5HVXhaRGhqT1RFMk1qUmg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 15248,
+      "completion_tokens": 133,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 15381,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaakF4WldGaU5XRXRZemswTlMwME5qQXhMV0kzT0dZdE5ESXhOREJsWmpBME9EZ3g="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 15471,
+      "completion_tokens": 126,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 15597,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZalV3Tm1Fd1lXRXRNamsxTnkwME1EZzVMVGcyTW1NdE5EWm1aV1ptT0Roak9EWTM="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 16375,
+      "completion_tokens": 152,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 16527,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaR0kyT1RrellUSXRZVGMzTnkwME16UXlMV0ptWWpBdFpqRmhZVGs1TlRCbU1ERmg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 22416,
+      "completion_tokens": 1635,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 24051,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZamczTW1VME1HUXRaV1EzTmkwMFl6TTJMV0V5TWpjdE9URXpaRFkzT0RReU5qUXk="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 24068,
+      "completion_tokens": 120,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 24188,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaalZpT0RVNU9EVXRZbU0yWWkwMFptTXdMVGhpTURBdE1tRTVNR1kyTm1OaU0yVmk="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 24346,
+      "completion_tokens": 156,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 24502,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaVE14T1RjeU9HVXRaVEJoWkMwMFlUUmtMVGcwTkdZdFl6QXdZV0prWkRWbE16VXo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 25068,
+      "completion_tokens": 153,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 25221,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaamswTm1JMU9HTXRNekptT1MwMFpqTTRMV0kyWXpndE5UTTJOVEE0TWpFMU5tUmg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 25643,
+      "completion_tokens": 2751,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 28394,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROamN3TmpReFlqTXRaVFV6WlMwME1HRmlMV0k0WlRFdE1XUTRZV1ZoTnpVMVpqQTI="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 28411,
+      "completion_tokens": 274,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 28685,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3Raamd5TkdaaE1qY3RNV0UyTkMwMFl6VTNMV0pqT0dZdE5qUXhOekZrTmpGa1lXVTE="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 28710,
+      "completion_tokens": 251,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 28961,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZV00xTURNMFkySXRPV1EzTnkwME1qazFMV0UxTldNdE5XSXpNamhtTmpFNU5qbG0="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 29090,
+      "completion_tokens": 137,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 29227,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROakJpTm1aaFpURXRaRGs0T1MwMFpEQXlMVGs0Tm1ZdFlUSXhaVEUxTm1Jd09UTTE="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 29295,
+      "completion_tokens": 120,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 29415,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNakUyWm1JeE56a3RaVGhsT1MwME5tSXhMVGcxWVdZdFl6QTVOREJrTkdWa01UTms="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 29940,
+      "completion_tokens": 139,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 30079,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZelkwT1RVNU1XVXROR0prT0MwMFlUSTVMVGxsTWpRdE5qSXdOR0UyWVRVNU1qUmg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 30165,
+      "completion_tokens": 129,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 30294,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RPV0kwWVRVek9Ua3RORGMwT1MwMFkyTmtMVGt3WTJNdE1qZGhabVJoTmpGaU5XSm0="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 32645,
+      "completion_tokens": 155,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 32800,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROR0k1WXpWbU4yWXRObVk1TnkwMFl6Z3hMV0ZrWXpjdE16ZGhZVEZrTkRRMll6STM="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 14705,
+      "completion_tokens": 119,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 14824,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROakJtTVRRMk5EY3RNbU5rTmkwMFl6QXpMVGczWkdJdE1EbG1OREV4TWpjeVpXWmo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 14961,
+      "completion_tokens": 119,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 15080,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNemM0WTJaaVpXTXROMlF4TUMwMFlUUmtMV0U1Tm1RdE5ESTNPRGt3TW1Wa1lUSXc="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 15148,
+      "completion_tokens": 121,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 15269,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROR013TnpGbVl6UXRaakE1WVMwME1tVmpMVGs0WVdFdFlUSXpOR0kzTVRKaFltSXg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 16789,
+      "completion_tokens": 125,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 16914,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNVFJqTm1ReU5UWXROekl6WWkwMFlUZ3hMVGt5TXpjdE1tSXhZVGt5WXpnMU5HRXg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 17692,
+      "completion_tokens": 133,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 17825,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZbUkxWW1VelptSXRObUZsTVMwME9XSTFMVGhpTUdFdE9USmtNakUzTkdRd1l6ZzM="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 23714,
+      "completion_tokens": 1130,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 24844,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaV1l3TXpreU5UTXRaV1l4TnkwME16Y3dMV0k0WkRVdE9ERmlOVGxtWm1WaVptWXg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 24861,
+      "completion_tokens": 120,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 24981,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaREE0TW1Wa01qUXRNV1EzWlMwME9EQmtMV0ZpTWpRdE5ETTJObVk0T1RnME9HUXo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 25139,
+      "completion_tokens": 152,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 25291,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNRE00T0RVeU1ESXRNVFZoTmkwME5UWTVMV0k0WlRZdFpEWTFNV1ExTWpsbFpUTXg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 25857,
+      "completion_tokens": 150,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 26007,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZMkppTXpRMU1UUXRZVE5tWmkwME16RmhMVGhoTnpndE5tTTJObUUxTVdSaU5ERmk="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 26567,
+      "completion_tokens": 1392,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 27959,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RPVFl4TnpBd01UQXROR0V3TWkwME9EaGlMVGcyWVdVdE5XSXpaV1l6WmpZM1pqQTM="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 27976,
+      "completion_tokens": 140,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 28116,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RORGsxTldJNE1ERXRNakF6WkMwME5qSmxMVGs0TVRRdE5qY3dPRE16Tm1Vd1lqVTI="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 30467,
+      "completion_tokens": 234,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 30701,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RaVGhpWW1Nek5Ua3ROalk1TUMwMFlUSXdMVGcxTURZdFpqQTRaamczWlRjMU1ERms="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 30918,
+      "completion_tokens": 216,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 31134,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROamMwTTJKaE1ETXRZVGxoWkMwME9XUTVMV0ptWWprdE4ySXdNREF4TjJabE0yVTU="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 31159,
+      "completion_tokens": 1770,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 32929,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNMkkzTVRWall6a3RZMlEzTVMwMFkyUmpMVGd5TkdRdE1HWTNOR1l6TnpKalpqYzU="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 32946,
+      "completion_tokens": 332,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 33278,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZemhpTkRBelpEa3ROalkxT1MwMFptVXlMV0ZtWVRndFpXSTNaVGsyTUdWak1ERTI="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 33515,
+      "completion_tokens": 249,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 33764,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNVE0xTkRSbFpXVXRZVEEwWmkwMFlUVTJMVGhtTkRjdE5UTTJOakJsT0RZeVlXUXg="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 34085,
+      "completion_tokens": 153,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 34238,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RNams1TldRelpEWXROams0TmkwMFlXSXpMV0U1WkRBdFlqWTJOMk5qTTJVNE5URTU="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 35732,
+      "completion_tokens": 181,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 35913,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RORGMwWkRVMU9HSXRPRFkwWVMwMFlqVTVMV0V5WVRFdE1UVmhOV05tTm1SaU9XWXo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 36051,
+      "completion_tokens": 152,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 36203,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROalF5WVdRd1lUa3RZV1ptWkMwMFpUQXlMVGcxTnpJdE9UbG1ZV0l4WlRjeU9EWmo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 37258,
+      "completion_tokens": 152,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 37410,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZV0V5T1RWbE5qSXRaR0l6TkMwME9EWXlMVGcxWVdNdE1EWTBZVFpsTVRReVpEQTE="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 38219,
+      "completion_tokens": 202,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 38421,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3ROakJoTkRobE9UTXROMkV6TXkwME5qUmhMV0kyWlRrdE1UWTRNbUkwT0dKbU0yRmo="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 38446,
+      "completion_tokens": 515,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 38961,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxYMkZwTzIxdlpHVnNYMmxrT21SaU1USTBZelk0WlRJME1qSmxPREptTldFM09UWXhNakV6TlRjeVpqZ3lOVFl4Tmpjd05HWTBaR1kwWkRaaFltSXhPV1JoWkRjM04yRTRNMlF6TURVN2NtVnpjRzl1YzJWZmFXUTZZMmhoZEdOdGNHd3RZakF6WXpjMk56WXROekF5WlMwME9HTTNMVGs1WXpZdE1qZ3lZek5pWWpFMk5EUmw="
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 2213,
+      "completion_tokens": 460,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 2673,
+      "response_id": "chatcmpl-6bd0f1ab-51f7-42c7-85ee-2db7cccb5f7d"
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 1388,
+      "completion_tokens": 518,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 1906,
+      "response_id": "chatcmpl-5672ea7b-9c0b-4e2c-b2c6-7f93d026685e"
+    },
+    {
+      "model": "openai/claude-opus-4-6",
+      "prompt_tokens": 1191,
+      "completion_tokens": 368,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 1000000,
+      "per_turn_token": 1559,
+      "response_id": "chatcmpl-2186c9ea-2fbe-4960-a90a-5d4420c56c7a"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1038475,
+    "completion_tokens": 16629,
+    "total_tokens": 1055104
+  },
+  "token_footprint": {
+    "output_tokens_used": 16629,
+    "energy_consumption_kwh": 0.1111222149408,
+    "carbon_footprint_kg_co2e": 0.007998528026174881,
+    "scenario_file": "claudeopus46-ecologits2-token.json",
+    "scenario_path": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/model_footprint/claudeopus46-ecologits2-token.json",
+    "electricity_grid_source": "sweden"
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/astropy/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nPlease support header rows in RestructuredText output\n### Description\r\n\r\nIt would be great if the following would work:\r\n\r\n```Python\r\n>>> from astropy.table import QTable\r\n>>> import astropy.units as u\r\n>>> import sys\r\n>>> tbl = QTable({'wave': [350,950]*u.nm, 'response': [0.7, 1.2]*u.count})\r\n>>> tbl.write(sys.stdout,  format=\"ascii.rst\")\r\n===== ========\r\n wave response\r\n===== ========\r\n350.0      0.7\r\n950.0      1.2\r\n===== ========\r\n>>> tbl.write(sys.stdout,  format=\"ascii.fixed_width\", header_rows=[\"name\", \"unit\"])\r\n|  wave | response |\r\n|    nm |       ct |\r\n| 350.0 |      0.7 |\r\n| 950.0 |      1.2 |\r\n>>> tbl.write(sys.stdout,  format=\"ascii.rst\", header_rows=[\"name\", \"unit\"])\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \"/usr/lib/python3/dist-packages/astropy/table/connect.py\", line 129, in __call__\r\n    self.registry.write(instance, *args, **kwargs)\r\n  File \"/usr/lib/python3/dist-packages/astropy/io/registry/core.py\", line 369, in write\r\n    return writer(data, *args, **kwargs)\r\n  File \"/usr/lib/python3/dist-packages/astropy/io/ascii/connect.py\", line 26, in io_write\r\n    return write(table, filename, **kwargs)\r\n  File \"/usr/lib/python3/dist-packages/astropy/io/ascii/ui.py\", line 856, in write\r\n    writer = get_writer(Writer=Writer, fast_writer=fast_writer, **kwargs)\r\n  File \"/usr/lib/python3/dist-packages/astropy/io/ascii/ui.py\", line 800, in get_writer\r\n    writer = core._get_writer(Writer, fast_writer, **kwargs)\r\n  File \"/usr/lib/python3/dist-packages/astropy/io/ascii/core.py\", line 1719, in _get_writer\r\n    writer = Writer(**writer_kwargs)\r\nTypeError: RST.__init__() got an unexpected keyword argument 'header_rows'\r\n```\r\n\r\n\r\n### Additional context\r\n\r\nRestructuredText output is a great way to fill autogenerated documentation with content, so having this flexible makes the life easier `:-)`\r\n\r\n\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/astropy/ directory to ensure the <issue_description> is satisfied.\n\nFollow these phases to resolve the issue:\n\nPhase 1. READING: read the problem and reword it in clearer terms\n   1.1 If there are code or config snippets. Express in words any best practices or conventions in them.\n   1.2 Hightlight message errors, method names, variables, file names, stack traces, and technical details.\n   1.3 Explain the problem in clear terms.\n   1.4 Enumerate the steps to reproduce the problem.\n   1.5 Hightlight any best practices to take into account when testing and fixing the issue\n\nPhase 2. RUNNING: install and run the tests on the repository\n   2.1 Activate the environment by running  \n       ./opt/miniconda3/etc/profile.d/conda.sh ; conda activate testbed\n   2.2 Follow the readme\n   2.3 Install the environment and anything needed\n   2.4 Iterate and figure out how to run the tests\n\nPhase 3. EXPLORATION: find the files that are related to the problem and possible solutions\n   3.1 Use `grep` to search for relevant methods, classes, keywords and error messages.\n   3.2 Identify all files related to the problem statement.\n   3.3 Propose the methods and files to fix the issue and explain why.\n   3.4 From the possible file locations, select the most likely location to fix the issue.\n\nPhase 4. TEST CREATION: before implementing any fix, create a script to reproduce and verify the issue.\n   4.1 Look at existing test files in the repository to understand the test format/structure.\n   4.2 Create a minimal reproduction script that reproduces the located issue.\n   4.3 Run the reproduction script to confirm you are reproducing the issue.\n   4.4 Adjust the reproduction script as necessary.\n\nPhase 5. FIX ANALYSIS: state clearly the problem and how to fix it\n   5.1 State clearly what the problem is.\n   5.2 State clearly where the problem is located.\n   5.3 State clearly how the test reproduces the issue.\n   5.4 State clearly the best practices to take into account in the fix.\n   5.5 State clearly how to fix the problem.\n\nPhase 6. FIX IMPLEMENTATION: Edit the source code to implement your chosen solution.\n   6.1 Make minimal, focused changes to fix the issue.\n\nPhase 7. VERIFICATION: Test your implementation thoroughly.\n   7.1 Run your reproduction script to verify the fix works.\n   7.2 Add edge cases to your test script to ensure comprehensive coverage.\n   7.3 Run existing tests related to the modified code to ensure you haven't broken anything.\n\n8. FINAL REVIEW: Carefully re-read the problem description and compare your changes with the base commit a5917978be39d13cd90b517e1de4e7a539ffaa48.\n   8.1 Ensure you've fully addressed all requirements.\n   8.2 Run any tests in the repository related to:\n     8.2.1 The issue you are fixing\n     8.2.2 The files you modified\n     8.2.3 The functions you changed\n   8.3 If any tests fail, revise your implementation until all tests pass\n\nBe thorough in your exploration, testing, and reasoning. It's fine if your thinking process is lengthy - quality and completeness are more important than brevity.",
+  "test_result": {
+    "git_patch": "diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py\nindex abdeba8ef..0cd478eef 100644\n--- a/astropy/io/ascii/rst.py\n+++ b/astropy/io/ascii/rst.py\n@@ -57,10 +57,11 @@ class RST(FixedWidth):\n     data_class = SimpleRSTData\n     header_class = SimpleRSTHeader\n \n-    def __init__(self):\n-        super().__init__(delimiter_pad=None, bookend=False)\n+    def __init__(self, header_rows=None):\n+        super().__init__(delimiter_pad=None, bookend=False, header_rows=header_rows)\n \n     def write(self, lines):\n         lines = super().write(lines)\n-        lines = [lines[1]] + lines + [lines[1]]\n+        idx = len(self.data.header_rows)\n+        lines = [lines[idx]] + lines + [lines[idx]]\n         return lines\ndiff --git a/pyproject.toml b/pyproject.toml\nindex 0d1ee66ab..ec234472e 100644\n--- a/pyproject.toml\n+++ b/pyproject.toml\n@@ -1,5 +1,5 @@\n [build-system]\n-requires = [\"setuptools\",\n+requires = [\"setuptools==68.0.0\",\n             \"setuptools_scm>=6.2\",\n             \"wheel\",\n             \"cython==0.29.30\",\n",
+    "iteration_count": 44,
+    "timings": {
+      "workspace_generation_seconds": 2.36,
+      "agent_generation_seconds": 1466.061,
+      "total_generation_seconds": 1468.421
+    }
+  }
+}

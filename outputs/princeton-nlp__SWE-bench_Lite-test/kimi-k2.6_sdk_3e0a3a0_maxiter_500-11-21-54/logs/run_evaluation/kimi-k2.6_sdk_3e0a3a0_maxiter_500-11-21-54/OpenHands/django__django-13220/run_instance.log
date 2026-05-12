@@ -1,0 +1,87 @@
+2026-05-12 10:35:45,194 - INFO - Creating container for django__django-13220...
+2026-05-12 10:35:45,280 - INFO - Container for django__django-13220 created: 0cf65f445b2ab98626258827b510181ae6eadb3dc22a839602b10dc22ab43e59
+2026-05-12 10:35:45,379 - INFO - Container for django__django-13220 started: 0cf65f445b2ab98626258827b510181ae6eadb3dc22a839602b10dc22ab43e59
+2026-05-12 10:35:45,380 - INFO - Intermediate patch for django__django-13220 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-13220/patch.diff, now applying to container...
+2026-05-12 10:35:45,674 - INFO - >>>>> Applied Patch:
+Checking patch django/core/exceptions.py...
+Applied patch django/core/exceptions.py cleanly.
+
+2026-05-12 10:35:48,771 - INFO - Git diff before:
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..2ef0b4e7ec 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,28 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return NotImplemented
++        return self._get_comparison_key() == other._get_comparison_key()
++
++    def _get_comparison_key(self):
++        if hasattr(self, 'error_dict'):
++            # Dict form: normalize to dict of sorted comparison keys
++            return ('dict', tuple(sorted(
++                (field, tuple(sorted(e._get_comparison_key() for e in error_list)))
++                for field, error_list in self.error_dict.items()
++            )))
++        elif hasattr(self, 'message'):
++            # Single message form
++            params_key = tuple(sorted(self.params.items())) if self.params else None
++            return ('single', self.message, self.code, params_key)
++        else:
++            # List form: normalize to sorted comparison keys
++            return ('list', tuple(sorted(
++                e._get_comparison_key() for e in self.error_list
++            )))
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""
+2026-05-12 10:35:48,772 - INFO - Eval script for django__django-13220 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-13220/eval.sh; copying to container...
+2026-05-12 10:36:08,845 - INFO - Test runtime: 19.98 seconds
+2026-05-12 10:36:08,846 - INFO - Test output for django__django-13220 written to logs/run_evaluation/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/OpenHands/django__django-13220/test_output.txt
+2026-05-12 10:36:08,973 - INFO - Git diff after:
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..2ef0b4e7ec 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,28 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return NotImplemented
++        return self._get_comparison_key() == other._get_comparison_key()
++
++    def _get_comparison_key(self):
++        if hasattr(self, 'error_dict'):
++            # Dict form: normalize to dict of sorted comparison keys
++            return ('dict', tuple(sorted(
++                (field, tuple(sorted(e._get_comparison_key() for e in error_list)))
++                for field, error_list in self.error_dict.items()
++            )))
++        elif hasattr(self, 'message'):
++            # Single message form
++            params_key = tuple(sorted(self.params.items())) if self.params else None
++            return ('single', self.message, self.code, params_key)
++        else:
++            # List form: normalize to sorted comparison keys
++            return ('list', tuple(sorted(
++                e._get_comparison_key() for e in self.error_list
++            )))
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""
+2026-05-12 10:36:08,973 - INFO - Grading answer for django__django-13220...
+2026-05-12 10:36:08,973 - INFO - report: {'django__django-13220': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_eq (test_exceptions.test_validation_error.TestValidationError)', 'test_eq_nested (test_exceptions.test_validation_error.TestValidationError)'], 'failure': ['test_hash (test_exceptions.test_validation_error.TestValidationError)', 'test_hash_nested (test_exceptions.test_validation_error.TestValidationError)']}, 'PASS_TO_PASS': {'success': ['test_messages_concatenates_error_dict_values (test_exceptions.test_validation_error.TestValidationError)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13220: resolved: False
+2026-05-12 10:36:08,973 - INFO - Attempting to stop container sweb.eval.django__django-13220.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54...
+2026-05-12 10:36:24,078 - INFO - Attempting to remove container sweb.eval.django__django-13220.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54...
+2026-05-12 10:36:24,119 - INFO - Container sweb.eval.django__django-13220.kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54 removed.
+2026-05-12 10:36:24,119 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-13220:latest...
+2026-05-12 10:36:24,157 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-13220:latest removed.

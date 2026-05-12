@@ -1,0 +1,61 @@
+2026-05-12 14:23:06,138 - INFO - Creating container for django__django-11283...
+2026-05-12 14:23:06,185 - INFO - Container for django__django-11283 created: e6a24ba869a67d9e0b51bec637b31e898e4acbb1b44706cf998c7db3083f6aa6
+2026-05-12 14:23:06,285 - INFO - Container for django__django-11283 started: e6a24ba869a67d9e0b51bec637b31e898e4acbb1b44706cf998c7db3083f6aa6
+2026-05-12 14:23:06,286 - INFO - Intermediate patch for django__django-11283 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11283/patch.diff, now applying to container...
+2026-05-12 14:23:06,465 - INFO - >>>>> Applied Patch:
+Checking patch django/contrib/auth/migrations/0011_update_proxy_permissions.py...
+Applied patch django/contrib/auth/migrations/0011_update_proxy_permissions.py cleanly.
+
+2026-05-12 14:23:09,964 - INFO - Git diff before:
+diff --git a/django/contrib/auth/migrations/0011_update_proxy_permissions.py b/django/contrib/auth/migrations/0011_update_proxy_permissions.py
+index 0e66649695..5f9ec081b3 100644
+--- a/django/contrib/auth/migrations/0011_update_proxy_permissions.py
++++ b/django/contrib/auth/migrations/0011_update_proxy_permissions.py
+@@ -24,10 +24,14 @@ def update_proxy_model_permissions(apps, schema_editor, reverse=False):
+         proxy_content_type = ContentType.objects.get_for_model(Model, for_concrete_model=False)
+         old_content_type = proxy_content_type if reverse else concrete_content_type
+         new_content_type = concrete_content_type if reverse else proxy_content_type
++        already_existing_codenames = set(Permission.objects.filter(
++            permissions_query,
++            content_type=new_content_type,
++        ).values_list('codename', flat=True))
+         Permission.objects.filter(
+             permissions_query,
+             content_type=old_content_type,
+-        ).update(content_type=new_content_type)
++        ).exclude(codename__in=already_existing_codenames).update(content_type=new_content_type)
+ 
+ 
+ def revert_proxy_model_permissions(apps, schema_editor):
+2026-05-12 14:23:09,964 - INFO - Eval script for django__django-11283 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11283/eval.sh; copying to container...
+2026-05-12 14:23:30,707 - INFO - Test runtime: 20.66 seconds
+2026-05-12 14:23:30,708 - INFO - Test output for django__django-11283 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-11283/test_output.txt
+2026-05-12 14:23:30,885 - INFO - Git diff after:
+diff --git a/django/contrib/auth/migrations/0011_update_proxy_permissions.py b/django/contrib/auth/migrations/0011_update_proxy_permissions.py
+index 0e66649695..5f9ec081b3 100644
+--- a/django/contrib/auth/migrations/0011_update_proxy_permissions.py
++++ b/django/contrib/auth/migrations/0011_update_proxy_permissions.py
+@@ -24,10 +24,14 @@ def update_proxy_model_permissions(apps, schema_editor, reverse=False):
+         proxy_content_type = ContentType.objects.get_for_model(Model, for_concrete_model=False)
+         old_content_type = proxy_content_type if reverse else concrete_content_type
+         new_content_type = concrete_content_type if reverse else proxy_content_type
++        already_existing_codenames = set(Permission.objects.filter(
++            permissions_query,
++            content_type=new_content_type,
++        ).values_list('codename', flat=True))
+         Permission.objects.filter(
+             permissions_query,
+             content_type=old_content_type,
+-        ).update(content_type=new_content_type)
++        ).exclude(codename__in=already_existing_codenames).update(content_type=new_content_type)
+ 
+ 
+ def revert_proxy_model_permissions(apps, schema_editor):
+2026-05-12 14:23:30,886 - INFO - Grading answer for django__django-11283...
+2026-05-12 14:23:30,888 - INFO - report: {'django__django-11283': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_migrate_with_existing_target_permission (auth_tests.test_migrations.ProxyModelWithSameAppLabelTests)']}, 'PASS_TO_PASS': {'success': ['test_migrate_backwards (auth_tests.test_migrations.ProxyModelWithDifferentAppLabelTests)', 'test_proxy_model_permissions_contenttype (auth_tests.test_migrations.ProxyModelWithDifferentAppLabelTests)', 'test_user_has_now_proxy_model_permissions (auth_tests.test_migrations.ProxyModelWithDifferentAppLabelTests)', 'test_user_keeps_same_permissions_after_migrating_backward (auth_tests.test_migrations.ProxyModelWithDifferentAppLabelTests)', 'test_migrate_backwards (auth_tests.test_migrations.ProxyModelWithSameAppLabelTests)', 'test_proxy_model_permissions_contenttype (auth_tests.test_migrations.ProxyModelWithSameAppLabelTests)', 'test_user_keeps_same_permissions_after_migrating_backward (auth_tests.test_migrations.ProxyModelWithSameAppLabelTests)', 'test_user_still_has_proxy_model_permissions (auth_tests.test_migrations.ProxyModelWithSameAppLabelTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11283: resolved: False
+2026-05-12 14:23:30,889 - INFO - Attempting to stop container sweb.eval.django__django-11283.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:46,217 - INFO - Attempting to remove container sweb.eval.django__django-11283.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:46,274 - INFO - Container sweb.eval.django__django-11283.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15 removed.
+2026-05-12 14:23:46,274 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11283:latest...
+2026-05-12 14:23:46,327 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11283:latest removed.

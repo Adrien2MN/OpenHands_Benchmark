@@ -1,0 +1,197 @@
+2026-05-12 12:19:30,169 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 12:19:30,170 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-12 12:19:39,373 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-12 12:19:39,374 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-12 12:19:40,342 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-12 12:19:40,342 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-12 12:19:40,367 - INFO - openhands.agent_server.docker.build - $ git rev-parse --verify HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-12 12:19:40,432 - INFO - openhands.agent_server.docker.build - $ git symbolic-ref -q --short HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-12 12:19:40,558 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-12 12:19:40,560 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-12 12:19:40,561 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_m246sby (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-12 12:19:43,480 - INFO - openhands.agent_server.docker.build - [build] Built 1 sdists for clean context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_m246sby/unknown-0.0.0.tar.gz
+2026-05-12 12:19:43,656 - INFO - openhands.agent_server.docker.build - [build] Clean build context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-rj4uznp2/unknown-0.0.0
+2026-05-12 12:19:43,656 - INFO - openhands.agent_server.docker.build - $ docker buildx inspect --bootstrap (cwd=None)
+2026-05-12 12:19:44,109 - WARNING - openhands.agent_server.docker.build - [build] WARNING: Active buildx driver is 'docker', which does not support local dir caching. Fallback to INLINE CACHE
+ Consider running the following commands to set up a compatible buildx environment:
+  1. docker buildx create --name openhands-builder --driver docker-container --use
+  2. docker buildx inspect --bootstrap
+
+2026-05-12 12:19:44,109 - INFO - openhands.agent_server.docker.build - [build] Cache: inline only (driver=docker)
+2026-05-12 12:19:44,109 - INFO - openhands.agent_server.docker.build - [build] Building target='source-minimal' image='ghcr.io/openhands/eval-agent-server' custom_tags='3e0a3a0-35d813f' from base='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' for platforms='local-arch'
+2026-05-12 12:19:44,109 - INFO - openhands.agent_server.docker.build - [build] Git ref='unknown' sha='3e0a3a0915b369c7e2057c77722e98585855d30a' package_version='1.16.1'
+2026-05-12 12:19:44,109 - INFO - openhands.agent_server.docker.build - [build] Cache tag: buildcache-source-minimal-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795
+2026-05-12 12:19:44,109 - INFO - openhands.agent_server.docker.build - $ docker buildx build --file /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile --target source-minimal --build-arg BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest --build-arg OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a --build-arg OPENHANDS_BUILD_GIT_REF=unknown --load --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal --build-arg BUILDKIT_INLINE_CACHE=1 /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-rj4uznp2/unknown-0.0.0 (cwd=/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-rj4uznp2/unknown-0.0.0)
+2026-05-12 12:19:46,695 - INFO - openhands.agent_server.docker.build - [build] Cleaning /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-rj4uznp2/unknown-0.0.0
+2026-05-12 12:19:46,777 - INFO - openhands.agent_server.docker.build - [build] Done. Tags:
+2026-05-12 12:19:46,777 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal
+2026-05-12 12:19:46,777 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal
+2026-05-12 12:19:46,777 - INFO - openhands.agent_server.docker.build - [build] Telemetry: {"build_context_seconds":3.096,"buildx_wall_clock_seconds":2.585,"cleanup_seconds":0.082,"cache_import_seconds":0.0,"cache_import_miss_count":0,"cache_export_seconds":0.0,"image_export_seconds":0.2,"push_layers_seconds":0.0,"export_manifest_seconds":0.0,"cached_step_count":15}
+2026-05-12 12:19:46,777 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-12T10:19:46.777362+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal'] error=None log_path=None status='built' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=6.217 post_build_seconds=None sdk_build_context_seconds=3.096 sdk_buildx_wall_clock_seconds=2.585 sdk_cleanup_seconds=0.082 sdk_cache_import_seconds=0.0 sdk_cache_import_miss_count=0 sdk_cache_export_seconds=0.0 sdk_image_export_seconds=0.2 sdk_push_layers_seconds=0.0 sdk_export_manifest_seconds=0.0 sdk_cached_step_count=15
+2026-05-12 12:19:46,777 - WARNING - benchmarks.utils.build_utils - Expected tag ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not in built tags ['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal']. Creating tag alias: ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal → ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 12:19:46,871 - INFO - benchmarks.utils.build_utils - Successfully created image tag: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 12:19:47,010 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 12:19:47,057 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-9ff230c0-c564-4b1f-8f18-29717d5026a5 -e LMNR_SPAN_CONTEXT=null -p 31224:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 12:19:48,140 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-12 12:19:48,140 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 254, in prepare_workspace
+    workspace = DockerWorkspace(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/utils/models.py", line 132, in _validate_subtype
+    return handler(data)
+           ^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/_internal/_model_construction.py", line 146, in wrapped_model_post_init
+    original_model_post_init(self, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 154, in model_post_init
+    self._start_container(image, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 259, in _start_container
+    raise RuntimeError(f"Failed to run docker container: {proc.stderr}")
+RuntimeError: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+
+2026-05-12 13:49:01,860 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 13:49:01,862 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-12 13:49:03,148 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-12 13:49:03,148 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-12 13:49:04,073 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-12 13:49:04,074 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-12 13:49:04,275 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-12 13:49:04,278 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-12 13:49:04,279 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-womfite5 (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-12 13:49:07,428 - INFO - openhands.agent_server.docker.build - [build] Built 1 sdists for clean context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-womfite5/unknown-0.0.0.tar.gz
+2026-05-12 13:49:07,642 - INFO - openhands.agent_server.docker.build - [build] Clean build context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-gy0j87ny/unknown-0.0.0
+2026-05-12 13:49:07,643 - INFO - openhands.agent_server.docker.build - $ docker buildx inspect --bootstrap (cwd=None)
+2026-05-12 13:49:08,123 - WARNING - openhands.agent_server.docker.build - [build] WARNING: Active buildx driver is 'docker', which does not support local dir caching. Fallback to INLINE CACHE
+ Consider running the following commands to set up a compatible buildx environment:
+  1. docker buildx create --name openhands-builder --driver docker-container --use
+  2. docker buildx inspect --bootstrap
+
+2026-05-12 13:49:08,123 - INFO - openhands.agent_server.docker.build - [build] Cache: inline only (driver=docker)
+2026-05-12 13:49:08,123 - INFO - openhands.agent_server.docker.build - [build] Building target='source-minimal' image='ghcr.io/openhands/eval-agent-server' custom_tags='3e0a3a0-35d813f' from base='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' for platforms='local-arch'
+2026-05-12 13:49:08,123 - INFO - openhands.agent_server.docker.build - [build] Git ref='unknown' sha='3e0a3a0915b369c7e2057c77722e98585855d30a' package_version='1.16.1'
+2026-05-12 13:49:08,123 - INFO - openhands.agent_server.docker.build - [build] Cache tag: buildcache-source-minimal-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795
+2026-05-12 13:49:08,123 - INFO - openhands.agent_server.docker.build - $ docker buildx build --file /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile --target source-minimal --build-arg BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest --build-arg OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a --build-arg OPENHANDS_BUILD_GIT_REF=unknown --load --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal --build-arg BUILDKIT_INLINE_CACHE=1 /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-gy0j87ny/unknown-0.0.0 (cwd=/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-gy0j87ny/unknown-0.0.0)
+2026-05-12 13:49:10,980 - INFO - openhands.agent_server.docker.build - [build] Cleaning /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-gy0j87ny/unknown-0.0.0
+2026-05-12 13:49:11,105 - INFO - openhands.agent_server.docker.build - [build] Done. Tags:
+2026-05-12 13:49:11,105 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal
+2026-05-12 13:49:11,105 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal
+2026-05-12 13:49:11,106 - INFO - openhands.agent_server.docker.build - [build] Telemetry: {"build_context_seconds":3.364,"buildx_wall_clock_seconds":2.856,"cleanup_seconds":0.126,"cache_import_seconds":0.0,"cache_import_miss_count":0,"cache_export_seconds":0.0,"image_export_seconds":0.2,"push_layers_seconds":0.0,"export_manifest_seconds":0.0,"cached_step_count":15}
+2026-05-12 13:49:11,106 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-12T11:49:11.106212+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal'] error=None log_path=None status='built' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=6.828 post_build_seconds=None sdk_build_context_seconds=3.364 sdk_buildx_wall_clock_seconds=2.856 sdk_cleanup_seconds=0.126 sdk_cache_import_seconds=0.0 sdk_cache_import_miss_count=0 sdk_cache_export_seconds=0.0 sdk_image_export_seconds=0.2 sdk_push_layers_seconds=0.0 sdk_export_manifest_seconds=0.0 sdk_cached_step_count=15
+2026-05-12 13:49:11,106 - WARNING - benchmarks.utils.build_utils - Expected tag ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not in built tags ['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal']. Creating tag alias: ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal → ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 13:49:11,205 - INFO - benchmarks.utils.build_utils - Successfully created image tag: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 13:49:11,346 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 13:49:11,654 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-e7c1c61a-a5ba-4c33-9aa9-7ac4615240ad -e LMNR_SPAN_CONTEXT=null -p 36121:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 13:49:12,460 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-12 13:49:12,460 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 254, in prepare_workspace
+    workspace = DockerWorkspace(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/utils/models.py", line 132, in _validate_subtype
+    return handler(data)
+           ^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/_internal/_model_construction.py", line 146, in wrapped_model_post_init
+    original_model_post_init(self, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 154, in model_post_init
+    self._start_container(image, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 259, in _start_container
+    raise RuntimeError(f"Failed to run docker container: {proc.stderr}")
+RuntimeError: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+
+2026-05-12 14:21:51,703 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 14:21:51,705 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-12 14:22:06,588 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-12 14:22:06,589 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-12 14:22:07,296 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-12 14:22:07,296 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-12 14:22:07,392 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-12 14:22:07,396 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-12 14:22:07,397 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-twtpjk3x (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-12 14:22:10,698 - INFO - openhands.agent_server.docker.build - [build] Built 1 sdists for clean context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-twtpjk3x/unknown-0.0.0.tar.gz
+2026-05-12 14:22:10,984 - INFO - openhands.agent_server.docker.build - [build] Clean build context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-kqyxkf3z/unknown-0.0.0
+2026-05-12 14:22:10,984 - INFO - openhands.agent_server.docker.build - $ docker buildx inspect --bootstrap (cwd=None)
+2026-05-12 14:22:11,544 - WARNING - openhands.agent_server.docker.build - [build] WARNING: Active buildx driver is 'docker', which does not support local dir caching. Fallback to INLINE CACHE
+ Consider running the following commands to set up a compatible buildx environment:
+  1. docker buildx create --name openhands-builder --driver docker-container --use
+  2. docker buildx inspect --bootstrap
+
+2026-05-12 14:22:11,544 - INFO - openhands.agent_server.docker.build - [build] Cache: inline only (driver=docker)
+2026-05-12 14:22:11,544 - INFO - openhands.agent_server.docker.build - [build] Building target='source-minimal' image='ghcr.io/openhands/eval-agent-server' custom_tags='3e0a3a0-35d813f' from base='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' for platforms='local-arch'
+2026-05-12 14:22:11,545 - INFO - openhands.agent_server.docker.build - [build] Git ref='unknown' sha='3e0a3a0915b369c7e2057c77722e98585855d30a' package_version='1.16.1'
+2026-05-12 14:22:11,545 - INFO - openhands.agent_server.docker.build - [build] Cache tag: buildcache-source-minimal-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795
+2026-05-12 14:22:11,545 - INFO - openhands.agent_server.docker.build - $ docker buildx build --file /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile --target source-minimal --build-arg BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest --build-arg OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a --build-arg OPENHANDS_BUILD_GIT_REF=unknown --load --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal --build-arg BUILDKIT_INLINE_CACHE=1 /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-kqyxkf3z/unknown-0.0.0 (cwd=/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-kqyxkf3z/unknown-0.0.0)
+2026-05-12 14:22:14,630 - INFO - openhands.agent_server.docker.build - [build] Cleaning /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-kqyxkf3z/unknown-0.0.0
+2026-05-12 14:22:14,764 - INFO - openhands.agent_server.docker.build - [build] Done. Tags:
+2026-05-12 14:22:14,764 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal
+2026-05-12 14:22:14,764 - INFO - openhands.agent_server.docker.build -  - ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal
+2026-05-12 14:22:14,764 - INFO - openhands.agent_server.docker.build - [build] Telemetry: {"build_context_seconds":3.588,"buildx_wall_clock_seconds":3.085,"cleanup_seconds":0.134,"cache_import_seconds":0.0,"cache_import_miss_count":0,"cache_export_seconds":0.0,"image_export_seconds":0.2,"push_layers_seconds":0.0,"export_manifest_seconds":0.0,"cached_step_count":15}
+2026-05-12 14:22:14,764 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-12T12:22:14.764513+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal'] error=None log_path=None status='built' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=7.368 post_build_seconds=None sdk_build_context_seconds=3.588 sdk_buildx_wall_clock_seconds=3.085 sdk_cleanup_seconds=0.134 sdk_cache_import_seconds=0.0 sdk_cache_import_miss_count=0 sdk_cache_export_seconds=0.0 sdk_image_export_seconds=0.2 sdk_push_layers_seconds=0.0 sdk_export_manifest_seconds=0.0 sdk_cached_step_count=15
+2026-05-12 14:22:14,764 - WARNING - benchmarks.utils.build_utils - Expected tag ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not in built tags ['ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1191_tag_latest-eeed97319795-source-minimal']. Creating tag alias: ghcr.io/openhands/eval-agent-server:3e0a3a0-3e0a3a0-35d813f-source-minimal → ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 14:22:14,847 - INFO - benchmarks.utils.build_utils - Successfully created image tag: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal
+2026-05-12 14:22:14,986 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 14:22:15,016 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-9965b828-3196-4397-9d78-f2b952ac40d3 -e LMNR_SPAN_CONTEXT=null -p 37995:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 14:22:15,719 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-12 14:22:15,719 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 254, in prepare_workspace
+    workspace = DockerWorkspace(
+                ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/utils/models.py", line 132, in _validate_subtype
+    return handler(data)
+           ^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/pydantic/_internal/_model_construction.py", line 146, in wrapped_model_post_init
+    original_model_post_init(self, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 154, in model_post_init
+    self._start_container(image, context)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-workspace/openhands/workspace/docker/workspace.py", line 259, in _start_container
+    raise RuntimeError(f"Failed to run docker container: {proc.stderr}")
+RuntimeError: Failed to run docker container: Unable to find image 'ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal' locally
+docker: Error response from daemon: failed to resolve reference "ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal": ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal: not found
+
+Run 'docker run --help' for more information
+

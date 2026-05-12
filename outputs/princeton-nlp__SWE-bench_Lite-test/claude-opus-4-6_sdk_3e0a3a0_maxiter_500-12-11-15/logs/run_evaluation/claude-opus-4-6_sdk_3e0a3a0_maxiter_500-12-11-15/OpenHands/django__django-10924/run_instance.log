@@ -1,0 +1,139 @@
+2026-05-12 14:22:18,101 - INFO - Creating container for django__django-10924...
+2026-05-12 14:22:18,141 - INFO - Container for django__django-10924 created: d9e131aacd4cdba4f736df6f2f7a6ff0d1f06499ee4acf0ca7b642b46a9c77df
+2026-05-12 14:22:18,212 - INFO - Container for django__django-10924 started: d9e131aacd4cdba4f736df6f2f7a6ff0d1f06499ee4acf0ca7b642b46a9c77df
+2026-05-12 14:22:18,212 - INFO - Intermediate patch for django__django-10924 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-10924/patch.diff, now applying to container...
+2026-05-12 14:22:18,414 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/fields/__init__.py...
+Checking patch django/forms/fields.py...
+Applied patch django/db/models/fields/__init__.py cleanly.
+Applied patch django/forms/fields.py cleanly.
+
+2026-05-12 14:22:21,370 - INFO - Git diff before:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 0c64748ccd..e9f9f82b7c 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1668,6 +1668,14 @@ class FilePathField(Field):
+         kwargs.setdefault('max_length', 100)
+         super().__init__(verbose_name, name, **kwargs)
+ 
++    @property
++    def path(self):
++        return self._path() if callable(self._path) else self._path
++
++    @path.setter
++    def path(self, value):
++        self._path = value
++
+     def check(self, **kwargs):
+         return [
+             *super().check(**kwargs),
+@@ -1688,7 +1696,7 @@ class FilePathField(Field):
+     def deconstruct(self):
+         name, path, args, kwargs = super().deconstruct()
+         if self.path != '':
+-            kwargs['path'] = self.path
++            kwargs['path'] = self._path
+         if self.match is not None:
+             kwargs['match'] = self.match
+         if self.recursive is not False:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..a8150789a0 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1078,7 +1078,7 @@ class MultiValueField(Field):
+ class FilePathField(ChoiceField):
+     def __init__(self, path, *, match=None, recursive=False, allow_files=True,
+                  allow_folders=False, **kwargs):
+-        self.path, self.match, self.recursive = path, match, recursive
++        self.path, self.match, self.recursive = path() if callable(path) else path, match, recursive
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+ 
+@@ -1096,14 +1096,14 @@ class FilePathField(ChoiceField):
+                     for f in sorted(files):
+                         if self.match is None or self.match_re.search(f):
+                             f = os.path.join(root, f)
+-                            self.choices.append((f, f.replace(path, "", 1)))
++                            self.choices.append((f, f.replace(self.path, "", 1)))
+                 if self.allow_folders:
+                     for f in sorted(dirs):
+                         if f == '__pycache__':
+                             continue
+                         if self.match is None or self.match_re.search(f):
+                             f = os.path.join(root, f)
+-                            self.choices.append((f, f.replace(path, "", 1)))
++                            self.choices.append((f, f.replace(self.path, "", 1)))
+         else:
+             choices = []
+             for f in os.scandir(self.path):
+2026-05-12 14:22:21,370 - INFO - Eval script for django__django-10924 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-10924/eval.sh; copying to container...
+2026-05-12 14:22:49,176 - INFO - Test runtime: 27.73 seconds
+2026-05-12 14:22:49,177 - INFO - Test output for django__django-10924 written to logs/run_evaluation/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/OpenHands/django__django-10924/test_output.txt
+2026-05-12 14:22:49,335 - INFO - Git diff after:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 0c64748ccd..e9f9f82b7c 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1668,6 +1668,14 @@ class FilePathField(Field):
+         kwargs.setdefault('max_length', 100)
+         super().__init__(verbose_name, name, **kwargs)
+ 
++    @property
++    def path(self):
++        return self._path() if callable(self._path) else self._path
++
++    @path.setter
++    def path(self, value):
++        self._path = value
++
+     def check(self, **kwargs):
+         return [
+             *super().check(**kwargs),
+@@ -1688,7 +1696,7 @@ class FilePathField(Field):
+     def deconstruct(self):
+         name, path, args, kwargs = super().deconstruct()
+         if self.path != '':
+-            kwargs['path'] = self.path
++            kwargs['path'] = self._path
+         if self.match is not None:
+             kwargs['match'] = self.match
+         if self.recursive is not False:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..a8150789a0 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1078,7 +1078,7 @@ class MultiValueField(Field):
+ class FilePathField(ChoiceField):
+     def __init__(self, path, *, match=None, recursive=False, allow_files=True,
+                  allow_folders=False, **kwargs):
+-        self.path, self.match, self.recursive = path, match, recursive
++        self.path, self.match, self.recursive = path() if callable(path) else path, match, recursive
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+ 
+@@ -1096,14 +1096,14 @@ class FilePathField(ChoiceField):
+                     for f in sorted(files):
+                         if self.match is None or self.match_re.search(f):
+                             f = os.path.join(root, f)
+-                            self.choices.append((f, f.replace(path, "", 1)))
++                            self.choices.append((f, f.replace(self.path, "", 1)))
+                 if self.allow_folders:
+                     for f in sorted(dirs):
+                         if f == '__pycache__':
+                             continue
+                         if self.match is None or self.match_re.search(f):
+                             f = os.path.join(root, f)
+-                            self.choices.append((f, f.replace(path, "", 1)))
++                            self.choices.append((f, f.replace(self.path, "", 1)))
+         else:
+             choices = []
+             for f in os.scandir(self.path):
+2026-05-12 14:22:49,335 - INFO - Grading answer for django__django-10924...
+2026-05-12 14:22:49,336 - INFO - report: {'django__django-10924': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_callable_path (model_fields.test_filepathfield.FilePathFieldTests)']}, 'PASS_TO_PASS': {'success': ['test_path (model_fields.test_filepathfield.FilePathFieldTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-10924: resolved: False
+2026-05-12 14:22:49,337 - INFO - Attempting to stop container sweb.eval.django__django-10924.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:04,481 - INFO - Attempting to remove container sweb.eval.django__django-10924.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15...
+2026-05-12 14:23:04,532 - INFO - Container sweb.eval.django__django-10924.claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15 removed.
+2026-05-12 14:23:04,532 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-10924:latest...
+2026-05-12 14:23:04,580 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-10924:latest removed.

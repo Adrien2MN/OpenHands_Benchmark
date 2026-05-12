@@ -1,0 +1,62 @@
+{
+  "directory": "outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15",
+  "timestamp": "2026-05-12T14:30:48.692574",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 45,
+    "cost": 131.05345,
+    "time_statistics": {
+      "average_duration": 776.8632027111112,
+      "total_duration": 34958.844122,
+      "total_lines": 45,
+      "lines_with_duration": 45
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 50,
+      "cost": 116.71530499999999,
+      "time_statistics": {
+        "average_duration": 752.789604095238,
+        "total_duration": 31617.163372,
+        "total_lines": 50,
+        "lines_with_duration": 42
+      }
+    },
+    {
+      "filename": "output.critic_attempt_2.jsonl",
+      "lines": 8,
+      "cost": 14.338145,
+      "time_statistics": {
+        "average_duration": 1113.8935833333333,
+        "total_duration": 3341.68075,
+        "total_lines": 8,
+        "lines_with_duration": 3
+      }
+    },
+    {
+      "filename": "output.critic_attempt_3.jsonl",
+      "lines": 2,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 0.0,
+        "total_duration": 0.0,
+        "total_lines": 2,
+        "lines_with_duration": 0
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 131.05345,
+    "total_duration": 34958.844122,
+    "only_main_output_cost": 131.05345,
+    "sum_critic_files": 131.05345
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

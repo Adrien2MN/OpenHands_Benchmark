@@ -31,6 +31,7 @@ AVAILABLE_MODELS = [
     "deepseek-v3.1",
     "deepseek-v3-1",
     "kimi-k2.6",
+    "claude-opus-4-6",
     "claude-opus-4-7",
     "o1",
 ]
