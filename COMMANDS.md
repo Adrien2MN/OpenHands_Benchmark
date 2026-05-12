@@ -8,9 +8,9 @@ uv run swebench-lite-build-images \
 
 
 INFER : 
-uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json \
+uv run swebench-lite-infer .llm_config/litellm-kimi-k2-6.json \
   --n-limit 50 \
-  --num-workers 1 \
+  --num-workers 3 \
   --workspace docker
 
 uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json\
