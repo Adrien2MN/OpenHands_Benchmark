@@ -1,0 +1,73 @@
+2026-05-11 10:20:26,069 - INFO - Creating container for astropy__astropy-12907...
+2026-05-11 10:20:26,334 - INFO - Container for astropy__astropy-12907 created: dc2fc38698b32e9a9e7ce826a33ab11a82c83020c493962e1ce53598a8fb5d3a
+2026-05-11 10:20:26,811 - INFO - Container for astropy__astropy-12907 started: dc2fc38698b32e9a9e7ce826a33ab11a82c83020c493962e1ce53598a8fb5d3a
+2026-05-11 10:20:26,811 - INFO - Intermediate patch for astropy__astropy-12907 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/astropy__astropy-12907/patch.diff, now applying to container...
+2026-05-11 10:20:27,172 - INFO - >>>>> Applied Patch:
+Checking patch astropy/modeling/separable.py...
+Applied patch astropy/modeling/separable.py cleanly.
+
+2026-05-11 10:20:29,133 - INFO - Git diff before:
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..961391dc5 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -186,6 +186,13 @@ def _coord_matrix(model, pos, noutp):
+         is a left or right child.
+ 
+     """
++    from .core import CompoundModel
++
++    if isinstance(model, CompoundModel):
++        cleft = _coord_matrix(model.left, 'left', noutp)
++        cright = _coord_matrix(model.right, 'right', noutp)
++        return np.hstack([cleft, cright])
++
+     if isinstance(model, Mapping):
+         axes = []
+         for i in model.mapping:
+@@ -216,6 +223,7 @@ def _coord_matrix(model, pos, noutp):
+     return mat
+ 
+ 
++
+ def _cstack(left, right):
+     """
+     Function corresponding to '&' operation.
+2026-05-11 10:20:29,134 - INFO - Eval script for astropy__astropy-12907 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/astropy__astropy-12907/eval.sh; copying to container...
+2026-05-11 10:23:12,125 - INFO - Test runtime: 162.80 seconds
+2026-05-11 10:23:12,126 - INFO - Test output for astropy__astropy-12907 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/astropy__astropy-12907/test_output.txt
+2026-05-11 10:23:12,240 - INFO - Git diff after:
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..961391dc5 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -186,6 +186,13 @@ def _coord_matrix(model, pos, noutp):
+         is a left or right child.
+ 
+     """
++    from .core import CompoundModel
++
++    if isinstance(model, CompoundModel):
++        cleft = _coord_matrix(model.left, 'left', noutp)
++        cright = _coord_matrix(model.right, 'right', noutp)
++        return np.hstack([cleft, cright])
++
+     if isinstance(model, Mapping):
+         axes = []
+         for i in model.mapping:
+@@ -216,6 +223,7 @@ def _coord_matrix(model, pos, noutp):
+     return mat
+ 
+ 
++
+ def _cstack(left, right):
+     """
+     Function corresponding to '&' operation.
+2026-05-11 10:23:12,241 - INFO - Grading answer for astropy__astropy-12907...
+2026-05-11 10:23:12,243 - INFO - report: {'astropy__astropy-12907': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]']}, 'PASS_TO_PASS': {'success': ['astropy/modeling/tests/test_separable.py::test_coord_matrix', 'astropy/modeling/tests/test_separable.py::test_cdot', 'astropy/modeling/tests/test_separable.py::test_cstack', 'astropy/modeling/tests/test_separable.py::test_arith_oper', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]', 'astropy/modeling/tests/test_separable.py::test_custom_model_separable'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-12907: resolved: False
+2026-05-11 10:23:12,244 - INFO - Attempting to stop container sweb.eval.astropy__astropy-12907.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:27,395 - INFO - Attempting to remove container sweb.eval.astropy__astropy-12907.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:27,444 - INFO - Container sweb.eval.astropy__astropy-12907.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:23:27,444 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest...
+2026-05-11 10:23:27,489 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest removed.

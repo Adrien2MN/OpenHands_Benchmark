@@ -1,0 +1,37 @@
+diff --git a/django/http/response.py b/django/http/response.py
+index 6a84e193ba..f967096f2e 100644
+--- a/django/http/response.py
++++ b/django/http/response.py
+@@ -308,6 +308,9 @@ class HttpResponse(HttpResponseBase):
+ 
+     @content.setter
+     def content(self, value):
++        # Special case for memoryview: convert to bytes first
++        if isinstance(value, memoryview):
++            value = value.tobytes()
+         # Consume iterators upon assignment to allow repeated iteration.
+         if hasattr(value, '__iter__') and not isinstance(value, (bytes, str)):
+             content = b''.join(self.make_bytes(chunk) for chunk in value)
+diff --git a/reproduce_memoryview_response.py b/reproduce_memoryview_response.py
+new file mode 100644
+index 0000000000..db02f8862c
+--- /dev/null
++++ b/reproduce_memoryview_response.py
+@@ -0,0 +1,17 @@
++import os
++
++# Set environment variables before importing django
++if not os.environ.get('DJANGO_SETTINGS_MODULE'):
++    os.environ['DJANGO_SETTINGS_MODULE'] = 'django.conf.global_settings'
++if not os.environ.get('SECRET_KEY'):
++    os.environ['SECRET_KEY'] = 'fake'
++
++from django.http import HttpResponse
++
++# Create HttpResponse with bytes content
++response_bytes = HttpResponse(b"My Content")
++print("Bytes content:", response_bytes.content)
++
++# Create HttpResponse with memoryview content
++response_memoryview = HttpResponse(memoryview(b"My Content"))
++print("Memoryview content:", response_memoryview.content)

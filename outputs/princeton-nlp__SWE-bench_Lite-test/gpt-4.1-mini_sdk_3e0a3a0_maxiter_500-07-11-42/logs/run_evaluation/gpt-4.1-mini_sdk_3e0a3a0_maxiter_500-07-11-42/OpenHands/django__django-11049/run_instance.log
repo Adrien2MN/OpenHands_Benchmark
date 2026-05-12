@@ -1,0 +1,61 @@
+2026-05-11 10:20:26,050 - INFO - Creating container for django__django-11049...
+2026-05-11 10:20:26,263 - INFO - Container for django__django-11049 created: e0645b523bfb474f3358c73a570ddf1a073d3ba8ce8149a520408519e5cb56f4
+2026-05-11 10:20:26,725 - INFO - Container for django__django-11049 started: e0645b523bfb474f3358c73a570ddf1a073d3ba8ce8149a520408519e5cb56f4
+2026-05-11 10:20:26,725 - INFO - Intermediate patch for django__django-11049 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11049/patch.diff, now applying to container...
+2026-05-11 10:20:27,063 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/fields/__init__.py...
+Applied patch django/db/models/fields/__init__.py cleanly.
+
+2026-05-11 10:20:32,747 - INFO - Git diff before:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index f32ce64629..beca3fe4c6 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1578,6 +1578,16 @@ class DecimalField(Field):
+ 
+ 
+ class DurationField(Field):
++    default_error_messages = {
++        'invalid': _('Enter a valid duration in the format [DD] [[HH:]MM:]ss[.uuuuuu].'),
++    }
++
++    def __init__(self, verbose_name=None, name=None, **kwargs):
++        if 'help_text' not in kwargs:
++            kwargs['help_text'] = _(
++                'Duration in the format [DD] [[HH:]MM:]ss[.uuuuuu]. Seconds are mandatory, minutes and hours are optional.')
++        super().__init__(verbose_name, name, **kwargs)
++
+     """
+     Store timedelta objects.
+2026-05-11 10:20:32,748 - INFO - Eval script for django__django-11049 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11049/eval.sh; copying to container...
+2026-05-11 10:21:03,424 - INFO - Test runtime: 30.57 seconds
+2026-05-11 10:21:03,425 - INFO - Test output for django__django-11049 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11049/test_output.txt
+2026-05-11 10:21:03,591 - INFO - Git diff after:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index f32ce64629..beca3fe4c6 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1578,6 +1578,16 @@ class DecimalField(Field):
+ 
+ 
+ class DurationField(Field):
++    default_error_messages = {
++        'invalid': _('Enter a valid duration in the format [DD] [[HH:]MM:]ss[.uuuuuu].'),
++    }
++
++    def __init__(self, verbose_name=None, name=None, **kwargs):
++        if 'help_text' not in kwargs:
++            kwargs['help_text'] = _(
++                'Duration in the format [DD] [[HH:]MM:]ss[.uuuuuu]. Seconds are mandatory, minutes and hours are optional.')
++        super().__init__(verbose_name, name, **kwargs)
++
+     """
+     Store timedelta objects.
+2026-05-11 10:21:03,591 - INFO - Grading answer for django__django-11049...
+2026-05-11 10:21:03,592 - INFO - report: {'django__django-11049': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_invalid_string (model_fields.test_durationfield.TestValidation)']}, 'PASS_TO_PASS': {'success': ['test_dumping (model_fields.test_durationfield.TestSerialization)', 'test_loading (model_fields.test_durationfield.TestSerialization)', 'test_formfield (model_fields.test_durationfield.TestFormField)', 'test_exact (model_fields.test_durationfield.TestQuerying)', 'test_gt (model_fields.test_durationfield.TestQuerying)', 'test_create_empty (model_fields.test_durationfield.TestSaveLoad)', 'test_fractional_seconds (model_fields.test_durationfield.TestSaveLoad)', 'test_simple_roundtrip (model_fields.test_durationfield.TestSaveLoad)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11049: resolved: False
+2026-05-11 10:21:03,593 - INFO - Attempting to stop container sweb.eval.django__django-11049.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:21:18,764 - INFO - Attempting to remove container sweb.eval.django__django-11049.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:21:18,845 - INFO - Container sweb.eval.django__django-11049.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:21:18,845 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11049:latest...
+2026-05-11 10:21:18,913 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11049:latest removed.

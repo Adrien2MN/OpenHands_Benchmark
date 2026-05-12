@@ -1,0 +1,80 @@
+2026-05-11 19:30:20,376 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 19:30:20,376 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-11 19:30:20,948 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-11 19:30:20,948 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-11 19:30:21,100 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-11 19:30:21,100 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-11 19:30:21,110 - INFO - openhands.agent_server.docker.build - $ git rev-parse --verify HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-11 19:30:21,150 - INFO - openhands.agent_server.docker.build - $ git symbolic-ref -q --short HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-11 19:30:21,254 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-11 19:30:21,258 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-11 19:30:21,259 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_0v3rfq_ (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-11 19:30:26,267 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-11T17:30:26.267140+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=[] error="CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_0v3rfq_'])" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=5.009 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-05-11 19:30:26,267 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-11 19:30:26,267 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_0v3rfq_'])
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 210, in prepare_workspace
+    build_result = ensure_local_image(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/build_utils.py", line 597, in ensure_local_image
+    raise RuntimeError(f"Image build failed: {output.error}")
+RuntimeError: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-_0v3rfq_'])
+2026-05-11 20:16:52,222 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 20:16:52,223 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-11 20:16:52,696 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-11 20:16:52,696 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-11 20:16:52,866 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-11 20:16:52,866 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-11 20:16:52,982 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-11 20:16:52,986 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-11 20:16:52,987 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-p23bvcfa (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-11 20:17:04,401 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-11T18:17:04.400896+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=[] error="CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-p23bvcfa'])" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=11.414 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-05-11 20:17:04,401 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-11 20:17:04,401 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-p23bvcfa'])
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 210, in prepare_workspace
+    build_result = ensure_local_image(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/build_utils.py", line 597, in ensure_local_image
+    raise RuntimeError(f"Image build failed: {output.error}")
+RuntimeError: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-p23bvcfa'])
+2026-05-11 21:03:19,292 - INFO - root - === Evaluation Started (instance django__django-11910) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11910.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 21:03:19,293 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11910
+2026-05-11 21:03:19,774 - WARNING - benchmarks.utils.build_utils - Local cached image exists but is not runnable for docker workspace: ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal. Rebuilding.
+2026-05-11 21:03:19,775 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-11 21:03:19,913 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11910-source-minimal failed (exit=1). Falling back to local build.
+2026-05-11 21:03:19,913 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest...
+2026-05-11 21:03:20,036 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-05-11 21:03:20,045 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest even if it exists.
+2026-05-11 21:03:20,051 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-st66lyrw (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-05-11 21:03:24,483 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-11T19:03:24.483149+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11910:latest' tags=[] error="CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-st66lyrw'])" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=4.437 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-05-11 21:03:24,483 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11910: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-11 21:03:24,483 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11910 failed after 1 attempts. Last error: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-st66lyrw'])
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 210, in prepare_workspace
+    build_result = ensure_local_image(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/build_utils.py", line 597, in ensure_local_image
+    raise RuntimeError(f"Image build failed: {output.error}")
+RuntimeError: Image build failed: CalledProcessError(2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-st66lyrw'])

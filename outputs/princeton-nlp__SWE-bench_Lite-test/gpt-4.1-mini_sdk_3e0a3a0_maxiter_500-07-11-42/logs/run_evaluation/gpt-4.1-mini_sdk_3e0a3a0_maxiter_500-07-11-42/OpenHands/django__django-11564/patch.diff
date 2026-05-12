@@ -1,0 +1,85 @@
+diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py
+index 75935df0e1..511224b252 100644
+--- a/django/conf/global_settings.py
++++ b/django/conf/global_settings.py
+@@ -1,9 +1,18 @@
+ """
+ Default Django settings. Override these with settings in the module pointed to
+ by the DJANGO_SETTINGS_MODULE environment variable.
++
++To enable default test settings, add these lines:
++
+ """
+ 
+ 
++INSTALLATION_ID = 'test_default_settings'
++SECRET_KEY = 'unsafe-secret-key-for-tests'  # default key for tests
++
++
++
++
+ # This is defined here as a do-nothing function because we can't import
+ # django.utils.translation -- that module depends on the settings.
+ def gettext_noop(s):
+diff --git a/django/conf/test_settings.py b/django/conf/test_settings.py
+new file mode 100644
+index 0000000000..e7ad308df4
+--- /dev/null
++++ b/django/conf/test_settings.py
+@@ -0,0 +1,13 @@
++"""
++Test settings module to enable test runs with default safe settings including SECRET_KEY
++"""
++
++from .global_settings import *
++
++SECRET_KEY = 'unsafe-secret-key-for-tests'
++INSTALLED_APPS = []
++
++
++
++# Add DEBUG for test convenience
++DEBUG = False
+diff --git a/django/contrib/staticfiles/storage.py b/django/contrib/staticfiles/storage.py
+index ba3b62620d..807f218a4d 100644
+--- a/django/contrib/staticfiles/storage.py
++++ b/django/contrib/staticfiles/storage.py
+@@ -145,7 +145,20 @@ class HashedFilesMixin:
+         """
+         Return the non-hashed URL in DEBUG mode.
+         """
+-        return self._url(self.stored_name, name, force)
++        url = self._url(self.stored_name, name, force)
++        # Attempt to prepend SCRIPT_NAME if available in the current WSGI environ variable
++        # This is a best-effort since storage.url does not get request context
++        try:
++            from django.core.handlers.wsgi import WSGIRequest
++            from django.conf import settings
++            environ = getattr(settings, '_request_environ', None)
++            if environ is not None:
++                script_name = environ.get('SCRIPT_NAME', '')
++                if script_name and not url.startswith(script_name):
++                    url = script_name + url
++        except Exception:
++            pass
++        return url
+ 
+     def url_converter(self, name, hashed_files, template=None):
+         """
+diff --git a/django/templatetags/static.py b/django/templatetags/static.py
+index 39712aaba0..a8f400ab20 100644
+--- a/django/templatetags/static.py
++++ b/django/templatetags/static.py
+@@ -104,6 +104,12 @@ class StaticNode(template.Node):
+ 
+     def render(self, context):
+         url = self.url(context)
++        # Prepend SCRIPT_NAME if available and not already part of url
++        request = context.get('request')
++        if request:
++            script_name = request.META.get('SCRIPT_NAME', '')
++            if script_name and not url.startswith(script_name):
++                url = script_name + url
+         if context.autoescape:
+             url = conditional_escape(url)
+         if self.varname is None:

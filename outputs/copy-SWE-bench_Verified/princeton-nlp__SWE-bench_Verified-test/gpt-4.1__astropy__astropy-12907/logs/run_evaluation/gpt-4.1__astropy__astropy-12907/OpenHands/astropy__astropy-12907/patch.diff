@@ -1,0 +1,86 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..135cc80e6 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -220,6 +220,8 @@ def _cstack(left, right):
+     """
+     Function corresponding to '&' operation.
+ 
++    Fix: Recursively flatten nested CompoundModels and stack their separability matrices.
++
+     Parameters
+     ----------
+     left, right : `astropy.modeling.Model` or ndarray
+@@ -231,20 +233,35 @@ def _cstack(left, right):
+         Result from this operation.
+ 
+     """
+-    noutp = _compute_n_outputs(left, right)
+-
+-    if isinstance(left, Model):
+-        cleft = _coord_matrix(left, 'left', noutp)
+-    else:
+-        cleft = np.zeros((noutp, left.shape[1]))
+-        cleft[: left.shape[0], : left.shape[1]] = left
+-    if isinstance(right, Model):
+-        cright = _coord_matrix(right, 'right', noutp)
+-    else:
+-        cright = np.zeros((noutp, right.shape[1]))
+-        cright[-right.shape[0]:, -right.shape[1]:] = 1
++    def flatten_and_get_matrix(model, pos, noutp):
++        # Recursively expand CompoundModel with '&'
++        from .core import CompoundModel
++        if isinstance(model, CompoundModel) and model.op == '&':
++            matrices = []
++            # Flatten left and right
++            matrices.extend(flatten_and_get_matrix(model.left, 'left', _compute_n_outputs(model.left, model.right)))
++            matrices.extend(flatten_and_get_matrix(model.right, 'right', _compute_n_outputs(model.left, model.right)))
++            return matrices
++        elif isinstance(model, Model):
++            return [_coord_matrix(model, pos, noutp)]
++        else:
++            # Already an ndarray
++            return [model]
+ 
+-    return np.hstack([cleft, cright])
++    noutp = _compute_n_outputs(left, right)
++    matrices_left = flatten_and_get_matrix(left, 'left', noutp)
++    matrices_right = flatten_and_get_matrix(right, 'right', noutp)
++    # Stack block-diagonally
++    block_diag = np.zeros((noutp, sum([m.shape[1] for m in matrices_left + matrices_right]),), dtype=bool)
++    col_idx = 0
++    row_idx = 0
++    for m in matrices_left + matrices_right:
++        rows = m.shape[0]
++        cols = m.shape[1]
++        block_diag[row_idx:row_idx+rows, col_idx:col_idx+cols] = m
++        row_idx += rows
++        col_idx += cols
++    return block_diag
+ 
+ 
+ def _cdot(left, right):
+diff --git a/bug_repro_separability.py b/bug_repro_separability.py
+new file mode 100644
+index 000000000..dca2f6f50
+--- /dev/null
++++ b/bug_repro_separability.py
+@@ -0,0 +1,18 @@
++from astropy.modeling import models as m
++from astropy.modeling.separable import separability_matrix
++import numpy as np
++
++# Simple CompoundModel case
++cm = m.Linear1D(10) & m.Linear1D(5)
++print("Simple CompoundModel:")
++print(separability_matrix(cm))
++
++# Multiple CompoundModels combined
++complex_cm = m.Pix2Sky_TAN() & m.Linear1D(10) & m.Linear1D(5)
++print("Complex CompoundModel:")
++print(separability_matrix(complex_cm))
++
++# Nested CompoundModel (bug case)
++nested_cm = m.Pix2Sky_TAN() & cm
++print("Nested CompoundModel (expected block-diagonal):")
++print(separability_matrix(nested_cm))

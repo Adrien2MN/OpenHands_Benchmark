@@ -1,0 +1,70 @@
+diff --git a/astropy/io/ascii/html.py b/astropy/io/ascii/html.py
+index 266cf229c..ed935eed1 100644
+--- a/astropy/io/ascii/html.py
++++ b/astropy/io/ascii/html.py
+@@ -142,12 +142,18 @@ class HTMLOutputter(core.TableOutputter):
+     This subclass allows for the final table to contain
+     multidimensional columns (defined using the colspan attribute
+     of <th>).
++
++    Accepts a `formats` dictionary in the initializer to apply formatting to columns.
+     """
+ 
+     default_converters = [core.convert_numpy(int),
+                           core.convert_numpy(float),
+                           core.convert_numpy(str)]
+ 
++    def __init__(self, *args, formats=None, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.formats = formats or {}
++
+     def __call__(self, cols, meta):
+         """
+         Process the data in multidimensional columns.
+@@ -432,12 +438,20 @@ class HTML(core.BaseReader):
+ 
+                                     new_col_iter_str_vals = self.fill_values(
+                                         col, new_col.info.iter_str_vals())
++                                    # Apply formatting if available
++                                    if new_col.info.name in self.formats:
++                                        new_col_iter_str_vals = (self.formats[new_col.info.name](v) for v in new_col_iter_str_vals)
++
+                                     col_str_iters.append(new_col_iter_str_vals)
+                                     new_cols_escaped.append(col_escaped)
+                                     new_cols.append(new_col)
+                             else:
+ 
+                                 col_iter_str_vals = self.fill_values(col, col.info.iter_str_vals())
++                                # Apply formatting if available
++                                if col.info.name in self.formats:
++                                    col_iter_str_vals = (self.formats[col.info.name](v) for v in col_iter_str_vals)
++
+                                 col_str_iters.append(col_iter_str_vals)
+ 
+                                 new_cols_escaped.append(col_escaped)
+diff --git a/astropy/io/ascii/ui.py b/astropy/io/ascii/ui.py
+index bef801959..291a19b26 100644
+--- a/astropy/io/ascii/ui.py
++++ b/astropy/io/ascii/ui.py
+@@ -820,6 +820,9 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+     _validate_read_write_kwargs('write', format=format, fast_writer=fast_writer,
+                                 overwrite=overwrite, **kwargs)
+ 
++    # Extract formats if provided
++    formats = kwargs.pop('formats', None)
++
+     if isinstance(output, (str, bytes, os.PathLike)):
+         output = os.path.expanduser(output)
+         if not overwrite and os.path.lexists(output):
+@@ -852,6 +855,11 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+         fast_writer = False
+ 
+     Writer = _get_format_class(format, Writer, 'Writer')
++
++    # Pass formats arg explicitly for html format
++    if (format and format.lower() == 'html' and formats is not None):
++        kwargs['formats'] = formats
++
+     writer = get_writer(Writer=Writer, fast_writer=fast_writer, **kwargs)
+     if writer._format_name in core.FAST_CLASSES:
+         writer.write(table, output)

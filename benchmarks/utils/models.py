@@ -50,13 +50,20 @@ class EvalMetadata(BaseModel):
         "(one per line)",
     )
     max_retries: int = Field(
-        default=3,
+        default=0,
         ge=0,
         description="Maximum number of retries for instances that throw exceptions",
     )
     workspace_type: Literal["docker", "remote", "apptainer"] = Field(
         default="docker",
         description="Type of workspace to use, e.g., 'docker', 'remote', or 'apptainer'",
+    )
+    prebuilt_only: bool = Field(
+        default=False,
+        description=(
+            "Only evaluate instances whose workspace image already exists in the registry. "
+            "Missing images are filtered out before workspace creation."
+        ),
     )
     base_resource_factor: int = Field(
         default=1,

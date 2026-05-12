@@ -1,0 +1,71 @@
+2026-05-11 10:22:10,643 - INFO - Creating container for django__django-11999...
+2026-05-11 10:22:10,777 - INFO - Container for django__django-11999 created: 9b74fae2d4cf48f3d2535b6d2df0d3ada0eabd0405466bd702093466144c2615
+2026-05-11 10:22:10,959 - INFO - Container for django__django-11999 started: 9b74fae2d4cf48f3d2535b6d2df0d3ada0eabd0405466bd702093466144c2615
+2026-05-11 10:22:10,960 - INFO - Intermediate patch for django__django-11999 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11999/patch.diff, now applying to container...
+2026-05-11 10:22:11,362 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/base.py...
+Applied patch django/db/models/base.py cleanly.
+
+2026-05-11 10:22:15,837 - INFO - Git diff before:
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 0a5e5ff673..5f80dd255f 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -939,10 +939,20 @@ class Model(metaclass=ModelBase):
+     delete.alters_data = True
+ 
+     def _get_FIELD_display(self, field):
++        """Return the human readable value of a model field with choices.
++
++        This override allows subclasses to override get_FIELD_display manually to customize display.
++        """
++        method_name = f'get_{field.name}_display'
++        if hasattr(self, method_name) and getattr(self.__class__, method_name, None) is not getattr(self, method_name, None):
++            # If the instance has an overridden method with the same name different from the class method,
++            # call it to respect override instead of default implementation.
++            return getattr(self, method_name)()
+         value = getattr(self, field.attname)
+         # force_str() to coerce lazy strings.
+         return force_str(dict(field.flatchoices).get(value, value), strings_only=True)
+ 
++
+     def _get_next_or_previous_by_FIELD(self, field, is_next, **kwargs):
+         if not self.pk:
+             raise ValueError("get_next/get_previous cannot be used on unsaved objects.")
+2026-05-11 10:22:15,837 - INFO - Eval script for django__django-11999 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11999/eval.sh; copying to container...
+2026-05-11 10:22:39,188 - INFO - Test runtime: 23.26 seconds
+2026-05-11 10:22:39,188 - INFO - Test output for django__django-11999 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11999/test_output.txt
+2026-05-11 10:22:39,346 - INFO - Git diff after:
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 0a5e5ff673..5f80dd255f 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -939,10 +939,20 @@ class Model(metaclass=ModelBase):
+     delete.alters_data = True
+ 
+     def _get_FIELD_display(self, field):
++        """Return the human readable value of a model field with choices.
++
++        This override allows subclasses to override get_FIELD_display manually to customize display.
++        """
++        method_name = f'get_{field.name}_display'
++        if hasattr(self, method_name) and getattr(self.__class__, method_name, None) is not getattr(self, method_name, None):
++            # If the instance has an overridden method with the same name different from the class method,
++            # call it to respect override instead of default implementation.
++            return getattr(self, method_name)()
+         value = getattr(self, field.attname)
+         # force_str() to coerce lazy strings.
+         return force_str(dict(field.flatchoices).get(value, value), strings_only=True)
+ 
++
+     def _get_next_or_previous_by_FIELD(self, field, is_next, **kwargs):
+         if not self.pk:
+             raise ValueError("get_next/get_previous cannot be used on unsaved objects.")
+2026-05-11 10:22:39,346 - INFO - Grading answer for django__django-11999...
+2026-05-11 10:22:39,347 - INFO - report: {'django__django-11999': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_overriding_FIELD_display (model_fields.tests.GetFieldDisplayTests)']}, 'PASS_TO_PASS': {'success': ['test_blank_in_choices (model_fields.tests.GetChoicesTests)', 'test_blank_in_grouped_choices (model_fields.tests.GetChoicesTests)', 'test_empty_choices (model_fields.tests.GetChoicesTests)', 'test_lazy_strings_not_evaluated (model_fields.tests.GetChoicesTests)', 'test_check (model_fields.tests.ChoicesTests)', 'test_choices (model_fields.tests.ChoicesTests)', 'test_flatchoices (model_fields.tests.ChoicesTests)', 'test_formfield (model_fields.tests.ChoicesTests)', 'test_invalid_choice (model_fields.tests.ChoicesTests)', 'Can supply a custom choices form class to Field.formfield()', 'deconstruct() uses __qualname__ for nested class support.', 'Field instances can be pickled.', 'test_field_name (model_fields.tests.BasicFieldTests)', 'Fields are ordered based on their creation.', 'test_field_repr (model_fields.tests.BasicFieldTests)', '__repr__() uses __qualname__ for nested class support.', 'test_field_str (model_fields.tests.BasicFieldTests)', 'test_field_verbose_name (model_fields.tests.BasicFieldTests)', 'Field.formfield() sets disabled for fields with choices.', 'test_show_hidden_initial (model_fields.tests.BasicFieldTests)', 'test_empty_iterator_choices (model_fields.tests.GetFieldDisplayTests)', 'test_iterator_choices (model_fields.tests.GetFieldDisplayTests)', 'test_get_choices (model_fields.tests.GetChoicesLimitChoicesToTests)', 'test_get_choices_reverse_related_field (model_fields.tests.GetChoicesLimitChoicesToTests)', 'test_get_choices (model_fields.tests.GetChoicesOrderingTests)', 'test_get_choices_default_ordering (model_fields.tests.GetChoicesOrderingTests)', 'test_get_choices_reverse_related_field (model_fields.tests.GetChoicesOrderingTests)', 'test_get_choices_reverse_related_field_default_ordering (model_fields.tests.GetChoicesOrderingTests)'], 'failure': ['test_choices_and_field_display (model_fields.tests.GetFieldDisplayTests)', 'A translated display value is coerced to str.']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11999: resolved: False
+2026-05-11 10:22:39,349 - INFO - Attempting to stop container sweb.eval.django__django-11999.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:54,527 - INFO - Attempting to remove container sweb.eval.django__django-11999.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:54,604 - INFO - Container sweb.eval.django__django-11999.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:22:54,604 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11999:latest...
+2026-05-11 10:22:54,669 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11999:latest removed.

@@ -1,0 +1,57 @@
+2026-05-11 10:22:33,952 - INFO - Creating container for django__django-12113...
+2026-05-11 10:22:34,083 - INFO - Container for django__django-12113 created: 26704342e435cf27aa098ffaced68aebf397c2efd03ec7a185a50e15c11d636c
+2026-05-11 10:22:34,204 - INFO - Container for django__django-12113 started: 26704342e435cf27aa098ffaced68aebf397c2efd03ec7a185a50e15c11d636c
+2026-05-11 10:22:34,206 - INFO - Intermediate patch for django__django-12113 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12113/patch.diff, now applying to container...
+2026-05-11 10:22:34,483 - INFO - >>>>> Applied Patch:
+Checking patch django/db/backends/sqlite3/base.py...
+Applied patch django/db/backends/sqlite3/base.py cleanly.
+
+2026-05-11 10:22:36,787 - INFO - Git diff before:
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index a3ae1f048e..0487749a21 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -252,7 +252,12 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         return conn
+ 
+     def init_connection_state(self):
+-        pass
++        # Enable WAL journal mode for persistent test databases to reduce locking
++        if self.is_in_memory_db():
++            return
++        cursor = self.connection.cursor()
++        cursor.execute('PRAGMA journal_mode=WAL;')
++        cursor.close()
+ 
+     def create_cursor(self, name=None):
+         return self.connection.cursor(factory=SQLiteCursorWrapper)
+2026-05-11 10:22:36,787 - INFO - Eval script for django__django-12113 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12113/eval.sh; copying to container...
+2026-05-11 10:22:58,902 - INFO - Test runtime: 22.03 seconds
+2026-05-11 10:22:58,903 - INFO - Test output for django__django-12113 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12113/test_output.txt
+2026-05-11 10:22:59,131 - INFO - Git diff after:
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index a3ae1f048e..0487749a21 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -252,7 +252,12 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         return conn
+ 
+     def init_connection_state(self):
+-        pass
++        # Enable WAL journal mode for persistent test databases to reduce locking
++        if self.is_in_memory_db():
++            return
++        cursor = self.connection.cursor()
++        cursor.execute('PRAGMA journal_mode=WAL;')
++        cursor.close()
+ 
+     def create_cursor(self, name=None):
+         return self.connection.cursor(factory=SQLiteCursorWrapper)
+2026-05-11 10:22:59,131 - INFO - Grading answer for django__django-12113...
+2026-05-11 10:22:59,133 - INFO - report: {'django__django-12113': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_custom_test_name (backends.sqlite.test_creation.TestDbSignatureTests)']}, 'PASS_TO_PASS': {'success': [], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12113: resolved: False
+2026-05-11 10:22:59,134 - INFO - Attempting to stop container sweb.eval.django__django-12113.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:14,352 - INFO - Attempting to remove container sweb.eval.django__django-12113.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:14,435 - INFO - Container sweb.eval.django__django-12113.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:23:14,435 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-12113:latest...
+2026-05-11 10:23:14,519 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-12113:latest removed.

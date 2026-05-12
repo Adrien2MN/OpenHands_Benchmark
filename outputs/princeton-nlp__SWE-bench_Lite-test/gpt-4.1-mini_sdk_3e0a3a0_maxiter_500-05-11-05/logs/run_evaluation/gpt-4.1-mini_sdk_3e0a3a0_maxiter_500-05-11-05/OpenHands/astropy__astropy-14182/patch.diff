@@ -1,0 +1,51 @@
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index abdeba8ef..8877a6c72 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -57,10 +57,44 @@ class RST(FixedWidth):
+     data_class = SimpleRSTData
+     header_class = SimpleRSTHeader
+ 
+-    def __init__(self):
+-        super().__init__(delimiter_pad=None, bookend=False)
++    def __init__(self, *args, header_rows=None, **kwargs):
++        self.header_rows = header_rows
++        super().__init__(*args, delimiter_pad=None, bookend=False, **kwargs)
+ 
+     def write(self, lines):
++        # Override write method to support header_rows
++        if self.header_rows is not None:
++            # Compose the header lines with the header_rows content
++            header_lines = []
++            # Compose line with column names
++            header_lines.append(lines[1])  # Default header line with col names
++            # Add each additional header row data as a line
++            for hr in self.header_rows:
++                # hr is expected to be a list or tuple of strings for each column
++                # Build line by joining with spaces and padding
++                # A simple approach: align columns similar to lines[1]
++                split_indices = []
++                last_pos = 0
++                for i, c in enumerate(lines[1]):
++                    if c == " ":
++                        split_indices.append(i)
++                split_indices.append(len(lines[1]))
++                pos = 0
++                new_line = []
++                for i in range(len(hr)):
++                    start = split_indices[i - 1] if i > 0 else 0
++                    end = split_indices[i]
++                    val = hr[i]
++                    # Pad the val to fit in the column width
++                    col_width = end - start
++                    val_str = str(val).ljust(col_width)
++                    new_line.append(val_str)
++                new_header_line = "".join(new_line)
++                header_lines.append(new_header_line)
++            # Add original lines starting from header and data
++            lines = lines[:1] + header_lines + lines[2:]
++
+         lines = super().write(lines)
+         lines = [lines[1]] + lines + [lines[1]]
+         return lines
++

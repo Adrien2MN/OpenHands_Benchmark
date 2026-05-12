@@ -1,0 +1,41 @@
+{
+  "protocol": {
+    "benchmark": "SWE-bench",
+    "secondary_metrics": [
+      "generation_seconds",
+      "token_usage",
+      "energy_kwh",
+      "carbon_kg_co2e"
+    ]
+  },
+  "model": "o1",
+  "instances_total": 1,
+  "totals": {
+    "instances": 1,
+    "generation_seconds": 190.865,
+    "prompt_tokens": 40513,
+    "completion_tokens": 8246,
+    "total_tokens": 48759,
+    "energy_kwh": 0.015833501074579998,
+    "carbon_kg_co2e": 0.000809091904911038
+  },
+  "model_footprint": {
+    "gpu_consumption_kwh": 1.896624e-06,
+    "server_consumption_kwh": 2.351923e-08,
+    "total_electricity_kwh": 1.92014323e-06,
+    "co2e_operational_kg": 9.8119319053e-08,
+    "co2e_embodied_kg": null,
+    "co2e_total_kg": 9.8119319053e-08,
+    "co2e_factor_per_kwh": 0.0511,
+    "scenario_file": "o1-ecologits2-token-2.json",
+    "scenario_path": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/model_footprint/o1-ecologits2-token-2.json",
+    "electricity_grid_source": "sweden"
+  },
+  "artifacts": {
+    "input_output_jsonl": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/o1__astropy__astropy-12907/output.jsonl",
+    "reports_dir": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/o1__astropy__astropy-12907/report",
+    "instance_reports": [
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/o1__astropy__astropy-12907/report/report_astropy__astropy-12907.json"
+    ]
+  }
+}

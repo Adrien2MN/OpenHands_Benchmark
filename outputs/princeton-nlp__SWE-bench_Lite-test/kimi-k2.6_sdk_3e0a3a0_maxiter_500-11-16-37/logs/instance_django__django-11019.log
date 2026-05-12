@@ -1,0 +1,133 @@
+2026-05-11 17:22:29,130 - INFO - root - === Evaluation Started (instance django__django-11019) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 17:22:29,131 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11019
+2026-05-11 17:22:29,602 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal
+2026-05-11 17:22:29,656 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-11 17:22:29,688 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-3dea7e26-71c4-470d-b3c2-eb607038be97 -e LMNR_SPAN_CONTEXT=null -p 39452:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal --host 0.0.0.0 --port 8000
+2026-05-11 17:22:29,816 - INFO - openhands.workspace.docker.workspace - Started container: 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:29,822 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:30,857 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:31,896 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:32,935 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:33,971 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:35,001 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:36,034 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:37,072 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:38,103 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 17:22:39,174 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:39452
+2026-05-11 17:22:40,189 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-11 17:22:40,204 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-11 17:22:40,288 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-11 17:22:42,478 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-11 18:11:07,465 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 2904.0s)
+2026-05-11 18:11:07,487 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-05-11 18:11:07,487 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-05-11 18:11:08,108 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m71[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/django/forms/widgets.py b/django/forms/widgets.py\nindex 02aa32b207..dd05ec20f1 100644\n--- a/django/forms/widgets.py\n+++ b/django/forms/widgets.py\n@@ -6,6 +6,8 @@ i…'[0m
+2026-05-11 18:11:08,110 - INFO - benchmarks.utils.evaluation - [worker] done id=django__django-11019
+2026-05-11 18:11:08,240 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11019 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/conversations/django__django-11019.tar.gz
+2026-05-11 18:11:10,250 - INFO - openhands.workspace.docker.workspace - Stopping container: 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 18:11:10,251 - INFO - openhands.sdk.utils.command - $ docker stop 3a387f4a77ed63bf0afcd92968ba846e075956b3ed3eca932cd18556f15afdd3
+2026-05-11 20:02:31,128 - INFO - root - === Evaluation Started (instance django__django-11019) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 20:02:31,129 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11019
+2026-05-11 20:02:31,493 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal
+2026-05-11 20:02:31,558 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-11 20:02:31,585 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-057d54f0-15e9-4ad2-878e-9fdea164f0ac -e LMNR_SPAN_CONTEXT=null -p 37216:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal --host 0.0.0.0 --port 8000
+2026-05-11 20:02:31,716 - INFO - openhands.workspace.docker.workspace - Started container: 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:31,725 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:32,759 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:33,794 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:34,838 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:35,893 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:36,924 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:37,959 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:39,000 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:40,034 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:41,077 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:02:42,122 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:37216
+2026-05-11 20:02:42,309 - ERROR - openhands.sdk.git.utils - Git command failed: git fetch origin. Exit code: 128. Stderr: fatal: unable to access 'https://github.com/OpenHands/extensions/': Could not resolve host: github.com
+
+2026-05-11 20:02:42,310 - WARNING - openhands.sdk.git.cached_repo - Failed to fetch updates: Git command failed: git fetch origin. Using cached version.
+2026-05-11 20:02:42,370 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-11 20:02:42,381 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-11 20:02:42,463 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-11 20:02:44,940 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-11 20:06:05,056 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11019: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-05-11 20:06:05,056 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11019 failed after 1 attempts. Last error: Conversation run failed for id=a1414c92-a973-4912-ac47-234214cc27af: Remote conversation ended with error
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 1011, in _execute_single_attempt
+    out = self.evaluate_instance(instance, workspace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 416, in evaluate_instance
+    run_conversation_with_fake_user_response(
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/fake_user_response.py", line 152, in run_conversation_with_fake_user_response
+    conversation.run(timeout=run_timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/lmnr/opentelemetry_lib/decorators/__init__.py", line 186, in wrap
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 986, in run
+    self._wait_for_run_completion(poll_interval, timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1041, in _wait_for_run_completion
+    self._handle_conversation_status(ws_status)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1109, in _handle_conversation_status
+    raise ConversationRunError(
+openhands.sdk.conversation.exceptions.ConversationRunError: Conversation run failed for id=a1414c92-a973-4912-ac47-234214cc27af: Remote conversation ended with error
+2026-05-11 20:06:05,188 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11019 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/conversations/django__django-11019.tar.gz
+2026-05-11 20:06:07,193 - INFO - openhands.workspace.docker.workspace - Stopping container: 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:06:07,193 - INFO - openhands.sdk.utils.command - $ docker stop 8aea674f80bb6c2ba287bae5a91c6a1740371807a5038670d743715b1d36a181
+2026-05-11 20:49:09,956 - INFO - root - === Evaluation Started (instance django__django-11019) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/logs/instance_django__django-11019.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 20:49:09,957 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11019
+2026-05-11 20:49:10,313 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal
+2026-05-11 20:49:10,370 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-11 20:49:10,400 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-a87795a1-ba3b-4b52-ba6d-b89e15ebd4f7 -e LMNR_SPAN_CONTEXT=null -p 37845:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal --host 0.0.0.0 --port 8000
+2026-05-11 20:49:10,536 - INFO - openhands.workspace.docker.workspace - Started container: f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:10,546 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:11,576 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:12,617 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:13,657 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:14,689 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:15,726 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:16,761 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:17,801 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:18,843 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:49:19,889 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:37845
+2026-05-11 20:49:20,088 - ERROR - openhands.sdk.git.utils - Git command failed: git fetch origin. Exit code: 128. Stderr: fatal: unable to access 'https://github.com/OpenHands/extensions/': Could not resolve host: github.com
+
+2026-05-11 20:49:20,088 - WARNING - openhands.sdk.git.cached_repo - Failed to fetch updates: Git command failed: git fetch origin. Using cached version.
+2026-05-11 20:49:20,147 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-11 20:49:20,158 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-11 20:49:20,238 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-11 20:49:22,824 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-11 20:53:16,373 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11019: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-05-11 20:53:16,374 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-11019 failed after 1 attempts. Last error: Conversation run failed for id=489561a3-6a9c-4c0c-854d-7cdded144d7c: Remote conversation ended with error
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 1011, in _execute_single_attempt
+    out = self.evaluate_instance(instance, workspace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 416, in evaluate_instance
+    run_conversation_with_fake_user_response(
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/fake_user_response.py", line 152, in run_conversation_with_fake_user_response
+    conversation.run(timeout=run_timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/lmnr/opentelemetry_lib/decorators/__init__.py", line 186, in wrap
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 986, in run
+    self._wait_for_run_completion(poll_interval, timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1041, in _wait_for_run_completion
+    self._handle_conversation_status(ws_status)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1109, in _handle_conversation_status
+    raise ConversationRunError(
+openhands.sdk.conversation.exceptions.ConversationRunError: Conversation run failed for id=489561a3-6a9c-4c0c-854d-7cdded144d7c: Remote conversation ended with error
+2026-05-11 20:53:16,520 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11019 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-16-37/conversations/django__django-11019.tar.gz
+2026-05-11 20:53:18,520 - INFO - openhands.workspace.docker.workspace - Stopping container: f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e
+2026-05-11 20:53:18,521 - INFO - openhands.sdk.utils.command - $ docker stop f28f35359246e75a6f19ac6d3eaed99224c619835d63e0af39b7ad61041f6e3e

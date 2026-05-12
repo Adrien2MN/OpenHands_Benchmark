@@ -1,0 +1,5 @@
+{
+  "model": "kimi-k2.6",
+  "base_url": "http://127.0.0.1:4000/v1",
+  "api_key": "YOUR_PROXY_API_KEY"
+}

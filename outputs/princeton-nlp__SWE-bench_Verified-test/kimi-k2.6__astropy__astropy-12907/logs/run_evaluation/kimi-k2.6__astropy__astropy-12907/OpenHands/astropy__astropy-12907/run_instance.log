@@ -1,0 +1,63 @@
+2026-04-23 15:30:23,420 - INFO - Creating container for astropy__astropy-12907...
+2026-04-23 15:30:23,475 - INFO - Container for astropy__astropy-12907 created: c7ddfcf2c188591cb86a14cf903f3794d7040128215f2ab534d5ee2d2084f265
+2026-04-23 15:30:23,550 - INFO - Container for astropy__astropy-12907 started: c7ddfcf2c188591cb86a14cf903f3794d7040128215f2ab534d5ee2d2084f265
+2026-04-23 15:30:23,550 - INFO - Intermediate patch for astropy__astropy-12907 written to logs/run_evaluation/kimi-k2.6__astropy__astropy-12907/OpenHands/astropy__astropy-12907/patch.diff, now applying to container...
+2026-04-23 15:30:23,690 - INFO - >>>>> Applied Patch:
+Checking patch astropy/modeling/separable.py...
+Applied patch astropy/modeling/separable.py cleanly.
+
+2026-04-23 15:30:24,021 - INFO - Git diff before:
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..8cf984cd7 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -212,7 +212,7 @@ def _coord_matrix(model, pos, noutp):
+         for i in range(model.n_inputs):
+             mat[i, i] = 1
+         if pos == 'right':
+-            mat = np.roll(mat, (noutp - model.n_outputs))
++            mat = np.roll(mat, (noutp - model.n_outputs), axis=0)
+     return mat
+ 
+ 
+@@ -242,7 +242,7 @@ def _cstack(left, right):
+         cright = _coord_matrix(right, 'right', noutp)
+     else:
+         cright = np.zeros((noutp, right.shape[1]))
+-        cright[-right.shape[0]:, -right.shape[1]:] = 1
++        cright[-right.shape[0]:, -right.shape[1]:] = right
+ 
+     return np.hstack([cleft, cright])
+2026-04-23 15:30:24,022 - INFO - Eval script for astropy__astropy-12907 written to logs/run_evaluation/kimi-k2.6__astropy__astropy-12907/OpenHands/astropy__astropy-12907/eval.sh; copying to container...
+2026-04-23 15:32:07,547 - INFO - Test runtime: 103.47 seconds
+2026-04-23 15:32:07,548 - INFO - Test output for astropy__astropy-12907 written to logs/run_evaluation/kimi-k2.6__astropy__astropy-12907/OpenHands/astropy__astropy-12907/test_output.txt
+2026-04-23 15:32:07,634 - INFO - Git diff after:
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..8cf984cd7 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -212,7 +212,7 @@ def _coord_matrix(model, pos, noutp):
+         for i in range(model.n_inputs):
+             mat[i, i] = 1
+         if pos == 'right':
+-            mat = np.roll(mat, (noutp - model.n_outputs))
++            mat = np.roll(mat, (noutp - model.n_outputs), axis=0)
+     return mat
+ 
+ 
+@@ -242,7 +242,7 @@ def _cstack(left, right):
+         cright = _coord_matrix(right, 'right', noutp)
+     else:
+         cright = np.zeros((noutp, right.shape[1]))
+-        cright[-right.shape[0]:, -right.shape[1]:] = 1
++        cright[-right.shape[0]:, -right.shape[1]:] = right
+ 
+     return np.hstack([cleft, cright])
+2026-04-23 15:32:07,634 - INFO - Grading answer for astropy__astropy-12907...
+2026-04-23 15:32:07,637 - INFO - report: {'astropy__astropy-12907': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]'], 'failure': []}, 'PASS_TO_PASS': {'success': ['astropy/modeling/tests/test_separable.py::test_coord_matrix', 'astropy/modeling/tests/test_separable.py::test_cdot', 'astropy/modeling/tests/test_separable.py::test_cstack', 'astropy/modeling/tests/test_separable.py::test_arith_oper', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]', 'astropy/modeling/tests/test_separable.py::test_custom_model_separable'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-12907: resolved: True
+2026-04-23 15:32:07,638 - INFO - Attempting to stop container sweb.eval.astropy__astropy-12907.kimi-k2.6__astropy__astropy-12907...
+2026-04-23 15:32:22,760 - INFO - Attempting to remove container sweb.eval.astropy__astropy-12907.kimi-k2.6__astropy__astropy-12907...
+2026-04-23 15:32:22,781 - INFO - Container sweb.eval.astropy__astropy-12907.kimi-k2.6__astropy__astropy-12907 removed.
+2026-04-23 15:32:22,782 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest...
+2026-04-23 15:32:22,790 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest removed.

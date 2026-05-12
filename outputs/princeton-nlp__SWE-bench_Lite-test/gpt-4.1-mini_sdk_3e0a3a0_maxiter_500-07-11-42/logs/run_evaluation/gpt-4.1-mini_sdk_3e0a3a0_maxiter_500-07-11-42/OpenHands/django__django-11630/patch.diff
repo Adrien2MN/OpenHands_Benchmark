@@ -1,0 +1,22 @@
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..daf9b18e1e 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -35,8 +35,16 @@ def check_all_models(app_configs=None, **kwargs):
+             indexes[model_index.name].append(model._meta.label)
+         for model_constraint in model._meta.constraints:
+             constraints[model_constraint.name].append(model._meta.label)
++    from django.db import router
++
++    db_table_to_databases = defaultdict(set)
++    for model in (m for app in app_configs for m in app.get_models()):
++        db = router.db_for_write(model)
++        db_table_to_databases[model._meta.db_table].add(db)
++
+     for db_table, model_labels in db_table_models.items():
+-        if len(model_labels) != 1:
++        databases = db_table_to_databases[db_table]
++        if len(model_labels) != 1 and len(databases) == 1:
+             errors.append(
+                 Error(
+                     "db_table '%s' is used by multiple models: %s."

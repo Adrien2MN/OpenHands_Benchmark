@@ -142,7 +142,7 @@ class Evaluation(ABC, BaseModel):
         default=1, description="Current attempt number (1-indexed)"
     )
     instance_timeout: int = Field(
-        default=4 * 60 * 60,  # 4 hours
+        default=30 * 60,  # 30 minutes
         description=(
             "Maximum time in seconds for a single instance to complete. "
             "When a timeout occurs, the instance's asyncio task is cancelled. "

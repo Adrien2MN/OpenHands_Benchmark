@@ -1,0 +1,80 @@
+diff --git a/astropy/config/configuration.py b/astropy/config/configuration.py
+index 7b9f3e075..ce7e6f2a8 100644
+--- a/astropy/config/configuration.py
++++ b/astropy/config/configuration.py
+@@ -17,6 +17,12 @@ import re
+ from warnings import warn
+ 
+ from ..extern.configobj import configobj, validate
++import collections
++import collections.abc
++import sys
++
++if sys.version_info >= (3, 3):
++    collections.Mapping = collections.abc.Mapping
+ from ..utils.exceptions import AstropyWarning, AstropyDeprecationWarning
+ from ..utils import find_current_module
+ from ..utils.introspection import resolve_name
+@@ -543,7 +549,11 @@ def get_config(packageormod=None, reload=False):
+ 
+     if secname:  # not the root package
+         if secname not in cobj:
+-            cobj[secname] = {}
++            # Workaround for collections.Mapping error in Python 3.6
++            class DummyMapping(dict):
++                def __instancecheck__(self, inst):
++                    return isinstance(inst, collections.abc.Mapping)
++            cobj[secname] = DummyMapping()
+         return cobj[secname]
+     else:
+         return cobj
+diff --git a/astropy/io/fits/header.py b/astropy/io/fits/header.py
+index aa65c5c22..00511e412 100644
+--- a/astropy/io/fits/header.py
++++ b/astropy/io/fits/header.py
+@@ -1904,8 +1904,8 @@ class Header:
+             self[key] = value
+ 
+ 
+-collections.MutableSequence.register(Header)
+-collections.MutableMapping.register(Header)
++collections.abc.MutableSequence.register(Header)
++collections.abc.MutableMapping.register(Header)
+ 
+ 
+ class _CardAccessor:
+diff --git a/astropy/units/decorators.py b/astropy/units/decorators.py
+index 8bece5a85..c6011a799 100644
+--- a/astropy/units/decorators.py
++++ b/astropy/units/decorators.py
+@@ -221,7 +221,10 @@ class QuantityInput:
+             with add_enabled_equivalencies(self.equivalencies):
+                 return_ = wrapped_function(*func_args, **func_kwargs)
+             if wrapped_signature.return_annotation is not inspect.Signature.empty:
+-                return return_.to(wrapped_signature.return_annotation)
++                if return_ is None:
++                    return return_
++                else:
++                    return return_.to(wrapped_signature.return_annotation)
+             else:
+                 return return_
+ 
+diff --git a/poc_issue_4507_repro.py b/poc_issue_4507_repro.py
+new file mode 100644
+index 000000000..4ce0cd746
+--- /dev/null
++++ b/poc_issue_4507_repro.py
+@@ -0,0 +1,13 @@
++import astropy.units as u
++
++
++class PoC(object):
++
++    @u.quantity_input
++    def __init__(self, voltage: u.V) -> None:
++        pass
++
++
++if __name__ == '__main__':
++    poc = PoC(1.*u.V)
++    print("PoC instance created successfully with quantity_input decorator and None return")

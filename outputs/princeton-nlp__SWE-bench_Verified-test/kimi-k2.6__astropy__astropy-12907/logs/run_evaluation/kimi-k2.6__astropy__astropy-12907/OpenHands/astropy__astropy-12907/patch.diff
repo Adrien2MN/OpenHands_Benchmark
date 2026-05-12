@@ -1,0 +1,22 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..8cf984cd7 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -212,7 +212,7 @@ def _coord_matrix(model, pos, noutp):
+         for i in range(model.n_inputs):
+             mat[i, i] = 1
+         if pos == 'right':
+-            mat = np.roll(mat, (noutp - model.n_outputs))
++            mat = np.roll(mat, (noutp - model.n_outputs), axis=0)
+     return mat
+ 
+ 
+@@ -242,7 +242,7 @@ def _cstack(left, right):
+         cright = _coord_matrix(right, 'right', noutp)
+     else:
+         cright = np.zeros((noutp, right.shape[1]))
+-        cright[-right.shape[0]:, -right.shape[1]:] = 1
++        cright[-right.shape[0]:, -right.shape[1]:] = right
+ 
+     return np.hstack([cleft, cright])
+ 

@@ -1,0 +1,20 @@
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index 63ca817355..a91bf09c61 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -133,7 +133,14 @@ class SQLCompiler:
+         expressions = self.collapse_group_by(expressions, having_group_by)
+ 
+         for expr in expressions:
+-            sql, params = self.compile(expr)
++            # When the expression is a Ref instance that has a source expression
++            # which is a Subquery, use full subquery SQL instead of its alias.
++            # This addresses ambiguous column references in GROUP BY clauses caused
++            # by grouping by annotation aliases that refer to subqueries.
++            if isinstance(expr, Ref) and hasattr(expr, 'source') and expr.source.__class__.__name__ == 'Subquery':
++                sql, params = self.compile(expr.source)
++            else:
++                sql, params = self.compile(expr)
+             params_hash = make_hashable(params)
+             if (sql, params_hash) not in seen:
+                 result.append((sql, params))

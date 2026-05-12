@@ -1,0 +1,28 @@
+diff --git a/django/db/models/expressions.py b/django/db/models/expressions.py
+index 84960d77e1..b31d918347 100644
+--- a/django/db/models/expressions.py
++++ b/django/db/models/expressions.py
+@@ -1051,7 +1051,7 @@ class Subquery(Expression):
+ 
+     def get_group_by_cols(self, alias=None):
+         if alias:
+-            return [Ref(alias, self)]
++            return [self]
+         external_cols = self.query.get_external_cols()
+         if any(col.possibly_multivalued for col in external_cols):
+             return [self]
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index 63ca817355..5f6a2b3188 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -114,8 +114,8 @@ class SQLCompiler:
+         }
+         for expr, _, _ in select:
+             # Skip members of the select clause that are already included
+-            # by reference.
+-            if expr in ref_sources:
++            # in the grouped columns or by reference.
++            if expr in expressions or expr in ref_sources:
+                 continue
+             cols = expr.get_group_by_cols()
+             for col in cols:

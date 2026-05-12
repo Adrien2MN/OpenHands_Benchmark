@@ -1,0 +1,53 @@
+2026-05-11 10:15:58,003 - INFO - Creating container for django__django-12470...
+2026-05-11 10:15:58,100 - INFO - Container for django__django-12470 created: f20a11a1c731d137bab0f9981100ae84329616985dd509e6516644d7a0acc821
+2026-05-11 10:15:58,429 - INFO - Container for django__django-12470 started: f20a11a1c731d137bab0f9981100ae84329616985dd509e6516644d7a0acc821
+2026-05-11 10:15:58,432 - INFO - Intermediate patch for django__django-12470 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-12470/patch.diff, now applying to container...
+2026-05-11 10:15:58,749 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/sql/compiler.py...
+Applied patch django/db/models/sql/compiler.py cleanly.
+
+2026-05-11 10:16:04,932 - INFO - Git diff before:
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index 92213a4e67..355591a283 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -711,7 +711,10 @@ class SQLCompiler:
+         # If we get to this point and the field is a relation to another model,
+         # append the default ordering for that model unless the attribute name
+         # of the field is specified.
+-        if field.is_relation and opts.ordering and getattr(field, 'attname', None) != name:
++        if (
++            field.is_relation and opts.ordering and
++            getattr(field, 'attname', None) != name and name != 'pk'
++        ):
+             # Firstly, avoid infinite loops.
+             already_seen = already_seen or set()
+             join_tuple = tuple(getattr(self.query.alias_map[j], 'join_cols', None) for j in joins)
+2026-05-11 10:16:04,933 - INFO - Eval script for django__django-12470 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-12470/eval.sh; copying to container...
+2026-05-11 10:16:27,805 - INFO - Test runtime: 22.80 seconds
+2026-05-11 10:16:27,806 - INFO - Test output for django__django-12470 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-12470/test_output.txt
+2026-05-11 10:16:28,003 - INFO - Git diff after:
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index 92213a4e67..355591a283 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -711,7 +711,10 @@ class SQLCompiler:
+         # If we get to this point and the field is a relation to another model,
+         # append the default ordering for that model unless the attribute name
+         # of the field is specified.
+-        if field.is_relation and opts.ordering and getattr(field, 'attname', None) != name:
++        if (
++            field.is_relation and opts.ordering and
++            getattr(field, 'attname', None) != name and name != 'pk'
++        ):
+             # Firstly, avoid infinite loops.
+             already_seen = already_seen or set()
+             join_tuple = tuple(getattr(self.query.alias_map[j], 'join_cols', None) for j in joins)
+2026-05-11 10:16:28,003 - INFO - Grading answer for django__django-12470...
+2026-05-11 10:16:28,004 - INFO - report: {'django__django-12470': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_inherited_ordering_pk_desc (model_inheritance.tests.ModelInheritanceTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_abstract_fk_related_name (model_inheritance.tests.InheritanceSameModelNameTests)', 'test_unique (model_inheritance.tests.InheritanceUniqueTests)', 'test_unique_together (model_inheritance.tests.InheritanceUniqueTests)', 'test_abstract (model_inheritance.tests.ModelInheritanceTests)', 'test_abstract_parent_link (model_inheritance.tests.ModelInheritanceTests)', 'Creating a child with non-abstract parents only issues INSERTs.', 'test_custompk_m2m (model_inheritance.tests.ModelInheritanceTests)', 'test_eq (model_inheritance.tests.ModelInheritanceTests)', 'test_init_subclass (model_inheritance.tests.ModelInheritanceTests)', 'test_meta_fields_and_ordering (model_inheritance.tests.ModelInheritanceTests)', 'test_mixin_init (model_inheritance.tests.ModelInheritanceTests)', 'test_model_with_distinct_accessors (model_inheritance.tests.ModelInheritanceTests)', 'test_model_with_distinct_related_query_name (model_inheritance.tests.ModelInheritanceTests)', 'test_reverse_relation_for_different_hierarchy_tree (model_inheritance.tests.ModelInheritanceTests)', 'test_set_name (model_inheritance.tests.ModelInheritanceTests)', 'test_update_parent_filtering (model_inheritance.tests.ModelInheritanceTests)', 'test_exclude_inherited_on_null (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_inherited_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_inherited_on_null (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_on_parent_returns_object_of_parent_type (model_inheritance.tests.ModelInheritanceDataTests)', 'test_inherited_does_not_exist_exception (model_inheritance.tests.ModelInheritanceDataTests)', 'test_inherited_multiple_objects_returned_exception (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_cache_reuse (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_child_one_to_one_link (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_child_one_to_one_link_on_nonrelated_objects (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_fields_available_for_filtering_in_child_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_related_objects_for_inherited_models (model_inheritance.tests.ModelInheritanceDataTests)', 'test_select_related_defer (model_inheritance.tests.ModelInheritanceDataTests)', 'test_select_related_works_on_parent_model_fields (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_inherited_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_query_counts (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_works_on_parent_and_child_models_at_once (model_inheritance.tests.ModelInheritanceDataTests)', 'test_values_works_on_parent_model_fields (model_inheritance.tests.ModelInheritanceDataTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12470: resolved: True
+2026-05-11 10:16:28,004 - INFO - Attempting to stop container sweb.eval.django__django-12470.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58...
+2026-05-11 10:16:43,186 - INFO - Attempting to remove container sweb.eval.django__django-12470.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58...
+2026-05-11 10:16:43,267 - INFO - Container sweb.eval.django__django-12470.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58 removed.
+2026-05-11 10:16:43,267 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-12470:latest...
+2026-05-11 10:16:43,330 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-12470:latest removed.

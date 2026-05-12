@@ -1,0 +1,16 @@
+2026-05-06 16:17:04,557 - INFO - root - === Evaluation Started (instance django__django-11099) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/codestral-2501_sdk_3e0a3a0_maxiter_500-06-16-16/logs/instance_django__django-11099.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/codestral-2501_sdk_3e0a3a0_maxiter_500-06-16-16/logs/instance_django__django-11099.output.log   (stdout/stderr)
+    ===============================================
+2026-05-06 16:17:04,575 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11099
+2026-05-06 16:17:04,950 - INFO - benchmarks.utils.build_utils - Local image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11099-source-minimal not found. Attempting docker pull before rebuilding.
+2026-05-06 16:19:36,223 - INFO - benchmarks.utils.build_utils - docker pull for ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11099-source-minimal failed (exit=130). Falling back to local build.
+2026-05-06 16:19:36,223 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-11099:latest...
+2026-05-06 16:19:36,330 - WARNING - benchmarks.utils.build_utils - Failed to get SDK submodule SHA, using 'unknown'. Make sure submodules are initialized.
+2026-05-06 16:19:36,507 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=unknown, version=1.16.1
+2026-05-06 16:19:36,543 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.django_1776_django-11099:latest even if it exists.
+2026-05-06 16:19:36,644 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-05-06T14:19:36.644157+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-11099:latest' tags=[] error="CalledProcessError(-2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-__35hl5j'])" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=0.1 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-05-06 16:19:36,644 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11099: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-06 16:19:36,645 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11099 failed (attempt 1/4): Image build failed: CalledProcessError(-2, ['uv', 'build', '--sdist', '--out-dir', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-__35hl5j'])
+2026-05-06 16:19:36,646 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11099: attempt 2/4, runtime_failure_count=1, resource_factor=2

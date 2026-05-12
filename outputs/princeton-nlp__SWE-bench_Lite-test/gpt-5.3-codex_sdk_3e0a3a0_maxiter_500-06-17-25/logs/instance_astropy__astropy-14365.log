@@ -1,0 +1,34 @@
+2026-05-06 17:25:12,237 - INFO - root - === Evaluation Started (instance astropy__astropy-14365) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-06-17-25/logs/instance_astropy__astropy-14365.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-06-17-25/logs/instance_astropy__astropy-14365.output.log   (stdout/stderr)
+    ===============================================
+2026-05-06 17:25:12,242 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14365
+2026-05-06 17:25:15,167 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal
+2026-05-06 17:25:15,595 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-06 17:25:15,649 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-e8f4e8b9-2164-4cb5-b959-ee7b821b47d0 -e LMNR_SPAN_CONTEXT=null -p 32573:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal --host 0.0.0.0 --port 8000
+2026-05-06 17:25:15,880 - INFO - openhands.workspace.docker.workspace - Started container: 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:15,899 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:17,008 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:18,079 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:19,147 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:20,221 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:21,285 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:22,343 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:23,418 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:24,468 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:25,530 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:26,602 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:25:27,667 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:32573
+2026-05-06 17:25:29,220 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-06 17:25:29,235 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-06 17:25:29,313 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-06 17:25:30,738 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-06 17:35:11,175 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 580.2s)
+2026-05-06 17:35:11,196 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-05-06 17:35:11,196 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-05-06 17:35:11,638 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m24[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py\nindex 83a4f004a..e01148ab1 100644\n--- a/astropy/io/ascii/qdp.py\n+++ b/astropy/io/ascii/qdp.py\n@@ -60,7 +60,7 @@ d…'[0m
+2026-05-06 17:35:11,639 - INFO - benchmarks.utils.evaluation - [worker] done id=astropy__astropy-14365
+2026-05-06 17:35:11,757 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-14365 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-06-17-25/conversations/astropy__astropy-14365.tar.gz
+2026-05-06 17:35:13,763 - INFO - openhands.workspace.docker.workspace - Stopping container: 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718
+2026-05-06 17:35:13,763 - INFO - openhands.sdk.utils.command - $ docker stop 4d71a6ecdf8122aaaf79bd32013eb2460821d632920bcfe4e1f2b4e221c93718

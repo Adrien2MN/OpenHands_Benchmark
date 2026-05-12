@@ -1,0 +1,18 @@
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index a3ae1f048e..0487749a21 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -252,7 +252,12 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         return conn
+ 
+     def init_connection_state(self):
+-        pass
++        # Enable WAL journal mode for persistent test databases to reduce locking
++        if self.is_in_memory_db():
++            return
++        cursor = self.connection.cursor()
++        cursor.execute('PRAGMA journal_mode=WAL;')
++        cursor.close()
+ 
+     def create_cursor(self, name=None):
+         return self.connection.cursor(factory=SQLiteCursorWrapper)

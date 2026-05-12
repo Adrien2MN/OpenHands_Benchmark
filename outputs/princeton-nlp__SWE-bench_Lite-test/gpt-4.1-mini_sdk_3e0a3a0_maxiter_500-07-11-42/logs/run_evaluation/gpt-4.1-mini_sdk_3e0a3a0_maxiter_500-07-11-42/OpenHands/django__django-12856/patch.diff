@@ -1,0 +1,54 @@
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 7bb3fa4706..078fdedb76 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -1256,7 +1256,22 @@ class Model(metaclass=ModelBase):
+     def check(cls, **kwargs):
+         errors = [*cls._check_swappable(), *cls._check_model(), *cls._check_managers(**kwargs)]
+         if not cls._meta.swapped:
++    @classmethod
++    def _check_unique_constraints(cls):
++        """Check fields of UniqueConstraint constraints."""
++        errors = []
++        unique_constraints = [
++            c for c in getattr(cls._meta, 'constraints', [])
++            if isinstance(c, UniqueConstraint)
++        ]
++        for constraint in unique_constraints:
++            errors.extend(cls._check_local_fields(constraint.fields, "UniqueConstraint"))
++        return errors
++
++
+             databases = kwargs.get('databases') or []
++            errors.extend(cls._check_unique_constraints())
++
+             errors += [
+                 *cls._check_fields(**kwargs),
+                 *cls._check_m2m_through_same_relationship(),
+diff --git a/tests/validation/test_unique_constraint_field_check.py b/tests/validation/test_unique_constraint_field_check.py
+new file mode 100644
+index 0000000000..eceab1cc46
+--- /dev/null
++++ b/tests/validation/test_unique_constraint_field_check.py
+@@ -0,0 +1,21 @@
++# Minimal reproduction script to demonstrate the UniqueConstraint fields check issue
++from django.db import models
++from django.core.exceptions import ValidationError
++
++class ModelWithUniqueConstraint(models.Model):
++    field1 = models.CharField(max_length=100)
++
++    class Meta:
++        constraints = [
++            models.UniqueConstraint(fields=['field1', 'non_existent_field'], name='unique_constraint_test')
++        ]
++
++# Check validation manually
++try:
++    errors = ModelWithUniqueConstraint.check()
++    for error in errors:
++        print(f"Error id: {error.id}, message: {error.msg}")
++except ValidationError as e:
++    print(e)
++
++# This should raise an error for the non_existent_field but currently likely does not

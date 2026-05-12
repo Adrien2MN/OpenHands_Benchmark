@@ -1,0 +1,62 @@
+{
+  "directory": "outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42",
+  "timestamp": "2026-05-11T10:24:34.095727",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 48,
+    "cost": 5.902611315000001,
+    "time_statistics": {
+      "average_duration": 359.30717366666664,
+      "total_duration": 17246.744336,
+      "total_lines": 48,
+      "lines_with_duration": 48
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 50,
+      "cost": 5.902611315000001,
+      "time_statistics": {
+        "average_duration": 359.30717366666664,
+        "total_duration": 17246.744336,
+        "total_lines": 50,
+        "lines_with_duration": 48
+      }
+    },
+    {
+      "filename": "output.critic_attempt_2.jsonl",
+      "lines": 2,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 0.0,
+        "total_duration": 0.0,
+        "total_lines": 2,
+        "lines_with_duration": 0
+      }
+    },
+    {
+      "filename": "output.critic_attempt_3.jsonl",
+      "lines": 2,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 0.0,
+        "total_duration": 0.0,
+        "total_lines": 2,
+        "lines_with_duration": 0
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 5.902611315000001,
+    "total_duration": 17246.744336,
+    "only_main_output_cost": 5.902611315000001,
+    "sum_critic_files": 5.902611315000001
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

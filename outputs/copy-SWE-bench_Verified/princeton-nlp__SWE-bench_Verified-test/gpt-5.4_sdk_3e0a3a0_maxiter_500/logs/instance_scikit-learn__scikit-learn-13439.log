@@ -1,0 +1,156 @@
+2026-04-29 16:25:14,836 - INFO - root - === Evaluation Started (instance scikit-learn__scikit-learn-13439) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:25:14,836 - INFO - benchmarks.utils.evaluation - [worker] start id=scikit-learn__scikit-learn-13439
+2026-04-29 16:25:17,340 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13439-source-minimal
+2026-04-29 16:25:17,419 - INFO - openhands.sdk.utils.command - $ docker version
+2026-04-29 16:25:17,449 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-847b2ff8-0095-4cfe-81d4-662acc454a03 -e LMNR_SPAN_CONTEXT=null -p 33378:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13439-source-minimal --host 0.0.0.0 --port 8000
+2026-04-29 16:25:17,612 - INFO - openhands.workspace.docker.workspace - Started container: 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:17,623 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:18,654 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:19,718 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:20,860 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:22,019 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:23,109 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:24,253 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:25,340 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:26,465 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:27,604 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:28,848 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:33378
+2026-04-29 16:25:38,070 - INFO - openhands.sdk.skills.skill - Found 39 skill files in public skills repository
+2026-04-29 16:25:43,428 - INFO - openhands.sdk.skills.skill - Loaded 39 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-04-29 16:25:45,744 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/scikit-learn/
+2026-04-29 16:25:47,343 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-04-29 16:25:47,523 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-04-29 16:25:47,530 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 1/4): Conversation run failed for id=da781b63-3980-4a46-8182-8ec83a0c202e: Remote conversation ended with error
+2026-04-29 16:25:47,809 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for scikit-learn__scikit-learn-13439 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/conversations/scikit-learn__scikit-learn-13439.tar.gz
+2026-04-29 16:25:47,939 - INFO - openhands.workspace.docker.workspace - Stopping container: 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:47,957 - INFO - openhands.sdk.utils.command - $ docker stop 83ffdef3d1287a44edf4d8643fe9fc1152a26df896fc5fa6d6fdb2418e3af42d
+2026-04-29 16:25:49,607 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13439-source-minimal
+2026-04-29 16:26:05,838 - INFO - openhands.sdk.utils.command - $ docker version
+2026-04-29 16:26:07,823 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-fc5fb752-1b52-447c-b4d2-62f1d0fcebf7 -e LMNR_SPAN_CONTEXT=null -p 33584:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.scikit-learn_1776_scikit-learn-13439-source-minimal --host 0.0.0.0 --port 8000
+2026-04-29 16:26:08,002 - INFO - openhands.workspace.docker.workspace - Started container: 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:08,045 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:09,257 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:10,519 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:11,632 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:12,916 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:14,078 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:15,233 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:16,409 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:33584
+2026-04-29 16:26:24,540 - INFO - openhands.sdk.skills.skill - Found 39 skill files in public skills repository
+2026-04-29 16:26:24,589 - INFO - openhands.sdk.skills.skill - Loaded 39 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-04-29 16:26:24,703 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/scikit-learn/
+2026-04-29 16:26:25,906 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-04-29 16:26:26,030 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-04-29 16:26:26,031 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 2/4): Conversation run failed for id=cd6570f6-d91d-4953-becd-b3dd3bd382a1: Remote conversation ended with error
+2026-04-29 16:26:26,161 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for scikit-learn__scikit-learn-13439 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/conversations/scikit-learn__scikit-learn-13439.tar.gz
+2026-04-29 16:26:26,606 - INFO - openhands.workspace.docker.workspace - Stopping container: 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:26,606 - INFO - openhands.sdk.utils.command - $ docker stop 96a9651cf1710a0ac208880a3ceb9b9bce2a36489c06c9410ec91679fd62cdc9
+2026-04-29 16:26:27,683 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:26:27,683 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:26:27,683 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 4/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:26:27,713 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:26:27,713 - ERROR - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,260 - INFO - root - === Evaluation Started (instance scikit-learn__scikit-learn-13439) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:32:36,261 - INFO - benchmarks.utils.evaluation - [worker] start id=scikit-learn__scikit-learn-13439
+2026-04-29 16:32:36,332 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:32:36,332 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,333 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:32:36,360 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:32:36,360 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,361 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:32:36,388 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:32:36,388 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,388 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:32:36,417 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:32:36,417 - ERROR - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,437 - INFO - root - === Evaluation Started (instance scikit-learn__scikit-learn-13439) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_scikit-learn__scikit-learn-13439.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:32:36,438 - INFO - benchmarks.utils.evaluation - [worker] start id=scikit-learn__scikit-learn-13439
+2026-04-29 16:32:36,472 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:32:36,472 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,473 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:32:36,509 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:32:36,510 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,510 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:32:36,544 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:32:36,544 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,545 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:32:36,574 - WARNING - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:32:36,574 - ERROR - benchmarks.utils.evaluation - [worker] Instance scikit-learn__scikit-learn-13439 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.

@@ -1,0 +1,120 @@
+2026-04-29 16:25:14,836 - INFO - root - === Evaluation Started (instance django__django-14434) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:25:14,836 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-14434
+2026-04-29 16:25:17,309 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-14434:latest...
+2026-04-29 16:25:17,492 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-04-29 16:26:24,836 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-04-29T14:26:24.836203+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-14434:latest' tags=[] error="AssertionError('Expected single folder in sdist')" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=1.286 build_seconds=66.055 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-04-29 16:26:24,836 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:26:24,836 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 1/4): Image build failed: AssertionError('Expected single folder in sdist')
+2026-04-29 16:26:24,836 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:26:24,881 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:26:24,881 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:26:24,882 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:26:24,909 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:26:24,909 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:26:24,909 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:26:24,935 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:26:24,936 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,261 - INFO - root - === Evaluation Started (instance django__django-14434) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:32:36,262 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-14434
+2026-04-29 16:32:36,332 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:32:36,333 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,335 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:32:36,367 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:32:36,367 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,368 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:32:36,401 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:32:36,402 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,402 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:32:36,431 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:32:36,431 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,437 - INFO - root - === Evaluation Started (instance django__django-14434) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-14434.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:32:36,438 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-14434
+2026-04-29 16:32:36,481 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:32:36,482 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,482 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:32:36,518 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:32:36,518 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,519 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:32:36,554 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:32:36,554 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:32:36,555 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:32:36,582 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-14434: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:32:36,582 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-14434 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.

@@ -143,7 +143,7 @@ def run_conversation_with_fake_user_response(
             status is FINISHED, even when the agent did not explicitly call
             the finish tool.
     """
-    run_timeout = int(os.getenv("CONVERSATION_TIMEOUT", "3600"))
+    run_timeout = int(os.getenv("CONVERSATION_TIMEOUT", "1800"))
 
     fake_response_count = 0
 

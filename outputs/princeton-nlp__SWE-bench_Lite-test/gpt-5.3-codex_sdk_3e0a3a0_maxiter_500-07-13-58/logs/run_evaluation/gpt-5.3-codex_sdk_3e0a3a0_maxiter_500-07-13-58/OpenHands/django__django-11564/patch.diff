@@ -1,0 +1,62 @@
+diff --git a/django/core/files/storage.py b/django/core/files/storage.py
+index 4c27fce605..8d08001a71 100644
+--- a/django/core/files/storage.py
++++ b/django/core/files/storage.py
+@@ -22,6 +22,16 @@ __all__ = (
+ )
+ 
+ 
++def _add_script_prefix(value):
++    if value.startswith('/') and not value.startswith('//'):
++        from django.urls import get_script_prefix
++
++        script_name = get_script_prefix()
++        if script_name and not value.startswith(script_name):
++            value = urljoin(script_name, value.lstrip('/'))
++    return value
++
++
+ class Storage:
+     """
+     A base storage class, providing some default behaviors that all other
+@@ -332,7 +342,8 @@ class FileSystemStorage(Storage):
+         url = filepath_to_uri(name)
+         if url is not None:
+             url = url.lstrip('/')
+-        return urljoin(self.base_url, url)
++        base_url = _add_script_prefix(self.base_url)
++        return urljoin(base_url, url)
+ 
+     def _datetime_from_timestamp(self, ts):
+         """
+diff --git a/django/templatetags/static.py b/django/templatetags/static.py
+index 39712aaba0..d705a4bbb4 100644
+--- a/django/templatetags/static.py
++++ b/django/templatetags/static.py
+@@ -8,6 +8,16 @@ from django.utils.html import conditional_escape
+ register = template.Library()
+ 
+ 
++def _add_script_prefix(value):
++    if value.startswith('/') and not value.startswith('//'):
++        from django.urls import get_script_prefix
++
++        script_name = get_script_prefix()
++        if script_name and not value.startswith(script_name):
++            value = urljoin(script_name, value.lstrip('/'))
++    return value
++
++
+ class PrefixNode(template.Node):
+ 
+     def __repr__(self):
+@@ -43,7 +53,8 @@ class PrefixNode(template.Node):
+         except ImportError:
+             prefix = ''
+         else:
+-            prefix = iri_to_uri(getattr(settings, name, ''))
++            prefix = _add_script_prefix(getattr(settings, name, ''))
++            prefix = iri_to_uri(prefix)
+         return prefix
+ 
+     def render(self, context):

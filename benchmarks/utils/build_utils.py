@@ -48,7 +48,12 @@ class BuildOutput(BaseModel):
     tags: list[str]
     error: str | None = None
     log_path: str | None = None
-    status: Literal["built", "skipped_remote_exists", "failed"] = "built"
+    status: Literal[
+        "built",
+        "skipped_remote_exists",
+        "skipped_prebuilt_missing",
+        "failed",
+    ] = "built"
     skip_reason: str | None = None
     attempt_count: int = 1
     started_at: str | None = None

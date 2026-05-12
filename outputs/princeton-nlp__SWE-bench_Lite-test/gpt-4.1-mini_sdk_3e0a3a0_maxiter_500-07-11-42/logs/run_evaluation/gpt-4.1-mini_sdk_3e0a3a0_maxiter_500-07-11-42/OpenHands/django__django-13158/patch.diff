@@ -1,0 +1,35 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index 07d6ffd4ca..6fa199a3c0 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -919,7 +919,12 @@ class QuerySet:
+     def none(self):
+         """Return an empty QuerySet."""
+         clone = self._chain()
+-        clone.query.set_empty()
++        # Handle combined queries by setting each combined query empty
++        if clone.query.combined_queries:
++            for q in clone.query.combined_queries:
++                q.set_empty()
++        else:
++            clone.query.set_empty()
+         return clone
+ 
+     ##################################################################
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index 36dad72704..3d6ee877ae 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -926,6 +926,12 @@ class TypedMultipleChoiceField(MultipleChoiceField):
+         return new_value
+ 
+     def clean(self, value):
++        # Fix for combined querysets that have empty state set causing form to submit all entries if empty
++        qs = self.queryset
++        query = getattr(qs, 'query', None)
++        if query and hasattr(query, 'is_empty') and query.is_empty() and (value == [] or value is None):
++            return qs.none()
++
+         value = super().clean(value)
+         return self._coerce(value)
+ 

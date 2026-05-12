@@ -1,0 +1,65 @@
+2026-05-11 10:21:50,570 - INFO - Creating container for django__django-11630...
+2026-05-11 10:21:50,748 - INFO - Container for django__django-11630 created: 9ae7ad766360da4eebf46f8bc1dbcf9cc7980c936e17c66002df60738a0a5041
+2026-05-11 10:21:50,881 - INFO - Container for django__django-11630 started: 9ae7ad766360da4eebf46f8bc1dbcf9cc7980c936e17c66002df60738a0a5041
+2026-05-11 10:21:50,883 - INFO - Intermediate patch for django__django-11630 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11630/patch.diff, now applying to container...
+2026-05-11 10:21:51,093 - INFO - >>>>> Applied Patch:
+Checking patch django/core/checks/model_checks.py...
+Applied patch django/core/checks/model_checks.py cleanly.
+
+2026-05-11 10:21:53,723 - INFO - Git diff before:
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..daf9b18e1e 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -35,8 +35,16 @@ def check_all_models(app_configs=None, **kwargs):
+             indexes[model_index.name].append(model._meta.label)
+         for model_constraint in model._meta.constraints:
+             constraints[model_constraint.name].append(model._meta.label)
++    from django.db import router
++
++    db_table_to_databases = defaultdict(set)
++    for model in (m for app in app_configs for m in app.get_models()):
++        db = router.db_for_write(model)
++        db_table_to_databases[model._meta.db_table].add(db)
++
+     for db_table, model_labels in db_table_models.items():
+-        if len(model_labels) != 1:
++        databases = db_table_to_databases[db_table]
++        if len(model_labels) != 1 and len(databases) == 1:
+             errors.append(
+                 Error(
+                     "db_table '%s' is used by multiple models: %s."
+2026-05-11 10:21:53,724 - INFO - Eval script for django__django-11630 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11630/eval.sh; copying to container...
+2026-05-11 10:22:16,895 - INFO - Test runtime: 23.11 seconds
+2026-05-11 10:22:16,897 - INFO - Test output for django__django-11630 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11630/test_output.txt
+2026-05-11 10:22:17,055 - INFO - Git diff after:
+diff --git a/django/core/checks/model_checks.py b/django/core/checks/model_checks.py
+index 5c2266ca1d..daf9b18e1e 100644
+--- a/django/core/checks/model_checks.py
++++ b/django/core/checks/model_checks.py
+@@ -35,8 +35,16 @@ def check_all_models(app_configs=None, **kwargs):
+             indexes[model_index.name].append(model._meta.label)
+         for model_constraint in model._meta.constraints:
+             constraints[model_constraint.name].append(model._meta.label)
++    from django.db import router
++
++    db_table_to_databases = defaultdict(set)
++    for model in (m for app in app_configs for m in app.get_models()):
++        db = router.db_for_write(model)
++        db_table_to_databases[model._meta.db_table].add(db)
++
+     for db_table, model_labels in db_table_models.items():
+-        if len(model_labels) != 1:
++        databases = db_table_to_databases[db_table]
++        if len(model_labels) != 1 and len(databases) == 1:
+             errors.append(
+                 Error(
+                     "db_table '%s' is used by multiple models: %s."
+2026-05-11 10:22:17,055 - INFO - Grading answer for django__django-11630...
+2026-05-11 10:22:17,059 - INFO - report: {'django__django-11630': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_collision_across_apps_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_collision_in_same_app_database_routers_installed (check_framework.test_model_checks.DuplicateDBTableTests)']}, 'PASS_TO_PASS': {'success': [], 'failure': ['test_collision_abstract_model (check_framework.test_model_checks.IndexNameTests)', 'test_collision_across_apps (check_framework.test_model_checks.IndexNameTests)', 'test_collision_in_different_models (check_framework.test_model_checks.IndexNameTests)', 'test_collision_in_same_model (check_framework.test_model_checks.IndexNameTests)', 'test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.IndexNameTests)', 'test_no_collision_across_apps_interpolation (check_framework.test_model_checks.IndexNameTests)', 'test_collision_abstract_model (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_across_apps (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_in_different_models (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_in_same_model (check_framework.test_model_checks.ConstraintNameTests)', 'test_no_collision_abstract_model_interpolation (check_framework.test_model_checks.ConstraintNameTests)', 'test_no_collision_across_apps_interpolation (check_framework.test_model_checks.ConstraintNameTests)', 'test_collision_across_apps (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_collision_in_same_app (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_no_collision_for_proxy_models (check_framework.test_model_checks.DuplicateDBTableTests)', 'test_no_collision_for_unmanaged_models (check_framework.test_model_checks.DuplicateDBTableTests)']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11630: resolved: False
+2026-05-11 10:22:17,060 - INFO - Attempting to stop container sweb.eval.django__django-11630.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:32,310 - INFO - Attempting to remove container sweb.eval.django__django-11630.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:32,403 - INFO - Container sweb.eval.django__django-11630.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:22:32,403 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11630:latest...
+2026-05-11 10:22:32,567 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11630:latest removed.

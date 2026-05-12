@@ -1,0 +1,34 @@
+2026-04-30 10:29:31,378 - INFO - root - === Evaluation Started (instance django__django-12155) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-12155.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-12155.output.log   (stdout/stderr)
+    ===============================================
+2026-04-30 10:29:31,378 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-12155
+2026-04-30 10:29:33,688 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-12155-source-minimal
+2026-04-30 10:29:33,771 - INFO - openhands.sdk.utils.command - $ docker version
+2026-04-30 10:29:33,799 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-06e61ee2-9286-4417-ae38-f73465149f1d -e LMNR_SPAN_CONTEXT=null -p 30771:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-12155-source-minimal --host 0.0.0.0 --port 8000
+2026-04-30 10:29:33,996 - INFO - openhands.workspace.docker.workspace - Started container: a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:34,012 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:35,038 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:36,107 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:37,185 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:38,393 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:39,537 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:40,641 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:41,853 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:43,002 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:44,224 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:45,442 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:29:46,534 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:30771
+2026-04-30 10:29:54,478 - INFO - openhands.sdk.skills.skill - Found 39 skill files in public skills repository
+2026-04-30 10:29:57,367 - INFO - openhands.sdk.skills.skill - Loaded 39 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-04-30 10:29:59,216 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-04-30 10:30:01,426 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-04-30 10:37:31,261 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 449.5s)
+2026-04-30 10:37:31,276 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-04-30 10:37:31,276 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-04-30 10:37:31,825 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m40[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/django/contrib/admindocs/utils.py b/django/contrib/admindocs/utils.py\nindex 4c0e7e2a56..57339b91af 100644\n--- a/django/contrib/admindocs/utils.py\n+++ b/django/contr…'[0m
+2026-04-30 10:37:31,825 - INFO - benchmarks.utils.evaluation - [worker] done id=django__django-12155
+2026-04-30 10:37:31,943 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-12155 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500/conversations/django__django-12155.tar.gz
+2026-04-30 10:37:33,948 - INFO - openhands.workspace.docker.workspace - Stopping container: a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc
+2026-04-30 10:37:33,949 - INFO - openhands.sdk.utils.command - $ docker stop a01885e51c6564de2f656d28dea425bab6f2c904611875a97768a8424369b4bc

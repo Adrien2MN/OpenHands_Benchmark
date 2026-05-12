@@ -1,0 +1,43 @@
+# SWE-Bench-Lite Configuration (300 instances, optimized for fast iteration)
+# This config is designed for efficient testing during development
+# Use this instead of the full SWE-Bench dataset for 10x speedup
+
+defaults:
+  - _self_
+
+# Use Lite subset instead of full verified dataset
+dataset: princeton-nlp/SWE-bench_Lite
+split: test
+
+# Evaluation limit - Lite has exactly 300 instances
+# Set to smaller number for testing (e.g., 20, 50, 100)
+eval_limit: 300
+
+# Inference settings
+num_workers: 8            # Reduced from default 30 (each worker = one instance in parallel)
+template_path: swe_task_template.j2
+output_base_dir: outputs/swebench_lite
+
+# Timeout per instance (seconds)
+timeout: 1800  # 30 minutes - should be enough for agent to explore
+
+# Docker workspace settings - critical for speed
+workspace_type: docker
+docker_image_prefix: ghcr.io/swebench  # Where to pull pre-built base images
+
+# Try pulling from registry first before local rebuild (huge speedup)
+docker_pull_first: true
+force_rebuild: false  # Use cache if available
+
+# Context condenser (manages conversation history size)
+enable_condenser: true
+condenser_max_size: 240     # Max events before summarization
+condenser_keep_first: 2     # Always keep first 2 events
+
+# Agent settings
+agent_type: CodeAct        # Use CodeAct agent (from paper)
+tool_preset: default       # Standard tools: bash, python, file operations
+
+# Validation (optional - disable if very slow)
+validator_enabled: true
+validator_timeout: 300     # 5 min to run test suite

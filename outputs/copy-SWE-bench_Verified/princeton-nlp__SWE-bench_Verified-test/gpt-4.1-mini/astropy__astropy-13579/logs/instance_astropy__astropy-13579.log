@@ -1,0 +1,125 @@
+2026-04-24 14:15:18,499 - INFO - root - === Evaluation Started (instance astropy__astropy-13579) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.output.log   (stdout/stderr)
+    ===============================================
+2026-04-24 14:15:18,505 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-13579
+2026-04-24 14:15:20,178 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest...
+2026-04-24 14:15:20,747 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-04-24 14:15:20,774 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest even if it exists.
+2026-04-24 14:51:52,961 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-04-24T12:51:52.959861+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest' tags=[] error="FileNotFoundError(2, 'No such file or directory')" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=2192.175 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-04-24 14:51:52,962 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-24 14:51:52,962 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 1/4): Image build failed: FileNotFoundError(2, 'No such file or directory')
+2026-04-24 14:51:52,962 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-24 14:51:54,173 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest...
+2026-04-24 14:51:54,274 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-04-24 14:51:54,321 - INFO - benchmarks.utils.build_utils - FORCE_BUILD set, rebuilding remote image for docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest even if it exists.
+2026-04-24 15:40:17,215 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-04-24T13:40:17.215860+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-13579:latest' tags=[] error="AssertionError('Expected single folder in sdist')" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=0.0 build_seconds=2902.888 post_build_seconds=None sdk_build_context_seconds=None sdk_buildx_wall_clock_seconds=None sdk_cleanup_seconds=None sdk_cache_import_seconds=None sdk_cache_import_miss_count=None sdk_cache_export_seconds=None sdk_image_export_seconds=None sdk_push_layers_seconds=None sdk_export_manifest_seconds=None sdk_cached_step_count=None
+2026-04-24 15:40:17,216 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-24 15:40:17,217 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 2/4): Image build failed: AssertionError('Expected single folder in sdist')
+2026-04-24 15:40:17,219 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-24 15:40:17,286 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-24 15:40:17,286 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:40:17,293 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-24 15:40:17,339 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-24 15:40:17,364 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    # Fall back to filesystem discovery below.
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    if _is_repo_root(root_path):
+                  ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    """Return True when *path* looks like the benchmarks repo root."""
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,224 - INFO - root - === Evaluation Started (instance astropy__astropy-13579) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.output.log   (stdout/stderr)
+    ===============================================
+2026-04-24 15:52:27,225 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-13579
+2026-04-24 15:52:27,322 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-24 15:52:27,329 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,345 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-24 15:52:27,419 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-24 15:52:27,420 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,427 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-24 15:52:27,481 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-24 15:52:27,504 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,510 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-24 15:52:27,558 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-24 15:52:27,558 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    # Fall back to filesystem discovery below.
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    if _is_repo_root(root_path):
+                  ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    """Return True when *path* looks like the benchmarks repo root."""
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,633 - INFO - root - === Evaluation Started (instance astropy__astropy-13579) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/logs/instance_astropy__astropy-13579.output.log   (stdout/stderr)
+    ===============================================
+2026-04-24 15:52:27,633 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-13579
+2026-04-24 15:52:27,682 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-24 15:52:27,696 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,697 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-24 15:52:27,751 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-24 15:52:27,770 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,776 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-24 15:52:27,820 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-24 15:52:27,834 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-24 15:52:27,846 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-24 15:52:27,891 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-24 15:52:27,905 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13579 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    # Fall back to filesystem discovery below.
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    if _is_repo_root(root_path):
+                  ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    """Return True when *path* looks like the benchmarks repo root."""
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.

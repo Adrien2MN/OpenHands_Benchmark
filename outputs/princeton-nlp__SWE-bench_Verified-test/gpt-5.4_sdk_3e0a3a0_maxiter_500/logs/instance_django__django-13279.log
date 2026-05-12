@@ -1,0 +1,346 @@
+2026-04-29 16:46:07,006 - INFO - root - === Evaluation Started (instance django__django-13279) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:46:07,010 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-13279
+2026-04-29 16:46:09,149 - INFO - benchmarks.utils.build_utils - Building image from docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest...
+2026-04-29 16:46:09,154 - INFO - openhands.agent_server.docker.build - $ git rev-parse --verify HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-04-29 16:46:09,202 - INFO - openhands.agent_server.docker.build - $ git symbolic-ref -q --short HEAD (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-04-29 16:46:09,327 - INFO - benchmarks.utils.build_utils - SDK submodule info: ref=unknown, sha=3e0a3a0, version=1.16.1
+2026-04-29 16:46:10,395 - INFO - openhands.agent_server.docker.build - $ uv build --sdist --out-dir /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-pvmw6s9j (cwd=/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk)
+2026-04-29 16:47:50,381 - INFO - openhands.agent_server.docker.build - [build] Built 1 sdists for clean context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-sdist-pvmw6s9j/unknown-0.0.0.tar.gz
+2026-04-29 16:47:50,740 - INFO - openhands.agent_server.docker.build - [build] Clean build context: /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0
+2026-04-29 16:47:50,740 - INFO - openhands.agent_server.docker.build - $ docker buildx inspect --bootstrap (cwd=None)
+2026-04-29 16:47:51,066 - WARNING - openhands.agent_server.docker.build - [build] WARNING: Active buildx driver is 'docker', which does not support local dir caching. Fallback to INLINE CACHE
+ Consider running the following commands to set up a compatible buildx environment:
+  1. docker buildx create --name openhands-builder --driver docker-container --use
+  2. docker buildx inspect --bootstrap
+
+2026-04-29 16:47:51,066 - INFO - openhands.agent_server.docker.build - [build] Cache: inline only (driver=docker)
+2026-04-29 16:47:51,066 - INFO - openhands.agent_server.docker.build - [build] Building target='source-minimal' image='ghcr.io/openhands/eval-agent-server' custom_tags='sweb.eval.x86_64.django_1776_django-13279' from base='docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest' for platforms='local-arch'
+2026-04-29 16:47:51,066 - INFO - openhands.agent_server.docker.build - [build] Git ref='unknown' sha='3e0a3a0915b369c7e2057c77722e98585855d30a' package_version='1.16.1'
+2026-04-29 16:47:51,066 - INFO - openhands.agent_server.docker.build - [build] Cache tag: buildcache-source-minimal-sweb.eval.x86_64.django_1776_django-1327_tag_latest-7fd9b1985a42
+2026-04-29 16:47:51,066 - INFO - openhands.agent_server.docker.build - $ docker buildx build --file /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile --target source-minimal --build-arg BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest --build-arg OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a --build-arg OPENHANDS_BUILD_GIT_REF=unknown --load --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-13279-source-minimal --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1327_tag_latest-7fd9b1985a42-source-minimal --build-arg BUILDKIT_INLINE_CACHE=1 /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0 (cwd=/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0)
+2026-04-29 16:48:30,806 - ERROR - openhands.agent_server.docker.build - [build] ERROR: Build failed with exit code 1
+2026-04-29 16:48:30,806 - ERROR - openhands.agent_server.docker.build - [build] Command: docker buildx build --file /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile --target source-minimal --build-arg BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest --build-arg OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a --build-arg OPENHANDS_BUILD_GIT_REF=unknown --load --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-13279-source-minimal --tag ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1327_tag_latest-7fd9b1985a42-source-minimal --build-arg BUILDKIT_INLINE_CACHE=1 /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0
+2026-04-29 16:48:30,806 - ERROR - openhands.agent_server.docker.build - [build] Full stdout:
+
+2026-04-29 16:48:30,806 - ERROR - openhands.agent_server.docker.build - [build] Full stderr:
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 14.43kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1.7
+#2 DONE 1.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e
+#3 resolve docker.io/docker/dockerfile:1.7@sha256:a57df69d0ea827fb7266491f2813635de6f17269be881f696fbfdf2d83dda33e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest
+#4 DONE 0.6s
+
+#5 [internal] load metadata for ghcr.io/astral-sh/uv:0.11.6
+#5 ...
+
+#6 [internal] load metadata for docker.io/library/python:3.13-bookworm
+#6 DONE 0.6s
+
+#5 [internal] load metadata for ghcr.io/astral-sh/uv:0.11.6
+#5 DONE 1.0s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [internal] settings cache mount permissions
+#8 DONE 0.0s
+
+#9 [base-image-minimal 1/6] FROM docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest@sha256:d4d2f83d1ea46455697cc836ffa39ef57a911ab81d82505f1fd623fbf33d0caa
+#9 resolve docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest@sha256:d4d2f83d1ea46455697cc836ffa39ef57a911ab81d82505f1fd623fbf33d0caa done
+#9 CACHED
+
+#10 [builder  1/10] FROM docker.io/library/python:3.13-bookworm@sha256:aaaabf04f3b8867aa162e22d13969aab598b770eda2fa17ee88be4bc909400d6
+#10 resolve docker.io/library/python:3.13-bookworm@sha256:aaaabf04f3b8867aa162e22d13969aab598b770eda2fa17ee88be4bc909400d6 0.0s done
+#10 DONE 0.0s
+
+#11 FROM ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754
+#11 resolve ghcr.io/astral-sh/uv:0.11.6@sha256:b1e699368d24c57cda93c338a57a8c5a119009ba809305cc8e86986d4a006754 0.0s done
+#11 CACHED
+
+#12 [internal] load build context
+#12 transferring context: 33.81kB 0.0s done
+#12 DONE 0.0s
+
+#13 [builder  7/10] COPY --chown=openhands:openhands openhands-tools ./openhands-tools
+#13 CACHED
+
+#14 [builder  8/10] COPY --chown=openhands:openhands openhands-workspace ./openhands-workspace
+#14 CACHED
+
+#15 [builder  9/10] COPY --chown=openhands:openhands openhands-agent-server ./openhands-agent-server
+#15 CACHED
+
+#16 [builder  2/10] COPY --from=ghcr.io/astral-sh/uv:0.11.6 /uv /uvx /bin/
+#16 CACHED
+
+#17 [builder  3/10] RUN groupadd -g 10001 openhands  && useradd -m -u 10001 -g 10001 -s /usr/sbin/nologin openhands  && mkdir -p /agent-server/uv-managed-python  && chown -R openhands:openhands /agent-server
+#17 CACHED
+
+#18 [builder  4/10] WORKDIR /agent-server
+#18 CACHED
+
+#19 [builder  5/10] COPY --chown=openhands:openhands pyproject.toml uv.lock README.md LICENSE ./
+#19 CACHED
+
+#20 [builder  6/10] COPY --chown=openhands:openhands openhands-sdk ./openhands-sdk
+#20 CACHED
+
+#21 [builder 10/10] RUN --mount=type=cache,target=/home/openhands/.cache,uid=10001,gid=10001     uv python install 3.13 &&     uv venv --python-preference only-managed --python 3.13 .venv &&     uv sync --frozen --no-editable --managed-python --extra boto3 &&     readlink -f .venv/bin/python | grep -q '^/agent-server/uv-managed-python/'
+#21 CACHED
+
+#22 [base-image-minimal 2/6] RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates curl wget sudo apt-utils git jq tmux build-essential         coreutils util-linux procps findutils grep sed         apt-transport-https gnupg lsb-release;         (getent group 10001 || groupadd -g 10001 openhands);     (id -u openhands >/dev/null 2>&1 || useradd -m -u 10001 -g 10001 -s /bin/bash openhands);     usermod -aG sudo openhands;     echo "openhands ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers;     mkdir -p /workspace/project;     chown -R openhands:openhands /workspace;     rm -rf /var/lib/apt/lists/*
+#22 0.131 + apt-get update
+#22 0.653 Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+#22 1.038 Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+#22 1.559 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+#22 2.028 Get:4 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [3863 kB]
+#22 2.057 Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+#22 2.297 Get:6 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [61.6 kB]
+#22 2.806 Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+#22 2.806 Get:8 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1292 kB]
+#22 2.978 Get:9 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+#22 3.100 Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+#22 3.276 Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [6862 kB]
+#22 4.239 Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+#22 4.703 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4193 kB]
+#22 4.938 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1601 kB]
+#22 5.055 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [86.0 kB]
+#22 5.536 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [7142 kB]
+#22 5.683 Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.7 kB]
+#22 5.798 Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.7 kB]
+#22 5.990 Fetched 45.6 MB in 6s (7960 kB/s)
+#22 5.990 Reading package lists...
+#22 6.791 + apt-get install -y --no-install-recommends ca-certificates curl wget sudo apt-utils git jq tmux build-essential coreutils util-linux procps findutils grep sed apt-transport-https gnupg lsb-release
+#22 6.872 Reading package lists...
+#22 7.680 Building dependency tree...
+#22 7.897 Reading state information...
+#22 8.061 build-essential is already the newest version (12.9ubuntu3).
+#22 8.061 findutils is already the newest version (4.8.0-1ubuntu3).
+#22 8.061 grep is already the newest version (3.7-1build1).
+#22 8.061 sed is already the newest version (4.8-1ubuntu2).
+#22 8.061 ca-certificates is already the newest version (20240203~22.04.1).
+#22 8.061 ca-certificates set to manually installed.
+#22 8.061 procps is already the newest version (2:3.3.17-6ubuntu2.1).
+#22 8.061 wget is already the newest version (1.21.2-2ubuntu1.1).
+#22 8.061 The following additional packages will be installed:
+#22 8.061   apt dirmngr distro-info-data gnupg-l10n gnupg-utils gpg gpg-agent
+#22 8.061   gpg-wks-client gpg-wks-server gpgconf gpgsm gpgv libapt-pkg6.0 libcurl4
+#22 8.062   libevent-core-2.1-7 libjq1 libutempter0
+#22 8.063 Suggested packages:
+#22 8.063   apt-doc aptitude | synaptic | wajig powermgmt-base dbus-user-session
+#22 8.063   libpam-systemd pinentry-gnome3 tor gettext-base git-daemon-run
+#22 8.063   | git-daemon-sysvinit git-doc git-email git-gui gitk gitweb git-cvs
+#22 8.063   git-mediawiki git-svn parcimonie xloadimage scdaemon dosfstools kbd
+#22 8.063   util-linux-locales
+#22 8.132 The following NEW packages will be installed:
+#22 8.132   apt-transport-https apt-utils distro-info-data libevent-core-2.1-7
+#22 8.132   libutempter0 lsb-release sudo tmux
+#22 8.133 The following packages will be upgraded:
+#22 8.133   apt coreutils curl dirmngr git gnupg gnupg-l10n gnupg-utils gpg gpg-agent
+#22 8.133   gpg-wks-client gpg-wks-server gpgconf gpgsm gpgv jq libapt-pkg6.0 libcurl4
+#22 8.133   libjq1 util-linux
+#22 8.680 20 upgraded, 8 newly installed, 0 to remove and 92 not upgraded.
+#22 8.680 Need to get 12.5 MB of archives.
+#22 8.680 After this operation, 5002 kB of additional disk space will be used.
+#22 8.680 Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 coreutils amd64 8.32-4.1ubuntu1.3 [1437 kB]
+#22 9.154 Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 util-linux amd64 2.37.2-4ubuntu3.5 [1067 kB]
+#22 9.228 Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapt-pkg6.0 amd64 2.4.14 [912 kB]
+#22 9.325 Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpg-wks-client amd64 2.2.27-3ubuntu2.5 [62.7 kB]
+#22 9.435 Get:5 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 dirmngr amd64 2.2.27-3ubuntu2.5 [293 kB]
+#22 9.540 Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpg-wks-server amd64 2.2.27-3ubuntu2.5 [57.6 kB]
+#22 9.627 Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gnupg-utils amd64 2.2.27-3ubuntu2.5 [309 kB]
+#22 9.743 Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpg-agent amd64 2.2.27-3ubuntu2.5 [209 kB]
+#22 9.839 Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpg amd64 2.2.27-3ubuntu2.5 [519 kB]
+#22 9.934 Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpgconf amd64 2.2.27-3ubuntu2.5 [94.3 kB]
+#22 10.04 Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gnupg-l10n all 2.2.27-3ubuntu2.5 [54.5 kB]
+#22 10.13 Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gnupg all 2.2.27-3ubuntu2.5 [315 kB]
+#22 10.24 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpgsm amd64 2.2.27-3ubuntu2.5 [197 kB]
+#22 10.33 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 gpgv amd64 2.2.27-3ubuntu2.5 [137 kB]
+#22 10.44 Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apt amd64 2.4.14 [1363 kB]
+#22 10.54 Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apt-utils amd64 2.4.14 [211 kB]
+#22 10.65 Get:17 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 distro-info-data all 0.52ubuntu0.11 [5444 B]
+#22 10.73 Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 lsb-release all 11.1.0ubuntu4 [10.8 kB]
+#22 10.83 Get:19 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 sudo amd64 1.9.9-1ubuntu2.6 [820 kB]
+#22 10.92 Get:20 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transport-https all 2.4.14 [1510 B]
+#22 11.03 Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 curl amd64 7.81.0-1ubuntu1.23 [194 kB]
+#22 11.14 Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcurl4 amd64 7.81.0-1ubuntu1.23 [290 kB]
+#22 11.36 Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.17 [3174 kB]
+#22 11.41 Err:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 git amd64 1:2.34.1-1ubuntu1.17
+#22 11.41   Hash Sum mismatch
+#22 11.41   Hashes of expected file:
+#22 11.41    - SHA512:e467e3d5bd10503904248af4079bbb6c5969debc83e567446ff14e20e7f5b2a809013d3d932f7313668739d6ac07f212dd2ad443ef09d707fbf2d1126480d2e5
+#22 11.41    - SHA256:8794fcf2c4606c445df0db3dc963c8fb852772208bfb12727a12717c03767af7
+#22 11.41    - SHA1:72daea032a2c431fecc45053bb12ce32d15612f4 [weak]
+#22 11.41    - MD5Sum:f541a42e0f241bb4b06fefe294c402b4 [weak]
+#22 11.41    - Filesize:3173622 [weak]
+#22 11.41   Hashes of received file:
+#22 11.41    - SHA512:03ecfcfc22019f14c436ff400a0836145a9b1f4a9a246ed14c66daca08ff20104421371621ebde21b753dccd5ef526443305df06bb70573ea8fc000c8afa05dd
+#22 11.41    - SHA256:617cd7af68f6913461e6f6dc4e5f79101a74eadf3cb9f121a26926cd3e4e2d72
+#22 11.41    - SHA1:65b0306fcbaacd24844f9ce4019cf6a48c30a018 [weak]
+#22 11.41    - MD5Sum:34306972dbedd6ebdb1875af32fff4d8 [weak]
+#22 11.41    - Filesize:3173622 [weak]
+#22 11.41   Last modification reported: Fri, 27 Feb 2026 17:34:54 +0000
+#22 11.46 Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 jq amd64 1.6-2.1ubuntu3.2 [52.5 kB]
+#22 11.55 Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjq1 amd64 1.6-2.1ubuntu3.2 [135 kB]
+#22 11.65 Get:26 http://archive.ubuntu.com/ubuntu jammy/main amd64 libevent-core-2.1-7 amd64 2.1.12-stable-1build3 [93.9 kB]
+#22 11.74 Get:27 http://archive.ubuntu.com/ubuntu jammy/main amd64 libutempter0 amd64 1.2.1-2build2 [8848 B]
+#22 37.06 Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 tmux amd64 3.2a-4ubuntu0.2 [428 kB]
+#22 37.10 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/main/g/git/git_2.34.1-1ubuntu1.17_amd64.deb  Hash Sum mismatchFetched 12.5 MB in 29s (430 kB/s)
+#22 37.10 
+#22 37.10    Hashes of expected file:
+#22 37.10     - SHA512:e467e3d5bd10503904248af4079bbb6c5969debc83e567446ff14e20e7f5b2a809013d3d932f7313668739d6ac07f212dd2ad443ef09d707fbf2d1126480d2e5
+#22 37.10     - SHA256:8794fcf2c4606c445df0db3dc963c8fb852772208bfb12727a12717c03767af7
+#22 37.10     - SHA1:72daea032a2c431fecc45053bb12ce32d15612f4 [weak]
+#22 37.10     - MD5Sum:f541a42e0f241bb4b06fefe294c402b4 [weak]
+#22 37.10     - Filesize:3173622 [weak]
+#22 37.10    Hashes of received file:
+#22 37.10     - SHA512:03ecfcfc22019f14c436ff400a0836145a9b1f4a9a246ed14c66daca08ff20104421371621ebde21b753dccd5ef526443305df06bb70573ea8fc000c8afa05dd
+#22 37.10     - SHA256:617cd7af68f6913461e6f6dc4e5f79101a74eadf3cb9f121a26926cd3e4e2d72
+#22 37.10     - SHA1:65b0306fcbaacd24844f9ce4019cf6a48c30a018 [weak]
+#22 37.10     - MD5Sum:34306972dbedd6ebdb1875af32fff4d8 [weak]
+#22 37.10     - Filesize:3173622 [weak]
+#22 37.10    Last modification reported: Fri, 27 Feb 2026 17:34:54 +0000
+#22 37.10 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+#22 ERROR: process "/bin/sh -c set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates curl wget sudo apt-utils git jq tmux build-essential         coreutils util-linux procps findutils grep sed         apt-transport-https gnupg lsb-release;         (getent group ${GID} || groupadd -g ${GID} ${USERNAME});     (id -u ${USERNAME} >/dev/null 2>&1 || useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USERNAME});     usermod -aG sudo ${USERNAME};     echo \"${USERNAME} ALL=(ALL) NOPASSWD:ALL\" >> /etc/sudoers;     mkdir -p /workspace/project;     chown -R ${USERNAME}:${USERNAME} /workspace;     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [base-image-minimal 2/6] RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates curl wget sudo apt-utils git jq tmux build-essential         coreutils util-linux procps findutils grep sed         apt-transport-https gnupg lsb-release;         (getent group 10001 || groupadd -g 10001 openhands);     (id -u openhands >/dev/null 2>&1 || useradd -m -u 10001 -g 10001 -s /bin/bash openhands);     usermod -aG sudo openhands;     echo "openhands ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers;     mkdir -p /workspace/project;     chown -R openhands:openhands /workspace;     rm -rf /var/lib/apt/lists/*:
+37.10     - MD5Sum:f541a42e0f241bb4b06fefe294c402b4 [weak]
+37.10     - Filesize:3173622 [weak]
+37.10    Hashes of received file:
+37.10     - SHA512:03ecfcfc22019f14c436ff400a0836145a9b1f4a9a246ed14c66daca08ff20104421371621ebde21b753dccd5ef526443305df06bb70573ea8fc000c8afa05dd
+37.10     - SHA256:617cd7af68f6913461e6f6dc4e5f79101a74eadf3cb9f121a26926cd3e4e2d72
+37.10     - SHA1:65b0306fcbaacd24844f9ce4019cf6a48c30a018 [weak]
+37.10     - MD5Sum:34306972dbedd6ebdb1875af32fff4d8 [weak]
+37.10     - Filesize:3173622 [weak]
+37.10    Last modification reported: Fri, 27 Feb 2026 17:34:54 +0000
+37.10 E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+------
+ERROR: failed to build: failed to solve: process "/bin/sh -c set -eux;     apt-get update;     apt-get install -y --no-install-recommends         ca-certificates curl wget sudo apt-utils git jq tmux build-essential         coreutils util-linux procps findutils grep sed         apt-transport-https gnupg lsb-release;         (getent group ${GID} || groupadd -g ${GID} ${USERNAME});     (id -u ${USERNAME} >/dev/null 2>&1 || useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USERNAME});     usermod -aG sudo ${USERNAME};     echo \"${USERNAME} ALL=(ALL) NOPASSWD:ALL\" >> /etc/sudoers;     mkdir -p /workspace/project;     chown -R ${USERNAME}:${USERNAME} /workspace;     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+
+2026-04-29 16:48:30,807 - INFO - openhands.agent_server.docker.build - [build] Cleaning /private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0
+2026-04-29 16:48:30,871 - INFO - benchmarks.utils.build_utils - Image build output: time='2026-04-29T14:48:30.871203+00:00' base_image='docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest' tags=[] error="BuildCommandError(1, ['docker', 'buildx', 'build', '--file', '/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile', '--target', 'source-minimal', '--build-arg', 'BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest', '--build-arg', 'OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a', '--build-arg', 'OPENHANDS_BUILD_GIT_REF=unknown', '--load', '--tag', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-13279-source-minimal', '--tag', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1327_tag_latest-7fd9b1985a42-source-minimal', '--build-arg', 'BUILDKIT_INLINE_CACHE=1', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0'])" log_path=None status='failed' skip_reason=None attempt_count=1 started_at=None finished_at=None duration_seconds=None remote_check_seconds=1.061 build_seconds=140.477 post_build_seconds=None sdk_build_context_seconds=100.346 sdk_buildx_wall_clock_seconds=39.739 sdk_cleanup_seconds=0.064 sdk_cache_import_seconds=0.0 sdk_cache_import_miss_count=0 sdk_cache_export_seconds=0.0 sdk_image_export_seconds=0.0 sdk_push_layers_seconds=0.0 sdk_export_manifest_seconds=0.0 sdk_cached_step_count=12
+2026-04-29 16:48:30,871 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:48:30,871 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 1/4): Image build failed: BuildCommandError(1, ['docker', 'buildx', 'build', '--file', '/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-agent-server/openhands/agent_server/docker/Dockerfile', '--target', 'source-minimal', '--build-arg', 'BASE_IMAGE=docker.io/swebench/sweb.eval.x86_64.django_1776_django-13279:latest', '--build-arg', 'OPENHANDS_BUILD_GIT_SHA=3e0a3a0915b369c7e2057c77722e98585855d30a', '--build-arg', 'OPENHANDS_BUILD_GIT_REF=unknown', '--load', '--tag', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-13279-source-minimal', '--tag', 'ghcr.io/openhands/eval-agent-server:3e0a3a0-sweb.eval.x86_64.django_1776_django-1327_tag_latest-7fd9b1985a42-source-minimal', '--build-arg', 'BUILDKIT_INLINE_CACHE=1', '/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/agent-build-6z2a2i7u/unknown-0.0.0'])
+2026-04-29 16:48:30,871 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:48:30,920 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:48:30,920 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:30,921 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:48:30,946 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:48:30,946 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:30,946 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:48:30,970 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:48:30,970 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:30,974 - INFO - root - === Evaluation Started (instance django__django-13279) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:48:30,975 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-13279
+2026-04-29 16:48:31,020 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:48:31,021 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,022 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:48:31,058 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:48:31,058 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,059 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:48:31,093 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:48:31,093 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,093 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:48:31,125 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:48:31,125 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,135 - INFO - root - === Evaluation Started (instance django__django-13279) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_500/logs/instance_django__django-13279.output.log   (stdout/stderr)
+    ===============================================
+2026-04-29 16:48:31,139 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-13279
+2026-04-29 16:48:31,184 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-29 16:48:31,184 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 1/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,184 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-04-29 16:48:31,219 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=2
+2026-04-29 16:48:31,219 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 2/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,219 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 3/4, runtime_failure_count=2, resource_factor=4
+2026-04-29 16:48:31,250 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=3
+2026-04-29 16:48:31,250 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed (attempt 3/4): Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+2026-04-29 16:48:31,251 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: attempt 4/4, runtime_failure_count=3, resource_factor=8
+2026-04-29 16:48:31,280 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-13279: failure_category=resource, escalate_resources=True, runtime_failure_count=4
+2026-04-29 16:48:31,280 - ERROR - benchmarks.utils.evaluation - [worker] Instance django__django-13279 failed after 4 attempts. Last error: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 960, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 169, in prepare_workspace
+    base_agent_image = f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-{custom_tag}{suffix}"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/version.py", line 72, in get_phased_image_tag_prefix
+    os.getenv("IMAGE_TAG_PREFIX") or f"{SDK_SHORT_SHA}-{dockerfile_content_hash()}"
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 92, in dockerfile_content_hash
+    content = _get_sdk_dockerfile().read_text()
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 71, in _get_sdk_dockerfile
+    benchmarks_root = _get_repo_root()
+                      ^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/build_base_images.py", line 60, in _get_repo_root
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/Users/z338mn/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'rev-parse', '--show-toplevel']' returned non-zero exit status 128.

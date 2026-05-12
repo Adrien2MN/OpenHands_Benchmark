@@ -1,0 +1,126 @@
+2026-05-05 13:37:46,268 - INFO - Creating container for astropy__astropy-14182...
+2026-05-05 13:37:46,367 - INFO - Container for astropy__astropy-14182 created: 474f089836ab30a87472ca7b843a991302798f054509342cbf9205aa590d22a5
+2026-05-05 13:37:46,446 - INFO - Container for astropy__astropy-14182 started: 474f089836ab30a87472ca7b843a991302798f054509342cbf9205aa590d22a5
+2026-05-05 13:37:46,446 - INFO - Intermediate patch for astropy__astropy-14182 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05/OpenHands/astropy__astropy-14182/patch.diff, now applying to container...
+2026-05-05 13:37:46,575 - INFO - >>>>> Applied Patch:
+Checking patch astropy/io/ascii/rst.py...
+/tmp/patch.diff:51: new blank line at EOF.
++
+Applied patch astropy/io/ascii/rst.py cleanly.
+warning: 1 line adds whitespace errors.
+
+2026-05-05 13:37:46,902 - INFO - Git diff before:
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index abdeba8ef..8877a6c72 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -57,10 +57,44 @@ class RST(FixedWidth):
+     data_class = SimpleRSTData
+     header_class = SimpleRSTHeader
+ 
+-    def __init__(self):
+-        super().__init__(delimiter_pad=None, bookend=False)
++    def __init__(self, *args, header_rows=None, **kwargs):
++        self.header_rows = header_rows
++        super().__init__(*args, delimiter_pad=None, bookend=False, **kwargs)
+ 
+     def write(self, lines):
++        # Override write method to support header_rows
++        if self.header_rows is not None:
++            # Compose the header lines with the header_rows content
++            header_lines = []
++            # Compose line with column names
++            header_lines.append(lines[1])  # Default header line with col names
++            # Add each additional header row data as a line
++            for hr in self.header_rows:
++                # hr is expected to be a list or tuple of strings for each column
++                # Build line by joining with spaces and padding
++                # A simple approach: align columns similar to lines[1]
++                split_indices = []
++                last_pos = 0
++                for i, c in enumerate(lines[1]):
++                    if c == " ":
++                        split_indices.append(i)
++                split_indices.append(len(lines[1]))
++                pos = 0
++                new_line = []
++                for i in range(len(hr)):
++                    start = split_indices[i - 1] if i > 0 else 0
++                    end = split_indices[i]
++                    val = hr[i]
++                    # Pad the val to fit in the column width
++                    col_width = end - start
++                    val_str = str(val).ljust(col_width)
++                    new_line.append(val_str)
++                new_header_line = "".join(new_line)
++                header_lines.append(new_header_line)
++            # Add original lines starting from header and data
++            lines = lines[:1] + header_lines + lines[2:]
++
+         lines = super().write(lines)
+         lines = [lines[1]] + lines + [lines[1]]
+         return lines
++
+2026-05-05 13:37:46,902 - INFO - Eval script for astropy__astropy-14182 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05/OpenHands/astropy__astropy-14182/eval.sh; copying to container...
+2026-05-05 13:39:37,379 - INFO - Test runtime: 110.42 seconds
+2026-05-05 13:39:37,380 - INFO - Test output for astropy__astropy-14182 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05/OpenHands/astropy__astropy-14182/test_output.txt
+2026-05-05 13:39:37,463 - INFO - Git diff after:
+diff --git a/astropy/io/ascii/rst.py b/astropy/io/ascii/rst.py
+index abdeba8ef..8877a6c72 100644
+--- a/astropy/io/ascii/rst.py
++++ b/astropy/io/ascii/rst.py
+@@ -57,10 +57,44 @@ class RST(FixedWidth):
+     data_class = SimpleRSTData
+     header_class = SimpleRSTHeader
+ 
+-    def __init__(self):
+-        super().__init__(delimiter_pad=None, bookend=False)
++    def __init__(self, *args, header_rows=None, **kwargs):
++        self.header_rows = header_rows
++        super().__init__(*args, delimiter_pad=None, bookend=False, **kwargs)
+ 
+     def write(self, lines):
++        # Override write method to support header_rows
++        if self.header_rows is not None:
++            # Compose the header lines with the header_rows content
++            header_lines = []
++            # Compose line with column names
++            header_lines.append(lines[1])  # Default header line with col names
++            # Add each additional header row data as a line
++            for hr in self.header_rows:
++                # hr is expected to be a list or tuple of strings for each column
++                # Build line by joining with spaces and padding
++                # A simple approach: align columns similar to lines[1]
++                split_indices = []
++                last_pos = 0
++                for i, c in enumerate(lines[1]):
++                    if c == " ":
++                        split_indices.append(i)
++                split_indices.append(len(lines[1]))
++                pos = 0
++                new_line = []
++                for i in range(len(hr)):
++                    start = split_indices[i - 1] if i > 0 else 0
++                    end = split_indices[i]
++                    val = hr[i]
++                    # Pad the val to fit in the column width
++                    col_width = end - start
++                    val_str = str(val).ljust(col_width)
++                    new_line.append(val_str)
++                new_header_line = "".join(new_line)
++                header_lines.append(new_header_line)
++            # Add original lines starting from header and data
++            lines = lines[:1] + header_lines + lines[2:]
++
+         lines = super().write(lines)
+         lines = [lines[1]] + lines + [lines[1]]
+         return lines
++
+2026-05-05 13:39:37,463 - INFO - Grading answer for astropy__astropy-14182...
+2026-05-05 13:39:37,467 - INFO - report: {'astropy__astropy-14182': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/io/ascii/tests/test_rst.py::test_rst_with_header_rows']}, 'PASS_TO_PASS': {'success': ['astropy/io/ascii/tests/test_rst.py::test_read_normal', 'astropy/io/ascii/tests/test_rst.py::test_read_normal_names', 'astropy/io/ascii/tests/test_rst.py::test_read_normal_names_include', 'astropy/io/ascii/tests/test_rst.py::test_read_normal_exclude', 'astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column', 'astropy/io/ascii/tests/test_rst.py::test_read_unbounded_right_column_header', 'astropy/io/ascii/tests/test_rst.py::test_read_right_indented_table', 'astropy/io/ascii/tests/test_rst.py::test_trailing_spaces_in_row_definition', 'astropy/io/ascii/tests/test_rst.py::test_write_normal'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-14182: resolved: False
+2026-05-05 13:39:37,468 - INFO - Attempting to stop container sweb.eval.astropy__astropy-14182.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05...
+2026-05-05 13:39:52,576 - INFO - Attempting to remove container sweb.eval.astropy__astropy-14182.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05...
+2026-05-05 13:39:52,609 - INFO - Container sweb.eval.astropy__astropy-14182.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05 removed.
+2026-05-05 13:39:52,609 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-14182:latest...
+2026-05-05 13:39:52,632 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-14182:latest removed.

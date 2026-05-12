@@ -1,0 +1,510 @@
+{
+  "instance_id": "django__django-12113",
+  "model": "gpt-5.3-codex",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 633
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.6417186999999999,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.6417186999999999
+  },
+  "generation_seconds": 376.439,
+  "timings": {
+    "workspace_generation_seconds": 3.282,
+    "agent_generation_seconds": 374.154,
+    "total_generation_seconds": 377.436
+  },
+  "iterations": 42,
+  "iteration_token_usage": [
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 14677,
+      "completion_tokens": 107,
+      "cache_read_tokens": 5632,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 71,
+      "context_window": 272000,
+      "per_turn_token": 14784,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmhaRFV4WXpBNE1UazFPV0UyTnpKbE5tTTJPRE5rT1dVMU5nPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 530,
+      "completion_tokens": 348,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 331,
+      "context_window": 272000,
+      "per_turn_token": 878,
+      "response_id": "chatcmpl-9ea93eb4-7495-4291-9333-8f22fccd9e3e"
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 14810,
+      "completion_tokens": 310,
+      "cache_read_tokens": 14592,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 10,
+      "context_window": 272000,
+      "per_turn_token": 15120,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmlNRFU1T1RBNE1UazFPR1UxWkdNM1lXRXlNekE1TURaaU53PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 15128,
+      "completion_tokens": 155,
+      "cache_read_tokens": 14720,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 61,
+      "context_window": 272000,
+      "per_turn_token": 15283,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmlOV1l6TlRnNE1UazFZVEJtTlRnelpEa3lNVFF4TURSa05nPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 16328,
+      "completion_tokens": 319,
+      "cache_read_tokens": 15104,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 222,
+      "context_window": 272000,
+      "per_turn_token": 16647,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmlZV0poTURnNE1UazFZalJsWkdRd09UUmhNemN3TkRnNE5RPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 17248,
+      "completion_tokens": 201,
+      "cache_read_tokens": 16512,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 144,
+      "context_window": 272000,
+      "per_turn_token": 17449,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmpNbVExWVdNNE1UazFPVFpqWlROaE5XRTJORGN3WW1FME1BPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 17731,
+      "completion_tokens": 78,
+      "cache_read_tokens": 17280,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 30,
+      "context_window": 272000,
+      "per_turn_token": 17809,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmpOMlUxTVRnNE1UazFZak0yWWpReU5qWXlOREkzWmpFeVlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 17867,
+      "completion_tokens": 263,
+      "cache_read_tokens": 17664,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 227,
+      "context_window": 272000,
+      "per_turn_token": 18130,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmpZamt4WlRnNE1UazFZbU5rTlRNeFpUQXlNR1kwWW1FMVlRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 18370,
+      "completion_tokens": 281,
+      "cache_read_tokens": 6272,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 272000,
+      "per_turn_token": 18651,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmtNR0pqWmpBNE1UazFZamswWVRaaVpqazRaRGRqTTJKallnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 18673,
+      "completion_tokens": 263,
+      "cache_read_tokens": 18560,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 168,
+      "context_window": 272000,
+      "per_turn_token": 18936,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmtOR001TnpRNE1UazFZVGcwWlRWalpUUXlPR1ZtT1RZNU9BPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 21588,
+      "completion_tokens": 605,
+      "cache_read_tokens": 18688,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 362,
+      "context_window": 272000,
+      "per_turn_token": 22193,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmtZbU5oWkdNNE1UazFZbVEzWlRnMU5tUXpNelk0T1RjMk9RPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 22428,
+      "completion_tokens": 313,
+      "cache_read_tokens": 22016,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 201,
+      "context_window": 272000,
+      "per_turn_token": 22741,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmxOV0l6WVRnNE1UazFZVEF5TVRRMlkySm1NelV5T1dNME1RPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 25162,
+      "completion_tokens": 692,
+      "cache_read_tokens": 22656,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 407,
+      "context_window": 272000,
+      "per_turn_token": 25854,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTmxZemM1TnpRNE1UazFPVFZoTVRRNVkyTm1PREUwWm1FNU13PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 25876,
+      "completion_tokens": 162,
+      "cache_read_tokens": 17920,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 43,
+      "context_window": 272000,
+      "per_turn_token": 26038,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTm1ObU5tWXpRNE1UazFPVFpqWXpsbFpXSXhOVFkwTmpsa1pBPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 28818,
+      "completion_tokens": 351,
+      "cache_read_tokens": 25472,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 184,
+      "context_window": 272000,
+      "per_turn_token": 29169,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XTm1ZbUUzTXpRNE1UazFZakF6WlRNeE9XUTFObVEzWVRjM1pBPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 38527,
+      "completion_tokens": 1264,
+      "cache_read_tokens": 28672,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 1137,
+      "context_window": 272000,
+      "per_turn_token": 39791,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXdNV00xWkRRNE1UazFZbVJoWTJVMllXWm1ORGc0T0Raa05nPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 41894,
+      "completion_tokens": 161,
+      "cache_read_tokens": 39552,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 105,
+      "context_window": 272000,
+      "per_turn_token": 42055,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXhZelk1TlRnNE1UazFZV1ZsTWpaaU5HRTFOell4TUdKbE5BPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 43173,
+      "completion_tokens": 354,
+      "cache_read_tokens": 41984,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 162,
+      "context_window": 272000,
+      "per_turn_token": 43527,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXlNRGMwTURBNE1UazFPREkyTURaaFpXSmlNVGswWTJVeU5nPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 43779,
+      "completion_tokens": 459,
+      "cache_read_tokens": 43392,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 142,
+      "context_window": 272000,
+      "per_turn_token": 44238,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXlOell6TnpRNE1UazFZalUyTjJFeE5UVXhaamsyWVRGa1pBPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 44547,
+      "completion_tokens": 268,
+      "cache_read_tokens": 44160,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 204,
+      "context_window": 272000,
+      "per_turn_token": 44815,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXlaVEJsTXpnNE1UazFPVFZrTUdFNVlUSmhZek5rTXpjek1BPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 46015,
+      "completion_tokens": 504,
+      "cache_read_tokens": 44672,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 244,
+      "context_window": 272000,
+      "per_turn_token": 46519,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXpORFU0TmpRNE1UazFPVFJrT0Rka09HSmlOemN5Wm1NNFlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 46535,
+      "completion_tokens": 321,
+      "cache_read_tokens": 46208,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 24,
+      "context_window": 272000,
+      "per_turn_token": 46856,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUXpaREEzT1dNNE1UazFPRGMzTmpKaFltWTNNRFExTUdSbU53PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 46878,
+      "completion_tokens": 350,
+      "cache_read_tokens": 46720,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 25,
+      "context_window": 272000,
+      "per_turn_token": 47228,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTBNV0UyTjJNNE1UazFZalUzWTJVeVpHWm1NRGxrT0RZM053PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 47486,
+      "completion_tokens": 302,
+      "cache_read_tokens": 25856,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 131,
+      "context_window": 272000,
+      "per_turn_token": 47788,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTBObUUzWWpRNE1UazFPVEUxTVRrMU4yRm1PVGt4Tnprek13PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 48007,
+      "completion_tokens": 142,
+      "cache_read_tokens": 47616,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 12,
+      "context_window": 272000,
+      "per_turn_token": 48149,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTBaVEF4TW1NNE1UazFPREE0WW1KallUQXhNVEEyT1RNNFlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 50776,
+      "completion_tokens": 149,
+      "cache_read_tokens": 47104,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 35,
+      "context_window": 272000,
+      "per_turn_token": 50925,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTFNemM1WkdNNE1UazFZalpoTVRjNE1qVmhZak14TldZNU1RPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 51060,
+      "completion_tokens": 193,
+      "cache_read_tokens": 50816,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 95,
+      "context_window": 272000,
+      "per_turn_token": 51253,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTFPRGcwTlRnNE1UazFZakJrTkdOaE5HRXlNemhtWkRJMVlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 51385,
+      "completion_tokens": 452,
+      "cache_read_tokens": 48000,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 369,
+      "context_window": 272000,
+      "per_turn_token": 51837,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTFaVGxtWkdNNE1UazFZakV5WkRNeU1URmxabUl3T0RZME13PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 51905,
+      "completion_tokens": 443,
+      "cache_read_tokens": 51584,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 126,
+      "context_window": 272000,
+      "per_turn_token": 52348,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTJPVFExTVdNNE1UazFZakZrTlRZeU9UVXpabU01TXpobFlRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 52370,
+      "completion_tokens": 205,
+      "cache_read_tokens": 51072,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 86,
+      "context_window": 272000,
+      "per_turn_token": 52575,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTNNRGd5TURBNE1UazFPVGt6WlRneU1ESTROalEzTWpjM1pRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 52814,
+      "completion_tokens": 158,
+      "cache_read_tokens": 52224,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 72,
+      "context_window": 272000,
+      "per_turn_token": 52972,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTNaalEzWkRBNE1UazFZakkxT1RCaE1UQmxaREJsTlRVellRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 53193,
+      "completion_tokens": 527,
+      "cache_read_tokens": 52864,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 450,
+      "context_window": 272000,
+      "per_turn_token": 53720,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTRZemhrTWpBNE1UazFZV1F4WWpnM056Y3dOelpqTXpnMk5RPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 53846,
+      "completion_tokens": 177,
+      "cache_read_tokens": 53632,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 80,
+      "context_window": 272000,
+      "per_turn_token": 54023,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUTVPV016WWpRNE1UazFPRFppWldWaVl6ZzBPVEJsT1dSbVlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 54117,
+      "completion_tokens": 241,
+      "cache_read_tokens": 53760,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 126,
+      "context_window": 272000,
+      "per_turn_token": 54358,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmhOalE1TUdNNE1UazFZamd3WlRRM09ESTNNVFE1TWpCbU5BPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 54449,
+      "completion_tokens": 213,
+      "cache_read_tokens": 54272,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 135,
+      "context_window": 272000,
+      "per_turn_token": 54662,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmlNelF5WWpRNE1UazFZak5pTkRneE5USXhOMkZtTXprMllRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 56150,
+      "completion_tokens": 427,
+      "cache_read_tokens": 54400,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 242,
+      "context_window": 272000,
+      "per_turn_token": 56577,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmpNRGhsT1dNNE1UazFZamMxTmpGaE5EUm1Oakl6WXpCa1pRPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 56784,
+      "completion_tokens": 238,
+      "cache_read_tokens": 56448,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 116,
+      "context_window": 272000,
+      "per_turn_token": 57022,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmpaakZrWm1NNE1UazFZak5rWkdFMU5UZzJZelptWXpKbE53PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 57538,
+      "completion_tokens": 153,
+      "cache_read_tokens": 52480,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 43,
+      "context_window": 272000,
+      "per_turn_token": 57691,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmtZamc1TTJNNE1UazFZalE0TjJaaFl6TTROMlF3WWpCbVpnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 57786,
+      "completion_tokens": 363,
+      "cache_read_tokens": 57600,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 17,
+      "context_window": 272000,
+      "per_turn_token": 58149,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUmxPVFkxT0RBNE1UazFPREJqWWpNMFpEWmpPVGsxTTJRMVpnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 58171,
+      "completion_tokens": 111,
+      "cache_read_tokens": 57984,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 37,
+      "context_window": 272000,
+      "per_turn_token": 58282,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XUm1OemhpTnpnNE1UazFPV1ZoTldaaFpqa3dOekkxTW1NME13PT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 58340,
+      "completion_tokens": 114,
+      "cache_read_tokens": 58112,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 63,
+      "context_window": 272000,
+      "per_turn_token": 58454,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XVXdOalU0WlRRNE1UazFPRGd4TUdVeU9HSXdOemxoWmpsaFlnPT0="
+    },
+    {
+      "model": "openai/gpt-5.3-codex",
+      "prompt_tokens": 58523,
+      "completion_tokens": 1189,
+      "cache_read_tokens": 56832,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 132,
+      "context_window": 272000,
+      "per_turn_token": 59712,
+      "response_id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDpOb25lO3Jlc3BvbnNlX2lkOnJlc3BfYkdsMFpXeHNiVHBqZFhOMGIyMWZiR3h0WDNCeWIzWnBaR1Z5T21GNmRYSmxPMjF2WkdWc1gybGtPalk1WldZNFltUmtOMlU0TTJSak16QmpOV1UwWkdFeU9ETm1ZamMxWm1NNE9EUmpNMk01TXpkaE1UWmhaVFkwTnpFM1pXRXhNakZpWWpFeVlqUTJZMkk3Y21WemNHOXVjMlZmYVdRNmNtVnpjRjh3TldJd1ptSmxNek16T0dFelpUWm1NREUyT1daak9XVXhNMlUxWmpRNE1UazFZakkzTmpJNE1qZGlZalJqWm1JM1lRPT0="
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1651282,
+    "completion_tokens": 13926,
+    "total_tokens": 1665208
+  },
+  "token_footprint": {
+    "output_tokens_used": 13926,
+    "energy_consumption_kwh": 0.033871333019039995,
+    "carbon_footprint_kg_co2e": 0.002444420512972944,
+    "scenario_file": "gpt53-ecologits2-token.json",
+    "scenario_path": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/model_footprint/gpt53-ecologits2-token.json",
+    "electricity_grid_source": "sweden"
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nadmin_views.test_multidb fails with persistent test SQLite database.\nDescription\n\t \n\t\t(last modified by Mariusz Felisiak)\n\t \nI've tried using persistent SQLite databases for the tests (to make use of\n--keepdb), but at least some test fails with:\nsqlite3.OperationalError: database is locked\nThis is not an issue when only using TEST[\"NAME\"] with \"default\" (which is good enough in terms of performance).\ndiff --git i/tests/test_sqlite.py w/tests/test_sqlite.py\nindex f1b65f7d01..9ce4e32e14 100644\n--- i/tests/test_sqlite.py\n+++ w/tests/test_sqlite.py\n@@ -15,9 +15,15 @@\n DATABASES = {\n\t 'default': {\n\t\t 'ENGINE': 'django.db.backends.sqlite3',\n+\t\t'TEST': {\n+\t\t\t'NAME': 'test_default.sqlite3'\n+\t\t},\n\t },\n\t 'other': {\n\t\t 'ENGINE': 'django.db.backends.sqlite3',\n+\t\t'TEST': {\n+\t\t\t'NAME': 'test_other.sqlite3'\n+\t\t},\n\t }\n }\n% tests/runtests.py admin_views.test_multidb -v 3 --keepdb --parallel 1\n\u2026\nOperations to perform:\n Synchronize unmigrated apps: admin_views, auth, contenttypes, messages, sessions, staticfiles\n Apply all migrations: admin, sites\nRunning pre-migrate handlers for application contenttypes\nRunning pre-migrate handlers for application auth\nRunning pre-migrate handlers for application sites\nRunning pre-migrate handlers for application sessions\nRunning pre-migrate handlers for application admin\nRunning pre-migrate handlers for application admin_views\nSynchronizing apps without migrations:\n Creating tables...\n\tRunning deferred SQL...\nRunning migrations:\n No migrations to apply.\nRunning post-migrate handlers for application contenttypes\nRunning post-migrate handlers for application auth\nRunning post-migrate handlers for application sites\nRunning post-migrate handlers for application sessions\nRunning post-migrate handlers for application admin\nRunning post-migrate handlers for application admin_views\nSystem check identified no issues (0 silenced).\nERROR\n======================================================================\nERROR: setUpClass (admin_views.test_multidb.MultiDatabaseTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n File \"\u2026/Vcs/django/django/db/backends/utils.py\", line 84, in _execute\n\treturn self.cursor.execute(sql, params)\n File \"\u2026/Vcs/django/django/db/backends/sqlite3/base.py\", line 391, in execute\n\treturn Database.Cursor.execute(self, query, params)\nsqlite3.OperationalError: database is locked\nThe above exception was the direct cause of the following exception:\nTraceback (most recent call last):\n File \"\u2026/Vcs/django/django/test/testcases.py\", line 1137, in setUpClass\n\tcls.setUpTestData()\n File \"\u2026/Vcs/django/tests/admin_views/test_multidb.py\", line 40, in setUpTestData\n\tusername='admin', password='something', email='test@test.org',\n File \"\u2026/Vcs/django/django/contrib/auth/models.py\", line 158, in create_superuser\n\treturn self._create_user(username, email, password, **extra_fields)\n File \"\u2026/Vcs/django/django/contrib/auth/models.py\", line 141, in _create_user\n\tuser.save(using=self._db)\n File \"\u2026/Vcs/django/django/contrib/auth/base_user.py\", line 66, in save\n\tsuper().save(*args, **kwargs)\n File \"\u2026/Vcs/django/django/db/models/base.py\", line 741, in save\n\tforce_update=force_update, update_fields=update_fields)\n File \"\u2026/Vcs/django/django/db/models/base.py\", line 779, in save_base\n\tforce_update, using, update_fields,\n File \"\u2026/Vcs/django/django/db/models/base.py\", line 870, in _save_table\n\tresult = self._do_insert(cls._base_manager, using, fields, update_pk, raw)\n File \"\u2026/Vcs/django/django/db/models/base.py\", line 908, in _do_insert\n\tusing=using, raw=raw)\n File \"\u2026/Vcs/django/django/db/models/manager.py\", line 82, in manager_method\n\treturn getattr(self.get_queryset(), name)(*args, **kwargs)\n File \"\u2026/Vcs/django/django/db/models/query.py\", line 1175, in _insert\n\treturn query.get_compiler(using=using).execute_sql(return_id)\n File \"\u2026/Vcs/django/django/db/models/sql/compiler.py\", line 1321, in execute_sql\n\tcursor.execute(sql, params)\n File \"\u2026/Vcs/django/django/db/backends/utils.py\", line 67, in execute\n\treturn self._execute_with_wrappers(sql, params, many=False, executor=self._execute)\n File \"\u2026/Vcs/django/django/db/backends/utils.py\", line 76, in _execute_with_wrappers\n\treturn executor(sql, params, many, context)\n File \"\u2026/Vcs/django/django/db/backends/utils.py\", line 84, in _execute\n\treturn self.cursor.execute(sql, params)\n File \"\u2026/Vcs/django/django/db/utils.py\", line 89, in __exit__\n\traise dj_exc_value.with_traceback(traceback) from exc_value\n File \"\u2026/Vcs/django/django/db/backends/utils.py\", line 84, in _execute\n\treturn self.cursor.execute(sql, params)\n File \"\u2026/Vcs/django/django/db/backends/sqlite3/base.py\", line 391, in execute\n\treturn Database.Cursor.execute(self, query, params)\ndjango.db.utils.OperationalError: database is locked\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nFollow these phases to resolve the issue:\n\nPhase 1. READING: read the problem and reword it in clearer terms\n   1.1 If there are code or config snippets. Express in words any best practices or conventions in them.\n   1.2 Hightlight message errors, method names, variables, file names, stack traces, and technical details.\n   1.3 Explain the problem in clear terms.\n   1.4 Enumerate the steps to reproduce the problem.\n   1.5 Hightlight any best practices to take into account when testing and fixing the issue\n\nPhase 2. RUNNING: install and run the tests on the repository\n   2.1 Activate the environment by running  \n       ./opt/miniconda3/etc/profile.d/conda.sh ; conda activate testbed\n   2.2 Follow the readme\n   2.3 Install the environment and anything needed\n   2.4 Iterate and figure out how to run the tests\n\nPhase 3. EXPLORATION: find the files that are related to the problem and possible solutions\n   3.1 Use `grep` to search for relevant methods, classes, keywords and error messages.\n   3.2 Identify all files related to the problem statement.\n   3.3 Propose the methods and files to fix the issue and explain why.\n   3.4 From the possible file locations, select the most likely location to fix the issue.\n\nPhase 4. TEST CREATION: before implementing any fix, create a script to reproduce and verify the issue.\n   4.1 Look at existing test files in the repository to understand the test format/structure.\n   4.2 Create a minimal reproduction script that reproduces the located issue.\n   4.3 Run the reproduction script to confirm you are reproducing the issue.\n   4.4 Adjust the reproduction script as necessary.\n\nPhase 5. FIX ANALYSIS: state clearly the problem and how to fix it\n   5.1 State clearly what the problem is.\n   5.2 State clearly where the problem is located.\n   5.3 State clearly how the test reproduces the issue.\n   5.4 State clearly the best practices to take into account in the fix.\n   5.5 State clearly how to fix the problem.\n\nPhase 6. FIX IMPLEMENTATION: Edit the source code to implement your chosen solution.\n   6.1 Make minimal, focused changes to fix the issue.\n\nPhase 7. VERIFICATION: Test your implementation thoroughly.\n   7.1 Run your reproduction script to verify the fix works.\n   7.2 Add edge cases to your test script to ensure comprehensive coverage.\n   7.3 Run existing tests related to the modified code to ensure you haven't broken anything.\n\n8. FINAL REVIEW: Carefully re-read the problem description and compare your changes with the base commit 62254c5202e80a68f4fe6572a2be46a3d953de1a.\n   8.1 Ensure you've fully addressed all requirements.\n   8.2 Run any tests in the repository related to:\n     8.2.1 The issue you are fixing\n     8.2.2 The files you modified\n     8.2.3 The functions you changed\n   8.3 If any tests fail, revise your implementation until all tests pass\n\nBe thorough in your exploration, testing, and reasoning. It's fine if your thinking process is lengthy - quality and completeness are more important than brevity.",
+  "test_result": {
+    "git_patch": "diff --git a/django/db/backends/sqlite3/creation.py b/django/db/backends/sqlite3/creation.py\nindex d97052f52d..6ffbc26d36 100644\n--- a/django/db/backends/sqlite3/creation.py\n+++ b/django/db/backends/sqlite3/creation.py\n@@ -95,7 +95,7 @@ class DatabaseCreation(BaseDatabaseCreation):\n         TEST NAME. See https://www.sqlite.org/inmemorydb.html\n         \"\"\"\n         test_database_name = self._get_test_db_name()\n-        sig = [self.connection.settings_dict['NAME']]\n+        sig = [test_database_name]\n         if self.is_in_memory_db(test_database_name):\n             sig.append(self.connection.alias)\n         return tuple(sig)\n",
+    "iteration_count": 42,
+    "timings": {
+      "workspace_generation_seconds": 3.282,
+      "agent_generation_seconds": 374.154,
+      "total_generation_seconds": 377.436
+    }
+  }
+}

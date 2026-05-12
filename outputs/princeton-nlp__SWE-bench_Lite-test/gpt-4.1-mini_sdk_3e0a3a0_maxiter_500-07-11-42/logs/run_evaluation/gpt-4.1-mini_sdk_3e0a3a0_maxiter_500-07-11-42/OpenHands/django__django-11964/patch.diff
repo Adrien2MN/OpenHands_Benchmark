@@ -1,0 +1,18 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index d610dc86f0..7745f01abb 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -916,7 +916,12 @@ class Field(RegisterLookupMixin):
+ 
+     def value_from_object(self, obj):
+         """Return the value of this field in the given model instance."""
+-        return getattr(obj, self.attname)
++        val = getattr(obj, self.attname)
++        # unwrap enum.Enum to the actual value
++        if hasattr(val, "__class__") and issubclass(val.__class__, enum.Enum):
++            return val.value
++        return val
++
+ 
+ 
+ class BooleanField(Field):

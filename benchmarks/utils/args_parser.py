@@ -91,8 +91,8 @@ def get_parser(add_llm_config: bool = True) -> argparse.ArgumentParser:
     parser.add_argument(
         "--max-retries",
         type=int,
-        default=3,
-        help="Maximum retries for instances that throw exceptions (default: 3)",
+        default=0,
+        help="Maximum retries for instances that throw exceptions (default: 0)",
     )
     parser.add_argument(
         "--tool-preset",

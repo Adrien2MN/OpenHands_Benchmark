@@ -1,0 +1,40 @@
+{
+  "directory": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100",
+  "timestamp": "2026-04-23T16:10:29.689822",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 3,
+    "cost": 3.4688370000000006,
+    "time_statistics": {
+      "average_duration": 425.8441533333333,
+      "total_duration": 1277.53246,
+      "total_lines": 3,
+      "lines_with_duration": 3
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 3,
+      "cost": 3.4688370000000006,
+      "time_statistics": {
+        "average_duration": 425.8441533333333,
+        "total_duration": 1277.53246,
+        "total_lines": 3,
+        "lines_with_duration": 3
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 3.4688370000000006,
+    "total_duration": 1277.53246,
+    "only_main_output_cost": 3.4688370000000006,
+    "sum_critic_files": 3.4688370000000006
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

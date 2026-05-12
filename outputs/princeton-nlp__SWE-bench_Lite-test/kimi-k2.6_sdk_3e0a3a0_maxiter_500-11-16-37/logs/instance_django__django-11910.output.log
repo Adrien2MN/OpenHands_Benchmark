@@ -1,0 +1,1173 @@
+[?25l$ git rev-parse --verify HEAD 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K$ git rev-parse --verify HEAD 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ 3e0a3a0915b369c7e2057c77722e98585855d30a
+[?25h[?25l$ git symbolic-ref -q --short HEAD 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K$ git symbolic-ref -q --short HEAD 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+
+[?25h[?25l$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-_0v3rfq_[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`
+   × Failed to build
+   │ 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+   ├─▶ Failed to resolve requirements from `setup.py` build
+   ├─▶ No solution found when resolving: `setuptools>=[1;36m40.8[0m.[1;36m0[0m`
+   ├─▶ Request failed after [1;36m3[0m retries in [1;36m4.[0m9s
+   ├─▶ Failed to fetch: `[4;94mhttps://pypi.org/simple/setuptools/`[0m
+   ├─▶ error sending request for url [1m([0m[4;94mhttps://pypi.org/simple/setuptools/[0m[4;94m)[0m
+   ├─▶ client error [1m([0mConnect[1m)[0m
+   ├─▶ dns error
+   ╰─▶ failed to lookup address information: nodename nor servname provided, or not known
+[?25h[?25l$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-p23bvcfa[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`
+   × Failed to build
+   │ 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+   ├─▶ Failed to resolve requirements from `setup.py` build
+   ├─▶ No solution found when resolving: `setuptools>=[1;36m40.8[0m.[1;36m0[0m`
+   ├─▶ Request failed after [1;36m3[0m retries in [1;36m11.[0m3s
+   ├─▶ Failed to fetch: `[4;94mhttps://pypi.org/simple/setuptools/`[0m
+   ├─▶ error sending request for url [1m([0m[4;94mhttps://pypi.org/simple/setuptools/[0m[4;94m)[0m
+   ├─▶ client error [1m([0mConnect[1m)[0m
+   ├─▶ dns error
+   ╰─▶ failed to lookup address information: nodename nor servname provided, or not known
+[?25h[?25l$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K$ uv build --sdist --out-dir [35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-st66lyrw[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-[0m
+[95msdk[0m[1m)[0m
+ Building source distribution[33m...[0m
+ warning: 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+appears to be a workspace root without a Python project; consider using `uv sync` to install the workspace, 
+or add a `` table to `pyproject.toml`
+   × Failed to build
+   │ 
+`[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m`
+   ├─▶ Failed to resolve requirements from `setup.py` build
+   ├─▶ No solution found when resolving: `setuptools>=[1;36m40.8[0m.[1;36m0[0m`
+   ├─▶ Request failed after [1;36m3[0m retries in [1;36m4.[0m4s
+   ├─▶ Failed to fetch: `[4;94mhttps://pypi.org/simple/setuptools/`[0m
+   ├─▶ error sending request for url [1m([0m[4;94mhttps://pypi.org/simple/setuptools/[0m[4;94m)[0m
+   ├─▶ client error [1m([0mConnect[1m)[0m
+   ├─▶ dns error
+   ╰─▶ failed to lookup address information: nodename nor servname provided, or not known
+[?25h

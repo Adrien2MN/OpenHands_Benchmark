@@ -1,0 +1,40 @@
+2026-05-05 09:36:22,959 - INFO - root - === Evaluation Started (instance astropy__astropy-14995) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/data__swebench_lite__swebench_lite_first5.jsonl-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-09-36/logs/instance_astropy__astropy-14995.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/data__swebench_lite__swebench_lite_first5.jsonl-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-09-36/logs/instance_astropy__astropy-14995.output.log   (stdout/stderr)
+    ===============================================
+2026-05-05 09:36:22,963 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14995
+2026-05-05 09:36:26,090 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-05 09:36:26,211 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-05 09:36:26,238 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-25a4126f-2021-482e-a2c8-a30aad6d8e78 -e LMNR_SPAN_CONTEXT=null -p 31492:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-05 09:36:26,384 - INFO - openhands.workspace.docker.workspace - Started container: 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:26,395 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:27,428 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:28,465 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:29,506 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:30,544 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:31,574 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:32,615 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:33,654 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:34,687 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:35,720 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:36,757 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 6362abe43f17d38dbc2d937545986f840bfc8557a489312d5ab99ec1af19762f
+2026-05-05 09:36:37,796 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:31492
+2026-05-05 09:36:39,701 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-05 09:36:39,718 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-05 09:36:39,803 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-05 09:36:41,292 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-05 10:12:25,659 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 54] Connection reset by peer
+2026-05-05 10:12:25,659 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 54] Connection reset by peer
+2026-05-05 10:12:26,665 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:26,665 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 10:12:27,671 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:27,671 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 10:12:28,674 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:28,674 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 10:12:29,677 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:29,677 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 10:12:30,681 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:30,681 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 10:12:31,684 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 10:12:31,684 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused

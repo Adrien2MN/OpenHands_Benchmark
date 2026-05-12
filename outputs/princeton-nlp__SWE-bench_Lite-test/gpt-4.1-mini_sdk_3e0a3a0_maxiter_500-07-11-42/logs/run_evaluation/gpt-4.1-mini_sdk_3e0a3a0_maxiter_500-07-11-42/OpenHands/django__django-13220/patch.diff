@@ -1,0 +1,32 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..031a814f26 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,27 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return False
++        
++        # Compare error_dicts if both have error_dict
++        if hasattr(self, 'error_dict') and hasattr(other, 'error_dict'):
++            # Compare keys and their sorted error lists
++            if set(self.error_dict.keys()) != set(other.error_dict.keys()):
++                return False
++            for key in self.error_dict.keys():
++                if sorted(self.error_dict[key]) != sorted(other.error_dict[key]):
++                    return False
++            return True
++
++        # Compare error lists if both have error_list
++        if hasattr(self, 'error_list') and hasattr(other, 'error_list'):
++            return sorted(self.error_list) == sorted(other.error_list)
++
++        # Otherwise fallback to comparing messages
++        return self.messages == other.messages
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""

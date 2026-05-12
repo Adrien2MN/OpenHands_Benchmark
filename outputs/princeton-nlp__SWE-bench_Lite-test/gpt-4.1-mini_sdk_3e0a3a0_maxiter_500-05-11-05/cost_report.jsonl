@@ -1,0 +1,40 @@
+{
+  "directory": "outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05",
+  "timestamp": "2026-05-05T13:40:09.642445",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 4,
+    "cost": 0.32300285999999995,
+    "time_statistics": {
+      "average_duration": 977.43141625,
+      "total_duration": 3909.725665,
+      "total_lines": 4,
+      "lines_with_duration": 4
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 4,
+      "cost": 0.32300285999999995,
+      "time_statistics": {
+        "average_duration": 977.43141625,
+        "total_duration": 3909.725665,
+        "total_lines": 4,
+        "lines_with_duration": 4
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 0.32300285999999995,
+    "total_duration": 3909.725665,
+    "only_main_output_cost": 0.32300285999999995,
+    "sum_critic_files": 0.32300285999999995
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

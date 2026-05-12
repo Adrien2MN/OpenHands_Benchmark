@@ -1,0 +1,56 @@
+2026-05-12 00:03:10,971 - INFO - root - === Evaluation Started (instance django__django-11564) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/logs/instance_django__django-11564.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/logs/instance_django__django-11564.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 00:03:10,972 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11564
+2026-05-12 00:03:11,617 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11564-source-minimal
+2026-05-12 00:03:11,668 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 00:03:11,690 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-7059c728-a9ba-4e97-851b-f6c2cae10da4 -e LMNR_SPAN_CONTEXT=null -p 30829:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11564-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 00:03:11,820 - INFO - openhands.workspace.docker.workspace - Started container: 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:11,825 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:12,858 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:13,924 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:14,970 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:16,010 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:17,043 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:18,079 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:19,119 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:20,165 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:03:21,209 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:30829
+2026-05-12 00:03:22,083 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-12 00:03:22,098 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-12 00:03:22,193 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-12 00:03:24,912 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-12 00:58:53,928 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 3328.6s)
+2026-05-12 00:58:53,943 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-05-12 00:58:53,943 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-05-12 00:58:54,444 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m152[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/django/conf/__init__.py b/django/conf/__init__.py\nindex b32e56184d..fd47da2cfc 100644\n--- a/django/conf/__init__.py\n+++ b/django/conf/__init__.py\n@@ -15,7 +15,8 @@…'[0m
+2026-05-12 00:58:54,446 - INFO - benchmarks.utils.evaluation - [worker] done id=django__django-11564
+2026-05-12 00:58:54,575 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11564 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/conversations/django__django-11564.tar.gz
+2026-05-12 00:58:56,584 - INFO - openhands.workspace.docker.workspace - Stopping container: 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 00:58:56,584 - INFO - openhands.sdk.utils.command - $ docker stop 8e251eea3cc572145eac531abc4d5b45ee99d8d4e465c47eb59a3c976e44565f
+2026-05-12 09:30:05,358 - INFO - root - === Evaluation Started (instance django__django-11564) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/logs/instance_django__django-11564.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-21-54/logs/instance_django__django-11564.output.log   (stdout/stderr)
+    ===============================================
+2026-05-12 09:30:05,359 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11564
+2026-05-12 09:30:05,798 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11564-source-minimal
+2026-05-12 09:30:05,853 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-12 09:30:05,878 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-d9e2b0dc-dba1-4f37-8292-e92e401f4234 -e LMNR_SPAN_CONTEXT=null -p 37432:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11564-source-minimal --host 0.0.0.0 --port 8000
+2026-05-12 09:30:05,994 - INFO - openhands.workspace.docker.workspace - Started container: c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:05,998 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:07,028 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:08,066 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:09,106 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:10,139 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:11,177 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:12,221 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:13,253 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:14,287 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' c0ee9b1637afa77f9834d571ee03087058c37810b898b95b8b026518f6f0908f
+2026-05-12 09:30:15,325 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:37432
+2026-05-12 09:30:16,218 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-12 09:30:16,234 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-12 09:30:16,329 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-12 09:30:18,853 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>

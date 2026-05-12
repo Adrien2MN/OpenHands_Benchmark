@@ -1,0 +1,31 @@
+diff --git a/reproduce_field_choices_inheritance.py b/reproduce_field_choices_inheritance.py
+new file mode 100644
+index 0000000000..b4ef86e6ae
+--- /dev/null
++++ b/reproduce_field_choices_inheritance.py
+@@ -0,0 +1,25 @@
++from django.db import models
++
++class A(models.Model):
++    foo_choice = [("A","output1"),("B","output2")]
++    field_foo = models.CharField(max_length=254, choices=foo_choice)
++
++    class Meta:
++        abstract = True
++
++class B(A):
++    foo_choice = [("A","output1"),("B","output2"),("C","output3")]
++    field_foo = models.CharField(max_length=254, choices=foo_choice)
++
++
++b = B(field_foo='A')
++print(b.get_field_foo_display())  # Expected: output1
++
++b = B(field_foo='C')
++print(b.get_field_foo_display())  # Expected: output3 (currently returns 'C')
++
++b = B(field_foo='B')
++print(b.get_field_foo_display())  # Expected: output2
++
++b = B(field_foo='X')
++print(b.get_field_foo_display())  # Expected: X (not found in choices, returns raw value)

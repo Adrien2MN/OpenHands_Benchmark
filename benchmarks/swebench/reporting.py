@@ -91,6 +91,7 @@ def _pick_footprint_for_model(
         "gpt41": "gpt41",
         "gpt41mini": "gpt41mini",
         "gpt41nano": "gpt41nano",
+        "gpt53codex": "gpt53",
         "mistralsmall2503": "mistralsmall3",
         "o1": "o1",
     }

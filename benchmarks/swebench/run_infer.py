@@ -113,6 +113,16 @@ def get_instruction(
     return instruction
 
 
+def _expected_agent_server_image(instance: dict, build_target: str) -> str:
+    official_docker_image = get_official_docker_image(str(instance["instance_id"]))
+    custom_tag = extract_custom_tag(official_docker_image)
+    suffix = f"-{build_target}" if build_target != constants.BUILD_TARGET_BINARY else ""
+    return (
+        f"{EVAL_AGENT_SERVER_IMAGE}:{get_phased_image_tag_prefix()}-"
+        f"{custom_tag}{suffix}"
+    )
+
+
 class SWEBenchEvaluation(Evaluation):
     """
     Process-based SWE-bench evaluation implemented as a child of the
@@ -138,6 +148,33 @@ class SWEBenchEvaluation(Evaluation):
         for _, row in df.iterrows():
             inst_id = str(row["instance_id"])
             instances.append(EvalInstance(id=inst_id, data=row.to_dict()))
+
+        if self.metadata.prebuilt_only:
+            build_target = constants.DEFAULT_BUILD_TARGET
+            available_instances: List[EvalInstance] = []
+            skipped_instances: List[str] = []
+            for inst in instances:
+                agent_server_image = _expected_agent_server_image(
+                    inst.data, build_target
+                )
+                if remote_image_exists(agent_server_image):
+                    available_instances.append(inst)
+                else:
+                    skipped_instances.append(inst.id)
+
+            logger.info(
+                "Prebuilt-only enabled: keeping %d/%d instances; skipped %d missing images",
+                len(available_instances),
+                len(instances),
+                len(skipped_instances),
+            )
+            if skipped_instances:
+                logger.info(
+                    "Prebuilt-only skipped instances: %s",
+                    ", ".join(skipped_instances[:10])
+                    + (" ..." if len(skipped_instances) > 10 else ""),
+                )
+            instances = available_instances
 
         logger.info("Total instances to process: %d", len(instances))
         return instances
@@ -452,6 +489,14 @@ class SWEBenchEvaluation(Evaluation):
 def main() -> None:
     parser = get_parser()
     add_prompt_path_argument(parser, __file__)
+    parser.add_argument(
+        "--prebuilt-only",
+        action="store_true",
+        help=(
+            "Only run instances whose agent-server image already exists in the registry; "
+            "skip instances whose required image is missing"
+        ),
+    )
     parser.set_defaults(**INFER_DEFAULTS)
     args = parser.parse_args()
 
@@ -500,6 +545,7 @@ def main() -> None:
         selected_instances_file=args.select,
         max_retries=args.max_retries,
         workspace_type=args.workspace,
+        prebuilt_only=args.prebuilt_only,
         tool_preset=args.tool_preset,
         enable_delegation=args.enable_delegation,
         agent_type=args.agent_type,

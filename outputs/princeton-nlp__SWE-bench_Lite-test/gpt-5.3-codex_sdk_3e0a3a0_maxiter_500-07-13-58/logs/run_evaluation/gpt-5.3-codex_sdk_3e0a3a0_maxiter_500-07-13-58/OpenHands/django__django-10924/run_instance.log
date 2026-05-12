@@ -1,0 +1,47 @@
+2026-05-11 10:13:47,864 - INFO - Creating container for django__django-10924...
+2026-05-11 10:13:47,925 - INFO - Container for django__django-10924 created: 9d9a5a1806f90efd7fc2be806103d4d42094d69b9f2f733803f7e44f0252e21b
+2026-05-11 10:13:48,030 - INFO - Container for django__django-10924 started: 9d9a5a1806f90efd7fc2be806103d4d42094d69b9f2f733803f7e44f0252e21b
+2026-05-11 10:13:48,031 - INFO - Intermediate patch for django__django-10924 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-10924/patch.diff, now applying to container...
+2026-05-11 10:13:48,265 - INFO - >>>>> Applied Patch:
+Checking patch django/forms/fields.py...
+Applied patch django/forms/fields.py cleanly.
+
+2026-05-11 10:13:53,502 - INFO - Git diff before:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..1016d461a2 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1078,6 +1078,8 @@ class MultiValueField(Field):
+ class FilePathField(ChoiceField):
+     def __init__(self, path, *, match=None, recursive=False, allow_files=True,
+                  allow_folders=False, **kwargs):
++        if callable(path):
++            path = path()
+         self.path, self.match, self.recursive = path, match, recursive
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+2026-05-11 10:13:53,503 - INFO - Eval script for django__django-10924 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-10924/eval.sh; copying to container...
+2026-05-11 10:14:16,422 - INFO - Test runtime: 22.84 seconds
+2026-05-11 10:14:16,423 - INFO - Test output for django__django-10924 written to logs/run_evaluation/gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58/OpenHands/django__django-10924/test_output.txt
+2026-05-11 10:14:16,572 - INFO - Git diff after:
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..1016d461a2 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -1078,6 +1078,8 @@ class MultiValueField(Field):
+ class FilePathField(ChoiceField):
+     def __init__(self, path, *, match=None, recursive=False, allow_files=True,
+                  allow_folders=False, **kwargs):
++        if callable(path):
++            path = path()
+         self.path, self.match, self.recursive = path, match, recursive
+         self.allow_files, self.allow_folders = allow_files, allow_folders
+         super().__init__(choices=(), **kwargs)
+2026-05-11 10:14:16,572 - INFO - Grading answer for django__django-10924...
+2026-05-11 10:14:16,573 - INFO - report: {'django__django-10924': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['test_callable_path (model_fields.test_filepathfield.FilePathFieldTests)'], 'failure': []}, 'PASS_TO_PASS': {'success': ['test_path (model_fields.test_filepathfield.FilePathFieldTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-10924: resolved: True
+2026-05-11 10:14:16,574 - INFO - Attempting to stop container sweb.eval.django__django-10924.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58...
+2026-05-11 10:14:31,710 - INFO - Attempting to remove container sweb.eval.django__django-10924.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58...
+2026-05-11 10:14:31,750 - INFO - Container sweb.eval.django__django-10924.gpt-5.3-codex_sdk_3e0a3a0_maxiter_500-07-13-58 removed.
+2026-05-11 10:14:31,750 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-10924:latest...
+2026-05-11 10:14:31,787 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-10924:latest removed.

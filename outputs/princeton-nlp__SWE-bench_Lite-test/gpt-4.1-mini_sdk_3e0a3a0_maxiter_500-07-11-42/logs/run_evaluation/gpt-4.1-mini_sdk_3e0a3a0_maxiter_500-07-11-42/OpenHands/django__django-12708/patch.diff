@@ -1,0 +1,32 @@
+diff --git a/django/db/backends/base/schema.py b/django/db/backends/base/schema.py
+index 61f88401ab..eb714206dc 100644
+--- a/django/db/backends/base/schema.py
++++ b/django/db/backends/base/schema.py
+@@ -407,11 +407,27 @@ class BaseDatabaseSchemaEditor:
+             model, columns, exclude=meta_constraint_names | meta_index_names,
+             **constraint_kwargs
+         )
++        # If there is more than one constraint, the _uniq and _idx, skip deleting index with a warning
++        if len(constraint_names) > 1 and constraint_kwargs.get('index'):
++            unique_constraints = self._constraint_names(model, columns, exclude=meta_constraint_names | meta_index_names, unique=True)
++            if len(unique_constraints) == 1:
++                logger.debug("Skipping index deletion as unique constraint exists on columns %s", columns)
++                return
++
+         if len(constraint_names) != 1:
+             raise ValueError("Found wrong number (%s) of constraints for %s(%s)" % (
+                 len(constraint_names),
+                 model._meta.db_table,
+                 ", ".join(columns),
++        # If there is more than one constraint, the _uniq and _idx, skip deleting index with a warning
++        if len(constraint_names) > 1 and constraint_kwargs.get('index'):
++            # One constraint is unique, the other is index - skip index deletion
++            unique_constraints = self._constraint_names(model, columns, exclude=meta_constraint_names | meta_index_names, unique=True)
++            if len(unique_constraints) == 1:
++                # Assuming unique constraint covers the index, do not delete the index
++                logger.debug("Skipping index deletion as unique constraint exists on columns %s", columns)
++                return
++
+             ))
+         self.execute(self._delete_constraint_sql(sql, model, constraint_names[0]))
+ 

@@ -1,0 +1,20 @@
+diff --git a/django/db/migrations/serializer.py b/django/db/migrations/serializer.py
+index 7d226955d5..3913833f1f 100644
+--- a/django/db/migrations/serializer.py
++++ b/django/db/migrations/serializer.py
+@@ -90,10 +90,13 @@ class DeconstructableSerializer(BaseSerializer):
+ 
+     @staticmethod
+     def _serialize_path(path):
+-        module, name = path.rsplit(".", 1)
++        # Improved handling of inner class paths
++        module, qualname = path.rsplit(".", 1)
++        # Qualname can have dots if nested classes, preserve fully
++        # Handle known django.db.models prefix replacement
+         if module == "django.db.models":
+             imports = {"from django.db import models"}
+-            name = "models.%s" % name
++            name = "models.%s" % qualname
+         else:
+             imports = {"import %s" % module}
+             name = path

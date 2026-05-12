@@ -1,0 +1,32 @@
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[stderr] Building source distribution...
+$ uv build --sdist --out-dir 
+[35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-qcbe5p[0m
+[95m39[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench[0m
+[35m/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[stderr] Building source distribution...
+$ uv build --sdist --out-dir 
+[35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-qcbe5p[0m
+[95m39[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench[0m
+[35m/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[stderr] warning: 
+`/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/ben
+chmarks/vendor/software-agent-sdk` appears to be a workspace root without a
+Python project; consider using `uv sync` to install the workspace, or add a
+`[build-system]` table to `pyproject.toml`
+$ uv build --sdist --out-dir 
+[35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-qcbe5p[0m
+[95m39[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench[0m
+[35m/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m[1m)[0m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[stderr] warning: 
+`/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/ben
+chmarks/vendor/software-agent-sdk` appears to be a workspace root without a
+Python project; consider using `uv sync` to install the workspace, or add a
+`[build-system]` table to `pyproject.toml`
+$ uv build --sdist --out-dir 
+[35m/private/var/folders/4w/fjwj8gg17gq7c3pkx6txfg_h0000gp/T/[0m[95magent-sdist-qcbe5p[0m
+[95m39[0m 
+[1m([0m[33mcwd[0m=[35m/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench[0m
+[35m/benchmarks/vendor/[0m[95msoftware-agent-sdk[0m[1m)[0m

@@ -183,6 +183,11 @@ def get_parser() -> argparse.ArgumentParser:
         help="Rebuild final images even if matching remote tags already exist",
     )
     parser.add_argument(
+        "--prebuilt-only",
+        action="store_true",
+        help="Skip assembly when the prebuilt final image is not already in the registry",
+    )
+    parser.add_argument(
         "--agent-type",
         type=str,
         default="default",
@@ -241,6 +246,7 @@ def main(argv: list[str] | None = None) -> int:
         max_workers=args.max_workers,
         max_retries=args.max_retries,
         force_build=args.force_build,
+        prebuilt_only=args.prebuilt_only,
         custom_tag_fn=custom_tag_fn,
     )
 

@@ -1,0 +1,163 @@
+2026-04-24 15:52:39,128 - INFO - Creating container for astropy__astropy-13453...
+2026-04-24 15:52:39,190 - INFO - Container for astropy__astropy-13453 created: c5cb3f99d0337c893a12cb276a9cd89d2e53758f682a030ab2f4cae4c941c1c9
+2026-04-24 15:52:39,314 - INFO - Container for astropy__astropy-13453 started: c5cb3f99d0337c893a12cb276a9cd89d2e53758f682a030ab2f4cae4c941c1c9
+2026-04-24 15:52:39,315 - INFO - Intermediate patch for astropy__astropy-13453 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/OpenHands/astropy__astropy-13453/patch.diff, now applying to container...
+2026-04-24 15:52:39,452 - INFO - >>>>> Applied Patch:
+Checking patch astropy/io/ascii/html.py...
+Checking patch astropy/io/ascii/ui.py...
+Applied patch astropy/io/ascii/html.py cleanly.
+Applied patch astropy/io/ascii/ui.py cleanly.
+
+2026-04-24 15:52:40,068 - INFO - Git diff before:
+diff --git a/astropy/io/ascii/html.py b/astropy/io/ascii/html.py
+index 266cf229c..ed935eed1 100644
+--- a/astropy/io/ascii/html.py
++++ b/astropy/io/ascii/html.py
+@@ -142,12 +142,18 @@ class HTMLOutputter(core.TableOutputter):
+     This subclass allows for the final table to contain
+     multidimensional columns (defined using the colspan attribute
+     of <th>).
++
++    Accepts a `formats` dictionary in the initializer to apply formatting to columns.
+     """
+ 
+     default_converters = [core.convert_numpy(int),
+                           core.convert_numpy(float),
+                           core.convert_numpy(str)]
+ 
++    def __init__(self, *args, formats=None, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.formats = formats or {}
++
+     def __call__(self, cols, meta):
+         """
+         Process the data in multidimensional columns.
+@@ -432,12 +438,20 @@ class HTML(core.BaseReader):
+ 
+                                     new_col_iter_str_vals = self.fill_values(
+                                         col, new_col.info.iter_str_vals())
++                                    # Apply formatting if available
++                                    if new_col.info.name in self.formats:
++                                        new_col_iter_str_vals = (self.formats[new_col.info.name](v) for v in new_col_iter_str_vals)
++
+                                     col_str_iters.append(new_col_iter_str_vals)
+                                     new_cols_escaped.append(col_escaped)
+                                     new_cols.append(new_col)
+                             else:
+ 
+                                 col_iter_str_vals = self.fill_values(col, col.info.iter_str_vals())
++                                # Apply formatting if available
++                                if col.info.name in self.formats:
++                                    col_iter_str_vals = (self.formats[col.info.name](v) for v in col_iter_str_vals)
++
+                                 col_str_iters.append(col_iter_str_vals)
+ 
+                                 new_cols_escaped.append(col_escaped)
+diff --git a/astropy/io/ascii/ui.py b/astropy/io/ascii/ui.py
+index bef801959..291a19b26 100644
+--- a/astropy/io/ascii/ui.py
++++ b/astropy/io/ascii/ui.py
+@@ -820,6 +820,9 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+     _validate_read_write_kwargs('write', format=format, fast_writer=fast_writer,
+                                 overwrite=overwrite, **kwargs)
+ 
++    # Extract formats if provided
++    formats = kwargs.pop('formats', None)
++
+     if isinstance(output, (str, bytes, os.PathLike)):
+         output = os.path.expanduser(output)
+         if not overwrite and os.path.lexists(output):
+@@ -852,6 +855,11 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+         fast_writer = False
+ 
+     Writer = _get_format_class(format, Writer, 'Writer')
++
++    # Pass formats arg explicitly for html format
++    if (format and format.lower() == 'html' and formats is not None):
++        kwargs['formats'] = formats
++
+     writer = get_writer(Writer=Writer, fast_writer=fast_writer, **kwargs)
+     if writer._format_name in core.FAST_CLASSES:
+         writer.write(table, output)
+2026-04-24 15:52:40,069 - INFO - Eval script for astropy__astropy-13453 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/OpenHands/astropy__astropy-13453/eval.sh; copying to container...
+2026-04-24 15:54:30,275 - INFO - Test runtime: 110.16 seconds
+2026-04-24 15:54:30,276 - INFO - Test output for astropy__astropy-13453 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100/OpenHands/astropy__astropy-13453/test_output.txt
+2026-04-24 15:54:30,374 - INFO - Git diff after:
+diff --git a/astropy/io/ascii/html.py b/astropy/io/ascii/html.py
+index 266cf229c..ed935eed1 100644
+--- a/astropy/io/ascii/html.py
++++ b/astropy/io/ascii/html.py
+@@ -142,12 +142,18 @@ class HTMLOutputter(core.TableOutputter):
+     This subclass allows for the final table to contain
+     multidimensional columns (defined using the colspan attribute
+     of <th>).
++
++    Accepts a `formats` dictionary in the initializer to apply formatting to columns.
+     """
+ 
+     default_converters = [core.convert_numpy(int),
+                           core.convert_numpy(float),
+                           core.convert_numpy(str)]
+ 
++    def __init__(self, *args, formats=None, **kwargs):
++        super().__init__(*args, **kwargs)
++        self.formats = formats or {}
++
+     def __call__(self, cols, meta):
+         """
+         Process the data in multidimensional columns.
+@@ -432,12 +438,20 @@ class HTML(core.BaseReader):
+ 
+                                     new_col_iter_str_vals = self.fill_values(
+                                         col, new_col.info.iter_str_vals())
++                                    # Apply formatting if available
++                                    if new_col.info.name in self.formats:
++                                        new_col_iter_str_vals = (self.formats[new_col.info.name](v) for v in new_col_iter_str_vals)
++
+                                     col_str_iters.append(new_col_iter_str_vals)
+                                     new_cols_escaped.append(col_escaped)
+                                     new_cols.append(new_col)
+                             else:
+ 
+                                 col_iter_str_vals = self.fill_values(col, col.info.iter_str_vals())
++                                # Apply formatting if available
++                                if col.info.name in self.formats:
++                                    col_iter_str_vals = (self.formats[col.info.name](v) for v in col_iter_str_vals)
++
+                                 col_str_iters.append(col_iter_str_vals)
+ 
+                                 new_cols_escaped.append(col_escaped)
+diff --git a/astropy/io/ascii/ui.py b/astropy/io/ascii/ui.py
+index bef801959..291a19b26 100644
+--- a/astropy/io/ascii/ui.py
++++ b/astropy/io/ascii/ui.py
+@@ -820,6 +820,9 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+     _validate_read_write_kwargs('write', format=format, fast_writer=fast_writer,
+                                 overwrite=overwrite, **kwargs)
+ 
++    # Extract formats if provided
++    formats = kwargs.pop('formats', None)
++
+     if isinstance(output, (str, bytes, os.PathLike)):
+         output = os.path.expanduser(output)
+         if not overwrite and os.path.lexists(output):
+@@ -852,6 +855,11 @@ def write(table, output=None, format=None, Writer=None, fast_writer=True, *,
+         fast_writer = False
+ 
+     Writer = _get_format_class(format, Writer, 'Writer')
++
++    # Pass formats arg explicitly for html format
++    if (format and format.lower() == 'html' and formats is not None):
++        kwargs['formats'] = formats
++
+     writer = get_writer(Writer=Writer, fast_writer=fast_writer, **kwargs)
+     if writer._format_name in core.FAST_CLASSES:
+         writer.write(table, output)
+2026-04-24 15:54:30,374 - INFO - Grading answer for astropy__astropy-13453...
+2026-04-24 15:54:30,385 - INFO - report: {'astropy__astropy-13453': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/io/ascii/tests/test_html.py::test_write_table_formatted_columns']}, 'PASS_TO_PASS': {'success': ['astropy/io/ascii/tests/test_html.py::test_listwriter', 'astropy/io/ascii/tests/test_html.py::test_htmlinputter_no_bs4'], 'failure': ['astropy/io/ascii/tests/test_html.py::test_multicolumn_write', 'astropy/io/ascii/tests/test_html.py::test_write_no_multicols', 'astropy/io/ascii/tests/test_html.py::test_write_table_html_fill_values', 'astropy/io/ascii/tests/test_html.py::test_write_table_html_fill_values_optional_columns', 'astropy/io/ascii/tests/test_html.py::test_write_table_html_fill_values_masked', 'astropy/io/ascii/tests/test_html.py::test_multicolumn_table_html_fill_values', 'astropy/io/ascii/tests/test_html.py::test_multi_column_write_table_html_fill_values_masked']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-13453: resolved: False
+2026-04-24 15:54:30,386 - INFO - Attempting to stop container sweb.eval.astropy__astropy-13453.gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100...
+2026-04-24 15:54:45,479 - INFO - Attempting to remove container sweb.eval.astropy__astropy-13453.gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100...
+2026-04-24 15:54:45,495 - INFO - Container sweb.eval.astropy__astropy-13453.gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n20_iter100 removed.
+2026-04-24 15:54:45,496 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-13453:latest...
+2026-04-24 15:54:45,505 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-13453:latest removed.

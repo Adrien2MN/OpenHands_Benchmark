@@ -1,0 +1,15 @@
+2026-04-27 16:02:47,028 - INFO - root - === Evaluation Started (instance astropy__astropy-13033) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1_sdk_3e0a3a0_maxiter_100_N_gpt-4.1_n4_iter100/logs/instance_astropy__astropy-13033.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1_sdk_3e0a3a0_maxiter_100_N_gpt-4.1_n4_iter100/logs/instance_astropy__astropy-13033.output.log   (stdout/stderr)
+    ===============================================
+2026-04-27 16:02:47,028 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-13033
+2026-04-27 16:02:47,029 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13033: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-04-27 16:02:47,029 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13033 failed after 1 attempts. Last error: RUNTIME_API_KEY environment variable is not set for remote workspace
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 982, in _execute_single_attempt
+    workspace = self.prepare_workspace(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 246, in prepare_workspace
+    raise ValueError(
+ValueError: RUNTIME_API_KEY environment variable is not set for remote workspace

@@ -1,0 +1,48 @@
+2026-04-27 15:51:11,646 - INFO - root - === Evaluation Started (instance astropy__astropy-13033) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/kimi-k2.6_sdk_3e0a3a0_maxiter_100_N_kimi-k2.6_n4_iter100/logs/instance_astropy__astropy-13033.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/kimi-k2.6_sdk_3e0a3a0_maxiter_100_N_kimi-k2.6_n4_iter100/logs/instance_astropy__astropy-13033.output.log   (stdout/stderr)
+    ===============================================
+2026-04-27 15:51:11,647 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-13033
+2026-04-27 15:51:12,195 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-13033-source-minimal
+2026-04-27 15:51:12,265 - INFO - openhands.sdk.utils.command - $ docker version
+2026-04-27 15:51:12,308 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-37908774-c684-4256-820c-ef79973d5b82 -e LMNR_SPAN_CONTEXT=null -p 37969:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-13033-source-minimal --host 0.0.0.0 --port 8000
+2026-04-27 15:51:12,457 - INFO - openhands.workspace.docker.workspace - Started container: ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:12,463 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:13,488 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:14,513 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:15,543 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:16,573 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:17,598 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:18,622 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:19,647 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:20,758 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:21,832 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:51:22,872 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:37969
+2026-04-27 15:51:23,903 - INFO - openhands.sdk.skills.skill - Found 39 skill files in public skills repository
+2026-04-27 15:51:23,916 - INFO - openhands.sdk.skills.skill - Loaded 39 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-04-27 15:51:23,998 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-04-27 15:51:25,600 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-04-27 15:54:49,108 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13033: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-04-27 15:54:49,109 - ERROR - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-13033 failed after 1 attempts. Last error: Conversation run failed for id=f464ca33-0061-4eae-a965-3746960301ec: Remote conversation ended with error
+Traceback (most recent call last):
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/evaluation.py", line 1011, in _execute_single_attempt
+    out = self.evaluate_instance(instance, workspace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/swebench/run_infer.py", line 372, in evaluate_instance
+    run_conversation_with_fake_user_response(
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/benchmarks/utils/fake_user_response.py", line 152, in run_conversation_with_fake_user_response
+    conversation.run(timeout=run_timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/.venv/lib/python3.12/site-packages/lmnr/opentelemetry_lib/decorators/__init__.py", line 186, in wrap
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 986, in run
+    self._wait_for_run_completion(poll_interval, timeout)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1041, in _wait_for_run_completion
+    self._handle_conversation_status(ws_status)
+  File "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/vendor/software-agent-sdk/openhands-sdk/openhands/sdk/conversation/impl/remote_conversation.py", line 1109, in _handle_conversation_status
+    raise ConversationRunError(
+openhands.sdk.conversation.exceptions.ConversationRunError: Conversation run failed for id=f464ca33-0061-4eae-a965-3746960301ec: Remote conversation ended with error
+2026-04-27 15:54:49,246 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-13033 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/kimi-k2.6_sdk_3e0a3a0_maxiter_100_N_kimi-k2.6_n4_iter100/conversations/astropy__astropy-13033.tar.gz
+2026-04-27 15:54:51,249 - INFO - openhands.workspace.docker.workspace - Stopping container: ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674
+2026-04-27 15:54:51,249 - INFO - openhands.sdk.utils.command - $ docker stop ba68a7478eb3af1a0fe07867ad2325d60f1273d200e08b68a091c8100eddc674

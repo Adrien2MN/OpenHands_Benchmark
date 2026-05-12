@@ -1,0 +1,664 @@
+2026-05-05 11:05:43,339 - INFO - root - === Evaluation Started (instance astropy__astropy-12907) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05/logs/instance_astropy__astropy-12907.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-11-05/logs/instance_astropy__astropy-12907.output.log   (stdout/stderr)
+    ===============================================
+2026-05-05 11:05:43,339 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-12907
+2026-05-05 11:05:43,701 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-12907-source-minimal
+2026-05-05 11:05:43,778 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-05 11:05:43,808 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-dd25ab49-cbac-4af5-b2fd-a9e10324c029 -e LMNR_SPAN_CONTEXT=null -p 35018:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-12907-source-minimal --host 0.0.0.0 --port 8000
+2026-05-05 11:05:43,960 - INFO - openhands.workspace.docker.workspace - Started container: 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:43,972 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:45,006 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:46,045 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:47,079 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:48,111 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:49,152 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:50,186 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:51,221 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:52,262 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5feaf7f855ff14d28bbf4d99977b3f311f055436b0dd80f5a0d7984e75242c57
+2026-05-05 11:05:53,304 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:35018
+2026-05-05 11:05:54,251 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-05 11:05:54,273 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-05 11:05:54,362 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-05 11:05:55,465 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-05 13:34:24,169 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 54] Connection reset by peer
+2026-05-05 13:34:24,171 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 54] Connection reset by peer
+2026-05-05 13:34:25,177 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:25,178 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:26,181 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:26,182 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:27,186 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:27,186 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:28,193 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:28,193 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:29,199 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:29,200 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:30,202 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:30,202 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:31,208 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:31,208 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:32,215 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:32,215 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:33,221 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:33,221 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:34,227 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:34,228 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:35,231 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:35,232 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:36,238 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:36,238 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:37,243 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:37,243 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:38,247 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:38,248 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:39,254 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:39,254 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:40,260 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:40,260 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:41,267 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:41,267 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:42,274 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:42,274 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:43,280 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:43,280 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:44,286 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:44,286 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:45,290 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:45,290 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:46,296 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:46,296 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:47,302 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:47,302 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:48,308 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:48,308 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:49,314 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:49,314 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:50,318 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:50,318 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:51,323 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:51,323 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:52,329 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:52,329 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:53,335 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:53,335 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:54,340 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:54,341 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:55,346 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:55,346 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:56,352 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:56,353 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:57,359 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:57,359 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:58,362 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:58,362 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:34:59,368 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:34:59,368 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:00,374 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:00,374 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:01,381 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:01,381 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:02,387 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:02,387 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:03,394 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:03,394 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:04,396 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:04,397 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:05,398 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:05,398 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:06,404 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:06,404 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:07,409 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:07,409 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:08,415 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:08,415 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:09,418 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:09,418 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:10,423 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:10,424 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:11,427 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:11,427 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:12,433 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:12,433 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:13,439 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:13,440 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:14,445 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:14,446 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:15,451 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:15,451 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:16,456 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:16,457 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:17,458 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:17,459 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:18,464 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:18,465 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:19,467 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:19,468 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:20,473 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:20,474 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:21,479 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:21,479 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:22,485 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:22,485 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:23,490 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:23,490 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:24,496 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:24,496 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:25,498 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:25,498 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:26,503 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:26,503 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:27,510 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:27,510 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:28,516 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:28,516 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:29,521 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:29,522 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:30,528 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:30,528 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:31,532 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:31,532 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:32,539 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:32,539 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:33,541 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:33,541 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:34,548 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:34,548 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:35,551 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:35,551 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:36,557 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:36,557 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:37,563 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:37,563 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:38,567 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:38,567 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:39,574 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:39,574 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:40,580 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:40,580 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:41,584 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:41,584 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:42,590 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:42,590 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:43,596 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:43,596 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:44,602 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:44,602 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:45,607 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:45,607 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:46,608 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:46,608 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:47,614 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:47,614 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:48,617 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:48,617 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:49,621 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:49,621 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:50,627 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:50,627 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:51,633 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:51,633 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:52,639 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:52,639 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:53,646 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:53,646 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:54,650 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:54,650 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:55,657 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:55,657 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:56,663 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:56,663 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:57,669 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:57,669 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:58,675 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:58,675 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:35:59,677 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:35:59,677 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:00,683 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:00,683 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:01,685 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:01,686 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:02,689 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:02,689 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:03,691 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:03,692 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:04,698 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:04,698 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:05,705 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:05,705 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:06,707 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:06,707 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:07,711 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:07,711 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:08,717 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:08,717 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:09,723 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:09,724 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:10,726 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:10,727 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:11,731 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:11,731 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:12,737 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:12,738 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:13,743 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:13,744 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:14,749 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:14,750 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:15,756 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:15,756 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:16,762 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:16,762 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:17,767 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:17,767 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:18,773 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:18,773 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:19,779 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:19,779 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:20,785 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:20,785 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:21,791 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:21,792 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:22,799 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:22,799 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:23,806 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:23,806 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:24,811 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:24,811 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:25,817 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:25,818 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:26,821 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:26,822 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:27,828 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:27,828 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:28,834 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:28,835 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:29,840 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:29,841 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:30,843 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:30,843 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:31,847 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:31,847 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:32,852 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:32,852 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:33,855 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:33,856 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:34,858 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:34,858 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:35,864 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:35,864 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:36,869 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:36,869 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:37,875 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:37,875 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:38,882 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:38,882 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:39,885 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:39,886 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:40,890 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:40,891 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:41,894 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:41,894 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:42,900 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:42,901 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:43,907 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:43,908 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:44,914 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:44,914 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:45,918 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:45,918 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:46,924 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:46,924 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:47,925 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:47,925 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:48,929 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:48,930 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:49,936 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:49,937 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:50,939 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:50,940 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:51,944 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:51,945 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:52,951 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:52,952 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:53,958 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:53,958 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:54,961 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:54,961 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:55,968 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:55,968 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:56,971 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:56,972 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:57,976 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:57,976 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:58,979 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:58,979 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:36:59,983 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:36:59,983 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:00,989 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:00,989 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:01,993 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:01,993 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:03,000 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:03,000 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:04,006 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:04,007 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:05,008 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:05,008 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:06,011 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:06,011 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:07,017 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:07,017 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:08,024 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:08,024 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:09,028 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:09,028 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:10,035 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:10,035 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:11,037 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:11,037 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:12,039 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:12,040 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:13,045 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:13,045 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:14,048 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:14,049 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:15,052 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:15,052 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:16,055 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:16,055 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:17,061 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:17,062 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:18,065 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:18,066 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:19,070 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:19,070 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:20,074 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:20,074 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:21,078 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:21,079 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:22,081 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:22,081 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:23,086 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:23,087 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:24,089 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:24,089 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:25,096 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:25,096 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:26,102 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:26,103 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:27,108 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:27,108 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:28,114 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:28,114 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:29,120 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:29,120 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:30,126 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:30,126 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:31,129 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:31,129 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:32,134 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:32,135 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:33,140 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:33,141 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:34,143 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:34,144 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:35,148 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:35,149 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:36,153 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:36,153 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:37,157 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:37,157 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:38,164 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:38,164 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:39,169 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:39,169 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:40,171 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:40,171 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:41,177 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:41,177 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:42,183 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:42,183 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:43,191 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:43,191 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:44,195 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:44,195 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:45,198 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:45,198 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:46,203 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:46,203 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:47,208 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:47,208 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:48,214 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:48,214 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:49,218 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:49,219 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:50,223 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:50,223 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:51,224 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:51,225 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:52,227 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:52,227 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:53,231 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:53,231 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:54,234 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:54,234 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:55,236 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:55,237 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:56,242 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:56,243 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:57,249 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:57,249 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:58,253 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:58,253 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:37:59,256 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:37:59,256 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:00,261 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:00,261 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:01,267 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:01,267 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:02,272 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:02,272 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:03,278 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:03,279 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:04,282 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:04,282 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:05,287 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:05,287 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:06,294 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:06,294 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:07,300 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:07,300 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:08,305 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:08,305 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:09,310 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:09,310 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:10,316 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:10,316 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:11,322 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:11,322 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:12,328 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:12,328 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:13,334 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:13,334 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:14,340 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:14,340 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:15,341 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:15,342 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:16,343 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:16,344 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:17,350 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:17,350 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:18,356 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:18,356 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:19,362 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:19,362 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:20,366 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:20,366 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:21,367 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:21,368 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:22,373 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:22,373 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:23,376 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:23,376 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:24,382 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:24,382 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:25,388 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:25,388 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:26,394 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:26,394 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:27,399 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:27,399 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:28,405 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:28,405 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:29,411 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:29,411 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:30,412 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:30,413 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:31,416 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:31,416 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:32,418 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:32,418 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:33,424 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:33,424 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:34,430 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:34,430 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:35,433 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:35,433 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:36,439 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:36,439 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:37,446 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:37,446 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:38,449 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:38,449 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:39,455 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:39,455 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:40,458 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:40,458 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:41,460 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:41,460 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:42,466 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:42,466 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:43,471 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:43,471 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:44,477 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:44,477 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:45,480 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:45,480 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:46,486 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:46,486 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:47,491 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:47,491 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:48,493 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:48,494 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:49,495 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:49,495 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:50,498 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:50,498 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:51,504 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:51,504 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:52,509 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:52,509 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:53,514 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:53,514 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:54,521 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:54,521 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:55,527 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:55,527 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:56,532 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:56,532 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:57,538 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:57,538 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:58,544 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:58,544 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:38:59,550 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:38:59,550 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:00,556 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:00,556 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:01,559 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:01,559 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:02,565 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:02,565 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:03,571 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:03,571 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:04,574 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:04,574 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:05,580 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:05,580 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:06,585 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:06,585 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:07,589 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:07,589 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:08,594 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:08,594 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:09,597 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:09,597 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:10,602 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:10,602 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:11,603 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:11,603 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:12,608 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:12,608 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:13,615 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:13,615 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:14,621 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:14,621 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:15,625 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:15,625 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:16,631 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:16,631 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:17,636 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:17,636 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:18,643 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:18,643 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:19,648 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:19,649 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:20,651 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:20,651 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:21,657 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:21,657 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:22,662 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:22,662 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:23,668 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:23,668 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:24,674 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:24,675 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:25,678 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:25,678 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:26,684 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:26,685 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:27,689 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:27,690 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:28,694 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:28,694 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:29,697 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:29,697 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:30,701 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:30,701 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:31,707 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:31,708 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:32,714 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:32,715 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:33,721 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:33,721 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:34,727 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:34,727 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:35,733 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:35,733 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:36,739 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:36,739 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:37,744 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:37,744 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:38,748 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:38,748 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:39,754 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:39,754 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:40,761 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:40,761 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:41,764 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:41,764 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:42,769 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:42,769 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:43,775 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:43,775 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused
+2026-05-05 13:39:44,781 - ERROR - openhands.sdk.conversation.impl.remote_conversation - Request failed: [Errno 61] Connection refused
+2026-05-05 13:39:44,782 - WARNING - openhands.sdk.conversation.impl.remote_conversation - Error polling status (will retry): [Errno 61] Connection refused

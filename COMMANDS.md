@@ -9,15 +9,20 @@ uv run swebench-lite-build-images \
 
 INFER : 
 uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json \
-  --n-limit 10 \
-  --num-workers 5 \
+  --n-limit 50 \
+  --num-workers 1 \
   --workspace docker
+
+uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json\
+  --n-limit 50\ 
+  --num-workers 1\ 
+  --workspace docker\ 
 
 
 
 EVAL : 
-uv run swebench-lite-eval outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-15-59/output.jsonl \
-  --run-id gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-05-15-59 \
+uv run swebench-lite-eval outputs/princeton-nlp__SWE-bench_Lite-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/output.jsonl \
+  --run-id gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 \
   --no-modal
 
 

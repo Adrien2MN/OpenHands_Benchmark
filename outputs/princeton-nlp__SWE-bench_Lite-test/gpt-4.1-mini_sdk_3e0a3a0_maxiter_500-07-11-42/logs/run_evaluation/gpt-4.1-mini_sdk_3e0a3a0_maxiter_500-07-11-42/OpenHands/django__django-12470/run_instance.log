@@ -1,0 +1,155 @@
+2026-05-11 10:22:51,729 - INFO - Creating container for django__django-12470...
+2026-05-11 10:22:51,808 - INFO - Container for django__django-12470 created: f223457db073155af6b18b492105515acaec12c19f139274c099a7e276cb7fcf
+2026-05-11 10:22:51,918 - INFO - Container for django__django-12470 started: f223457db073155af6b18b492105515acaec12c19f139274c099a7e276cb7fcf
+2026-05-11 10:22:51,919 - INFO - Intermediate patch for django__django-12470 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12470/patch.diff, now applying to container...
+2026-05-11 10:22:52,214 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/sql/query.py...
+Applied patch django/db/models/sql/query.py cleanly.
+
+2026-05-11 10:22:55,622 - INFO - Git diff before:
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 78c4f47b5b..b728a5cfff 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -1893,6 +1893,8 @@ class Query(BaseExpression):
+         If 'ordering' is empty, clear all ordering from the query.
+         """
+         errors = []
++        new_ordering = []
++        opts = self.get_meta()
+         for item in ordering:
+             if not hasattr(item, 'resolve_expression') and not ORDER_PATTERN.match(item):
+                 errors.append(item)
+@@ -1901,10 +1903,52 @@ class Query(BaseExpression):
+                     'Using an aggregate in order_by() without also including '
+                     'it in annotate() is not allowed: %s' % item
+                 )
++
++            if hasattr(item, 'resolve_expression'):
++                new_ordering.append(item)
++            else:
++                # item is a field name possibly with '-' prefix
++                field_name = item
++                descending = False
++                if item.startswith('-'):
++                    descending = True
++                    field_name = item[1:]
++
++                # Try to find the concrete field for this field name
++                field = None
++                for model in opts.get_parent_list() + [opts]:
++                    if field_name in model._field_name_cache:
++                        field = model._field_name_cache[field_name]
++                        break
++
++                if not field:
++                    # fallback to regular field fetch
++                    try:
++                        field = opts.get_field(field_name)
++                    except FieldDoesNotExist:
++                        field = None
++
++                if field is not None:
++                    # Determine correct alias for the model's table in inheritance join
++                    alias = None
++                    for a, join in self.alias_map.items():
++                        if hasattr(join, 'table_name') and join.table_name == field.model._meta.db_table:
++                            alias = a
++                            break
++                    col = self.get_col(alias, field)
++                    expr = col
++                    if descending:
++                        from django.db.models.expressions import OrderBy
++                        expr = OrderBy(col, descending=True)
++                    new_ordering.append(expr)
++                else:
++                    new_ordering.append(item)
++
+         if errors:
+             raise FieldError('Invalid order_by arguments: %s' % errors)
+-        if ordering:
+-            self.order_by += ordering
++        if new_ordering:
++            self.order_by += tuple(new_ordering)
++            self.default_ordering = False
+         else:
+             self.default_ordering = False
+2026-05-11 10:22:55,623 - INFO - Eval script for django__django-12470 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12470/eval.sh; copying to container...
+2026-05-11 10:23:18,575 - INFO - Test runtime: 22.79 seconds
+2026-05-11 10:23:18,576 - INFO - Test output for django__django-12470 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12470/test_output.txt
+2026-05-11 10:23:18,744 - INFO - Git diff after:
+diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py
+index 78c4f47b5b..b728a5cfff 100644
+--- a/django/db/models/sql/query.py
++++ b/django/db/models/sql/query.py
+@@ -1893,6 +1893,8 @@ class Query(BaseExpression):
+         If 'ordering' is empty, clear all ordering from the query.
+         """
+         errors = []
++        new_ordering = []
++        opts = self.get_meta()
+         for item in ordering:
+             if not hasattr(item, 'resolve_expression') and not ORDER_PATTERN.match(item):
+                 errors.append(item)
+@@ -1901,10 +1903,52 @@ class Query(BaseExpression):
+                     'Using an aggregate in order_by() without also including '
+                     'it in annotate() is not allowed: %s' % item
+                 )
++
++            if hasattr(item, 'resolve_expression'):
++                new_ordering.append(item)
++            else:
++                # item is a field name possibly with '-' prefix
++                field_name = item
++                descending = False
++                if item.startswith('-'):
++                    descending = True
++                    field_name = item[1:]
++
++                # Try to find the concrete field for this field name
++                field = None
++                for model in opts.get_parent_list() + [opts]:
++                    if field_name in model._field_name_cache:
++                        field = model._field_name_cache[field_name]
++                        break
++
++                if not field:
++                    # fallback to regular field fetch
++                    try:
++                        field = opts.get_field(field_name)
++                    except FieldDoesNotExist:
++                        field = None
++
++                if field is not None:
++                    # Determine correct alias for the model's table in inheritance join
++                    alias = None
++                    for a, join in self.alias_map.items():
++                        if hasattr(join, 'table_name') and join.table_name == field.model._meta.db_table:
++                            alias = a
++                            break
++                    col = self.get_col(alias, field)
++                    expr = col
++                    if descending:
++                        from django.db.models.expressions import OrderBy
++                        expr = OrderBy(col, descending=True)
++                    new_ordering.append(expr)
++                else:
++                    new_ordering.append(item)
++
+         if errors:
+             raise FieldError('Invalid order_by arguments: %s' % errors)
+-        if ordering:
+-            self.order_by += ordering
++        if new_ordering:
++            self.order_by += tuple(new_ordering)
++            self.default_ordering = False
+         else:
+             self.default_ordering = False
+2026-05-11 10:23:18,745 - INFO - Grading answer for django__django-12470...
+2026-05-11 10:23:18,749 - INFO - report: {'django__django-12470': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_inherited_ordering_pk_desc (model_inheritance.tests.ModelInheritanceTests)']}, 'PASS_TO_PASS': {'success': [], 'failure': ['test_abstract_fk_related_name (model_inheritance.tests.InheritanceSameModelNameTests)', 'test_unique (model_inheritance.tests.InheritanceUniqueTests)', 'test_unique_together (model_inheritance.tests.InheritanceUniqueTests)', 'test_abstract (model_inheritance.tests.ModelInheritanceTests)', 'test_abstract_parent_link (model_inheritance.tests.ModelInheritanceTests)', 'Creating a child with non-abstract parents only issues INSERTs.', 'test_custompk_m2m (model_inheritance.tests.ModelInheritanceTests)', 'test_eq (model_inheritance.tests.ModelInheritanceTests)', 'test_init_subclass (model_inheritance.tests.ModelInheritanceTests)', 'test_meta_fields_and_ordering (model_inheritance.tests.ModelInheritanceTests)', 'test_mixin_init (model_inheritance.tests.ModelInheritanceTests)', 'test_model_with_distinct_accessors (model_inheritance.tests.ModelInheritanceTests)', 'test_model_with_distinct_related_query_name (model_inheritance.tests.ModelInheritanceTests)', 'test_reverse_relation_for_different_hierarchy_tree (model_inheritance.tests.ModelInheritanceTests)', 'test_set_name (model_inheritance.tests.ModelInheritanceTests)', 'test_update_parent_filtering (model_inheritance.tests.ModelInheritanceTests)', 'test_exclude_inherited_on_null (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_inherited_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_inherited_on_null (model_inheritance.tests.ModelInheritanceDataTests)', 'test_filter_on_parent_returns_object_of_parent_type (model_inheritance.tests.ModelInheritanceDataTests)', 'test_inherited_does_not_exist_exception (model_inheritance.tests.ModelInheritanceDataTests)', 'test_inherited_multiple_objects_returned_exception (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_cache_reuse (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_child_one_to_one_link (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_child_one_to_one_link_on_nonrelated_objects (model_inheritance.tests.ModelInheritanceDataTests)', 'test_parent_fields_available_for_filtering_in_child_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_related_objects_for_inherited_models (model_inheritance.tests.ModelInheritanceDataTests)', 'test_select_related_defer (model_inheritance.tests.ModelInheritanceDataTests)', 'test_select_related_works_on_parent_model_fields (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_inherited_model (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_query_counts (model_inheritance.tests.ModelInheritanceDataTests)', 'test_update_works_on_parent_and_child_models_at_once (model_inheritance.tests.ModelInheritanceDataTests)', 'test_values_works_on_parent_model_fields (model_inheritance.tests.ModelInheritanceDataTests)']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12470: resolved: False
+2026-05-11 10:23:18,750 - INFO - Attempting to stop container sweb.eval.django__django-12470.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:33,927 - INFO - Attempting to remove container sweb.eval.django__django-12470.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:34,000 - INFO - Container sweb.eval.django__django-12470.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:23:34,001 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-12470:latest...
+2026-05-11 10:23:34,088 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-12470:latest removed.

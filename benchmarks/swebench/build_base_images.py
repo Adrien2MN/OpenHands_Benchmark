@@ -677,6 +677,7 @@ def _assemble_with_logging(
     push: bool = False,
     max_retries: int = 3,
     force_build: bool = False,
+    prebuilt_only: bool = False,
     *,
     content_hash: str,
 ) -> BuildOutput:
@@ -686,6 +687,29 @@ def _assemble_with_logging(
     base_tag = base_image_tag(custom_tag, content_hash=content_hash)
     # Include content_hash so Dockerfile changes invalidate cached assemblies.
     final_tag = f"{target_image}:{sdk_short_sha}-{content_hash}-{custom_tag}-{target}"
+
+    if prebuilt_only:
+        if remote_image_exists(final_tag):
+            logger.info("Agent image %s already exists. Skipping.", final_tag)
+            return BuildOutput(
+                base_image=base_image,
+                tags=[final_tag],
+                error=None,
+                status="skipped_remote_exists",
+                skip_reason="remote_image_exists",
+            )
+
+        logger.info(
+            "Prebuilt agent image %s not found. Skipping assembly.",
+            final_tag,
+        )
+        return BuildOutput(
+            base_image=base_image,
+            tags=[],
+            error=None,
+            status="skipped_prebuilt_missing",
+            skip_reason="prebuilt_source_minimal_missing",
+        )
 
     if not force_build and remote_image_exists(final_tag):
         logger.info("Agent image %s already exists. Skipping.", final_tag)
@@ -759,6 +783,7 @@ def assemble_all_agent_images(
     max_workers: int = 12,
     max_retries: int = 3,
     force_build: bool = False,
+    prebuilt_only: bool = False,
     custom_tag_fn: Callable[[str], str] | None = None,
 ) -> int:
     """Assemble all agent images using thin Dockerfile (Phase 2)."""
@@ -803,6 +828,7 @@ def assemble_all_agent_images(
                     push=push,
                     max_retries=max_retries,
                     force_build=force_build,
+                    prebuilt_only=prebuilt_only,
                     content_hash=content_hash,
                 )
                 futures[fut] = base
@@ -831,7 +857,13 @@ def assemble_all_agent_images(
                 writer.flush()
 
                 with mu:
-                    if result.error or not result.tags:
+                    if result.error:
+                        failures += 1
+                        status = "❌ Failed"
+                    elif result.status.startswith("skipped_"):
+                        skipped += 1
+                        status = "⏭ Skipped"
+                    elif not result.tags:
                         failures += 1
                         status = "❌ Failed"
                     else:

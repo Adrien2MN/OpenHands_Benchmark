@@ -1,0 +1,28 @@
+{
+  "protocol": {
+    "benchmark": "SWE-bench",
+    "secondary_metrics": [
+      "generation_seconds",
+      "token_usage",
+      "energy_kwh",
+      "carbon_kg_co2e"
+    ]
+  },
+  "model": "mistrall-small-2503",
+  "instances_total": 0,
+  "totals": {
+    "instances": 0,
+    "generation_seconds": 0.0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "energy_kwh": 0.0,
+    "carbon_kg_co2e": 0.0
+  },
+  "model_footprint": null,
+  "artifacts": {
+    "input_output_jsonl": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/mistrall-small-2503__astropy__astropy-12907/output.jsonl",
+    "reports_dir": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/mistrall-small-2503__astropy__astropy-12907/report",
+    "instance_reports": []
+  }
+}

@@ -1,0 +1,17 @@
+diff --git a/django/db/models/sql/compiler.py b/django/db/models/sql/compiler.py
+index abbb1e37cb..94009f0e58 100644
+--- a/django/db/models/sql/compiler.py
++++ b/django/db/models/sql/compiler.py
+@@ -329,6 +329,12 @@ class SQLCompiler:
+                 order_by.append((OrderBy(expr, descending=descending), False))
+                 continue
+ 
++            # Patch for self referencing fk _id order_by: just order by the column asc
++            if (field.endswith('_id') and '__' in field and self.query.model and
++                self.query.model._meta.get_field(field.split('__')[0]).is_relation):
++                order_by.append((OrderBy(RawSQL(col, []), descending=False), False))
++                continue
++
+             if '.' in field:
+                 # This came in through an extra(order_by=...) addition. Pass it
+                 # on verbatim.

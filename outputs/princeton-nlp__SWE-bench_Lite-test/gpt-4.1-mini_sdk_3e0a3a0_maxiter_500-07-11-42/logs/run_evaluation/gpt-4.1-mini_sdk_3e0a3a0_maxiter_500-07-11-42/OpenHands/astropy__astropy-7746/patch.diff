@@ -1,0 +1,38 @@
+diff --git a/astropy/wcs/wcs.py b/astropy/wcs/wcs.py
+index d3a06f2b31..0b4a5a5a8a 100644
+--- a/astropy/wcs/wcs.py
++++ b/astropy/wcs/wcs.py
+@@ -1258,6 +1258,12 @@ reduce these to 2 dimensions using the naxis kwarg.
+         elif len(args) == self.naxis + 1:
+             axes = args[:-1]
+             origin = args[-1]
++        # Handle empty input arrays to return empty arrays/lists immediately
++        if all(len(a) == 0 for a in args[:-1]):
++            # Return an empty array for each axis
++            return tuple(np.array([], dtype=float) for _ in args[:-1])
++
++
+             try:
+                 axes = [np.asarray(x) for x in axes]
+                 origin = int(origin)
+diff --git a/issue_repro_wcs_empty_input.py b/issue_repro_wcs_empty_input.py
+new file mode 100644
+index 0000000000..3a30395bb5
+--- /dev/null
++++ b/issue_repro_wcs_empty_input.py
+@@ -0,0 +1,15 @@
++from astropy.wcs import WCS
++import numpy as np
++
++# This script reproduces the issue described: passing empty lists to wcs_pix2world
++
++wcs = WCS('2MASS_h.fits')  # Load a WCS from a real FITS file
++
++# Input empty arrays
++x = np.array([])
++y = np.array([])
++
++# Call the transformation
++output = wcs.wcs_pix2world(x, y, 0)
++
++print('Output with empty inputs:', output)

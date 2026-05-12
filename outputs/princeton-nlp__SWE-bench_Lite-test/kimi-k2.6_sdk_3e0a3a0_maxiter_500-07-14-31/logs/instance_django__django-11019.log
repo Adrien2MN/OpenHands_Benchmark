@@ -1,0 +1,108 @@
+2026-05-07 17:02:47,143 - INFO - root - === Evaluation Started (instance django__django-11019) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-07-14-31/logs/instance_django__django-11019.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-07-14-31/logs/instance_django__django-11019.output.log   (stdout/stderr)
+    ===============================================
+2026-05-07 17:02:47,143 - INFO - benchmarks.utils.evaluation - [worker] start id=django__django-11019
+2026-05-07 17:02:47,509 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal
+2026-05-07 17:02:47,571 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-07 17:02:47,600 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-deacdb1e-cd63-4de1-a671-6bfd24a86a0d -e LMNR_SPAN_CONTEXT=null -p 31814:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal --host 0.0.0.0 --port 8000
+2026-05-07 17:02:47,742 - INFO - openhands.workspace.docker.workspace - Started container: bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:47,746 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:48,780 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:49,820 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:50,868 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:51,901 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:52,935 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:53,970 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:55,023 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:56,070 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:57,132 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:58,169 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:02:59,212 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:00,253 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:01,310 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:02,363 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:03,401 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:04,437 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:05,474 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:06,509 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:07,546 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:08,580 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:09,640 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:10,680 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:11,725 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:12,770 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:13,812 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:14,854 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:15,891 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:16,931 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:17,986 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:19,056 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:20,109 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:21,173 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:22,266 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:23,463 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:44,189 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:45,242 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:46,283 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:47,360 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:48,420 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:49,501 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:50,559 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:51,640 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:03:52,689 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' bb6a8289a14320ac90bb1d4b88dc11e2876a82f1f24369f26e40a7dbefd41c0d
+2026-05-07 17:05:00,342 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11019: failure_category=resource, escalate_resources=True, runtime_failure_count=1
+2026-05-07 17:05:00,342 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11019 failed (attempt 1/4): Container failed to become healthy in time
+2026-05-07 17:05:00,344 - WARNING - benchmarks.utils.evaluation - [worker] Instance django__django-11019: attempt 2/4, runtime_failure_count=1, resource_factor=2
+2026-05-07 17:05:00,746 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal
+2026-05-07 17:05:00,797 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-07 17:05:00,824 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-4f8c73a0-58d8-4c2a-bdd9-55b279b9033a -e LMNR_SPAN_CONTEXT=null -p 31706:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.django_1776_django-11019-source-minimal --host 0.0.0.0 --port 8000
+2026-05-07 17:05:00,943 - INFO - openhands.workspace.docker.workspace - Started container: d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:00,948 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:01,979 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:03,038 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:04,522 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:05,902 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:07,103 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:08,271 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:09,354 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:10,458 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:11,553 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:12,642 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:13,759 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:14,859 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:15,940 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:17,053 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:18,137 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:19,234 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:20,344 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:21,449 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:22,547 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:23,630 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:24,738 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:25,828 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:26,913 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:28,014 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:29,108 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:30,179 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:31,371 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:32,483 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:33,577 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:34,696 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:35,772 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:36,851 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:37,936 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 17:05:39,035 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:31706
+2026-05-07 17:05:40,055 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-07 17:05:40,077 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-07 17:05:40,236 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/django/
+2026-05-07 17:05:46,102 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-07 22:06:06,370 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 1584.1s)
+2026-05-07 22:06:06,377 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-05-07 22:06:06,377 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-05-07 22:06:06,977 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m74[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/django/forms/widgets.py b/django/forms/widgets.py\nindex 02aa32b207..e944091f0d 100644\n--- a/django/forms/widgets.py\n+++ b/django/forms/widgets.py\n@@ -6,16 +6,21 @@…'[0m
+2026-05-07 22:06:06,978 - INFO - benchmarks.utils.evaluation - [worker] done id=django__django-11019
+2026-05-07 22:06:07,102 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for django__django-11019 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-07-14-31/conversations/django__django-11019.tar.gz
+2026-05-07 22:06:09,113 - INFO - openhands.workspace.docker.workspace - Stopping container: d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4
+2026-05-07 22:06:09,113 - INFO - openhands.sdk.utils.command - $ docker stop d2fbe63b7ff87437ab3ed1505e461020ba6419d5140aedccddbd1666308ee9f4

@@ -1,0 +1,29 @@
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index e0eeccefa6..10a41205e7 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -350,6 +350,8 @@ class QuerySet:
+         if not other.query.can_filter():
+             other = other.model._base_manager.filter(pk__in=other.values('pk'))
+         combined.query.combine(other.query, sql.OR)
++        # Mark as a union query
++        combined._is_union = True
+         return combined
+ 
+     ####################################
+@@ -1137,9 +1139,15 @@ class QuerySet:
+     def distinct(self, *field_names):
+         """
+         Return a new QuerySet instance that will select only distinct results.
++
++        Raise an error if the QuerySet is a union query.
+         """
+         assert not self.query.is_sliced, \
+             "Cannot create distinct fields once a slice has been taken."
++        if getattr(self, '_is_union', False):
++            raise NotImplementedError(
++                "distinct() after union() is not supported."
++            )
+         obj = self._chain()
+         obj.query.add_distinct_fields(*field_names)
+         return obj

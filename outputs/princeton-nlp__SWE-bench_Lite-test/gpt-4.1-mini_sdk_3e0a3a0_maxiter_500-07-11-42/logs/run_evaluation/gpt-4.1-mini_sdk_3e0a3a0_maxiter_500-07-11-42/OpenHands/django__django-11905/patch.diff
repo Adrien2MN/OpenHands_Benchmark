@@ -1,0 +1,24 @@
+diff --git a/django/db/models/lookups.py b/django/db/models/lookups.py
+index 9344979c56..7347a91dda 100644
+--- a/django/db/models/lookups.py
++++ b/django/db/models/lookups.py
+@@ -462,6 +462,11 @@ class IsNull(BuiltinLookup):
+     lookup_name = 'isnull'
+     prepare_rhs = False
+ 
++    def get_db_prep_lookup(self, value, connection):
++        if not isinstance(value, bool):
++            raise TypeError("The '__isnull' lookup requires a boolean value.")
++        return super().get_db_prep_lookup(value, connection)
++
+     def as_sql(self, compiler, connection):
+         sql, params = compiler.compile(self.lhs)
+         if self.rhs:
+@@ -473,6 +478,7 @@ class IsNull(BuiltinLookup):
+ @Field.register_lookup
+ class Regex(BuiltinLookup):
+     lookup_name = 'regex'
++
+     prepare_rhs = False
+ 
+     def as_sql(self, compiler, connection):

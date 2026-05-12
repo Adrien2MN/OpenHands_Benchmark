@@ -1,0 +1,59 @@
+2026-05-04 11:40:52,331 - INFO - Creating container for astropy__astropy-6938...
+2026-05-04 11:40:52,495 - INFO - Container for astropy__astropy-6938 created: e93e0e0c8edd51a4738fe487fdb6f096cdded17d71b623a34b2d56d93925fdf3
+2026-05-04 11:40:52,590 - INFO - Container for astropy__astropy-6938 started: e93e0e0c8edd51a4738fe487fdb6f096cdded17d71b623a34b2d56d93925fdf3
+2026-05-04 11:40:52,590 - INFO - Intermediate patch for astropy__astropy-6938 written to logs/run_evaluation/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16/OpenHands/astropy__astropy-6938/patch.diff, now applying to container...
+2026-05-04 11:40:52,741 - INFO - >>>>> Applied Patch:
+Checking patch astropy/io/fits/fitsrec.py...
+Applied patch astropy/io/fits/fitsrec.py cleanly.
+
+2026-05-04 11:40:53,875 - INFO - Git diff before:
+diff --git a/astropy/io/fits/fitsrec.py b/astropy/io/fits/fitsrec.py
+index 574b4073b1..e7dc180482 100644
+--- a/astropy/io/fits/fitsrec.py
++++ b/astropy/io/fits/fitsrec.py
+@@ -1257,11 +1257,10 @@ class FITS_rec(np.recarray):
+                 # decimal point
+                 value = value[1:] + '.'
+ 
+-            output_field[jdx] = value
++            if 'D' in format:
++                value = value.replace('E', 'D')
+ 
+-        # Replace exponent separator in floating point numbers
+-        if 'D' in format:
+-            output_field.replace(encode_ascii('E'), encode_ascii('D'))
++            output_field[jdx] = value
+ 
+ 
+ def _get_recarray_field(array, key):
+2026-05-04 11:40:53,876 - INFO - Eval script for astropy__astropy-6938 written to logs/run_evaluation/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16/OpenHands/astropy__astropy-6938/eval.sh; copying to container...
+2026-05-04 11:41:04,009 - INFO - Test runtime: 10.07 seconds
+2026-05-04 11:41:04,013 - INFO - Test output for astropy__astropy-6938 written to logs/run_evaluation/gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16/OpenHands/astropy__astropy-6938/test_output.txt
+2026-05-04 11:41:04,177 - INFO - Git diff after:
+diff --git a/astropy/io/fits/fitsrec.py b/astropy/io/fits/fitsrec.py
+index 574b4073b1..e7dc180482 100644
+--- a/astropy/io/fits/fitsrec.py
++++ b/astropy/io/fits/fitsrec.py
+@@ -1257,11 +1257,10 @@ class FITS_rec(np.recarray):
+                 # decimal point
+                 value = value[1:] + '.'
+ 
+-            output_field[jdx] = value
++            if 'D' in format:
++                value = value.replace('E', 'D')
+ 
+-        # Replace exponent separator in floating point numbers
+-        if 'D' in format:
+-            output_field.replace(encode_ascii('E'), encode_ascii('D'))
++            output_field[jdx] = value
+ 
+ 
+ def _get_recarray_field(array, key):
+2026-05-04 11:41:04,178 - INFO - Grading answer for astropy__astropy-6938...
+2026-05-04 11:41:04,184 - INFO - report: {'astropy__astropy-6938': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': True, 'tests_status': {'FAIL_TO_PASS': {'success': ['astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_ascii_table_data', 'astropy/io/fits/tests/test_table.py::TestTableFunctions::test_ascii_table'], 'failure': []}, 'PASS_TO_PASS': {'success': ['astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_sample_file', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_image_create', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_scaled_data', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_scaled_data_auto_rescale', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_uint16_data', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_groups_hdu_data', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_open_with_no_keywords', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_writeto_convenience', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_hdu_writeto', 'astropy/io/fits/tests/test_checksum.py::TestChecksumFunctions::test_datasum_only', 'astropy/io/fits/tests/test_table.py::test_regression_scalar_indexing'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-6938: resolved: True
+2026-05-04 11:41:04,186 - INFO - Attempting to stop container sweb.eval.astropy__astropy-6938.gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16...
+2026-05-04 11:41:19,421 - INFO - Attempting to remove container sweb.eval.astropy__astropy-6938.gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16...
+2026-05-04 11:41:19,453 - INFO - Container sweb.eval.astropy__astropy-6938.gpt-5.4-2026-03-05_sdk_3e0a3a0_maxiter_500-30-17-16 removed.
+2026-05-04 11:41:19,454 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-6938:latest...
+2026-05-04 11:41:19,478 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-6938:latest removed.

@@ -1,0 +1,79 @@
+2026-05-11 10:23:18,840 - INFO - Creating container for django__django-12908...
+2026-05-11 10:23:18,940 - INFO - Container for django__django-12908 created: 0de2f3e15129d281501adafc94802f69087990095ecd8a758fa91a32e824e673
+2026-05-11 10:23:19,058 - INFO - Container for django__django-12908 started: 0de2f3e15129d281501adafc94802f69087990095ecd8a758fa91a32e824e673
+2026-05-11 10:23:19,059 - INFO - Intermediate patch for django__django-12908 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12908/patch.diff, now applying to container...
+2026-05-11 10:23:19,282 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/query.py...
+Applied patch django/db/models/query.py cleanly.
+
+2026-05-11 10:23:19,989 - INFO - Git diff before:
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index e0eeccefa6..10a41205e7 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -350,6 +350,8 @@ class QuerySet:
+         if not other.query.can_filter():
+             other = other.model._base_manager.filter(pk__in=other.values('pk'))
+         combined.query.combine(other.query, sql.OR)
++        # Mark as a union query
++        combined._is_union = True
+         return combined
+ 
+     ####################################
+@@ -1137,9 +1139,15 @@ class QuerySet:
+     def distinct(self, *field_names):
+         """
+         Return a new QuerySet instance that will select only distinct results.
++
++        Raise an error if the QuerySet is a union query.
+         """
+         assert not self.query.is_sliced, \
+             "Cannot create distinct fields once a slice has been taken."
++        if getattr(self, '_is_union', False):
++            raise NotImplementedError(
++                "distinct() after union() is not supported."
++            )
+         obj = self._chain()
+         obj.query.add_distinct_fields(*field_names)
+         return obj
+2026-05-11 10:23:19,990 - INFO - Eval script for django__django-12908 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12908/eval.sh; copying to container...
+2026-05-11 10:23:41,369 - INFO - Test runtime: 21.29 seconds
+2026-05-11 10:23:41,370 - INFO - Test output for django__django-12908 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-12908/test_output.txt
+2026-05-11 10:23:41,524 - INFO - Git diff after:
+diff --git a/django/db/models/query.py b/django/db/models/query.py
+index e0eeccefa6..10a41205e7 100644
+--- a/django/db/models/query.py
++++ b/django/db/models/query.py
+@@ -350,6 +350,8 @@ class QuerySet:
+         if not other.query.can_filter():
+             other = other.model._base_manager.filter(pk__in=other.values('pk'))
+         combined.query.combine(other.query, sql.OR)
++        # Mark as a union query
++        combined._is_union = True
+         return combined
+ 
+     ####################################
+@@ -1137,9 +1139,15 @@ class QuerySet:
+     def distinct(self, *field_names):
+         """
+         Return a new QuerySet instance that will select only distinct results.
++
++        Raise an error if the QuerySet is a union query.
+         """
+         assert not self.query.is_sliced, \
+             "Cannot create distinct fields once a slice has been taken."
++        if getattr(self, '_is_union', False):
++            raise NotImplementedError(
++                "distinct() after union() is not supported."
++            )
+         obj = self._chain()
+         obj.query.add_distinct_fields(*field_names)
+         return obj
+2026-05-11 10:23:41,524 - INFO - Grading answer for django__django-12908...
+2026-05-11 10:23:41,526 - INFO - report: {'django__django-12908': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_unsupported_operations_on_combined_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_unsupported_ordering_slicing_raises_db_error (queries.test_qs_combinators.QuerySetSetOperationTests)']}, 'PASS_TO_PASS': {'success': ['test_combining_multiple_models (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_union (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_count_union_empty_result (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_difference_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_difference_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_intersection_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_intersection_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_limits (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_order_by_same_type (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_order_raises_on_non_selected_column (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_ordering_by_f_expression (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_qs_with_subcompound_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_difference (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_intersection (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_simple_union (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_distinct (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_empty_qs (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_extra_and_values_list (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_two_annotated_values_list (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values_list_and_order (queries.test_qs_combinators.QuerySetSetOperationTests)', 'test_union_with_values_list_on_annotated_and_unannotated (queries.test_qs_combinators.QuerySetSetOperationTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-12908: resolved: False
+2026-05-11 10:23:41,526 - INFO - Attempting to stop container sweb.eval.django__django-12908.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:56,728 - INFO - Attempting to remove container sweb.eval.django__django-12908.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:23:56,801 - INFO - Container sweb.eval.django__django-12908.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:23:56,802 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-12908:latest...
+2026-05-11 10:23:56,862 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-12908:latest removed.

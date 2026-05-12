@@ -1,0 +1,21 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index f32ce64629..beca3fe4c6 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -1578,6 +1578,16 @@ class DecimalField(Field):
+ 
+ 
+ class DurationField(Field):
++    default_error_messages = {
++        'invalid': _('Enter a valid duration in the format [DD] [[HH:]MM:]ss[.uuuuuu].'),
++    }
++
++    def __init__(self, verbose_name=None, name=None, **kwargs):
++        if 'help_text' not in kwargs:
++            kwargs['help_text'] = _(
++                'Duration in the format [DD] [[HH:]MM:]ss[.uuuuuu]. Seconds are mandatory, minutes and hours are optional.')
++        super().__init__(verbose_name, name, **kwargs)
++
+     """
+     Store timedelta objects.
+ 

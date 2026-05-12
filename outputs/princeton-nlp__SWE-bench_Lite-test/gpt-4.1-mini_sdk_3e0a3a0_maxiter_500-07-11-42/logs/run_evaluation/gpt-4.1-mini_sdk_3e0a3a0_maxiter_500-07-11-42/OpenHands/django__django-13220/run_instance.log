@@ -1,0 +1,88 @@
+2026-05-11 10:23:36,546 - INFO - Creating container for django__django-13220...
+2026-05-11 10:23:36,709 - INFO - Container for django__django-13220 created: 4a00282e81419ff5a770a0480aadd53be1d3d67f2af6c716a34e8235ce67da70
+2026-05-11 10:23:36,901 - INFO - Container for django__django-13220 started: 4a00282e81419ff5a770a0480aadd53be1d3d67f2af6c716a34e8235ce67da70
+2026-05-11 10:23:36,902 - INFO - Intermediate patch for django__django-13220 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-13220/patch.diff, now applying to container...
+2026-05-11 10:23:37,251 - INFO - >>>>> Applied Patch:
+/tmp/patch.diff:12: trailing whitespace.
+        
+Checking patch django/core/exceptions.py...
+Applied patch django/core/exceptions.py cleanly.
+warning: 1 line adds whitespace errors.
+
+2026-05-11 10:23:38,053 - INFO - Git diff before:
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..031a814f26 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,27 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return False
++        
++        # Compare error_dicts if both have error_dict
++        if hasattr(self, 'error_dict') and hasattr(other, 'error_dict'):
++            # Compare keys and their sorted error lists
++            if set(self.error_dict.keys()) != set(other.error_dict.keys()):
++                return False
++            for key in self.error_dict.keys():
++                if sorted(self.error_dict[key]) != sorted(other.error_dict[key]):
++                    return False
++            return True
++
++        # Compare error lists if both have error_list
++        if hasattr(self, 'error_list') and hasattr(other, 'error_list'):
++            return sorted(self.error_list) == sorted(other.error_list)
++
++        # Otherwise fallback to comparing messages
++        return self.messages == other.messages
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""
+2026-05-11 10:23:38,054 - INFO - Eval script for django__django-13220 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-13220/eval.sh; copying to container...
+2026-05-11 10:23:57,271 - INFO - Test runtime: 19.09 seconds
+2026-05-11 10:23:57,271 - INFO - Test output for django__django-13220 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-13220/test_output.txt
+2026-05-11 10:23:57,426 - INFO - Git diff after:
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..031a814f26 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -182,6 +182,27 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return False
++        
++        # Compare error_dicts if both have error_dict
++        if hasattr(self, 'error_dict') and hasattr(other, 'error_dict'):
++            # Compare keys and their sorted error lists
++            if set(self.error_dict.keys()) != set(other.error_dict.keys()):
++                return False
++            for key in self.error_dict.keys():
++                if sorted(self.error_dict[key]) != sorted(other.error_dict[key]):
++                    return False
++            return True
++
++        # Compare error lists if both have error_list
++        if hasattr(self, 'error_list') and hasattr(other, 'error_list'):
++            return sorted(self.error_list) == sorted(other.error_list)
++
++        # Otherwise fallback to comparing messages
++        return self.messages == other.messages
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""
+2026-05-11 10:23:57,426 - INFO - Grading answer for django__django-13220...
+2026-05-11 10:23:57,427 - INFO - report: {'django__django-13220': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_eq (test_exceptions.test_validation_error.TestValidationError)', 'test_eq_nested (test_exceptions.test_validation_error.TestValidationError)', 'test_hash (test_exceptions.test_validation_error.TestValidationError)', 'test_hash_nested (test_exceptions.test_validation_error.TestValidationError)']}, 'PASS_TO_PASS': {'success': ['test_messages_concatenates_error_dict_values (test_exceptions.test_validation_error.TestValidationError)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13220: resolved: False
+2026-05-11 10:23:57,428 - INFO - Attempting to stop container sweb.eval.django__django-13220.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:24:12,559 - INFO - Attempting to remove container sweb.eval.django__django-13220.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:24:12,604 - INFO - Container sweb.eval.django__django-13220.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:24:12,604 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-13220:latest...
+2026-05-11 10:24:12,645 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-13220:latest removed.

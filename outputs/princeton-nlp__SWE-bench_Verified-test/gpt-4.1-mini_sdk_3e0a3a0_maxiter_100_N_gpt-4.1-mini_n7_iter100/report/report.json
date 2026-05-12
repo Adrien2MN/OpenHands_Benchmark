@@ -1,0 +1,39 @@
+{
+  "protocol": {
+    "benchmark": "SWE-bench",
+    "secondary_metrics": [
+      "generation_seconds",
+      "token_usage",
+      "energy_kwh",
+      "carbon_kg_co2e"
+    ]
+  },
+  "model": "gpt-4.1-mini",
+  "instances_total": 0,
+  "totals": {
+    "instances": 0,
+    "generation_seconds": 0.0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "energy_kwh": 0.0,
+    "carbon_kg_co2e": 0.0
+  },
+  "model_footprint": {
+    "gpu_consumption_kwh": 8.2016e-06,
+    "server_consumption_kwh": 2.89e-06,
+    "total_electricity_kwh": 1.1091599999999999e-05,
+    "co2e_operational_kg": 5.667807599999999e-07,
+    "co2e_embodied_kg": null,
+    "co2e_total_kg": 5.667807599999999e-07,
+    "co2e_factor_per_kwh": 0.05109999999999999,
+    "scenario_file": "gpt41mini-ecologits-token-2.json",
+    "scenario_path": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/model_footprint/gpt41mini-ecologits-token-2.json",
+    "electricity_grid_source": "sweden"
+  },
+  "artifacts": {
+    "input_output_jsonl": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n7_iter100/output.jsonl",
+    "reports_dir": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-4.1-mini_sdk_3e0a3a0_maxiter_100_N_gpt-4.1-mini_n7_iter100/report",
+    "instance_reports": []
+  }
+}

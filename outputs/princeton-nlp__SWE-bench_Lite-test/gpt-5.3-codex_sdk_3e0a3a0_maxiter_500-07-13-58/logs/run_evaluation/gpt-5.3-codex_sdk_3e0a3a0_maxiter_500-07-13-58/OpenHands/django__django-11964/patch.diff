@@ -1,0 +1,12 @@
+diff --git a/django/db/models/enums.py b/django/db/models/enums.py
+index bbe362a6ab..c68eccb7be 100644
+--- a/django/db/models/enums.py
++++ b/django/db/models/enums.py
+@@ -73,3 +73,7 @@ class TextChoices(str, Choices):
+ 
+     def _generate_next_value_(name, start, count, last_values):
+         return name
++
++
++IntegerChoices.__str__ = int.__str__
++TextChoices.__str__ = str.__str__

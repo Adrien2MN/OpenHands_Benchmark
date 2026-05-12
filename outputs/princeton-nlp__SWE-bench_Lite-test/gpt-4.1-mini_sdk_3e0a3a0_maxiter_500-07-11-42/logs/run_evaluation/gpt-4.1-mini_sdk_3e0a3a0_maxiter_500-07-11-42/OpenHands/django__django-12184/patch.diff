@@ -1,0 +1,15 @@
+diff --git a/django/urls/resolvers.py b/django/urls/resolvers.py
+index 2d4610aac4..793bf401e1 100644
+--- a/django/urls/resolvers.py
++++ b/django/urls/resolvers.py
+@@ -352,7 +352,9 @@ class URLPattern:
+         match = self.pattern.match(path)
+         if match:
+             new_path, args, kwargs = match
+-            # Pass any extra_kwargs as **kwargs.
++            # If there are no positional args or we have named groups in kwargs, avoid passing positional args.
++            if args and kwargs:
++                args = ()
+             kwargs.update(self.default_args)
+             return ResolverMatch(self.callback, args, kwargs, self.pattern.name, route=str(self.pattern))
+ 

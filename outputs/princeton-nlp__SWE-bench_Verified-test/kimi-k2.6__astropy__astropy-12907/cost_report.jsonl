@@ -1,0 +1,40 @@
+{
+  "directory": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/kimi-k2.6__astropy__astropy-12907",
+  "timestamp": "2026-04-23T15:32:37.939665",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 1,
+    "cost": 0.0,
+    "time_statistics": {
+      "average_duration": 436.48835,
+      "total_duration": 436.48835,
+      "total_lines": 1,
+      "lines_with_duration": 1
+    }
+  },
+  "critic_files": [
+    {
+      "filename": "output.critic_attempt_1.jsonl",
+      "lines": 1,
+      "cost": 0.0,
+      "time_statistics": {
+        "average_duration": 436.48835,
+        "total_duration": 436.48835,
+        "total_lines": 1,
+        "lines_with_duration": 1
+      }
+    }
+  ],
+  "summary": {
+    "total_cost": 0.0,
+    "total_duration": 436.48835,
+    "only_main_output_cost": 0.0,
+    "sum_critic_files": 0.0
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0,
+    "sum_critic_files_proxy_cost": 0.0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "protocol": {
+    "benchmark": "SWE-bench",
+    "secondary_metrics": [
+      "generation_seconds",
+      "token_usage",
+      "energy_kwh",
+      "carbon_kg_co2e"
+    ]
+  },
+  "model": "gpt-5.4",
+  "instances_total": 3,
+  "totals": {
+    "instances": 3,
+    "generation_seconds": 1277.533,
+    "prompt_tokens": 2894532,
+    "completion_tokens": 35605,
+    "total_tokens": 2930137,
+    "energy_kwh": 0.0,
+    "carbon_kg_co2e": 0.0
+  },
+  "model_footprint": null,
+  "artifacts": {
+    "input_output_jsonl": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/output.jsonl",
+    "reports_dir": "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/report",
+    "instance_reports": [
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/report/report_astropy__astropy-12907.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/report/report_astropy__astropy-13236.json",
+      "/Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Verified-test/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/report/report_astropy__astropy-13033.json"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 9ce46e3f73..c8ab586f38 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -202,6 +202,7 @@ class Field(RegisterLookupMixin):
+         return [
+             *self._check_field_name(),
+             *self._check_choices(),
++            *self._check_max_length_choices(),
+             *self._check_db_index(),
+             *self._check_null_allowed_for_primary_keys(),
+             *self._check_backend_specific_checks(**kwargs),
+@@ -209,6 +210,38 @@ class Field(RegisterLookupMixin):
+             *self._check_deprecation_details(),
+         ]
+ 
++    def _check_max_length_choices(self):
++        from django.core.checks import Error
++
++        if not self.choices or self.max_length is None:
++            return []
++
++        # Flatten choices to extract all actual values
++        values = []
++        for choice in self.choices:
++            if isinstance(choice, (list, tuple)) and len(choice) == 2:
++                # If first element is iterable, these are grouped choices
++                if isinstance(choice[1], (list, tuple)):
++                    values.extend(v for v, _ in choice[1])
++                else:
++                    values.append(choice[0])
++            else:
++                values.append(choice)
++
++        # Find the max length of the string representation of these values
++        max_choice_len = max(len(str(v)) for v in values)
++
++        if self.max_length < max_choice_len:
++            return [
++                Error(
++                    f"Field max_length={self.max_length} is too small for the longest choice value length {max_choice_len}.",
++                    obj=self,
++                    id='fields.E009',
++                )
++            ]
++        return []
++
++
+     def _check_field_name(self):
+         """
+         Check if field name is valid, i.e. 1) does not end with an
+diff --git a/django/http/cookie.py b/django/http/cookie.py
+index 5c418d7e35..cca525e0e0 100644
+--- a/django/http/cookie.py
++++ b/django/http/cookie.py
+@@ -1,4 +1,5 @@
+-from http import cookies
++import http.cookies as cookies
++
+ 
+ # For backwards compatibility in Django 2.1.
+ SimpleCookie = cookies.SimpleCookie

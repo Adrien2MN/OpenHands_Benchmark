@@ -1,0 +1,62 @@
+diff --git a/django/core/exceptions.py b/django/core/exceptions.py
+index dc084b8692..7856bc8ac0 100644
+--- a/django/core/exceptions.py
++++ b/django/core/exceptions.py
+@@ -2,6 +2,10 @@
+ Global Django exception and warning classes.
+ """
+ 
++from collections import Counter
++
++from django.utils.hashable import make_hashable
++
+ 
+ class FieldDoesNotExist(Exception):
+     """The requested model field does not exist"""
+@@ -182,6 +186,46 @@ class ValidationError(Exception):
+     def __repr__(self):
+         return 'ValidationError(%s)' % self
+ 
++    @classmethod
++    def _normalize_value(cls, value):
++        if isinstance(value, dict):
++            return tuple((key, cls._normalize_value(nested_value)) for key, nested_value in sorted(value.items()))
++        if isinstance(value, (list, tuple)):
++            return tuple(cls._normalize_value(item) for item in value)
++        return make_hashable(value)
++
++    def _normalized_data(self):
++        if hasattr(self, 'message'):
++            return (
++                'message',
++                self._normalize_value(self.message),
++                self.code,
++                self._normalize_value(self.params),
++            )
++        if hasattr(self, 'error_dict'):
++            return (
++                'error_dict',
++                frozenset(
++                    (
++                        field,
++                        frozenset(Counter(error._normalized_data() for error in errors).items()),
++                    )
++                    for field, errors in self.error_dict.items()
++                ),
++            )
++        return (
++            'error_list',
++            frozenset(Counter(error._normalized_data() for error in self.error_list).items()),
++        )
++
++    def __eq__(self, other):
++        if not isinstance(other, ValidationError):
++            return NotImplemented
++        return self._normalized_data() == other._normalized_data()
++
++    def __hash__(self):
++        return hash(self._normalized_data())
++
+ 
+ class EmptyResultSet(Exception):
+     """A database query predicate is impossible."""

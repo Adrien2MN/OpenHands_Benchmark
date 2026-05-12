@@ -1,0 +1,25 @@
+diff --git a/django/db/models/base.py b/django/db/models/base.py
+index 0a5e5ff673..5f80dd255f 100644
+--- a/django/db/models/base.py
++++ b/django/db/models/base.py
+@@ -939,10 +939,20 @@ class Model(metaclass=ModelBase):
+     delete.alters_data = True
+ 
+     def _get_FIELD_display(self, field):
++        """Return the human readable value of a model field with choices.
++
++        This override allows subclasses to override get_FIELD_display manually to customize display.
++        """
++        method_name = f'get_{field.name}_display'
++        if hasattr(self, method_name) and getattr(self.__class__, method_name, None) is not getattr(self, method_name, None):
++            # If the instance has an overridden method with the same name different from the class method,
++            # call it to respect override instead of default implementation.
++            return getattr(self, method_name)()
+         value = getattr(self, field.attname)
+         # force_str() to coerce lazy strings.
+         return force_str(dict(field.flatchoices).get(value, value), strings_only=True)
+ 
++
+     def _get_next_or_previous_by_FIELD(self, field, is_next, **kwargs):
+         if not self.pk:
+             raise ValueError("get_next/get_previous cannot be used on unsaved objects.")

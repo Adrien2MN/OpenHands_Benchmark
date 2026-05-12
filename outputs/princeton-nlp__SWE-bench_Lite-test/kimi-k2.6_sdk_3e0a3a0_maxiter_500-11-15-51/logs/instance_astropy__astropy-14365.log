@@ -1,0 +1,32 @@
+2026-05-11 16:14:40,060 - INFO - root - === Evaluation Started (instance astropy__astropy-14365) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-15-51/logs/instance_astropy__astropy-14365.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-15-51/logs/instance_astropy__astropy-14365.output.log   (stdout/stderr)
+    ===============================================
+2026-05-11 16:14:40,060 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14365
+2026-05-11 16:14:40,586 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal
+2026-05-11 16:14:40,642 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-11 16:14:40,667 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-40b9868f-258f-4673-bff5-29e8754007aa -e LMNR_SPAN_CONTEXT=null -p 37195:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14365-source-minimal --host 0.0.0.0 --port 8000
+2026-05-11 16:14:40,787 - INFO - openhands.workspace.docker.workspace - Started container: 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:40,792 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:41,827 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:42,893 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:43,934 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:44,970 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:46,036 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:47,087 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:48,119 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:49,287 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:14:50,333 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:37195
+2026-05-11 16:14:51,227 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-11 16:14:51,242 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-11 16:14:51,333 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-11 16:14:52,753 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-11 16:22:50,639 - INFO - openhands.sdk.conversation.impl.remote_conversation - Run completed via WebSocket notification (status: finished, elapsed: 477.1s)
+2026-05-11 16:22:50,658 - INFO - benchmarks.utils.fake_user_response - Agent finished with FinishAction after 0 fake responses
+2026-05-11 16:22:50,658 - INFO - benchmarks.utils.fake_user_response - Conversation completed. Total fake responses sent: 0
+2026-05-11 16:22:51,221 - INFO - benchmarks.swebench.run_infer - [INSTANCE] [32mOK[0m patch=[32mNONEMPTY[0m commit=[32m0[0m changes=N msgs(a/u)=0/1 tool_calls=[37m38[0m errors(agent/conv)=[32m0/0[0m end=[32mfinish_tool[0m [2mpreview='diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py\nindex 83a4f004a..f75144532 100644\n--- a/astropy/io/ascii/qdp.py\n+++ b/astropy/io/ascii/qdp.py\n@@ -60,7 +60,7 @@ d…'[0m
+2026-05-11 16:22:51,222 - INFO - benchmarks.utils.evaluation - [worker] done id=astropy__astropy-14365
+2026-05-11 16:22:51,341 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-14365 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/kimi-k2.6_sdk_3e0a3a0_maxiter_500-11-15-51/conversations/astropy__astropy-14365.tar.gz
+2026-05-11 16:22:53,346 - INFO - openhands.workspace.docker.workspace - Stopping container: 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea
+2026-05-11 16:22:53,347 - INFO - openhands.sdk.utils.command - $ docker stop 7e013f8ec4f36afde273be5a107fdea4c8d0e762d91f39129748452e3efba2ea

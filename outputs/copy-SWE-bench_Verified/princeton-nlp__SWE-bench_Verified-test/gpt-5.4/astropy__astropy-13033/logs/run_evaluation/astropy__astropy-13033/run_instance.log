@@ -1,0 +1,93 @@
+2026-04-23 16:08:08,390 - INFO - Creating container for astropy__astropy-13033...
+2026-04-23 16:08:08,428 - INFO - Container for astropy__astropy-13033 created: f7b0a1e98a88c74928434fe6eb95e7933cbfd8714735bd9258d2c6924a858114
+2026-04-23 16:08:08,500 - INFO - Container for astropy__astropy-13033 started: f7b0a1e98a88c74928434fe6eb95e7933cbfd8714735bd9258d2c6924a858114
+2026-04-23 16:08:08,501 - INFO - Intermediate patch for astropy__astropy-13033 written to logs/run_evaluation/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/OpenHands/astropy__astropy-13033/patch.diff, now applying to container...
+2026-04-23 16:08:08,681 - INFO - >>>>> Applied Patch:
+Checking patch astropy/timeseries/core.py...
+Applied patch astropy/timeseries/core.py cleanly.
+
+2026-04-23 16:08:09,003 - INFO - Git diff before:
+diff --git a/astropy/timeseries/core.py b/astropy/timeseries/core.py
+index c279f35f8..435884cee 100644
+--- a/astropy/timeseries/core.py
++++ b/astropy/timeseries/core.py
+@@ -76,9 +76,28 @@ class BaseTimeSeries(QTable):
+ 
+             elif self.colnames[:len(required_columns)] != required_columns:
+ 
+-                raise ValueError("{} object is invalid - expected '{}' "
+-                                 "as the first column{} but found '{}'"
+-                                 .format(self.__class__.__name__, required_columns[0], plural, self.colnames[0]))
++                for index, required_column in enumerate(required_columns):
++                    if index >= len(self.colnames):
++                        missing_columns = required_columns[index:]
++                        missing = "', '".join(missing_columns)
++                        plural = 's' if len(missing_columns) > 1 else ''
++                        raise ValueError("{} object is invalid - missing required column{} '{}'"
++                                         .format(self.__class__.__name__, plural, missing))
++
++                    if self.colnames[index] != required_column:
++                        if index > 0:
++                            missing_columns = [column for column in required_columns[index:]
++                                               if column not in self.colnames[index:]]
++                            if missing_columns:
++                                missing = "', '".join(missing_columns)
++                                plural = 's' if len(missing_columns) > 1 else ''
++                                raise ValueError("{} object is invalid - missing required column{} '{}'"
++                                                 .format(self.__class__.__name__, plural, missing))
++
++                        raise ValueError("{} object is invalid - expected '{}' "
++                                         "as the first column{} but found '{}'"
++                                         .format(self.__class__.__name__, required_columns[0], plural,
++                                                 self.colnames[index]))
+ 
+             if (self._required_columns_relax
+                     and self._required_columns == self.colnames[:len(self._required_columns)]):
+2026-04-23 16:08:09,003 - INFO - Eval script for astropy__astropy-13033 written to logs/run_evaluation/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/OpenHands/astropy__astropy-13033/eval.sh; copying to container...
+2026-04-23 16:09:56,144 - INFO - Test runtime: 107.09 seconds
+2026-04-23 16:09:56,145 - INFO - Test output for astropy__astropy-13033 written to logs/run_evaluation/gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100/OpenHands/astropy__astropy-13033/test_output.txt
+2026-04-23 16:09:56,231 - INFO - Git diff after:
+diff --git a/astropy/timeseries/core.py b/astropy/timeseries/core.py
+index c279f35f8..435884cee 100644
+--- a/astropy/timeseries/core.py
++++ b/astropy/timeseries/core.py
+@@ -76,9 +76,28 @@ class BaseTimeSeries(QTable):
+ 
+             elif self.colnames[:len(required_columns)] != required_columns:
+ 
+-                raise ValueError("{} object is invalid - expected '{}' "
+-                                 "as the first column{} but found '{}'"
+-                                 .format(self.__class__.__name__, required_columns[0], plural, self.colnames[0]))
++                for index, required_column in enumerate(required_columns):
++                    if index >= len(self.colnames):
++                        missing_columns = required_columns[index:]
++                        missing = "', '".join(missing_columns)
++                        plural = 's' if len(missing_columns) > 1 else ''
++                        raise ValueError("{} object is invalid - missing required column{} '{}'"
++                                         .format(self.__class__.__name__, plural, missing))
++
++                    if self.colnames[index] != required_column:
++                        if index > 0:
++                            missing_columns = [column for column in required_columns[index:]
++                                               if column not in self.colnames[index:]]
++                            if missing_columns:
++                                missing = "', '".join(missing_columns)
++                                plural = 's' if len(missing_columns) > 1 else ''
++                                raise ValueError("{} object is invalid - missing required column{} '{}'"
++                                                 .format(self.__class__.__name__, plural, missing))
++
++                        raise ValueError("{} object is invalid - expected '{}' "
++                                         "as the first column{} but found '{}'"
++                                         .format(self.__class__.__name__, required_columns[0], plural,
++                                                 self.colnames[index]))
+ 
+             if (self._required_columns_relax
+                     and self._required_columns == self.colnames[:len(self._required_columns)]):
+2026-04-23 16:09:56,232 - INFO - Grading answer for astropy__astropy-13033...
+2026-04-23 16:09:56,236 - INFO - report: {'astropy__astropy-13033': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/timeseries/tests/test_sampled.py::test_required_columns']}, 'PASS_TO_PASS': {'success': ['astropy/timeseries/tests/test_sampled.py::test_empty_initialization', 'astropy/timeseries/tests/test_sampled.py::test_empty_initialization_invalid', 'astropy/timeseries/tests/test_sampled.py::test_initialize_only_time', 'astropy/timeseries/tests/test_sampled.py::test_initialization_with_data', 'astropy/timeseries/tests/test_sampled.py::test_initialize_only_data', 'astropy/timeseries/tests/test_sampled.py::test_initialization_with_table', 'astropy/timeseries/tests/test_sampled.py::test_initialization_missing_time_delta', 'astropy/timeseries/tests/test_sampled.py::test_initialization_invalid_time_and_time_start', 'astropy/timeseries/tests/test_sampled.py::test_initialization_invalid_time_delta', 'astropy/timeseries/tests/test_sampled.py::test_initialization_with_time_in_data', 'astropy/timeseries/tests/test_sampled.py::test_initialization_n_samples', 'astropy/timeseries/tests/test_sampled.py::test_initialization_length_mismatch', 'astropy/timeseries/tests/test_sampled.py::test_initialization_invalid_both_time_and_time_delta', 'astropy/timeseries/tests/test_sampled.py::test_fold', 'astropy/timeseries/tests/test_sampled.py::test_fold_invalid_options', 'astropy/timeseries/tests/test_sampled.py::test_read_time_missing', 'astropy/timeseries/tests/test_sampled.py::test_read_time_wrong', 'astropy/timeseries/tests/test_sampled.py::test_read', 'astropy/timeseries/tests/test_sampled.py::test_periodogram[BoxLeastSquares]', 'astropy/timeseries/tests/test_sampled.py::test_periodogram[LombScargle]'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-13033: resolved: False
+2026-04-23 16:09:56,236 - INFO - Attempting to stop container sweb.eval.astropy__astropy-13033.gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100...
+2026-04-23 16:10:11,347 - INFO - Attempting to remove container sweb.eval.astropy__astropy-13033.gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100...
+2026-04-23 16:10:11,374 - INFO - Container sweb.eval.astropy__astropy-13033.gpt-5.4_sdk_3e0a3a0_maxiter_100_N_gpt-5.4_n3_iter100 removed.
+2026-04-23 16:10:11,374 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.astropy_1776_astropy-13033:latest...
+2026-04-23 16:10:11,390 - INFO - Image swebench/sweb.eval.x86_64.astropy_1776_astropy-13033:latest removed.

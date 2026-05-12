@@ -1,0 +1,92 @@
+2026-05-06 10:43:23,414 - INFO - root - === Evaluation Started (instance astropy__astropy-14995) ===
+    View live output:
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/mistrall-small-2503_sdk_3e0a3a0_maxiter_500-06-10-43/logs/instance_astropy__astropy-14995.log          (logger)
+    • tail -f /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/mistrall-small-2503_sdk_3e0a3a0_maxiter_500-06-10-43/logs/instance_astropy__astropy-14995.output.log   (stdout/stderr)
+    ===============================================
+2026-05-06 10:43:23,419 - INFO - benchmarks.utils.evaluation - [worker] start id=astropy__astropy-14995
+2026-05-06 10:43:24,000 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-06 10:43:24,197 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-06 10:43:24,223 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-84783e57-fc68-44f4-a7c5-72375f62794d -e LMNR_SPAN_CONTEXT=null -p 30697:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-06 10:43:24,350 - INFO - openhands.workspace.docker.workspace - Started container: 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:24,357 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:25,386 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:26,417 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:27,446 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:28,484 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:29,518 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:30,553 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:31,585 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:32,630 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:33,669 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:30697
+2026-05-06 10:43:34,455 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-06 10:43:34,467 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-06 10:43:34,561 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-06 10:43:35,662 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-06 10:43:36,080 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-05-06 10:43:36,081 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995 failed (attempt 1/4): Conversation run failed for id=10f1265d-7064-4d58-a29e-5dfa2a1f4e2b: Remote conversation ended with error
+2026-05-06 10:43:36,222 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-14995 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/mistrall-small-2503_sdk_3e0a3a0_maxiter_500-06-10-43/conversations/astropy__astropy-14995.tar.gz
+2026-05-06 10:43:38,226 - INFO - openhands.workspace.docker.workspace - Stopping container: 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:38,227 - INFO - openhands.sdk.utils.command - $ docker stop 60cd3eb5517f94e62da22a5fc3c6be76ff2c1f1122b3605fab41ba072d2abadf
+2026-05-06 10:43:40,343 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-06 10:43:40,427 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-06 10:43:40,455 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-6c67b018-410c-41a2-948f-bda24e17fa8b -e LMNR_SPAN_CONTEXT=null -p 35887:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-06 10:43:40,591 - INFO - openhands.workspace.docker.workspace - Started container: fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:40,599 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:41,628 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:42,659 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:43,688 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:44,725 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:45,758 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:46,795 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:47,832 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:48,866 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:49,905 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:35887
+2026-05-06 10:43:50,798 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-06 10:43:50,812 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-06 10:43:50,890 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-06 10:43:51,997 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-06 10:43:52,354 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-05-06 10:43:52,354 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995 failed (attempt 2/4): Conversation run failed for id=0143f927-0536-4d6e-8d15-3763f660f32e: Remote conversation ended with error
+2026-05-06 10:43:52,488 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-14995 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/mistrall-small-2503_sdk_3e0a3a0_maxiter_500-06-10-43/conversations/astropy__astropy-14995.tar.gz
+2026-05-06 10:43:54,493 - INFO - openhands.workspace.docker.workspace - Stopping container: fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:54,494 - INFO - openhands.sdk.utils.command - $ docker stop fe98eed250c957aaec6782f6d2a349ffa43d9b42bbf7b3e40c061dcd830939f8
+2026-05-06 10:43:56,722 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-06 10:43:56,796 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-06 10:43:56,821 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-15d421ee-f429-421f-a3da-4f41175e133d -e LMNR_SPAN_CONTEXT=null -p 30124:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-06 10:43:56,955 - INFO - openhands.workspace.docker.workspace - Started container: 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:43:56,962 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:43:57,994 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:43:59,027 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:00,072 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:01,112 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:02,175 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:03,223 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:04,264 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:05,302 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:06,351 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:30124
+2026-05-06 10:44:07,246 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-06 10:44:07,263 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-06 10:44:07,341 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/
+2026-05-06 10:44:08,444 - INFO - openhands.sdk.conversation.impl.remote_conversation - run() triggered successfully: <Response [200 OK]>
+2026-05-06 10:44:08,806 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995: failure_category=non_resource, escalate_resources=False, runtime_failure_count=0
+2026-05-06 10:44:08,806 - WARNING - benchmarks.utils.evaluation - [worker] Instance astropy__astropy-14995 failed (attempt 3/4): Conversation run failed for id=bc7d27b0-dc5f-4f91-a3b9-c71494efaff5: Remote conversation ended with error
+2026-05-06 10:44:08,943 - INFO - benchmarks.utils.evaluation - [worker] Saved conversation archive for astropy__astropy-14995 to /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks/outputs/princeton-nlp__SWE-bench_Lite-test/mistrall-small-2503_sdk_3e0a3a0_maxiter_500-06-10-43/conversations/astropy__astropy-14995.tar.gz
+2026-05-06 10:44:10,948 - INFO - openhands.workspace.docker.workspace - Stopping container: 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:10,948 - INFO - openhands.sdk.utils.command - $ docker stop 719e866c6e8a3c1fcb8ebb5ef3ef281dae88940f5298ac7cea9e36303312e933
+2026-05-06 10:44:13,096 - INFO - benchmarks.utils.build_utils - Using pre-built image ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal
+2026-05-06 10:44:13,175 - INFO - openhands.sdk.utils.command - $ docker version
+2026-05-06 10:44:13,202 - INFO - openhands.sdk.utils.command - $ docker run -d --platform linux/amd64 --rm --ulimit nofile=65536:65536 --name agent-server-09a1aaa4-a3fb-4ae2-8fc2-7a65bacf4ca9 -e LMNR_SPAN_CONTEXT=null -p 31872:8000 ghcr.io/openhands/eval-agent-server:3e0a3a0-35d813f-sweb.eval.x86_64.astropy_1776_astropy-14995-source-minimal --host 0.0.0.0 --port 8000
+2026-05-06 10:44:13,322 - INFO - openhands.workspace.docker.workspace - Started container: 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:13,329 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:14,358 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:15,390 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:16,426 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:17,470 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:18,506 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:19,544 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:20,575 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:21,610 - INFO - openhands.sdk.utils.command - $ docker inspect -f '{{.State.Running}}' 5c0c9952b4b1c6c4b0f16ef2bc1f54a938a6712054ceec30432ccd422a5e420d
+2026-05-06 10:44:22,648 - INFO - openhands.workspace.docker.workspace - Docker workspace is ready at http://127.0.0.1:31872
+2026-05-06 10:44:23,520 - INFO - openhands.sdk.skills.skill - Found 40 skill files in public skills repository
+2026-05-06 10:44:23,534 - INFO - openhands.sdk.skills.skill - Loaded 40 public skills: ['add-skill', 'deno', 'docker', 'spark-version-upgrade', 'discord', 'openhands-api', 'vercel', 'theme-factory', 'gitlab', 'iterate', 'pdflatex', 'openhands-sdk', 'security', 'flarglebargle', 'linear', 'code-review', 'qa-changes', 'github-pr-review', 'learn-from-code-review', 'azure-devops', 'release-notes', 'notion', 'swift-linux', 'agent-creator', 'agent-sdk-builder', 'uv', 'skill-creator', 'ssh', 'github', 'openhands-automation', 'datadog', 'agent-memory', 'prd', 'frontend-design', 'bitbucket', 'kubernetes', 'add-javadoc', 'jupyter', 'code-simplifier', 'npm']
+2026-05-06 10:44:23,614 - INFO - benchmarks.swebench.run_infer - repo_path: /workspace/astropy/

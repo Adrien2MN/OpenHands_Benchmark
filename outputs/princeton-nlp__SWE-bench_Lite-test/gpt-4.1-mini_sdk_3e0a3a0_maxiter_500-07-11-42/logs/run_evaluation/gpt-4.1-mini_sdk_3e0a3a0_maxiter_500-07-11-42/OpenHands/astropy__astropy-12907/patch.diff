@@ -1,0 +1,26 @@
+diff --git a/astropy/modeling/separable.py b/astropy/modeling/separable.py
+index a308e2729..961391dc5 100644
+--- a/astropy/modeling/separable.py
++++ b/astropy/modeling/separable.py
+@@ -186,6 +186,13 @@ def _coord_matrix(model, pos, noutp):
+         is a left or right child.
+ 
+     """
++    from .core import CompoundModel
++
++    if isinstance(model, CompoundModel):
++        cleft = _coord_matrix(model.left, 'left', noutp)
++        cright = _coord_matrix(model.right, 'right', noutp)
++        return np.hstack([cleft, cright])
++
+     if isinstance(model, Mapping):
+         axes = []
+         for i in model.mapping:
+@@ -216,6 +223,7 @@ def _coord_matrix(model, pos, noutp):
+     return mat
+ 
+ 
++
+ def _cstack(left, right):
+     """
+     Function corresponding to '&' operation.

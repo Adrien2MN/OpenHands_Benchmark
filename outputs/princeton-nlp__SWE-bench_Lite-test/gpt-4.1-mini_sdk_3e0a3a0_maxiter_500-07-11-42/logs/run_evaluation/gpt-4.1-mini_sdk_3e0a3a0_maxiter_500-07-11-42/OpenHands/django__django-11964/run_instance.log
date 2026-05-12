@@ -1,0 +1,57 @@
+2026-05-11 10:22:09,854 - INFO - Creating container for django__django-11964...
+2026-05-11 10:22:09,936 - INFO - Container for django__django-11964 created: bbcda27f4dda27dffcef8fc8b3c5029b046ea8e404256d87079f278800eef656
+2026-05-11 10:22:10,048 - INFO - Container for django__django-11964 started: bbcda27f4dda27dffcef8fc8b3c5029b046ea8e404256d87079f278800eef656
+2026-05-11 10:22:10,049 - INFO - Intermediate patch for django__django-11964 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11964/patch.diff, now applying to container...
+2026-05-11 10:22:10,345 - INFO - >>>>> Applied Patch:
+Checking patch django/db/models/fields/__init__.py...
+Applied patch django/db/models/fields/__init__.py cleanly.
+
+2026-05-11 10:22:15,286 - INFO - Git diff before:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index d610dc86f0..7745f01abb 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -916,7 +916,12 @@ class Field(RegisterLookupMixin):
+ 
+     def value_from_object(self, obj):
+         """Return the value of this field in the given model instance."""
+-        return getattr(obj, self.attname)
++        val = getattr(obj, self.attname)
++        # unwrap enum.Enum to the actual value
++        if hasattr(val, "__class__") and issubclass(val.__class__, enum.Enum):
++            return val.value
++        return val
++
+ 
+ 
+ class BooleanField(Field):
+2026-05-11 10:22:15,286 - INFO - Eval script for django__django-11964 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11964/eval.sh; copying to container...
+2026-05-11 10:22:35,518 - INFO - Test runtime: 20.11 seconds
+2026-05-11 10:22:35,519 - INFO - Test output for django__django-11964 written to logs/run_evaluation/gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42/OpenHands/django__django-11964/test_output.txt
+2026-05-11 10:22:35,669 - INFO - Git diff after:
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index d610dc86f0..7745f01abb 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -916,7 +916,12 @@ class Field(RegisterLookupMixin):
+ 
+     def value_from_object(self, obj):
+         """Return the value of this field in the given model instance."""
+-        return getattr(obj, self.attname)
++        val = getattr(obj, self.attname)
++        # unwrap enum.Enum to the actual value
++        if hasattr(val, "__class__") and issubclass(val.__class__, enum.Enum):
++            return val.value
++        return val
++
+ 
+ 
+ class BooleanField(Field):
+2026-05-11 10:22:35,669 - INFO - Grading answer for django__django-11964...
+2026-05-11 10:22:35,671 - INFO - report: {'django__django-11964': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_str (model_enums.tests.ChoicesTests)', 'test_textchoices (model_enums.tests.ChoicesTests)']}, 'PASS_TO_PASS': {'success': ['test_integerchoices (model_enums.tests.ChoicesTests)', 'test_integerchoices_auto_label (model_enums.tests.ChoicesTests)', 'test_integerchoices_containment (model_enums.tests.ChoicesTests)', 'test_integerchoices_empty_label (model_enums.tests.ChoicesTests)', 'test_integerchoices_functional_api (model_enums.tests.ChoicesTests)', 'test_invalid_definition (model_enums.tests.ChoicesTests)', 'test_textchoices_auto_label (model_enums.tests.ChoicesTests)', 'test_textchoices_blank_value (model_enums.tests.ChoicesTests)', 'test_textchoices_containment (model_enums.tests.ChoicesTests)', 'test_textchoices_empty_label (model_enums.tests.ChoicesTests)', 'test_textchoices_functional_api (model_enums.tests.ChoicesTests)', 'test_bool_unsupported (model_enums.tests.CustomChoicesTests)', 'test_labels_valid (model_enums.tests.CustomChoicesTests)', 'test_timezone_unsupported (model_enums.tests.CustomChoicesTests)', 'test_uuid_unsupported (model_enums.tests.CustomChoicesTests)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-11964: resolved: False
+2026-05-11 10:22:35,672 - INFO - Attempting to stop container sweb.eval.django__django-11964.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:50,817 - INFO - Attempting to remove container sweb.eval.django__django-11964.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42...
+2026-05-11 10:22:50,909 - INFO - Container sweb.eval.django__django-11964.gpt-4.1-mini_sdk_3e0a3a0_maxiter_500-07-11-42 removed.
+2026-05-11 10:22:50,909 - INFO - Attempting to remove image swebench/sweb.eval.x86_64.django_1776_django-11964:latest...
+2026-05-11 10:22:50,978 - INFO - Image swebench/sweb.eval.x86_64.django_1776_django-11964:latest removed.

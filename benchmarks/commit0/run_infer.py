@@ -431,7 +431,7 @@ class Commit0Evaluation(Evaluation):
         )
         with workspace_keepalive(self.metadata.agent_type, workspace):
             conversation.send_message(instruction)
-            run_timeout = int(os.getenv("CONVERSATION_TIMEOUT", "3600"))
+            run_timeout = int(os.getenv("CONVERSATION_TIMEOUT", "1800"))
             conversation.run(timeout=run_timeout)
 
         history = list(conversation.state.events)
