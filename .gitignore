@@ -222,7 +222,7 @@ builds/
 outputs/
 
 # Vendor or bundled packages (often large)
-vendor/
+# vendor/
 unknown-0.0.0/
 
 # Local caches
