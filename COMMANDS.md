@@ -1,3 +1,7 @@
+LITELLM PROXY :
+
+make run-litellm-proxy PROXY_ENV_FILE=.env 
+
 PREBUILD :
 uv run swebench-lite-build-images \
   --n-limit 10 \
@@ -35,14 +39,16 @@ az ml compute create --name gpu-cluster-amn --type amlcompute --size Standard_NC
 
 SEND JOB TO CLUSTER
 
-cd /Users/z338mn/Library/CloudStorage/OneDrive-AXA/Cursor/OpenHands_bench/benchmarks && set -a && source .env && set +a && cd download_models && az ml job create -f job_eval.yml --set name=swebench-lite-infer-33 display_name=swebench-lite-infer-33 --workspace-name ai-research --resource-group token-energy-cliff --web 2>&1 | tail -60
-
+set -a
+source .env
+set +a
 az ml job create \
   -f azure/job_eval.yml \
   --workspace-name ai-research \
-  --resource-group token-energy-cliff
-
-
+  --resource-group token-energy-cliff \
+  --set environment_variables.HF_TOKEN="$HF_TOKEN" \
+  --set environment_variables.API_KEY="$API_KEY" \
+  --set environment_variables.GPT41_MINI_API_URL="$GPT41_MINI_API_URL"
 
 DELETE CLUSTER
 

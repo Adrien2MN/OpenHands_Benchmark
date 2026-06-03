@@ -6,7 +6,7 @@ experiment_name: swebench-lite
 code: ..
 
 command: >
-  python azure/eval_infer.py
+  uv run python azure/eval_infer.py
 
 environment:
   image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu22.04:latest
