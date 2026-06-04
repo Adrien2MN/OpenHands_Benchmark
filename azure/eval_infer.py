@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import logging
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -13,17 +14,33 @@ import requests as http_requests
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+repo_root = Path(__file__).resolve().parent.parent
+venv_python = repo_root / ".venv/bin/python"
+
+def write_proxy_env(env_path=".env"):
+    env_vars = {
+        "HF_TOKEN": os.getenv("HF_TOKEN"),
+        "API_KEY": os.getenv("API_KEY"),
+        "CURL_CA_BUNDLE": os.getenv("CURL_CA_BUNDLE"),
+        "LITELLM_MASTER_KEY": os.getenv("LITELLM_MASTER_KEY"),
+        "GPT41_MINI_API_URL": os.getenv("GPT41_MINI_API_URL"),
+        "MODEL_NAME": "mistral-7b",
+        "VLLM_BASE_URL": "http://127.0.0.1:8000/v1",
+    }
+
+    with open(env_path, "w") as f:
+        for key, value in env_vars.items():
+            if value is not None:
+                f.write(f"{key}={value}\n")
+    
+    logger.info("Proxy environment variables written to %s", env_path)
+
 
 def setup_workspace():
-    repo_root = Path(__file__).resolve().parent.parent
 
     logger.info("Repository root: %s", repo_root)
     logger.info("Python: %s", sys.version)
-
-    for root, dirs, files in os.walk(repo_root / "vendor"):
-        logger.info(root)
-        if root.count("/") > 15:  # optional depth limit
-            continue
+    logger.info("sys.executable=%s", sys.executable)
 
     subprocess.check_call([
         sys.executable,
@@ -31,36 +48,56 @@ def setup_workspace():
         "pip",
         "install",
         "-U",
-        "pip",
         "uv",
     ])
 
-    subprocess.check_call(
-        ["uv", "sync"],
-        cwd=repo_root,
-    )
+    subprocess.check_call(["uv", "--version"])
+
+    subprocess.check_call(["uv", "sync"])
 
     subprocess.check_call([
     "uv",
-    "pip",
-    "install",
-    "vllm"
-])
+    "run",
+    "python",
+    "-c",
+    "import sys; print(sys.executable)"
+    ])
+
+
     subprocess.check_call([
-    "uv",
-    "pip",
-    "install",
-    "litellm[proxy]"
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        str(venv_python),
+        "vllm",
+    ])
+    
+    subprocess.check_call([
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        str(venv_python),
+        "regex>=2025.10.22",
+    ])
+    
+    subprocess.check_call([
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        str(venv_python),
+        "litellm[proxy]"
     ])
 
     logger.info("Workspace installed")
 
 
 def download_model(model_path: Path):
+
     subprocess.check_call([
-        "uv",
-        "run",
-        "python",
+        str(venv_python),
         "-c",
         f"""
 from huggingface_hub import login, snapshot_download
@@ -79,23 +116,42 @@ print("Download complete")
     ])
 
 
-def wait_for_port(port: int, timeout: int = 300):
-    start = time.time()
-
-    while time.time() - start < timeout:
-        try:
-            with socket.create_connection(("127.0.0.1", port), timeout=2):
-                return
-        except OSError:
-            time.sleep(2)
-
-    raise TimeoutError(f"Port {port} did not open")
-
-
 def start_vllm(model_path: Path):
     logger.info("Starting vLLM server...")
 
-    return subprocess.Popen([
+    env = os.environ.copy()
+
+    env["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
+    env["VLLM_DISABLE_FLASHINFER"] = "1"
+    env["VLLM_USE_V1"] = "0"
+
+    env = os.environ.copy()
+
+    cuda_bin = (
+        repo_root
+        / ".venv/lib/python3.12/site-packages/nvidia/cu13/bin"
+    )
+
+    env["PATH"] = f"{cuda_bin}:{env.get('PATH','')}"
+    env["CUDA_HOME"] = str(cuda_bin.parent)
+
+    subprocess.check_call([
+    "uv",
+    "pip",
+    "install",
+    "--python",
+    str(venv_python),
+    "flashinfer-python",
+])
+    
+    subprocess.check_call([
+    str(venv_python),
+    "-c",
+    "import flashinfer; print(flashinfer.__file__)"
+])
+
+    return subprocess.Popen(
+    [
         "uv",
         "run",
         "python",
@@ -107,61 +163,11 @@ def start_vllm(model_path: Path):
         "0.0.0.0",
         "--port",
         "8000",
-    ])
-
-
-def verify_imports():
-    repo_root = Path(__file__).resolve().parent.parent
-    import textwrap
-
-    code = textwrap.dedent("""
-    from datasets import load_dataset
-
-    ds = load_dataset('princeton-nlp/SWE-bench_Lite', split='test')
-    print(len(ds))
-    print(ds[0]['instance_id'])
-    """)
-
-    subprocess.check_call([
-        "uv",
-        "run",
-        "python",
-        "-c",
-        code,
-    ])
-    cmd = [
-            "uv",
-            "run",
-            "python",
-            "-c",
-            """
-import openhands
-import fastmcp
-import frontmatter
-
-print("SUCCESS")
-            """
-        ]
-
-    subprocess.check_call(cmd, cwd=repo_root)
-
-
-def write_proxy_env(env_path=".env"):
-    env_vars = {
-        "HF_TOKEN": os.getenv("HF_TOKEN"),
-        "API_KEY": os.getenv("API_KEY"),
-        "CURL_CA_BUNDLE": os.getenv("CURL_CA_BUNDLE"),
-        "LITELLM_MASTER_KEY": os.getenv("LITELLM_MASTER_KEY"),
-        "GPT41_MINI_API_URL": os.getenv("GPT41_MINI_API_URL"),
-        "MODEL_NAME": "mistral-7b",
-        "VLLM_BASE_URL": "http://127.0.0.1:4000/v1",
-    }
-
-    with open(env_path, "w") as f:
-        for key, value in env_vars.items():
-            if value is not None:
-                f.write(f"{key}={value}\n")
-
+        "--max-model-len",
+        "8192",
+    ],
+    env=env,
+)
 
 def wait_for_vllm(
     url="http://127.0.0.1:8000/v1/models",
@@ -193,6 +199,17 @@ def wait_for_vllm(
     raise TimeoutError(
         f"vLLM did not become ready within {timeout} seconds"
     )
+
+
+def start_litellm_proxy():
+    subprocess.Popen(
+    [
+        str(venv_python),
+        "-m",
+        "make",
+        "run-litellm-proxy",
+        "PROXY_ENV_FILE=.env",
+    ])
 
 
 def wait_for_litellm(
@@ -256,6 +273,41 @@ def test_litellm_proxy():
     return r.json()
 
 
+def verify_imports():
+    import textwrap
+
+    code = textwrap.dedent("""
+    from datasets import load_dataset
+
+    ds = load_dataset('princeton-nlp/SWE-bench_Lite', split='test')
+    print(len(ds))
+    print(ds[0]['instance_id'])
+    """)
+
+    subprocess.check_call([
+        str(venv_python),
+        "-c",
+        code,
+    ])
+    cmd = [
+            str(venv_python),
+            "-m",
+            "uv",
+            "run",
+            "python",
+            "-c",
+            """
+import openhands
+import fastmcp
+import frontmatter
+
+print("SUCCESS")
+            """
+        ]
+
+    subprocess.check_call(cmd, cwd=repo_root)
+
+
 def main():
     write_proxy_env()
     setup_workspace()
@@ -264,19 +316,10 @@ def main():
     download_model(model_path)
     
     vllm_proc = start_vllm(model_path)
-
     wait_for_vllm()
 
-    subprocess.Popen(
-    [
-        "make",
-        "run-litellm-proxy",
-        "PROXY_ENV_FILE=.env",
-    ]
-    )
-
+    start_litellm_proxy()
     wait_for_litellm()
-
     test_litellm_proxy()
 
     verify_imports()
