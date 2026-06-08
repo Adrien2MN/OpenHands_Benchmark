@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 
 repo_root = Path(__file__).resolve().parent.parent
 venv_python = repo_root / ".venv/bin/python"
+venv_bin = repo_root / ".venv/bin"
+
 
 def write_proxy_env(env_path=".env"):
     env_vars = {
@@ -32,70 +34,69 @@ def write_proxy_env(env_path=".env"):
         for key, value in env_vars.items():
             if value is not None:
                 f.write(f"{key}={value}\n")
-    
+
     logger.info("Proxy environment variables written to %s", env_path)
 
 
-def setup_workspace():
+def _make_env():
+    """
+    Return an env dict with the venv bin dir and the CUDA shim prepended to PATH.
+    This ensures that both 'ninja' (installed via pip into the venv) and
+    other venv binaries are visible to any subprocess we launch.
+    """
+    env = os.environ.copy()
 
+    cuda_bin = (
+        repo_root
+        / ".venv/lib/python3.12/site-packages/nvidia/cu13/bin"
+    )
+
+    env["PATH"] = f"{venv_bin}:{cuda_bin}:{env.get('PATH', '')}"
+    env["CUDA_HOME"] = str(cuda_bin.parent)
+    env["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
+    return env
+
+
+def setup_workspace():
     logger.info("Repository root: %s", repo_root)
     logger.info("Python: %s", sys.version)
     logger.info("sys.executable=%s", sys.executable)
 
-    subprocess.check_call([
-        sys.executable,
-        "-m",
-        "pip",
-        "install",
-        "-U",
-        "uv",
-    ])
-
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-U", "uv"])
     subprocess.check_call(["uv", "--version"])
+    subprocess.check_call(["uv", "sync", "-v"])
+    subprocess.check_call(["uv", "pip", "list", "--python", str(venv_python)])
 
-    subprocess.check_call(["uv", "sync"])
+    for pkg in ["vllm", "litellm[proxy]", "regex", "ninja"]:
+        subprocess.check_call([
+            "uv", "pip", "install", "--python", str(venv_python), pkg,
+        ])
+
+    # Verify ninja binary is importable AND on PATH via the venv
+    env = _make_env()
+    result = subprocess.run(
+        ["ninja", "--version"],
+        env=env,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            "ninja binary not found on PATH after install. "
+            f"stdout={result.stdout!r} stderr={result.stderr!r}"
+        )
+    logger.info("ninja version: %s", result.stdout.strip())
 
     subprocess.check_call([
-    "uv",
-    "run",
-    "python",
-    "-c",
-    "import sys; print(sys.executable)"
-    ])
-
-
-    subprocess.check_call([
-        "uv",
-        "pip",
-        "install",
-        "--python",
         str(venv_python),
-        "vllm",
-    ])
-    
-    subprocess.check_call([
-        "uv",
-        "pip",
-        "install",
-        "--python",
-        str(venv_python),
-        "regex>=2025.10.22",
-    ])
-    
-    subprocess.check_call([
-        "uv",
-        "pip",
-        "install",
-        "--python",
-        str(venv_python),
-        "litellm[proxy]"
+        "-c",
+        'import importlib.metadata; print(importlib.metadata.version("regex"))',
     ])
 
     logger.info("Workspace installed")
 
 
 def download_model(model_path: Path):
-
     subprocess.check_call([
         str(venv_python),
         "-c",
@@ -112,104 +113,66 @@ snapshot_download(
     local_dir="{model_path}",
 )
 print("Download complete")
-"""
+""",
     ])
 
 
 def start_vllm(model_path: Path):
     logger.info("Starting vLLM server...")
 
-    env = os.environ.copy()
-
-    env["VLLM_ATTENTION_BACKEND"] = "FLASH_ATTN"
-    env["VLLM_DISABLE_FLASHINFER"] = "1"
-    env["VLLM_USE_V1"] = "0"
-
-    env = os.environ.copy()
-
-    cuda_bin = (
-        repo_root
-        / ".venv/lib/python3.12/site-packages/nvidia/cu13/bin"
-    )
-
-    env["PATH"] = f"{cuda_bin}:{env.get('PATH','')}"
-    env["CUDA_HOME"] = str(cuda_bin.parent)
-
-    subprocess.check_call([
-    "uv",
-    "pip",
-    "install",
-    "--python",
-    str(venv_python),
-    "flashinfer-python",
-])
-    
-    subprocess.check_call([
-    str(venv_python),
-    "-c",
-    "import flashinfer; print(flashinfer.__file__)"
-])
+    env = _make_env()
 
     return subprocess.Popen(
-    [
-        "uv",
-        "run",
-        "python",
-        "-m",
-        "vllm.entrypoints.openai.api_server",
-        "--model",
-        str(model_path),
-        "--host",
-        "0.0.0.0",
-        "--port",
-        "8000",
-        "--max-model-len",
-        "8192",
-    ],
-    env=env,
-)
+        [
+            str(venv_python),
+            "-m",
+            "vllm.entrypoints.openai.api_server",
+            "--model", str(model_path),
+            "--host", "0.0.0.0",
+            "--port", "8000",
+            "--max-model-len", "8192",
+            "--enforce-eager",
+        ],
+        env=env,
+    )
+
 
 def wait_for_vllm(
     url="http://127.0.0.1:8000/v1/models",
     timeout=600,
     poll_interval=5,
 ):
-    """
-    Wait until vLLM is serving requests.
-    """
-
+    """Wait until vLLM is serving requests."""
     logger.info("Waiting for vLLM...")
-
     start = time.time()
 
     while time.time() - start < timeout:
         try:
             r = http_requests.get(url, timeout=10)
-
             if r.status_code == 200:
                 logger.info("vLLM is ready")
                 logger.info("Models: %s", r.json())
                 return
-
         except Exception as e:
             logger.info("vLLM not ready yet: %s", e)
-
         time.sleep(poll_interval)
 
-    raise TimeoutError(
-        f"vLLM did not become ready within {timeout} seconds"
-    )
+    raise TimeoutError(f"vLLM did not become ready within {timeout} seconds")
 
 
 def start_litellm_proxy():
+    logger.info("Starting LiteLLM proxy...")
+    env = _make_env()
+
     subprocess.Popen(
-    [
-        str(venv_python),
-        "-m",
-        "make",
-        "run-litellm-proxy",
-        "PROXY_ENV_FILE=.env",
-    ])
+        [
+            "uv", "run", "litellm",
+            "--config", str(repo_root / "configs/litellm_openhands_proxy.yaml"),
+            "--port", "4000",
+        ],
+        env=env,
+        cwd=repo_root,
+    )
 
 
 def wait_for_litellm(
@@ -217,31 +180,22 @@ def wait_for_litellm(
     timeout=300,
     poll_interval=3,
 ):
-    """
-    Wait until LiteLLM proxy is serving requests.
-    """
-
+    """Wait until LiteLLM proxy is serving requests."""
     logger.info("Waiting for LiteLLM proxy...")
-
     start = time.time()
 
     while time.time() - start < timeout:
         try:
             r = http_requests.get(url, timeout=10)
-
             if r.status_code == 200:
                 logger.info("LiteLLM proxy is ready")
                 logger.info("Models: %s", r.json())
                 return
-
         except Exception as e:
             logger.info("LiteLLM not ready yet: %s", e)
-
         time.sleep(poll_interval)
 
-    raise TimeoutError(
-        f"LiteLLM did not become ready within {timeout} seconds"
-    )
+    raise TimeoutError(f"LiteLLM did not become ready within {timeout} seconds")
 
 
 def test_litellm_proxy():
@@ -249,12 +203,7 @@ def test_litellm_proxy():
 
     payload = {
         "model": "mistral-7b",
-        "messages": [
-            {
-                "role": "user",
-                "content": "Reply with the word READY",
-            }
-        ],
+        "messages": [{"role": "user", "content": "Reply with the word READY"}],
         "temperature": 0,
         "max_tokens": 10,
     }
@@ -265,11 +214,8 @@ def test_litellm_proxy():
         json=payload,
         timeout=120,
     )
-
     r.raise_for_status()
-
     logger.info("LiteLLM test response: %s", r.json())
-
     return r.json()
 
 
@@ -278,34 +224,21 @@ def verify_imports():
 
     code = textwrap.dedent("""
     from datasets import load_dataset
-
     ds = load_dataset('princeton-nlp/SWE-bench_Lite', split='test')
     print(len(ds))
     print(ds[0]['instance_id'])
     """)
+    subprocess.check_call([str(venv_python), "-c", code])
 
-    subprocess.check_call([
-        str(venv_python),
-        "-c",
-        code,
-    ])
-    cmd = [
-            str(venv_python),
-            "-m",
-            "uv",
-            "run",
-            "python",
-            "-c",
-            """
-import openhands
-import fastmcp
-import frontmatter
-
-print("SUCCESS")
-            """
-        ]
-
-    subprocess.check_call(cmd, cwd=repo_root)
+    # FIX: uv is a standalone binary, not a Python module — call it directly
+    subprocess.check_call(
+        [
+            "uv", "run", "python", "-c",
+            "import openhands; import fastmcp; import frontmatter; print('SUCCESS')",
+        ],
+        cwd=repo_root,
+        env=_make_env(),
+    )
 
 
 def main():
@@ -314,7 +247,7 @@ def main():
 
     model_path = Path("/tmp/mistral-7b")
     download_model(model_path)
-    
+
     vllm_proc = start_vllm(model_path)
     wait_for_vllm()
 
@@ -324,13 +257,12 @@ def main():
 
     verify_imports()
 
-
     try:
         # run OpenHands / SWE-bench evaluation here
         pass
-
     finally:
         vllm_proc.terminate()
+
 
 if __name__ == "__main__":
     main()
