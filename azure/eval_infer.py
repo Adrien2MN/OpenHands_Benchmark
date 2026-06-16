@@ -60,7 +60,6 @@ def _make_env():
     env["VLLM_USE_FLASHINFER_SAMPLER"] = "0"
     return env
 
-
 def setup_workspace():
     logger.info("Repository root: %s", repo_root)
     logger.info("Python: %s", sys.version)
@@ -69,8 +68,7 @@ def setup_workspace():
     subprocess.check_call([sys.executable, "-m", "pip", "install", "-U", "uv"])
     subprocess.check_call(["uv", "--version"])
 
-    # cwd=repo_root is critical: uv must find pyproject.toml to resolve the
-    # [tool.uv.workspace] members from vendor/software-agent-sdk instead of PyPI.
+    # cwd=repo_root so uv finds pyproject.toml and the workspace members
     subprocess.check_call(["uv", "sync", "-v"], cwd=repo_root)
     subprocess.check_call(["uv", "pip", "list", "--python", str(venv_python)])
 
@@ -80,59 +78,32 @@ def setup_workspace():
             "uv", "pip", "install", "--python", str(venv_python), pkg,
         ])
 
-    # Re-sync to restore any workspace packages clobbered by the pip installs above
-    subprocess.check_call(["uv", "sync", "-v"], cwd=repo_root)
-
-    subprocess.check_call([
-        str(venv_python), "-c",
-        'import importlib.metadata; print(importlib.metadata.version("regex"))',
-    ])
-
-    # Confirm workspace package is installed from local path, not PyPI
-    subprocess.check_call([
-        str(venv_python), "-c",
-        "from openhands.sdk.workspace.base import BaseWorkspace; print('openhands.sdk.workspace OK')",
-    ])
-
-    logger.info("Workspace installed")
-    logger.info("Repository root: %s", repo_root)
-    logger.info("Python: %s", sys.version)
-    logger.info("sys.executable=%s", sys.executable)
-
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "-U", "uv"])
-    subprocess.check_call(["uv", "--version"])
-
-    subprocess.check_call(["uv", "sync", "-v"], cwd=repo_root)
-    subprocess.check_call(["uv", "pip", "list", "--python", str(venv_python)])
-
-    for pkg in ["vllm", "litellm[proxy]", "regex", "ninja"]:
+    # Reinstall all local SDK packages as editable AFTER vllm/litellm installs.
+    # Editable installs (-e) make Python read directly from vendor/ source dirs,
+    # which correctly merges the openhands.sdk namespace across packages
+    # (openhands-sdk and openhands-workspace both contribute to openhands/sdk/).
+    # openhands-workspace must come first so its openhands/sdk/workspace/ subtree
+    # is registered before openhands-sdk imports from it.
+    sdk_root = repo_root / "vendor/software-agent-sdk"
+    for pkg_dir in [
+        sdk_root / "openhands-workspace",
+        sdk_root / "openhands-sdk",
+        sdk_root / "openhands-tools",
+        sdk_root / "openhands-agent-server",
+    ]:
+        logger.info("Installing local package: %s", pkg_dir)
         subprocess.check_call([
-            "uv", "pip", "install", "--python", str(venv_python), pkg,
+            "uv", "pip", "install", "--python", str(venv_python),
+            "--no-deps",
+            "-e", str(pkg_dir),
         ])
 
-    # Re-sync to restore any workspace packages clobbered by the pip installs above
-    subprocess.check_call(["uv", "sync", "-v"], cwd=repo_root)
-
-    # Verify ninja using its explicit venv path, not PATH lookup
-    ninja_bin = venv_bin / "ninja"
-    if not ninja_bin.exists():
-        raise RuntimeError(
-            f"ninja binary not found at {ninja_bin} after install. "
-            f"venv_bin contents: {list(venv_bin.iterdir())}"
-        )
-    result = subprocess.run([str(ninja_bin), "--version"], capture_output=True, text=True)
-    if result.returncode != 0:
-        raise RuntimeError(
-            f"ninja failed: stdout={result.stdout!r} stderr={result.stderr!r}"
-        )
-    logger.info("ninja version: %s", result.stdout.strip())
-
     subprocess.check_call([
         str(venv_python), "-c",
         'import importlib.metadata; print(importlib.metadata.version("regex"))',
     ])
 
-    # Confirm workspace package is installed from local path, not PyPI
+    # Confirm workspace package resolves correctly
     subprocess.check_call([
         str(venv_python), "-c",
         "from openhands.sdk.workspace.base import BaseWorkspace; print('openhands.sdk.workspace OK')",
