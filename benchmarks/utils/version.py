@@ -7,14 +7,38 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 
 
 def _get_submodule_sha(submodule_path: Path) -> str:
-    result = subprocess.run(
-        ["git", "submodule", "status", str(submodule_path)],
-        capture_output=True,
-        text=True,
-        check=True,
-    )
-    sha = result.stdout.strip().split()[0].lstrip("+-")
-    return sha
+    """
+    Get the commit SHA checked out at submodule_path.
+
+    Normally this asks the *parent* repo's git metadata via
+    `git submodule status`, which only works if submodule_path is properly
+    registered as a submodule (i.e. checked out via `git submodule update`).
+    If it's instead a plain `git clone` into that path (e.g. in CI/cloud
+    environments where the snapshot/upload mechanism doesn't carry submodule
+    metadata, so the SDK is freshly cloned directly), `git submodule status`
+    exits with status 128 ("no submodule mapping found"). In that case, fall
+    back to asking the nested repo directly for its own HEAD — the SHA is
+    identical either way since it's the same content, just checked out via a
+    different mechanism.
+    """
+    try:
+        result = subprocess.run(
+            ["git", "submodule", "status", str(submodule_path)],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        sha = result.stdout.strip().split()[0].lstrip("+-")
+        return sha
+    except subprocess.CalledProcessError:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=str(submodule_path),
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip()
 
 
 def get_sdk_sha() -> str:
