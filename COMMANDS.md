@@ -1,8 +1,9 @@
-LITELLM PROXY :
+LITELLM PROXY
 
 make run-litellm-proxy PROXY_ENV_FILE=.env 
 
-PREBUILD :
+PREBUILD
+
 uv run swebench-lite-build-images \
   --n-limit 10 \
   --max-workers 5 \
@@ -11,7 +12,8 @@ uv run swebench-lite-build-images \
   --force-build
 
 
-INFER : 
+INFER
+
 uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json \
   --n-limit 50 \
   --num-workers 3 \
@@ -19,21 +21,22 @@ uv run swebench-lite-infer .llm_config/litellm-gpt-4-1-mini.json \
 
 
 
-EVAL : 
+EVAL 
+
 uv run swebench-lite-eval outputs/princeton-nlp__SWE-bench_Lite-test/claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15/output.jsonl \
   --run-id claude-opus-4-6_sdk_3e0a3a0_maxiter_500-12-11-15 \
   --no-modal
 
 
 
-AZURE LOGIN :
+AZURE LOGIN 
 
 set -a
 source .env
 set +a
 az login --tenant d65b03ed-6a7d-41ca-a17d-4798d70d1d3f
 
-CREATE CLUSTER :
+CREATE CLUSTER
 
 az ml compute create --name gpu-cluster-amn --type amlcompute --size Standard_NC24ads_A100_v4 --min-instances 0 --max-instances 1 --idle-time-before-scale-down 120 --workspace-name ai-research --resource-group token-energy-cliff
 
@@ -53,3 +56,27 @@ az ml job create \
 DELETE CLUSTER
 
 az ml compute delete --name gpu-cluster-amn --workspace-name ai-research --resource-group token-energy-cliff --yes
+
+
+SETUP THE VM
+
+cd azure/vm
+./setup_vm.sh
+
+
+BUILD THE ACR IMAGE
+
+az acr build \
+  --registry diffusionregistry \
+  --image openhands-bench-full:latest \
+  --file azure/vm/Dockerfile.full \
+  --timeout 3600 \
+  .
+
+RUN THE VM WITH MODELS 
+
+set -a && source .env && set +a
+MODEL_SOURCE=local \
+MODEL_ID=mistralai/Mistral-7B-Instruct-v0.3 \
+LLM_CONFIG=litellm-mistral7b.json \
+  ./azure/vm/run_experiment.sh
