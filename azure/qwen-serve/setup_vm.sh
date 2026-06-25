@@ -32,6 +32,7 @@ az vm create \
   --image "$IMAGE" \
   --admin-username benchuser \
   --generate-ssh-keys \
+  --nsg-rule NONE \
   --public-ip-sku Standard \
   --os-disk-size-gb 256
 
