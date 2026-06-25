@@ -10,7 +10,7 @@ RUN apt-get update -qq && \
     add-apt-repository ppa:deadsnakes/ppa -y && \
     apt-get update -qq && \
     apt-get install -y -q --no-install-recommends \
-        python3.12 python3.12-dev python3.12-distutils \
+        python3.12 python3.12-dev \
         git build-essential ninja-build && \
     curl -sS https://bootstrap.pypa.io/get-pip.py | python3.12 && \
     # Docker CLI (daemon comes from host VM socket at runtime)
