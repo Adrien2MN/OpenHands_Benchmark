@@ -91,7 +91,7 @@ done
 
 # vllm only needed for local models — installed last so uv sync can't remove it
 if [ "$MODEL_SOURCE" = "local" ]; then
-    uv pip install --python .venv/bin/python "vllm==0.8.5" "transformers==4.48.0"
+    uv pip install --python .venv/bin/python "vllm==0.8.5" "transformers==4.51.1"
 fi
 echo ">>> Dependencies installed"
 
