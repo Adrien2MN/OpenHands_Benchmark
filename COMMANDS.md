@@ -60,11 +60,10 @@ az ml compute delete --name gpu-cluster-amn --workspace-name ai-research --resou
 
 SETUP THE VM
 
-cd azure/vm
-./setup_vm.sh
+./azure/vm/setup_vm.sh
 
 
-BUILD THE ACR IMAGE
+BUILD THE ACR IMAGE (1 time)
 
 az acr build \
   --registry diffusionregistry \
@@ -80,3 +79,23 @@ MODEL_SOURCE=local \
 MODEL_ID=mistralai/Mistral-7B-Instruct-v0.3 \
 LLM_CONFIG=litellm-mistral7b.json \
   ./azure/vm/run_experiment.sh
+
+
+
+
+
+
+DEBUG LOGS
+
+az vm run-command invoke \
+  --resource-group token-energy-cliff \
+  --name openhands-bench-gpu \
+  --command-id RunShellScript \
+  --scripts '
+    echo "=== Last container status ==="
+    docker ps -a --filter name=openhands-bench
+
+    echo ""
+    echo "=== Container logs (last 100 lines) ==="
+    docker logs openhands-bench 2>&1 | tail -100
+  '

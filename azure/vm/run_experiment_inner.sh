@@ -82,16 +82,17 @@ for pkg in openhands-sdk openhands-workspace openhands-tools openhands-agent-ser
 done
 
 uv sync -v
+
+# Install packages not in pyproject.toml AFTER the final uv sync,
+# so uv sync doesn't wipe them out.
 for pkg in "litellm[proxy]" regex ninja; do
     uv pip install --python .venv/bin/python "$pkg"
 done
 
-# vllm only needed for local models
+# vllm only needed for local models — installed last so uv sync can't remove it
 if [ "$MODEL_SOURCE" = "local" ]; then
     uv pip install --python .venv/bin/python vllm
 fi
-
-uv sync -v
 echo ">>> Dependencies installed"
 
 # --- 2. Start GPU energy monitoring ---
