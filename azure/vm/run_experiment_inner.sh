@@ -139,8 +139,7 @@ print('Download complete')
         --served-model-name "local-model" \
         --host 0.0.0.0 \
         --port 8000 \
-        --max-model-len 8192 \
-        --enforce-eager \
+        --max-model-len 2048 \
         --dtype half \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!

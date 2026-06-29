@@ -85,6 +85,18 @@ MODEL_ID=mistralai/Mistral-7B-Instruct-v0.3 \
 LLM_CONFIG=litellm-mistral7b.json \
   ./azure/vm/run_experiment.sh
 
+LOGS LIVE
+
+VM_IP=$(az vm show \
+  --resource-group token-energy-cliff \
+  --name openhands-bench-gpu \
+  --show-details \
+  --query publicIps -o tsv)
+
+echo "VM IP: $VM_IP"
+
+ssh benchuser@$VM_IP "docker logs --follow openhands-bench"                
+
 
 DEBUG LOGS
 
