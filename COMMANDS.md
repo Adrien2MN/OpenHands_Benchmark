@@ -97,6 +97,10 @@ echo "VM IP: $VM_IP"
 
 ssh benchuser@$VM_IP "docker logs --follow openhands-bench"                
 
+DETAILED LOGS
+
+ssh benchuser@52.233.252.179 "cat /home/benchuser/results/vllm.log"
+
 
 DEBUG LOGS
 
