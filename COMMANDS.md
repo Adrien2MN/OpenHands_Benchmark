@@ -58,9 +58,14 @@ DELETE CLUSTER
 az ml compute delete --name gpu-cluster-amn --workspace-name ai-research --resource-group token-energy-cliff --yes
 
 
-SETUP THE VM
+SETUP THE VM and OPEN PORT 22 FOR LOGS
 
 ./azure/vm/setup_vm.sh
+
+az vm open-port \
+  --resource-group token-energy-cliff \
+  --name openhands-bench-gpu \
+  --port 22
 
 
 BUILD THE ACR IMAGE (1 time)
@@ -79,10 +84,6 @@ MODEL_SOURCE=local \
 MODEL_ID=mistralai/Mistral-7B-Instruct-v0.3 \
 LLM_CONFIG=litellm-mistral7b.json \
   ./azure/vm/run_experiment.sh
-
-
-
-
 
 
 DEBUG LOGS

@@ -141,6 +141,7 @@ print('Download complete')
         --port 8000 \
         --max-model-len 8192 \
         --enforce-eager \
+        --dtype half \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!
 
