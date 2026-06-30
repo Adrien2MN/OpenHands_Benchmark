@@ -62,11 +62,6 @@ SETUP THE VM and OPEN PORT 22 FOR LOGS
 
 ./azure/vm/setup_vm.sh
 
-az vm open-port \
-  --resource-group token-energy-cliff \
-  --name openhands-bench-gpu \
-  --port 22
-
 
 BUILD THE ACR IMAGE (1 time)
 
@@ -116,3 +111,12 @@ az vm run-command invoke \
     echo "=== Container logs (last 100 lines) ==="
     docker logs openhands-bench 2>&1 | tail -100
   '
+
+
+TEAR DOWN
+
+
+az vm delete -g token-energy-cliff -n openhands-bench-gpu --yes
+az disk delete -g token-energy-cliff -n openhands-bench-gpuOsDisk --yes
+
+az group delete -g token-energy-cliff --yes

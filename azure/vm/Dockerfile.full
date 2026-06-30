@@ -33,6 +33,8 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /app
 COPY . /app
 
+ENV SSL_CERT_FILE=/app/azure/vm/axa_combined_ca.pem
+
 # Make inner script executable
 RUN chmod +x azure/vm/run_experiment_inner.sh
 

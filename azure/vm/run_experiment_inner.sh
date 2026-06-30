@@ -167,6 +167,7 @@ fi
 echo ">>> Starting LiteLLM proxy..."
 export PATH=".venv/bin:$PATH"
 
+unset SSL_CERT_FILE
 uv run litellm \
     --config "$REPO_ROOT/configs/litellm_openhands_proxy.yaml" \
     --port 4000 \
