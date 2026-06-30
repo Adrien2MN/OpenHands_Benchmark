@@ -63,7 +63,7 @@ SETUP THE VM and OPEN PORT 22 FOR LOGS
 ./azure/vm/setup_vm.sh
 
 
-BUILD THE ACR IMAGE (1 time)
+BUILD THE ACR IMAGE
 
 az acr build \
   --registry diffusionregistry \
