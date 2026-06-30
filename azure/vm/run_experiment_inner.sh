@@ -191,13 +191,14 @@ for i in $(seq 1 40); do
 done
 
 # Smoke test
-echo ">>> Smoke test: calling $(cat $REPO_ROOT/.llm_config/$LLM_CONFIG | python3 -c 'import sys,json; print(json.load(sys.stdin)["model"])')..."
+MODEL_NAME=$(python3 -c "import json; print(json.load(open('$REPO_ROOT/.llm_config/$LLM_CONFIG'))['model'])")
+echo ">>> Smoke test: calling $MODEL_NAME..."
 curl -s -X POST http://127.0.0.1:4000/v1/chat/completions \
     -H "Authorization: Bearer dummy" \
     -H "Content-Type: application/json" \
-    -d "{\"model\":\"$(cat $REPO_ROOT/.llm_config/$LLM_CONFIG | python3 -c 'import sys,json; print(json.load(sys.stdin)[\"model\"])')\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}" \
+    -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}" \
     | python3 -c "import sys,json; r=json.load(sys.stdin); print('Smoke test OK:', r['choices'][0]['message']['content'])"
-
+    
 # --- 5. Run SWE-bench ---
 echo ">>> Running SWE-bench Lite (n=$N_LIMIT, max_iter=$MAX_ITERATIONS)..."
 EXPERIMENT_START=$(date +%s)
