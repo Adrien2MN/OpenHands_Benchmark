@@ -136,7 +136,7 @@ print('Download complete')
 
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
         --model "$MODEL_CACHE" \
-        --served-model-name "local-model" \
+        --served-model-name "mistral-7b" \
         --host 0.0.0.0 \
         --port 8000 \
         --gpu-memory-utilization 0.95 \
@@ -147,7 +147,7 @@ print('Download complete')
 
     echo ">>> Waiting for vLLM (up to 600s)..."
     for i in $(seq 1 120); do
-        if curl -s http://127.0.0.1:8000/v1/models | grep -q "local-model" 2>/dev/null; then
+        if curl -s http://127.0.0.1:8000/v1/models | grep -q "mistral-7b" 2>/dev/null; then
             echo "vLLM ready after $((i * 5))s"
             break
         fi
