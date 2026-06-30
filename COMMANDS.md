@@ -96,6 +96,9 @@ az vm run-command invoke \
     docker logs openhands-bench 2>&1 | tail -100
   '
 
+CREATE RESULTS FILES
+
+./azure/vm/get_results.sh
 
 TEAR DOWN
 
