@@ -190,10 +190,10 @@ for i in $(seq 1 40); do
     sleep 3
 done
 
-# Smoke test
-MODEL_NAME=$(python3 -c "import json; print(json.load(open('$REPO_ROOT/.llm_config/$LLM_CONFIG'))['model'])")
+# Smoke test — use proxy alias (strip provider prefix like openai/ from model name)
+MODEL_NAME=$(python3 -c "import json; m=json.load(open('$REPO_ROOT/.llm_config/$LLM_CONFIG'))['model']; print(m.split('/')[-1] if '/' in m else m)")
 echo ">>> Smoke test: calling $MODEL_NAME..."
-RESPONSE=$(curl -s -X POST http://127.0.0.1:4000/v1/chat/completions \
+RESPONSE=$(curl -s --max-time 30 -X POST http://127.0.0.1:4000/v1/chat/completions \
     -H "Authorization: Bearer dummy" \
     -H "Content-Type: application/json" \
     -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}")
