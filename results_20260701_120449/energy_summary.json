@@ -1,0 +1,11 @@
+Enable succeeded: 
+[stdout]
+{
+  "duration_seconds": 160,
+  "avg_gpu_power_watts": 25.79,
+  "max_gpu_power_watts": 94.79,
+  "total_gpu_energy_wh": 1.1462,
+  "samples": 160
+}
+[stderr]
+
