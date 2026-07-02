@@ -22,7 +22,7 @@ MODEL_SOURCE="${MODEL_SOURCE:-local}"
 MODEL_ID="${MODEL_ID:-mistralai/Mistral-7B-Instruct-v0.3}"
 LLM_CONFIG="${LLM_CONFIG:-litellm-mistral7b.json}"
 N_LIMIT="${N_LIMIT:-1}"
-MAX_ITERATIONS="${MAX_ITERATIONS:-30}"
+MAX_ITERATIONS="${MAX_ITERATIONS:-100}"
 HF_TOKEN="${HF_TOKEN:-}"
 
 echo "============================================"
