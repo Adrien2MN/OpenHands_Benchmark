@@ -207,7 +207,7 @@ EXPERIMENT_START=$(date +%s)
 uv run swebench-lite-infer \
     "$REPO_ROOT/.llm_config/$LLM_CONFIG" \
     --n-limit "$N_LIMIT" \
-    --num-workers 3 \
+    --num-workers 1 \
     --workspace docker \
     2>&1 | tee "$RESULTS_DIR/benchmark.log"
 
