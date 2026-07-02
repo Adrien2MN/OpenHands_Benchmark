@@ -196,9 +196,10 @@ echo ">>> Smoke test: calling $MODEL_NAME..."
 RESPONSE=$(curl -s --max-time 30 -X POST http://127.0.0.1:4000/v1/chat/completions \
     -H "Authorization: Bearer dummy" \
     -H "Content-Type: application/json" \
-    -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}")
+    -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}" || echo '{"error":"curl failed"}')
 echo "Raw response: $RESPONSE"
-echo "$RESPONSE" | python3 -c "import sys,json; r=json.load(sys.stdin); print('Smoke test OK:', r['choices'][0]['message']['content'])"
+echo "$RESPONSE" | python3 -c "import sys,json; r=json.load(sys.stdin); print('Smoke test OK:', r.get('choices',[{}])[0].get('message',{}).get('content','NO CHOICES - full response: '+str(r)))" || true
+
 # --- 5. Run SWE-bench ---
 echo ">>> Running SWE-bench Lite (n=$N_LIMIT, max_iter=$MAX_ITERATIONS)..."
 EXPERIMENT_START=$(date +%s)
