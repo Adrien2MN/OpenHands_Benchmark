@@ -139,8 +139,8 @@ print('Download complete')
         --served-model-name "mistral-7b" \
         --host 0.0.0.0 \
         --port 8000 \
-        --gpu-memory-utilization 0.99 \
-        --max-model-len 8192 \
+        --gpu-memory-utilization 0.96 \
+        --max-model-len 4096 \
         --dtype half \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!
