@@ -1,0 +1,28 @@
+# eval_infer.py re-clones this directly from GitHub on the compute target,
+# so the local copy (which may be empty, partial, or stale) should never be
+# part of the snapshot upload. This also avoids re-triggering the original
+# "openhands-workspace missing its openhands/ source" bug if the local
+# submodule checkout is ever incomplete again.
+vendor/software-agent-sdk/
+
+# Standard cruft, mirrors .gitignore
+__pycache__/
+*.pyc
+.venv/
+.git/
+.pytest_cache/
+*.egg-info/
+
+outputs/
+
+# IMPORTANT: this .amlignore file, once present, FULLY REPLACES .gitignore
+# for Azure ML snapshot purposes (it does not merge with it). The repo's
+# .gitignore excludes `.llm_config/` (except example.json), which previously
+# caused the snapshot to silently drop .llm_config/litellm-mistral7b.json,
+# producing "LLM config file ... does not exist" on the compute target even
+# though the file existed locally. Since .amlignore has no .llm_config rule
+# at all, those files ARE included in the snapshot by default now. Do not
+# add a `.llm_config/` exclusion here unless you also add back the specific
+# config files you need (e.g. with a `!.llm_config/litellm-mistral7b.json`
+# style negation), the same way .gitignore does for example.json.
+

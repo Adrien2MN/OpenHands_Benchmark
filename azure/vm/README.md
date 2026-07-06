@@ -47,7 +47,7 @@ From the repo root, build `Dockerfile.full` in ACR. It includes vLLM, the benchm
 az acr build \
   --registry diffusionregistry \
   --image openhands-bench-full:latest \
-  --build-arg "MODEL_ID=Qwen/Qwen2.5-7B-Instruct" \
+  --file azure/vm/Dockerfile.full \
   --timeout 3600 \
   .
 ```

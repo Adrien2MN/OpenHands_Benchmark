@@ -210,10 +210,6 @@ workspace/
 !.openhands/microagents/
 .vscode/
 
-# LLM configuration directory (contains API keys and sensitive configs)
-.llm_config/
-!.llm_config/example.json
-
 # Evaluation outputs
 eval_outputs/
 builds/
@@ -227,3 +223,5 @@ unknown-0.0.0/
 
 # Local caches
 .cache/
+
+results_*/
