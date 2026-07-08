@@ -243,6 +243,10 @@ if echo "$SMOKE_OK" | grep -q "FAILED"; then
 fi
 
 # --- 5. Pre-build SWE-bench agent-server images ---
+# Prune all unused Docker images/containers/cache first to free disk space.
+echo ">>> Pruning unused Docker resources..."
+docker system prune -af --volumes 2>&1 | tail -3
+
 # Must run before infer so ensure_local_image finds them and doesn't try
 # to rebuild them one-by-one inside Docker-in-Docker during inference.
 echo ">>> Pre-building SWE-bench agent-server images (n=$N_LIMIT)..."
