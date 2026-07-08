@@ -66,6 +66,7 @@ def get_default_on_result_writer(
         # Choose the appropriate file based on whether there's an error
         target_path = error_output_path if out.error else output_path
 
+        os.makedirs(os.path.dirname(target_path), exist_ok=True)
         with open(target_path, "a") as f:
             # Use exclusive lock to prevent race conditions in parallel execution
             fcntl.flock(f, fcntl.LOCK_EX)

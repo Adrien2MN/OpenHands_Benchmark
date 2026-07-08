@@ -225,3 +225,6 @@ unknown-0.0.0/
 .cache/
 
 results_*/
+
+# Local LLM configs with real API keys — keep placeholder versions in git
+.llm_config/my-config.json

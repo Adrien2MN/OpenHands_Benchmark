@@ -131,3 +131,8 @@ model_list:
 
 litellm_settings:
   drop_params: true
+
+general_settings:
+  disable_spend_logs: true
+  background_health_checks: false
+  health_check_interval: 3600

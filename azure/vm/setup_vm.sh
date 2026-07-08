@@ -12,7 +12,7 @@ set -euo pipefail
 RESOURCE_GROUP="token-energy-cliff"
 LOCATION="westeurope"
 VM_NAME="openhands-bench-gpu"
-VM_SIZE="Standard_NC8as_T4_v3"      # T4 16GB, 8 vCPUs, 56GB RAM
+VM_SIZE="Standard_NC24ads_A100_v4"  # A100 80GB, 24 vCPUs, 220GB RAM
 IMAGE="Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest"
 REGISTRY_NAME="diffusionregistry"
 
@@ -22,19 +22,24 @@ echo "Location: $LOCATION"
 echo "Group:    $RESOURCE_GROUP"
 echo "============================================"
 
-# 1. Create the VM (GPU drivers pre-installed with ubuntu-hpc image)
-echo ">>> Creating GPU VM..."
-az vm create \
-  --resource-group "$RESOURCE_GROUP" \
-  --name "$VM_NAME" \
-  --location "$LOCATION" \
-  --size "$VM_SIZE" \
-  --image "$IMAGE" \
-  --admin-username benchuser \
-  --generate-ssh-keys \
-  --nsg-rule NONE \
-  --public-ip-sku Standard \
-  --os-disk-size-gb 256
+# 1. Create the VM if it does not already exist.
+if az vm show --resource-group "$RESOURCE_GROUP" --name "$VM_NAME" >/dev/null 2>&1; then
+  echo ">>> VM already exists; skipping create"
+else
+  echo ">>> Creating GPU VM..."
+  az vm create \
+    --resource-group "$RESOURCE_GROUP" \
+    --name "$VM_NAME" \
+    --location "$LOCATION" \
+    --size "$VM_SIZE" \
+    --image "$IMAGE" \
+    --admin-username benchuser \
+    --generate-ssh-keys \
+    --nsg-rule NONE \
+    --public-ip-sku Standard \
+    --security-type Standard \
+    --os-disk-size-gb 256
+fi
 
 # 2. Open no ports (we don't need SSH or inbound access)
 # The VM only needs outbound to pull from ACR and HuggingFace

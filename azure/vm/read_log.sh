@@ -1,0 +1,1 @@
+docker exec openhands-bench tail -80 /app/outputs/princeton-nlp__SWE-bench_Lite-test/mistral-7b__astropy__astropy-12907/logs/instance_astropy__astropy-12907.log 2>&1 || echo "container not running or log not found"

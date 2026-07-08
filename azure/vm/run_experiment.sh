@@ -40,6 +40,7 @@ az vm run-command invoke \
     --command-id RunShellScript \
     --scripts "
         set -e
+        rm -rf /home/benchuser/results
         mkdir -p /home/benchuser/results /home/benchuser/hf_cache
 
         docker rm -f openhands-bench 2>/dev/null || true

@@ -1,0 +1,7 @@
+{
+  "model": "openai/Qwen/Qwen2.5-7B-Instruct",
+  "base_url": "https://qwen-serve.politetree-37cf40af.swedencentral.azurecontainerapps.io/v1",
+  "api_key": "dummy",
+  "max_output_tokens": 8192,
+  "native_tool_calling": true
+}

@@ -85,13 +85,24 @@ uv sync -v
 
 # Install packages not in pyproject.toml AFTER the final uv sync,
 # so uv sync doesn't wipe them out.
-for pkg in "litellm[proxy]" regex ninja; do
+for pkg in "litellm[proxy]" regex ninja "opentelemetry-semantic-conventions>=0.50b0"; do
     uv pip install --python .venv/bin/python "$pkg"
 done
 
 # vllm only needed for local models — installed last so uv sync can't remove it
 if [ "$MODEL_SOURCE" = "local" ]; then
     uv pip install --python .venv/bin/python "vllm==0.8.5" "transformers==4.51.1"
+    # vllm pins opentelemetry-api<1.27.0 but lmnr requires 1.39.1.
+    # Use --no-deps to force-override without re-solving vllm's constraints.
+    uv pip install --python .venv/bin/python --no-deps \
+        "opentelemetry-api==1.39.1" \
+        "opentelemetry-sdk==1.39.1" \
+        "opentelemetry-proto==1.39.1" \
+        "opentelemetry-exporter-otlp-proto-common==1.39.1" \
+        "opentelemetry-exporter-otlp-proto-grpc==1.39.1" \
+        "opentelemetry-exporter-otlp-proto-http==1.39.1" \
+        "opentelemetry-instrumentation==0.60b1" \
+        "opentelemetry-semantic-conventions==0.60b1"
 fi
 echo ">>> Dependencies installed"
 
@@ -140,8 +151,10 @@ print('Download complete')
         --host 0.0.0.0 \
         --port 8000 \
         --gpu-memory-utilization 0.96 \
-        --max-model-len 4096 \
+        --max-model-len 16384 \
         --dtype half \
+        --enable-auto-tool-choice \
+        --tool-call-parser mistral \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!
 
@@ -163,48 +176,86 @@ else
     echo ">>> MODEL_SOURCE=proxy — skipping download and vLLM"
 fi
 
-# --- 4. Start LiteLLM proxy ---
-echo ">>> Starting LiteLLM proxy..."
-export PATH=".venv/bin:$PATH"
+# --- 4. Start LiteLLM proxy (proxy models only) ---
+# For local models, the agent-server calls vLLM directly via 172.17.0.1:8000.
+# LiteLLM is only needed for proxy (cloud API) models.
+LITELLM_PID=""
+if [ "$MODEL_SOURCE" = "proxy" ]; then
+    echo ">>> Starting LiteLLM proxy..."
+    export PATH=".venv/bin:$PATH"
+    unset SSL_CERT_FILE
+    export SSL_CERT_FILE=/app/azure/vm/axa_combined_ca.pem
+    .venv/bin/litellm \
+        --config "$REPO_ROOT/configs/litellm_openhands_proxy.yaml" \
+        --port 4000 \
+        >> "$RESULTS_DIR/litellm.log" 2>&1 &
+    LITELLM_PID=$!
 
-unset SSL_CERT_FILE
-export SSL_CERT_FILE=/app/azure/vm/axa_combined_ca.pem
-uv run litellm \
-    --config "$REPO_ROOT/configs/litellm_openhands_proxy.yaml" \
-    --port 4000 \
-    >> "$RESULTS_DIR/litellm.log" 2>&1 &
-LITELLM_PID=$!
+    echo ">>> Waiting for LiteLLM (up to 120s)..."
+    for i in $(seq 1 40); do
+        if curl -s http://127.0.0.1:4000/v1/models 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0 if d.get('data') else 1)" 2>/dev/null; then
+            echo "LiteLLM ready after $((i * 3))s"
+            break
+        fi
+        if [ "$i" -eq 40 ]; then
+            echo "ERROR: LiteLLM failed to start"
+            tail -30 "$RESULTS_DIR/litellm.log"
+            kill $ENERGY_PID ${VLLM_PID:-} 2>/dev/null || true
+            exit 1
+        fi
+        sleep 3
+    done
+else
+    echo ">>> MODEL_SOURCE=local — skipping LiteLLM, agent-server calls vLLM directly"
+fi
 
-echo ">>> Waiting for LiteLLM (up to 120s)..."
-for i in $(seq 1 40); do
-    if curl -s http://127.0.0.1:4000/v1/models 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0 if d.get('data') else 1)" 2>/dev/null; then
-        echo "LiteLLM ready after $((i * 3))s"
-        break
-    fi
-    if [ "$i" -eq 40 ]; then
-        echo "ERROR: LiteLLM failed to start"
-        tail -30 "$RESULTS_DIR/litellm.log"
-        kill $ENERGY_PID ${VLLM_PID:-} 2>/dev/null || true
-        exit 1
-    fi
-    sleep 3
-done
-
-# Smoke test — use proxy alias (strip provider prefix like openai/ from model name)
+# Smoke test — verify end-to-end routing
 MODEL_NAME=$(python3 -c "import json; m=json.load(open('$REPO_ROOT/.llm_config/$LLM_CONFIG'))['model']; print(m.split('/')[-1] if '/' in m else m)")
-echo ">>> Smoke test: calling $MODEL_NAME..."
-RESPONSE=$(curl -s --max-time 30 -X POST http://127.0.0.1:4000/v1/chat/completions \
+if [ "$MODEL_SOURCE" = "local" ]; then
+    SMOKE_URL="http://127.0.0.1:8000/v1/chat/completions"
+else
+    SMOKE_URL="http://127.0.0.1:4000/v1/chat/completions"
+fi
+echo ">>> Smoke test: calling $MODEL_NAME at $SMOKE_URL ..."
+RESPONSE=$(curl -s --max-time 60 -X POST "$SMOKE_URL" \
     -H "Authorization: Bearer dummy" \
     -H "Content-Type: application/json" \
-    -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with READY\"}],\"max_tokens\":5}" || echo '{"error":"curl failed"}')
+    -d "{\"model\":\"$MODEL_NAME\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with the single word READY\"}],\"max_tokens\":10}" || echo '{"error":"curl failed"}')
 echo "Raw response: $RESPONSE"
-echo "$RESPONSE" | python3 -c "import sys,json; r=json.load(sys.stdin); print('Smoke test OK:', r.get('choices',[{}])[0].get('message',{}).get('content','NO CHOICES - full response: '+str(r)))" || true
+SMOKE_OK=$(echo "$RESPONSE" | python3 -c "
+import sys, json
+r = json.load(sys.stdin)
+content = r.get('choices', [{}])[0].get('message', {}).get('content', '')
+if content:
+    print('Smoke test OK:', content)
+    sys.exit(0)
+else:
+    print('Smoke test FAILED — no choices. Full response:', r)
+    sys.exit(1)
+" 2>&1)
+echo "$SMOKE_OK"
+if echo "$SMOKE_OK" | grep -q "FAILED"; then
+    echo "ERROR: Smoke test failed — aborting before benchmark run"
+    [ -f "$RESULTS_DIR/litellm.log" ] && tail -50 "$RESULTS_DIR/litellm.log" || true
+    [ -f "$RESULTS_DIR/vllm.log" ] && tail -50 "$RESULTS_DIR/vllm.log" || true
+    kill $ENERGY_PID ${VLLM_PID:-} ${LITELLM_PID:-} 2>/dev/null || true
+    exit 1
+fi
 
-# --- 5. Run SWE-bench ---
+# --- 5. Pre-build SWE-bench agent-server images ---
+# Must run before infer so ensure_local_image finds them and doesn't try
+# to rebuild them one-by-one inside Docker-in-Docker during inference.
+echo ">>> Pre-building SWE-bench agent-server images (n=$N_LIMIT)..."
+.venv/bin/swebench-lite-build-images \
+    --n-limit "$N_LIMIT" \
+    2>&1 | tee "$RESULTS_DIR/build_images.log"
+echo ">>> Image build complete"
+
+# --- 6. Run SWE-bench ---
 echo ">>> Running SWE-bench Lite (n=$N_LIMIT, max_iter=$MAX_ITERATIONS)..."
 EXPERIMENT_START=$(date +%s)
 
-uv run swebench-lite-infer \
+.venv/bin/swebench-lite-infer \
     "$REPO_ROOT/.llm_config/$LLM_CONFIG" \
     --n-limit "$N_LIMIT" \
     --num-workers 1 \
@@ -214,12 +265,12 @@ uv run swebench-lite-infer \
 EXPERIMENT_END=$(date +%s)
 DURATION=$((EXPERIMENT_END - EXPERIMENT_START))
 
-# --- 6. Cleanup ---
+# --- 7. Cleanup ---
 kill $ENERGY_PID ${VLLM_PID:-} ${LITELLM_PID:-} 2>/dev/null || true
 
 [ -d "$REPO_ROOT/outputs" ] && cp -r "$REPO_ROOT/outputs" "$RESULTS_DIR/swebench_outputs" || true
 
-# --- 7. Energy summary ---
+# --- 8. Energy summary ---
 python3 << 'PYEOF'
 import csv, json, os
 from pathlib import Path
