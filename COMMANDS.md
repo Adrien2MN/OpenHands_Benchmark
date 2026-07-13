@@ -107,3 +107,7 @@ az vm delete -g token-energy-cliff -n openhands-bench-gpu --yes
 az disk delete -g token-energy-cliff -n openhands-bench-gpuOsDisk --yes
 
 az group delete -g token-energy-cliff --yes
+
+
+
+az group create --name token-energy-cliff --location westeurope

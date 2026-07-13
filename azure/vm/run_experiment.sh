@@ -13,6 +13,11 @@ set -euo pipefail
 #     ./run_experiment.sh
 # ============================================================
 
+# Same reasoning as setup_vm.sh: don't let local .env's Mac-path CA vars
+# leak into this shell and affect the `az` CLI call below.
+unset REQUESTS_CA_BUNDLE
+unset SSL_CERT_FILE
+
 RESOURCE_GROUP="${RESOURCE_GROUP:-token-energy-cliff}"
 VM_NAME="${VM_NAME:-openhands-bench-gpu}"
 REGISTRY_NAME="${REGISTRY_NAME:-diffusionregistry}"
@@ -21,9 +26,13 @@ IMAGE_NAME="${IMAGE_NAME:-openhands-bench-full}"
 MODEL_SOURCE="${MODEL_SOURCE:-local}"
 MODEL_ID="${MODEL_ID:-mistralai/Mistral-7B-Instruct-v0.3}"
 LLM_CONFIG="${LLM_CONFIG:-litellm-mistral7b.json}"
-N_LIMIT="${N_LIMIT:-20}"
+N_LIMIT="${N_LIMIT:-10}"
 MAX_ITERATIONS="${MAX_ITERATIONS:-100}"
 HF_TOKEN="${HF_TOKEN:-}"
+
+# Path INSIDE the container/VM where the cert actually lives — independent
+# of whatever .env says locally.
+CONTAINER_CA_PATH="/app/azure/vm/axa_combined_ca.pem"
 
 echo "============================================"
 echo "VM:             $VM_NAME"
@@ -59,6 +68,8 @@ az vm run-command invoke \
             -e N_LIMIT=${N_LIMIT} \
             -e MAX_ITERATIONS=${MAX_ITERATIONS} \
             -e RESULTS_DIR=/results \
+            -e SSL_CERT_FILE=${CONTAINER_CA_PATH} \
+            -e REQUESTS_CA_BUNDLE=${CONTAINER_CA_PATH} \
             ${REGISTRY_NAME}.azurecr.io/${IMAGE_NAME}:latest
 
         docker ps --filter name=openhands-bench

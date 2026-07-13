@@ -9,6 +9,14 @@ set -euo pipefail
 # Same pattern as diff-vs-llm but self-contained.
 # ============================================================
 
+# Local .env sets REQUESTS_CA_BUNDLE / SSL_CERT_FILE to a Mac path meant
+# for the container. If they leak into this shell (sourced .env, direnv,
+# etc.), the `az` CLI (which uses Python requests under the hood) tries
+# to use that path and fails with "invalid file path". Unset them here
+# so this script never depends on shell state — .env itself is untouched.
+unset REQUESTS_CA_BUNDLE
+unset SSL_CERT_FILE
+
 RESOURCE_GROUP="token-energy-cliff"
 LOCATION="westeurope"
 VM_NAME="openhands-bench-gpu"

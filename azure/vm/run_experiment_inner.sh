@@ -30,6 +30,13 @@ set -euo pipefail
 #   RESULTS_DIR      where to write outputs (default: /results)
 # ============================================================
 
+mkdir -p "$RESULTS_DIR"
+
+# Force the correct in-container CA bundle regardless of what may have
+# been set upstream (env-file, .env baked in some other way, etc.).
+export SSL_CERT_FILE=/app/azure/vm/axa_combined_ca.pem
+export REQUESTS_CA_BUNDLE=/app/azure/vm/axa_combined_ca.pem
+
 MODEL_SOURCE="${MODEL_SOURCE:-local}"
 MODEL_ID="${MODEL_ID:-mistralai/Mistral-7B-Instruct-v0.3}"
 LLM_CONFIG="${LLM_CONFIG:-litellm-mistral7b.json}"
@@ -148,10 +155,13 @@ print('Download complete')
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
         --model "$MODEL_CACHE" \
         --served-model-name "mistral-7b" \
+        --tokenizer-mode mistral \
+        --config-format mistral \
+        --load-format mistral \
         --host 0.0.0.0 \
         --port 8000 \
         --gpu-memory-utilization 0.96 \
-        --max-model-len 16384 \
+        --max-model-len 32768 \
         --dtype half \
         --enable-auto-tool-choice \
         --tool-call-parser mistral \

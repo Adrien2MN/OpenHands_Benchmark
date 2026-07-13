@@ -34,6 +34,7 @@ WORKDIR /app
 COPY . /app
 
 ENV SSL_CERT_FILE=/app/azure/vm/axa_combined_ca.pem
+ENV REQUESTS_CA_BUNDLE=/app/azure/vm/axa_combined_ca.pem
 
 # Make inner script executable
 RUN chmod +x azure/vm/run_experiment_inner.sh
