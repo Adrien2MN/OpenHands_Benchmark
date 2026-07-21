@@ -18,7 +18,7 @@ unset REQUESTS_CA_BUNDLE
 unset SSL_CERT_FILE
 
 RESOURCE_GROUP="token-energy-cliff"
-LOCATION="westeurope"
+LOCATION="northeurope"
 VM_NAME="openhands-bench-gpu"
 VM_SIZE="Standard_NC24ads_A100_v4"  # A100 80GB, 24 vCPUs, 220GB RAM
 IMAGE="Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest"

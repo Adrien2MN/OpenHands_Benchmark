@@ -42,10 +42,13 @@ MODEL_ID="${MODEL_ID:-mistralai/Mistral-7B-Instruct-v0.3}"
 LLM_CONFIG="${LLM_CONFIG:-litellm-mistral7b.json}"
 N_LIMIT="${N_LIMIT:-1}"
 MAX_ITERATIONS="${MAX_ITERATIONS:-100}"
+CONVERSATION_TIMEOUT="${CONVERSATION_TIMEOUT:-3600}"
 RESULTS_DIR="${RESULTS_DIR:-/results}"
 REPO_ROOT="/app"
 MODEL_CACHE="/root/.cache/huggingface/bench-model"
 PINNED_SDK_COMMIT="3e0a3a0915b369c7e2057c77722e98585855d30a"
+
+export CONVERSATION_TIMEOUT
 
 mkdir -p "$RESULTS_DIR"
 
@@ -55,6 +58,7 @@ echo "MODEL_ID:       $MODEL_ID"
 echo "LLM_CONFIG:     $LLM_CONFIG"
 echo "N instances:    $N_LIMIT"
 echo "Max iterations: $MAX_ITERATIONS"
+echo "Conv timeout:   $CONVERSATION_TIMEOUT"
 echo "Results dir:    $RESULTS_DIR"
 echo "============================================"
 
@@ -113,6 +117,9 @@ if [ "$MODEL_SOURCE" = "local" ]; then
 fi
 echo ">>> Dependencies installed"
 
+# Ensure the benchmark writes only fresh outputs for this run.
+rm -rf "$REPO_ROOT/outputs"
+
 # --- 2. Start GPU energy monitoring ---
 echo ">>> Starting GPU energy monitoring..."
 ENERGY_LOG="$RESULTS_DIR/energy_log.csv"
@@ -152,25 +159,31 @@ print('Download complete')
     export PATH=".venv/bin:$PATH"
     export VLLM_USE_FLASHINFER_SAMPLER=0
 
+    SERVED_NAME=$(python3 -c "import json; m=json.load(open('$REPO_ROOT/.llm_config/$LLM_CONFIG'))['model']; print(m.split('/')[-1] if '/' in m else m)")
+
+    # Model-specific vLLM flags
+    VLLM_EXTRA_ARGS=""
+    if echo "$MODEL_ID" | grep -qi "mistral"; then
+        VLLM_EXTRA_ARGS="--tokenizer-mode mistral --config-format mistral --load-format mistral --enable-auto-tool-choice --tool-call-parser mistral"
+    elif echo "$MODEL_ID" | grep -qi "qwen"; then
+        VLLM_EXTRA_ARGS=""
+    fi
+
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
         --model "$MODEL_CACHE" \
-        --served-model-name "mistral-7b" \
-        --tokenizer-mode mistral \
-        --config-format mistral \
-        --load-format mistral \
+        --served-model-name "$SERVED_NAME" \
         --host 0.0.0.0 \
         --port 8000 \
         --gpu-memory-utilization 0.96 \
         --max-model-len 32768 \
         --dtype half \
-        --enable-auto-tool-choice \
-        --tool-call-parser mistral \
+        $VLLM_EXTRA_ARGS \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!
 
     echo ">>> Waiting for vLLM (up to 600s)..."
     for i in $(seq 1 120); do
-        if curl -s http://127.0.0.1:8000/v1/models | grep -q "mistral-7b" 2>/dev/null; then
+        if curl -s http://127.0.0.1:8000/v1/models | grep -q "$SERVED_NAME" 2>/dev/null; then
             echo "vLLM ready after $((i * 5))s"
             break
         fi
@@ -274,6 +287,7 @@ EXPERIMENT_START=$(date +%s)
     --n-limit "$N_LIMIT" \
     --num-workers 1 \
     --workspace docker \
+    --max-iterations "$MAX_ITERATIONS" \
     2>&1 | tee "$RESULTS_DIR/benchmark.log"
 
 EXPERIMENT_END=$(date +%s)

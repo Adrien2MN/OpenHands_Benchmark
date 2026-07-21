@@ -417,12 +417,18 @@ class SWEBenchEvaluation(Evaluation):
             # Run conversation with fake user responses to handle agent messages
             run_conversation_with_fake_user_response(
                 conversation,
-                stop_after_first_finished=True,
+                stop_after_first_finished=False,
             )
 
         agent_generation_seconds = round(
             time.perf_counter() - agent_generation_started,
             3,
+        )
+
+        # Revert build/config files the model may have touched by mistake
+        workspace.execute_command(
+            f"cd {repo_path} ; git checkout -- pyproject.toml setup.py setup.cfg "
+            f"requirements.txt requirements-dev.txt Makefile 2>/dev/null; true"
         )
 
         # git add
@@ -437,10 +443,14 @@ class SWEBenchEvaluation(Evaluation):
             f"git commit --no-verify -m '{constants.GIT_COMMIT_MESSAGE}'"
         )
 
-        # Get git patch
+        # Get git patch (exclude build/config files that models tend to touch by mistake)
         base_commit = instance.data["base_commit"]
         git_patch_result = workspace.execute_command(
-            (f"cd {repo_path} ; git --no-pager diff --no-color {base_commit} HEAD")
+            (
+                f"cd {repo_path} ; git --no-pager diff --no-color {base_commit} HEAD "
+                f"-- . ':!pyproject.toml' ':!setup.py' ':!setup.cfg' "
+                f"':!requirements.txt' ':!requirements-dev.txt' ':!Makefile'"
+            )
         )
         assert git_patch_result.exit_code == 0, (
             f"git diff failed: {git_patch_result.stderr}"
