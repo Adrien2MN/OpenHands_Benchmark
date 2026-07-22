@@ -1,0 +1,28 @@
+{
+  "model": "Qwen2.5-Coder-32B-Instruct",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 13,
+  "n_instances_timed_out": 7,
+  "n_resolved": 2,
+  "resolve_rate_of_completed": "15.4%",
+  "energy_wh": 2905.695,
+  "duration_seconds": 37816,
+  "avg_gpu_power_watts": 276.62,
+  "max_gpu_power_watts": 414.62,
+  "instances": [
+    {"id": "django__django-10914", "resolved": true, "iters": 9, "files": ["django/conf/global_settings.py"]},
+    {"id": "django__django-11039", "resolved": true, "iters": 5, "files": ["django/core/management/commands/sqlmigrate.py"]},
+    {"id": "astropy__astropy-14182", "resolved": false, "iters": 20, "files": ["astropy/io/ascii/rst.py"]},
+    {"id": "astropy__astropy-14365", "resolved": false, "iters": 5, "files": ["astropy/io/ascii/qdp.py"]},
+    {"id": "astropy__astropy-6938", "resolved": false, "iters": 5, "files": ["astropy/io/fits/fitsrec.py"]},
+    {"id": "astropy__astropy-7746", "resolved": false, "iters": 12, "files": ["astropy/wcs/wcs.py"]},
+    {"id": "django__django-10924", "resolved": false, "iters": 8, "files": ["django/db/models/fields/__init__.py"]},
+    {"id": "django__django-11019", "resolved": false, "iters": 22, "files": ["django/forms/widgets.py"]},
+    {"id": "django__django-11133", "resolved": false, "iters": 17, "files": ["django/http/response.py"]},
+    {"id": "django__django-11283", "resolved": false, "iters": 48, "files": ["django/contrib/auth/migrations/0011_update_proxy_permissions.py"]},
+    {"id": "django__django-11422", "resolved": false, "iters": 5, "files": ["django/utils/autoreload.py"]},
+    {"id": "django__django-11564", "resolved": false, "iters": 16, "files": ["django/contrib/staticfiles/storage.py", "django/templatetags/static.py"]},
+    {"id": "django__django-11620", "resolved": false, "iters": 20, "files": ["django/urls/resolvers.py"]}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+    "model": "mistral-small-2503",
+    "total_instances": 300,
+    "submitted_instances": 11,
+    "completed_instances": 11,
+    "resolved_instances": 3,
+    "unresolved_instances": 8,
+    "empty_patch_instances": 0,
+    "error_instances": 0,
+    "submitted_ids": [
+        "astropy__astropy-12907",
+        "astropy__astropy-6938",
+        "django__django-10914",
+        "django__django-10924",
+        "django__django-11019",
+        "django__django-11039",
+        "django__django-11099",
+        "django__django-11179",
+        "django__django-11283",
+        "django__django-11422",
+        "django__django-11620"
+    ],
+    "resolved_ids": [
+        "django__django-10914",
+        "django__django-11039",
+        "django__django-11099"
+    ],
+    "unresolved_ids": [
+        "astropy__astropy-12907",
+        "astropy__astropy-6938",
+        "django__django-10924",
+        "django__django-11019",
+        "django__django-11179",
+        "django__django-11283",
+        "django__django-11422",
+        "django__django-11620"
+    ],
+    "schema_version": 2
+}

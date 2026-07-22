@@ -1,0 +1,26 @@
+{
+  "model": "mistral-small-2503 (24B)",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 11,
+  "n_instances_timed_out": 9,
+  "n_resolved": 3,
+  "resolve_rate_of_completed": "27.3%",
+  "energy_wh": 1004.67,
+  "duration_seconds": 15325,
+  "avg_gpu_power_watts": 236.01,
+  "max_gpu_power_watts": 423.62,
+  "instances": [
+    {"id": "django__django-10914", "resolved": true, "iters": 22, "files": ["django/conf/global_settings.py"]},
+    {"id": "django__django-11039", "resolved": true, "iters": 7, "files": ["django/core/management/commands/sqlmigrate.py"]},
+    {"id": "django__django-11099", "resolved": true, "iters": 13, "files": ["django/contrib/auth/validators.py"]},
+    {"id": "astropy__astropy-12907", "resolved": false, "iters": 32, "files": ["astropy/modeling/separable.py"]},
+    {"id": "astropy__astropy-6938", "resolved": false, "iters": 20, "files": ["astropy/io/fits/fitsrec.py"]},
+    {"id": "django__django-10924", "resolved": false, "iters": 9, "files": ["django/db/models/fields/__init__.py"]},
+    {"id": "django__django-11019", "resolved": false, "iters": 8, "files": ["django/forms/widgets.py"]},
+    {"id": "django__django-11179", "resolved": false, "iters": 6, "files": ["django/db/models/deletion.py"]},
+    {"id": "django__django-11283", "resolved": false, "iters": 16, "files": ["django/contrib/auth/migrations/0011_update_proxy_permissions.py"]},
+    {"id": "django__django-11422", "resolved": false, "iters": 35, "files": ["django/utils/autoreload.py"]},
+    {"id": "django__django-11620", "resolved": false, "iters": 8, "files": ["django/urls/converters.py", "django/urls/resolvers.py"]}
+  ]
+}
