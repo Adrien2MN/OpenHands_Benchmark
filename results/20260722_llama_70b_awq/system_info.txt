@@ -1,0 +1,12 @@
+kernel: 6.8.0-1062-azure
+arch: x86_64
+model_id: hugging-quants/Meta-Llama-3.1-70B-Instruct-AWQ-INT4
+llm_config: litellm-llama-70b.json
+n_limit: 20
+max_iterations: 100
+start_utc: 2026-07-22T10:45:02Z
+gpu: NVIDIA A100 80GB PCIe
+gpu_memory: 81920 MiB
+driver: 580.159.03
+power_limit: 300 W
+quantization: AWQ-INT4

@@ -1,0 +1,15 @@
+{
+    "model": "llama-3.1-70b-instruct-awq-int4",
+    "note": "No instances completed - all timed out due to 2.1 tok/s generation speed",
+    "total_instances": 300,
+    "submitted_instances": 0,
+    "completed_instances": 0,
+    "resolved_instances": 0,
+    "unresolved_instances": 0,
+    "empty_patch_instances": 0,
+    "error_instances": 5,
+    "timed_out_instances": 5,
+    "resolved_ids": [],
+    "unresolved_ids": [],
+    "schema_version": 2
+}

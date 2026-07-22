@@ -189,10 +189,14 @@ print('Download complete')
 
     # Model-specific vLLM flags
     VLLM_EXTRA_ARGS=""
+    VLLM_MAX_LEN=32768
     if echo "$MODEL_ID" | grep -qi "mistral"; then
         VLLM_EXTRA_ARGS=""
     elif echo "$MODEL_ID" | grep -qi "qwen"; then
         VLLM_EXTRA_ARGS=""
+    elif echo "$MODEL_ID" | grep -qi "llama.*70\|70.*llama"; then
+        VLLM_MAX_LEN=16384
+        VLLM_EXTRA_ARGS="--quantization awq"
     fi
 
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
@@ -201,7 +205,7 @@ print('Download complete')
         --host 0.0.0.0 \
         --port 8000 \
         --gpu-memory-utilization 0.96 \
-        --max-model-len 32768 \
+        --max-model-len "$VLLM_MAX_LEN" \
         --dtype half \
         $VLLM_EXTRA_ARGS \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &

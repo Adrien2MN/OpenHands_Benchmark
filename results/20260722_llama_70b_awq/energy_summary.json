@@ -1,0 +1,15 @@
+{
+  "note": "Interim data - run still in progress, all instances timing out",
+  "total": {
+    "duration_seconds": 12058,
+    "avg_gpu_power_watts": 266.7,
+    "max_gpu_power_watts": 427.4,
+    "total_gpu_energy_wh": 893.3,
+    "samples": 12058
+  },
+  "phases": {
+    "setup": null,
+    "inference": null
+  },
+  "per_instance": []
+}

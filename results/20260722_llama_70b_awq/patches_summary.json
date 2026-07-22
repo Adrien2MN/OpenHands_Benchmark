@@ -1,0 +1,24 @@
+{
+  "model": "Meta-Llama-3.1-70B-Instruct-AWQ-INT4",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "quantization": "AWQ 4-bit",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 0,
+  "n_instances_timed_out": 5,
+  "n_instances_in_progress": 15,
+  "n_resolved": 0,
+  "resolve_rate_of_completed": "N/A (all timed out)",
+  "energy_wh_interim": 893.3,
+  "duration_seconds_interim": 12058,
+  "avg_gpu_power_watts": 266.7,
+  "max_gpu_power_watts": 427.4,
+  "vllm_stats": {
+    "total_requests": 193,
+    "avg_generation_tps": 2.1,
+    "avg_prompt_tps": 252.2,
+    "kv_cache_usage_pct": 2.4,
+    "prefix_cache_hit_rate": 90.0
+  },
+  "note": "Model too slow (2.1 tok/s generation) for 30-min timeout. All instances time out before producing patches. GPU at 100% utilization and 70C throughout.",
+  "instances": []
+}
