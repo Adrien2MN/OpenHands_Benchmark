@@ -164,7 +164,7 @@ print('Download complete')
     # Model-specific vLLM flags
     VLLM_EXTRA_ARGS=""
     if echo "$MODEL_ID" | grep -qi "mistral"; then
-        VLLM_EXTRA_ARGS="--tokenizer-mode mistral --config-format mistral --load-format mistral --enable-auto-tool-choice --tool-call-parser mistral"
+        VLLM_EXTRA_ARGS=""
     elif echo "$MODEL_ID" | grep -qi "qwen"; then
         VLLM_EXTRA_ARGS=""
     fi

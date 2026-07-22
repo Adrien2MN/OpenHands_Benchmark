@@ -1,7 +1,11 @@
 {
   "model": "openai/mistral-small-2503",
   "base_url": "http://172.17.0.1:8000/v1",
-  "api_key": "dummy"
+  "api_key": "dummy",
+  "native_tool_calling": false,
+  "max_output_tokens": 8192,
+  "max_input_tokens": 32768,
+  "temperature": 0.0
 }
 
 
