@@ -120,7 +120,19 @@ echo ">>> Dependencies installed"
 # Ensure the benchmark writes only fresh outputs for this run.
 rm -rf "$REPO_ROOT/outputs"
 
-# --- 2. Start GPU energy monitoring ---
+# --- 2. Record system info ---
+echo ">>> Recording system info..."
+nvidia-smi --query-gpu=name,memory.total,driver_version,power.max_limit --format=csv > "$RESULTS_DIR/gpu_info.csv"
+echo "kernel: $(uname -r)" > "$RESULTS_DIR/system_info.txt"
+echo "arch: $(uname -m)" >> "$RESULTS_DIR/system_info.txt"
+echo "vllm: $(pip show vllm 2>/dev/null | grep Version || echo unknown)" >> "$RESULTS_DIR/system_info.txt"
+echo "model_id: $MODEL_ID" >> "$RESULTS_DIR/system_info.txt"
+echo "llm_config: $LLM_CONFIG" >> "$RESULTS_DIR/system_info.txt"
+echo "n_limit: $N_LIMIT" >> "$RESULTS_DIR/system_info.txt"
+echo "max_iterations: $MAX_ITERATIONS" >> "$RESULTS_DIR/system_info.txt"
+echo "start_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$RESULTS_DIR/system_info.txt"
+
+# --- 3. Start GPU energy monitoring ---
 echo ">>> Starting GPU energy monitoring..."
 ENERGY_LOG="$RESULTS_DIR/energy_log.csv"
 echo "timestamp,power_draw_W,gpu_util_pct,mem_used_MiB,temperature_C" > "$ENERGY_LOG"
@@ -133,6 +145,20 @@ echo "timestamp,power_draw_W,gpu_util_pct,mem_used_MiB,temperature_C" > "$ENERGY
     done
 ) &
 ENERGY_PID=$!
+
+# --- 3b. Start periodic results sync (crash protection) ---
+(
+    while true; do
+        sleep 120
+        # Sync any outputs written so far
+        if [ -d "$REPO_ROOT/outputs" ]; then
+            cp -r "$REPO_ROOT/outputs" "$RESULTS_DIR/swebench_outputs" 2>/dev/null || true
+        fi
+        # Extract vLLM throughput stats
+        grep -E "Added request|throughput|Avg prompt" "$RESULTS_DIR/vllm.log" > "$RESULTS_DIR/vllm_stats.log" 2>/dev/null || true
+    done
+) &
+SYNC_PID=$!
 
 VLLM_PID=""
 
@@ -278,6 +304,9 @@ echo ">>> Pre-building SWE-bench agent-server images (n=$N_LIMIT)..."
     2>&1 | tee "$RESULTS_DIR/build_images.log"
 echo ">>> Image build complete"
 
+# Record phase transition timestamps for energy splitting
+echo "$(date +%s)" > "$RESULTS_DIR/ts_inference_start.txt"
+
 # --- 6. Run SWE-bench ---
 echo ">>> Running SWE-bench Lite (n=$N_LIMIT, max_iter=$MAX_ITERATIONS)..."
 EXPERIMENT_START=$(date +%s)
@@ -292,33 +321,157 @@ EXPERIMENT_START=$(date +%s)
 
 EXPERIMENT_END=$(date +%s)
 DURATION=$((EXPERIMENT_END - EXPERIMENT_START))
+echo "end_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$RESULTS_DIR/system_info.txt"
+echo "duration_seconds: $DURATION" >> "$RESULTS_DIR/system_info.txt"
 
 # --- 7. Cleanup ---
-kill $ENERGY_PID ${VLLM_PID:-} ${LITELLM_PID:-} 2>/dev/null || true
+kill $ENERGY_PID ${VLLM_PID:-} ${LITELLM_PID:-} ${SYNC_PID:-} 2>/dev/null || true
 
 [ -d "$REPO_ROOT/outputs" ] && cp -r "$REPO_ROOT/outputs" "$RESULTS_DIR/swebench_outputs" || true
 
-# --- 8. Energy summary ---
-python3 << 'PYEOF'
-import csv, json, os
+# Extract vLLM throughput and token stats
+grep -E "Added request|Avg prompt throughput" "$RESULTS_DIR/vllm.log" > "$RESULTS_DIR/vllm_stats.log" 2>/dev/null || true
+
+# Extract per-request token counts from vLLM log
+python3 << 'TOKEOF'
+import re, json, os
 from pathlib import Path
-results_dir = os.environ.get("RESULTS_DIR", "/results")
-log = Path(results_dir) / "energy_log.csv"
-rows = list(csv.DictReader(log.open()))
-if rows:
-    powers = [float(r["power_draw_W"]) for r in rows if r.get("power_draw_W","").strip()]
-    avg = sum(powers)/len(powers) if powers else 0
-    summary = {
-        "duration_seconds": len(powers),
-        "avg_gpu_power_watts": round(avg, 2),
-        "max_gpu_power_watts": round(max(powers), 2) if powers else 0,
-        "total_gpu_energy_wh": round(avg * len(powers) / 3600, 4),
-        "samples": len(powers),
-    }
-else:
-    summary = {"error": "No power data"}
-Path(results_dir + "/energy_summary.json").write_text(json.dumps(summary, indent=2))
+results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
+vllm_log = results_dir / "vllm.log"
+if not vllm_log.exists():
+    exit()
+token_stats = []
+for line in vllm_log.open(errors="ignore"):
+    m = re.search(r"(\d{2}:\d{2}:\d{2}).*Received request (chatcmpl-\w+):.*prompt_token_ids: (?:None|\[.+?\])", line)
+    if not m:
+        continue
+# Simpler: count requests and extract throughput lines
+throughput = []
+for line in vllm_log.open(errors="ignore"):
+    m = re.search(r"Avg prompt throughput: ([\d.]+) tokens/s, Avg generation throughput: ([\d.]+) tokens/s.*GPU KV cache usage: ([\d.]+)%", line)
+    if m:
+        throughput.append({
+            "prompt_tps": float(m.group(1)),
+            "gen_tps": float(m.group(2)),
+            "kv_cache_pct": float(m.group(3)),
+        })
+total_requests = sum(1 for l in vllm_log.open(errors="ignore") if "Added request" in l)
+summary = {
+    "total_requests": total_requests,
+    "throughput_samples": len(throughput),
+    "avg_prompt_tps": round(sum(t["prompt_tps"] for t in throughput) / max(len(throughput), 1), 1),
+    "avg_gen_tps": round(sum(t["gen_tps"] for t in throughput) / max(len(throughput), 1), 1),
+    "avg_kv_cache_pct": round(sum(t["kv_cache_pct"] for t in throughput) / max(len(throughput), 1), 1),
+}
+(results_dir / "vllm_summary.json").write_text(json.dumps(summary, indent=2))
 print(json.dumps(summary, indent=2))
+TOKEOF
+
+# --- 8. Energy analysis (per-phase + per-instance) ---
+python3 << 'PYEOF'
+import csv, json, os, re
+from pathlib import Path
+from datetime import datetime
+
+results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
+log = results_dir / "energy_log.csv"
+
+# Load energy samples
+rows = list(csv.DictReader(log.open()))
+if not rows:
+    (results_dir / "energy_summary.json").write_text(json.dumps({"error": "No power data"}))
+    exit()
+
+# Parse energy data with timestamps
+energy_data = []
+for r in rows:
+    ts_str = r.get("timestamp", "").strip()
+    pw = r.get("power_draw_W", "").strip()
+    if ts_str and pw:
+        try:
+            ts = datetime.strptime(ts_str, "%Y/%m/%d %H:%M:%S.%f")
+        except ValueError:
+            try:
+                ts = datetime.strptime(ts_str, "%Y/%m/%d %H:%M:%S")
+            except ValueError:
+                continue
+        energy_data.append({"ts": ts, "power": float(pw)})
+
+powers = [e["power"] for e in energy_data]
+total_avg = sum(powers) / len(powers)
+
+# Phase split: read inference start timestamp
+ts_file = results_dir / "ts_inference_start.txt"
+inference_start_epoch = None
+if ts_file.exists():
+    inference_start_epoch = int(ts_file.read_text().strip())
+
+setup_energy = []
+inference_energy = []
+if inference_start_epoch and energy_data:
+    inference_start = datetime.fromtimestamp(inference_start_epoch)
+    for e in energy_data:
+        if e["ts"] < inference_start:
+            setup_energy.append(e["power"])
+        else:
+            inference_energy.append(e["power"])
+
+# Per-instance timing from benchmark.log
+benchmark_log = results_dir / "benchmark.log"
+instance_times = []
+if benchmark_log.exists():
+    content = benchmark_log.read_text()
+    starts = re.findall(
+        r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}),\d+ - INFO - === Evaluation Started \(instance (.+?)\) ===",
+        content
+    )
+    for i, (ts_str, iid) in enumerate(starts):
+        start = datetime.strptime(ts_str, "%Y-%m-%d %H:%M:%S")
+        # End is start of next instance, or end of energy data
+        if i + 1 < len(starts):
+            end = datetime.strptime(starts[i+1][0], "%Y-%m-%d %H:%M:%S")
+        else:
+            end = energy_data[-1]["ts"] if energy_data else start
+        # Sum energy samples in this window
+        inst_powers = [e["power"] for e in energy_data if start <= e["ts"] < end]
+        inst_energy_wh = sum(inst_powers) / 3600 if inst_powers else 0
+        instance_times.append({
+            "instance_id": iid,
+            "start": ts_str,
+            "duration_seconds": len(inst_powers),
+            "avg_power_watts": round(sum(inst_powers) / max(len(inst_powers), 1), 2),
+            "energy_wh": round(inst_energy_wh, 4),
+        })
+
+# Build summary
+summary = {
+    "total": {
+        "duration_seconds": len(powers),
+        "avg_gpu_power_watts": round(total_avg, 2),
+        "max_gpu_power_watts": round(max(powers), 2),
+        "total_gpu_energy_wh": round(total_avg * len(powers) / 3600, 4),
+        "samples": len(powers),
+    },
+    "phases": {
+        "setup": {
+            "duration_seconds": len(setup_energy),
+            "avg_gpu_power_watts": round(sum(setup_energy) / max(len(setup_energy), 1), 2),
+            "energy_wh": round(sum(setup_energy) / 3600, 4),
+        } if setup_energy else None,
+        "inference": {
+            "duration_seconds": len(inference_energy),
+            "avg_gpu_power_watts": round(sum(inference_energy) / max(len(inference_energy), 1), 2),
+            "energy_wh": round(sum(inference_energy) / 3600, 4),
+        } if inference_energy else None,
+    },
+    "per_instance": instance_times,
+}
+
+(results_dir / "energy_summary.json").write_text(json.dumps(summary, indent=2))
+print(json.dumps(summary["total"], indent=2))
+print(f"\nSetup:     {summary['phases']['setup']['energy_wh']:.1f} Wh ({summary['phases']['setup']['duration_seconds']}s)" if summary['phases']['setup'] else "")
+print(f"Inference: {summary['phases']['inference']['energy_wh']:.1f} Wh ({summary['phases']['inference']['duration_seconds']}s)" if summary['phases']['inference'] else "")
+print(f"Per-instance: {len(instance_times)} entries")
 PYEOF
 
 echo "============================================"
