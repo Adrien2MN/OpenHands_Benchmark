@@ -1,0 +1,29 @@
+{
+  "total": {
+    "duration_seconds": 4956,
+    "avg_gpu_power_watts": 184.7,
+    "max_gpu_power_watts": 335.28,
+    "total_gpu_energy_wh": 254.2,
+    "samples": 4956
+  },
+  "phases": {
+    "setup": {
+      "duration_seconds": 389,
+      "avg_gpu_power_watts": 53.77,
+      "energy_wh": 5.81
+    },
+    "inference": {
+      "duration_seconds": 4567,
+      "avg_gpu_power_watts": 190.8,
+      "energy_wh": 248.4
+    }
+  },
+  "per_instance": [
+    {
+      "instance_id": "astropy__astropy-12907",
+      "duration_seconds": 459,
+      "avg_power_watts": 168.65,
+      "energy_wh": 21.5
+    }
+  ]
+}

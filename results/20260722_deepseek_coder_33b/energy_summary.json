@@ -1,0 +1,15 @@
+{
+  "note": "Run stopped after ~4 instances - all timed out, no patches produced",
+  "total": {
+    "duration_seconds": 5514,
+    "avg_gpu_power_watts": 224.42,
+    "max_gpu_power_watts": 377.05,
+    "total_gpu_energy_wh": 343.74,
+    "samples": 5514
+  },
+  "phases": {
+    "setup": null,
+    "inference": null
+  },
+  "per_instance": []
+}

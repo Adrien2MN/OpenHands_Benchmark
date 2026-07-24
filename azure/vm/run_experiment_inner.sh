@@ -102,9 +102,10 @@ done
 
 # vllm only needed for local models — installed last so uv sync can't remove it
 if [ "$MODEL_SOURCE" = "local" ]; then
-    uv pip install --python .venv/bin/python "vllm==0.8.5" "transformers==4.51.1"
-    # vllm pins opentelemetry-api<1.27.0 but lmnr requires 1.39.1.
-    # Use --no-deps to force-override without re-solving vllm's constraints.
+    uv pip install --python .venv/bin/python "vllm==0.25.1" "transformers>=4.51.1"
+    # Force openai upgrade required by vllm 0.25.1 (needs NamespaceTool from openai.types.responses)
+    uv pip install --python .venv/bin/python --force-reinstall --no-deps "openai>=1.82.0"
+    # Re-pin opentelemetry to versions lmnr requires (vllm may downgrade them)
     uv pip install --python .venv/bin/python --no-deps \
         "opentelemetry-api==1.39.1" \
         "opentelemetry-sdk==1.39.1" \
@@ -190,6 +191,7 @@ print('Download complete')
     # Model-specific vLLM flags
     VLLM_EXTRA_ARGS=""
     VLLM_MAX_LEN=32768
+    VLLM_DTYPE="half"
     if echo "$MODEL_ID" | grep -qi "mistral"; then
         VLLM_EXTRA_ARGS=""
     elif echo "$MODEL_ID" | grep -qi "qwen"; then
@@ -197,6 +199,12 @@ print('Download complete')
     elif echo "$MODEL_ID" | grep -qi "llama.*70\|70.*llama"; then
         VLLM_MAX_LEN=16384
         VLLM_EXTRA_ARGS="--quantization awq"
+    elif echo "$MODEL_ID" | grep -qi "deepseek"; then
+        VLLM_MAX_LEN=16384
+        VLLM_EXTRA_ARGS="--trust-remote-code"
+    elif echo "$MODEL_ID" | grep -qi "gemma"; then
+        VLLM_MAX_LEN=32768
+        VLLM_DTYPE="bfloat16"
     fi
 
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
@@ -206,7 +214,7 @@ print('Download complete')
         --port 8000 \
         --gpu-memory-utilization 0.96 \
         --max-model-len "$VLLM_MAX_LEN" \
-        --dtype half \
+        --dtype "$VLLM_DTYPE" \
         $VLLM_EXTRA_ARGS \
         >> "$RESULTS_DIR/vllm.log" 2>&1 &
     VLLM_PID=$!

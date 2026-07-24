@@ -26,3 +26,7 @@
     {"id": "django__django-11620", "resolved": false, "iters": 20, "files": ["django/urls/resolvers.py"]}
   ]
 }
+vllm_version: 0.8.5
+openai_version: ~1.x
+dtype: half
+native_tool_calling: false

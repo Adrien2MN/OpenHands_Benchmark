@@ -1,0 +1,24 @@
+{
+  "model": "deepseek-ai/deepseek-coder-33b-instruct",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 2,
+  "n_instances_timed_out": 4,
+  "n_resolved": 0,
+  "resolve_rate_of_completed": "0%",
+  "energy_wh": 343.74,
+  "duration_seconds": 5514,
+  "avg_gpu_power_watts": 224.42,
+  "max_gpu_power_watts": 377.05,
+  "vllm_stats": {
+    "total_requests": 58,
+    "avg_generation_tps": 20.6,
+    "avg_prompt_tps": 252.2,
+    "prefix_cache_hit_rate": 94.1
+  },
+  "note": "Model generates at good speed (20.6 tok/s) but fails to produce patches. All completed instances have empty patches - the model likely cannot follow the XML tool-calling format effectively. Older model architecture without strong instruction-following.",
+  "instances": [
+    {"id": "astropy__astropy-12907", "resolved": false, "patch": false},
+    {"id": "astropy__astropy-14182", "resolved": false, "patch": false}
+  ]
+}

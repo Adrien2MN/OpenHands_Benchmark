@@ -1,0 +1,28 @@
+{
+  "model": "google/gemma-3-27b-it",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 14,
+  "n_instances_timed_out": 6,
+  "n_with_patches": 11,
+  "n_resolved": 1,
+  "resolve_rate_of_completed": "9.1%",
+  "energy_wh": 254.2,
+  "duration_seconds": 4956,
+  "avg_gpu_power_watts": 184.7,
+  "max_gpu_power_watts": 335.28,
+  "vllm_stats": {
+    "total_requests": 0,
+    "avg_generation_tps": 19.6,
+    "avg_prompt_tps": 168.5,
+    "avg_kv_cache_pct": 7.2
+  },
+  "software": {
+    "vllm": "0.25.1",
+    "openai": "2.48.0",
+    "dtype": "bfloat16",
+    "max_model_len": 32768,
+    "native_tool_calling": false
+  },
+  "instances": []
+}

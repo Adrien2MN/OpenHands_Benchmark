@@ -1,0 +1,14 @@
+{
+    "model": "deepseek-coder-v2-lite-instruct",
+    "note": "vLLM crashed - no instances completed",
+    "total_instances": 300,
+    "submitted_instances": 0,
+    "completed_instances": 0,
+    "resolved_instances": 0,
+    "unresolved_instances": 0,
+    "empty_patch_instances": 0,
+    "error_instances": 20,
+    "resolved_ids": [],
+    "unresolved_ids": [],
+    "schema_version": 2
+}

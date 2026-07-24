@@ -1,0 +1,18 @@
+{
+  "model": "DeepSeek-Coder-V2-Lite-Instruct (16B active, MoE)",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 0,
+  "n_resolved": 0,
+  "resolve_rate_of_completed": "N/A",
+  "energy_wh": 61.1,
+  "duration_seconds": 4694,
+  "avg_gpu_power_watts": 46.86,
+  "max_gpu_power_watts": 304.53,
+  "vllm_stats": {
+    "total_requests": 3,
+    "note": "vLLM crashed after 3 requests due to MoE architecture incompatibility with vLLM 0.8.5"
+  },
+  "note": "vLLM server shut down after 3 inference requests. DeepSeek-Coder-V2 MoE architecture requires newer vLLM version or specific configuration. All instances failed with 'Remote conversation ended with error' after vLLM became unavailable.",
+  "instances": []
+}

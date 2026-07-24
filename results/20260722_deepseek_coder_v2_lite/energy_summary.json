@@ -1,0 +1,15 @@
+{
+  "note": "vLLM crashed after 3 requests - MoE architecture incompatible with vLLM 0.8.5",
+  "total": {
+    "duration_seconds": 4694,
+    "avg_gpu_power_watts": 46.86,
+    "max_gpu_power_watts": 304.53,
+    "total_gpu_energy_wh": 61.1067,
+    "samples": 4694
+  },
+  "phases": {
+    "setup": null,
+    "inference": null
+  },
+  "per_instance": []
+}
