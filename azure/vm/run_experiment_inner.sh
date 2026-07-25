@@ -341,42 +341,140 @@ kill $ENERGY_PID ${VLLM_PID:-} ${LITELLM_PID:-} ${SYNC_PID:-} 2>/dev/null || tru
 
 [ -d "$REPO_ROOT/outputs" ] && cp -r "$REPO_ROOT/outputs" "$RESULTS_DIR/swebench_outputs" || true
 
-# Extract vLLM throughput and token stats
-grep -E "Added request|Avg prompt throughput" "$RESULTS_DIR/vllm.log" > "$RESULTS_DIR/vllm_stats.log" 2>/dev/null || true
-
-# Extract per-request token counts from vLLM log
-python3 << 'TOKEOF'
-import re, json, os
+# Extract per-instance tool usage from conversation archives
+python3 << 'TOOLEOF'
+import json, glob, tarfile, os
 from pathlib import Path
+from collections import Counter
+
 results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
-vllm_log = results_dir / "vllm.log"
-if not vllm_log.exists():
-    exit()
-token_stats = []
-for line in vllm_log.open(errors="ignore"):
-    m = re.search(r"(\d{2}:\d{2}:\d{2}).*Received request (chatcmpl-\w+):.*prompt_token_ids: (?:None|\[.+?\])", line)
-    if not m:
-        continue
-# Simpler: count requests and extract throughput lines
-throughput = []
-for line in vllm_log.open(errors="ignore"):
-    m = re.search(r"Avg prompt throughput: ([\d.]+) tokens/s, Avg generation throughput: ([\d.]+) tokens/s.*GPU KV cache usage: ([\d.]+)%", line)
-    if m:
-        throughput.append({
-            "prompt_tps": float(m.group(1)),
-            "gen_tps": float(m.group(2)),
-            "kv_cache_pct": float(m.group(3)),
+conv_dirs = glob.glob(str(results_dir / "swebench_outputs" / "**" / "conversations"), recursive=True)
+
+all_instances = []
+global_tool_counts = Counter()
+
+for conv_dir in conv_dirs:
+    for tar_path in sorted(Path(conv_dir).glob("*.tar.gz")):
+        iid = tar_path.stem
+        tool_counts = Counter()
+        tool_sequence = []
+        try:
+            with tarfile.open(tar_path) as tf:
+                tf.extractall(f"/tmp/tool_extract_{iid}", filter="data")
+            events = sorted(glob.glob(f"/tmp/tool_extract_{iid}/**/event-*.json", recursive=True))
+            for e in events:
+                d = json.load(open(e))
+                if d.get("kind") == "ActionEvent":
+                    tool = d.get("tool_name", "unknown")
+                    tool_counts[tool] += 1
+                    tool_sequence.append(tool)
+                    global_tool_counts[tool] += 1
+        except Exception:
+            continue
+
+        all_instances.append({
+            "instance_id": iid,
+            "tool_counts": dict(tool_counts),
+            "total_tool_calls": sum(tool_counts.values()),
+            "tool_sequence": tool_sequence,
         })
-total_requests = sum(1 for l in vllm_log.open(errors="ignore") if "Added request" in l)
+
 summary = {
-    "total_requests": total_requests,
+    "global_tool_counts": dict(global_tool_counts),
+    "total_tool_calls": sum(global_tool_counts.values()),
+    "total_instances": len(all_instances),
+    "avg_tool_calls_per_instance": round(sum(global_tool_counts.values()) / max(len(all_instances), 1), 1),
+    "per_instance": all_instances,
+}
+(results_dir / "tool_summary.json").write_text(json.dumps(summary, indent=2))
+print(f"Tools: {sum(global_tool_counts.values())} calls across {len(all_instances)} instances")
+print(f"  Breakdown: {dict(global_tool_counts)}")
+TOOLEOF
+
+# Extract vLLM throughput stats
+grep -E "throughput|HTTP" "$RESULTS_DIR/vllm.log" > "$RESULTS_DIR/vllm_stats.log" 2>/dev/null || true
+
+# Extract per-request tokens from vLLM log + per-instance tokens from output.jsonl
+python3 << 'TOKEOF'
+import re, json, os, glob
+from pathlib import Path
+
+results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
+
+# --- vLLM throughput summary ---
+vllm_log = results_dir / "vllm.log"
+throughput = []
+http_requests = 0
+if vllm_log.exists():
+    for line in vllm_log.open(errors="ignore"):
+        m = re.search(r"Avg prompt throughput: ([\d.]+) tokens/s, Avg generation throughput: ([\d.]+) tokens/s.*GPU KV cache usage: ([\d.]+)%", line)
+        if m:
+            throughput.append({
+                "prompt_tps": float(m.group(1)),
+                "gen_tps": float(m.group(2)),
+                "kv_cache_pct": float(m.group(3)),
+            })
+        if "POST /v1/chat/completions" in line and "200" in line:
+            http_requests += 1
+
+vllm_summary = {
+    "total_requests": http_requests,
     "throughput_samples": len(throughput),
     "avg_prompt_tps": round(sum(t["prompt_tps"] for t in throughput) / max(len(throughput), 1), 1),
     "avg_gen_tps": round(sum(t["gen_tps"] for t in throughput) / max(len(throughput), 1), 1),
     "avg_kv_cache_pct": round(sum(t["kv_cache_pct"] for t in throughput) / max(len(throughput), 1), 1),
 }
-(results_dir / "vllm_summary.json").write_text(json.dumps(summary, indent=2))
-print(json.dumps(summary, indent=2))
+(results_dir / "vllm_summary.json").write_text(json.dumps(vllm_summary, indent=2))
+print("vLLM:", json.dumps(vllm_summary))
+
+# --- Per-instance token usage from output.jsonl ---
+output_files = glob.glob(str(results_dir / "swebench_outputs" / "**" / "output.jsonl"), recursive=True)
+instance_tokens = []
+total_prompt = 0
+total_completion = 0
+
+for f in output_files:
+    for line in open(f, errors="ignore"):
+        try:
+            d = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if "instance_id" not in d:
+            continue
+        iid = d["instance_id"]
+        tr = d.get("test_result", {})
+        token_usages = d.get("metadata", {}).get("model_stats", {}).get("token_usages", [])
+        if not token_usages:
+            token_usages = tr.get("token_usages", [])
+
+        inst_prompt = sum(t.get("prompt_tokens", 0) for t in token_usages if isinstance(t, dict))
+        inst_completion = sum(t.get("completion_tokens", 0) for t in token_usages if isinstance(t, dict))
+        inst_turns = len(token_usages)
+        total_prompt += inst_prompt
+        total_completion += inst_completion
+
+        instance_tokens.append({
+            "instance_id": iid,
+            "prompt_tokens": inst_prompt,
+            "completion_tokens": inst_completion,
+            "total_tokens": inst_prompt + inst_completion,
+            "turns": inst_turns,
+            "has_patch": bool(tr.get("git_patch", "").strip()),
+            "iteration_count": tr.get("iteration_count", 0),
+        })
+
+token_summary = {
+    "total_prompt_tokens": total_prompt,
+    "total_completion_tokens": total_completion,
+    "total_tokens": total_prompt + total_completion,
+    "total_instances": len(instance_tokens),
+    "avg_tokens_per_instance": round((total_prompt + total_completion) / max(len(instance_tokens), 1)),
+    "avg_prompt_per_instance": round(total_prompt / max(len(instance_tokens), 1)),
+    "avg_completion_per_instance": round(total_completion / max(len(instance_tokens), 1)),
+    "per_instance": instance_tokens,
+}
+(results_dir / "token_summary.json").write_text(json.dumps(token_summary, indent=2))
+print(f"Tokens: {total_prompt + total_completion} total ({len(instance_tokens)} instances, avg {token_summary['avg_tokens_per_instance']}/inst)")
 TOKEOF
 
 # --- 8. Energy analysis (per-phase + per-instance) ---
@@ -454,6 +552,46 @@ if benchmark_log.exists():
             "avg_power_watts": round(sum(inst_powers) / max(len(inst_powers), 1), 2),
             "energy_wh": round(inst_energy_wh, 4),
         })
+
+# Build summary
+summary = {
+    "total": {
+        "duration_seconds": len(powers),
+        "avg_gpu_power_watts": round(total_avg, 2),
+        "max_gpu_power_watts": round(max(powers), 2),
+        "total_gpu_energy_wh": round(total_avg * len(powers) / 3600, 4),
+        "samples": len(powers),
+    },
+    "phases": {
+        "setup": {
+            "duration_seconds": len(setup_energy),
+            "avg_gpu_power_watts": round(sum(setup_energy) / max(len(setup_energy), 1), 2),
+            "energy_wh": round(sum(setup_energy) / 3600, 4),
+        } if setup_energy else None,
+        "inference": {
+            "duration_seconds": len(inference_energy),
+            "avg_gpu_power_watts": round(sum(inference_energy) / max(len(inference_energy), 1), 2),
+            "energy_wh": round(sum(inference_energy) / 3600, 4),
+        } if inference_energy else None,
+    },
+    "per_instance": instance_times,
+}
+
+# Merge token data into per-instance energy if token_summary exists
+token_file = results_dir / "token_summary.json"
+if token_file.exists():
+    token_data = json.loads(token_file.read_text())
+    token_by_id = {t["instance_id"]: t for t in token_data.get("per_instance", [])}
+    for inst in instance_times:
+        t = token_by_id.get(inst["instance_id"], {})
+        inst["prompt_tokens"] = t.get("prompt_tokens", 0)
+        inst["completion_tokens"] = t.get("completion_tokens", 0)
+        inst["total_tokens"] = t.get("total_tokens", 0)
+        inst["turns"] = t.get("turns", 0)
+        inst["has_patch"] = t.get("has_patch", False)
+        total_tok = inst["total_tokens"]
+        if total_tok > 0 and inst["energy_wh"] > 0:
+            inst["wh_per_1k_tokens"] = round(inst["energy_wh"] / (total_tok / 1000), 4)
 
 # Build summary
 summary = {
