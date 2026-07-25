@@ -1,0 +1,13 @@
+{
+    "model": "mistral-small-2503",
+    "total_instances": 300,
+    "submitted_instances": 14,
+    "completed_instances": 14,
+    "resolved_instances": 4,
+    "unresolved_instances": 10,
+    "empty_patch_instances": 0,
+    "error_instances": 0,
+    "resolved_ids": [],
+    "unresolved_ids": [],
+    "schema_version": 2
+}

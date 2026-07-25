@@ -1,0 +1,28 @@
+{
+  "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+  "hardware": "A100 80GB (Standard_NC24ads_A100_v4)",
+  "n_instances_attempted": 20,
+  "n_instances_completed": 14,
+  "n_instances_timed_out": 6,
+  "n_with_patches": 14,
+  "n_resolved": 4,
+  "resolve_rate_of_completed": "28.6%",
+  "energy_wh": 814.07,
+  "duration_seconds": 12574,
+  "avg_gpu_power_watts": 233.07,
+  "max_gpu_power_watts": 423.36,
+  "vllm_stats": {
+    "throughput_samples": 1069,
+    "avg_generation_tps": 26.1,
+    "avg_prompt_tps": 136.5,
+    "avg_kv_cache_pct": 8.3
+  },
+  "software": {
+    "vllm": "0.25.1",
+    "openai": "2.48.0",
+    "dtype": "half",
+    "max_model_len": 32768,
+    "native_tool_calling": false
+  },
+  "instances": []
+}

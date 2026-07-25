@@ -1,0 +1,22 @@
+{
+  "total": {
+    "duration_seconds": 12574,
+    "avg_gpu_power_watts": 233.07,
+    "max_gpu_power_watts": 423.36,
+    "total_gpu_energy_wh": 814.07,
+    "samples": 12574
+  },
+  "phases": {
+    "setup": {
+      "duration_seconds": 1250,
+      "avg_gpu_power_watts": 57.81,
+      "energy_wh": 20.07
+    },
+    "inference": {
+      "duration_seconds": 11324,
+      "avg_gpu_power_watts": 252.42,
+      "energy_wh": 794.0
+    }
+  },
+  "per_instance_count": 42
+}
