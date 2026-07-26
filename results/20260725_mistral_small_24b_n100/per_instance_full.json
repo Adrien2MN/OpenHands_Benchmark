@@ -1,0 +1,1236 @@
+{
+  "total_instances": 65,
+  "total_tokens": 21117576,
+  "per_instance": [
+    {
+      "instance_id": "django__django-11039",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 73414,
+      "completion_tokens": 606,
+      "total_tokens": 74020,
+      "turns": 5,
+      "duration_seconds": 52,
+      "energy_wh": 2.6,
+      "avg_power_watts": 179.8,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11099",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 200961,
+      "completion_tokens": 1512,
+      "total_tokens": 202473,
+      "turns": 13,
+      "duration_seconds": 115,
+      "energy_wh": 5.72,
+      "avg_power_watts": 179.1,
+      "total_tool_calls": 12,
+      "iteration_count": 13,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 9,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11133",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 214136,
+      "completion_tokens": 2418,
+      "total_tokens": 216554,
+      "turns": 13,
+      "duration_seconds": 149,
+      "energy_wh": 8.33,
+      "avg_power_watts": 201.2,
+      "total_tool_calls": 11,
+      "iteration_count": 13,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 5,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11564",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 550746,
+      "completion_tokens": 11455,
+      "total_tokens": 562201,
+      "turns": 37,
+      "duration_seconds": 412,
+      "energy_wh": 32.36,
+      "avg_power_watts": 282.8,
+      "total_tool_calls": 28,
+      "iteration_count": 37,
+      "tool_counts": {
+        "terminal": 11,
+        "file_editor": 16,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11620",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 141559,
+      "completion_tokens": 1278,
+      "total_tokens": 142837,
+      "turns": 8,
+      "duration_seconds": 72,
+      "energy_wh": 4.43,
+      "avg_power_watts": 221.4,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11797",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1158632,
+      "completion_tokens": 14050,
+      "total_tokens": 1172682,
+      "turns": 71,
+      "duration_seconds": 516,
+      "energy_wh": 40.29,
+      "avg_power_watts": 281.1,
+      "total_tool_calls": 59,
+      "iteration_count": 71,
+      "tool_counts": {
+        "terminal": 22,
+        "file_editor": 36,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11964",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 65571,
+      "completion_tokens": 307,
+      "total_tokens": 65878,
+      "turns": 5,
+      "duration_seconds": 78,
+      "energy_wh": 2.58,
+      "avg_power_watts": 118.9,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 1,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11999",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 331720,
+      "completion_tokens": 3145,
+      "total_tokens": 334865,
+      "turns": 18,
+      "duration_seconds": 173,
+      "energy_wh": 10.28,
+      "avg_power_watts": 214.0,
+      "total_tool_calls": 16,
+      "iteration_count": 18,
+      "tool_counts": {
+        "terminal": 7,
+        "file_editor": 8,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12453",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 129740,
+      "completion_tokens": 1042,
+      "total_tokens": 130782,
+      "turns": 7,
+      "duration_seconds": 65,
+      "energy_wh": 3.83,
+      "avg_power_watts": 212.0,
+      "total_tool_calls": 6,
+      "iteration_count": 7,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 3,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12983",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 281131,
+      "completion_tokens": 1789,
+      "total_tokens": 282920,
+      "turns": 15,
+      "duration_seconds": 90,
+      "energy_wh": 5.8,
+      "avg_power_watts": 231.8,
+      "total_tool_calls": 14,
+      "iteration_count": 15,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 10,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13230",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 66644,
+      "completion_tokens": 580,
+      "total_tokens": 67224,
+      "turns": 5,
+      "duration_seconds": 52,
+      "energy_wh": 2.58,
+      "avg_power_watts": 178.7,
+      "total_tool_calls": 0,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-13448",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 206900,
+      "completion_tokens": 2201,
+      "total_tokens": 209101,
+      "turns": 14,
+      "duration_seconds": 106,
+      "energy_wh": 7.11,
+      "avg_power_watts": 241.3,
+      "total_tool_calls": 11,
+      "iteration_count": 14,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 8,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13551",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 65360,
+      "completion_tokens": 748,
+      "total_tokens": 66108,
+      "turns": 5,
+      "duration_seconds": 91,
+      "energy_wh": 3.74,
+      "avg_power_watts": 148.1,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 1,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13660",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 143335,
+      "completion_tokens": 1237,
+      "total_tokens": 144572,
+      "turns": 9,
+      "duration_seconds": 76,
+      "energy_wh": 4.35,
+      "avg_power_watts": 205.9,
+      "total_tool_calls": 8,
+      "iteration_count": 9,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13710",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 164610,
+      "completion_tokens": 1233,
+      "total_tokens": 165843,
+      "turns": 9,
+      "duration_seconds": 74,
+      "energy_wh": 4.31,
+      "avg_power_watts": 209.7,
+      "total_tool_calls": 8,
+      "iteration_count": 9,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13925",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 366491,
+      "completion_tokens": 2658,
+      "total_tokens": 369149,
+      "turns": 21,
+      "duration_seconds": 169,
+      "energy_wh": 9.31,
+      "avg_power_watts": 198.2,
+      "total_tool_calls": 20,
+      "iteration_count": 21,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 14,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13933",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 141720,
+      "completion_tokens": 866,
+      "total_tokens": 142586,
+      "turns": 8,
+      "duration_seconds": 96,
+      "energy_wh": 4.14,
+      "avg_power_watts": 155.4,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13964",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 136796,
+      "completion_tokens": 1330,
+      "total_tokens": 138126,
+      "turns": 8,
+      "duration_seconds": 111,
+      "energy_wh": 5.33,
+      "avg_power_watts": 172.8,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 4,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14016",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 286787,
+      "completion_tokens": 2602,
+      "total_tokens": 289389,
+      "turns": 17,
+      "duration_seconds": 122,
+      "energy_wh": 8.23,
+      "avg_power_watts": 243.0,
+      "total_tool_calls": 14,
+      "iteration_count": 17,
+      "tool_counts": {
+        "terminal": 7,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14017",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 138951,
+      "completion_tokens": 972,
+      "total_tokens": 139923,
+      "turns": 8,
+      "duration_seconds": 102,
+      "energy_wh": 4.45,
+      "avg_power_watts": 157.1,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 4,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14382",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 63038,
+      "completion_tokens": 404,
+      "total_tokens": 63442,
+      "turns": 5,
+      "duration_seconds": 45,
+      "energy_wh": 2.06,
+      "avg_power_watts": 164.6,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14411",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 131948,
+      "completion_tokens": 1795,
+      "total_tokens": 133743,
+      "turns": 8,
+      "duration_seconds": 92,
+      "energy_wh": 5.77,
+      "avg_power_watts": 226.0,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14580",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 222612,
+      "completion_tokens": 2158,
+      "total_tokens": 224770,
+      "turns": 14,
+      "duration_seconds": 141,
+      "energy_wh": 7.78,
+      "avg_power_watts": 198.6,
+      "total_tool_calls": 12,
+      "iteration_count": 14,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14608",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1027024,
+      "completion_tokens": 5893,
+      "total_tokens": 1032917,
+      "turns": 53,
+      "duration_seconds": 263,
+      "energy_wh": 18.17,
+      "avg_power_watts": 248.7,
+      "total_tool_calls": 50,
+      "iteration_count": 53,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 48,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14752",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 84401,
+      "completion_tokens": 509,
+      "total_tokens": 84910,
+      "turns": 6,
+      "duration_seconds": 86,
+      "energy_wh": 3.22,
+      "avg_power_watts": 134.7,
+      "total_tool_calls": 5,
+      "iteration_count": 6,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14855",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 130355,
+      "completion_tokens": 684,
+      "total_tokens": 131039,
+      "turns": 9,
+      "duration_seconds": 81,
+      "energy_wh": 3.34,
+      "avg_power_watts": 148.5,
+      "total_tool_calls": 8,
+      "iteration_count": 9,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14915",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 256539,
+      "completion_tokens": 2217,
+      "total_tokens": 258756,
+      "turns": 14,
+      "duration_seconds": 144,
+      "energy_wh": 7.96,
+      "avg_power_watts": 198.9,
+      "total_tool_calls": 12,
+      "iteration_count": 14,
+      "tool_counts": {
+        "terminal": 6,
+        "file_editor": 5,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15320",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 332018,
+      "completion_tokens": 2752,
+      "total_tokens": 334770,
+      "turns": 19,
+      "duration_seconds": 127,
+      "energy_wh": 8.77,
+      "avg_power_watts": 248.5,
+      "total_tool_calls": 16,
+      "iteration_count": 19,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 13,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15347",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 84331,
+      "completion_tokens": 634,
+      "total_tokens": 84965,
+      "turns": 6,
+      "duration_seconds": 52,
+      "energy_wh": 2.76,
+      "avg_power_watts": 191.0,
+      "total_tool_calls": 5,
+      "iteration_count": 6,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 1,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15388",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 261306,
+      "completion_tokens": 2014,
+      "total_tokens": 263320,
+      "turns": 16,
+      "duration_seconds": 105,
+      "energy_wh": 6.79,
+      "avg_power_watts": 232.7,
+      "total_tool_calls": 14,
+      "iteration_count": 16,
+      "tool_counts": {
+        "terminal": 7,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15789",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 84155,
+      "completion_tokens": 939,
+      "total_tokens": 85094,
+      "turns": 6,
+      "duration_seconds": 62,
+      "energy_wh": 3.46,
+      "avg_power_watts": 200.9,
+      "total_tool_calls": 5,
+      "iteration_count": 6,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15814",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 890353,
+      "completion_tokens": 8452,
+      "total_tokens": 898805,
+      "turns": 52,
+      "duration_seconds": 359,
+      "energy_wh": 25.89,
+      "avg_power_watts": 259.6,
+      "total_tool_calls": 42,
+      "iteration_count": 52,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 39,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12113",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 709004,
+      "completion_tokens": 8250,
+      "total_tokens": 717254,
+      "turns": 52,
+      "duration_seconds": 377,
+      "energy_wh": 26.75,
+      "avg_power_watts": 255.5,
+      "total_tool_calls": 41,
+      "iteration_count": 52,
+      "tool_counts": {
+        "terminal": 24,
+        "file_editor": 16,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12308",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 74957,
+      "completion_tokens": 801,
+      "total_tokens": 75758,
+      "turns": 5,
+      "duration_seconds": 53,
+      "energy_wh": 3.16,
+      "avg_power_watts": 214.8,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12470",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 88587,
+      "completion_tokens": 847,
+      "total_tokens": 89434,
+      "turns": 6,
+      "duration_seconds": 58,
+      "energy_wh": 3.15,
+      "avg_power_watts": 195.5,
+      "total_tool_calls": 5,
+      "iteration_count": 6,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12589",
+      "resolved": false,
+      "has_patch": false,
+      "prompt_tokens": 1260893,
+      "completion_tokens": 13401,
+      "total_tokens": 1274294,
+      "turns": 88,
+      "duration_seconds": 788,
+      "energy_wh": 61.74,
+      "avg_power_watts": 282.1,
+      "total_tool_calls": 70,
+      "iteration_count": 88,
+      "tool_counts": {
+        "terminal": 62,
+        "file_editor": 7,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13033",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1624583,
+      "completion_tokens": 12359,
+      "total_tokens": 1636942,
+      "turns": 85,
+      "duration_seconds": 461,
+      "energy_wh": 36.12,
+      "avg_power_watts": 282.1,
+      "total_tool_calls": 73,
+      "iteration_count": 85,
+      "tool_counts": {
+        "terminal": 20,
+        "file_editor": 52,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14534",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 166457,
+      "completion_tokens": 855,
+      "total_tokens": 167312,
+      "turns": 11,
+      "duration_seconds": 52,
+      "energy_wh": 3.07,
+      "avg_power_watts": 212.7,
+      "total_tool_calls": 10,
+      "iteration_count": 11,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 8,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14667",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 167759,
+      "completion_tokens": 1953,
+      "total_tokens": 169712,
+      "turns": 10,
+      "duration_seconds": 99,
+      "energy_wh": 6.61,
+      "avg_power_watts": 240.4,
+      "total_tool_calls": 8,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14730",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 232147,
+      "completion_tokens": 3637,
+      "total_tokens": 235784,
+      "turns": 14,
+      "duration_seconds": 148,
+      "energy_wh": 10.71,
+      "avg_power_watts": 260.5,
+      "total_tool_calls": 12,
+      "iteration_count": 14,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 8,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15061",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 156536,
+      "completion_tokens": 1118,
+      "total_tokens": 157654,
+      "turns": 10,
+      "duration_seconds": 68,
+      "energy_wh": 4.11,
+      "avg_power_watts": 217.8,
+      "total_tool_calls": 8,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 5,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15790",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 119965,
+      "completion_tokens": 1547,
+      "total_tokens": 121512,
+      "turns": 8,
+      "duration_seconds": 79,
+      "energy_wh": 5.17,
+      "avg_power_watts": 235.8,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 3,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-14995",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 308119,
+      "completion_tokens": 4474,
+      "total_tokens": 312593,
+      "turns": 18,
+      "duration_seconds": 173,
+      "energy_wh": 13.14,
+      "avg_power_watts": 273.4,
+      "total_tool_calls": 15,
+      "iteration_count": 18,
+      "tool_counts": {
+        "terminal": 4,
+        "file_editor": 10,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-10914",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 117094,
+      "completion_tokens": 567,
+      "total_tokens": 117661,
+      "turns": 7,
+      "duration_seconds": 44,
+      "energy_wh": 2.43,
+      "avg_power_watts": 198.5,
+      "total_tool_calls": 6,
+      "iteration_count": 7,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11001",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 202957,
+      "completion_tokens": 1841,
+      "total_tokens": 204798,
+      "turns": 12,
+      "duration_seconds": 102,
+      "energy_wh": 6.31,
+      "avg_power_watts": 222.8,
+      "total_tool_calls": 10,
+      "iteration_count": 12,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11179",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 112124,
+      "completion_tokens": 1168,
+      "total_tokens": 113292,
+      "turns": 7,
+      "duration_seconds": 63,
+      "energy_wh": 3.95,
+      "avg_power_watts": 225.8,
+      "total_tool_calls": 6,
+      "iteration_count": 7,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 3,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-11422",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1204339,
+      "completion_tokens": 6594,
+      "total_tokens": 1210933,
+      "turns": 59,
+      "duration_seconds": 259,
+      "energy_wh": 19.49,
+      "avg_power_watts": 270.9,
+      "total_tool_calls": 55,
+      "iteration_count": 59,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 53,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12125",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 147464,
+      "completion_tokens": 704,
+      "total_tokens": 148168,
+      "turns": 9,
+      "duration_seconds": 51,
+      "energy_wh": 2.77,
+      "avg_power_watts": 195.8,
+      "total_tool_calls": 8,
+      "iteration_count": 9,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12286",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 64997,
+      "completion_tokens": 750,
+      "total_tokens": 65747,
+      "turns": 5,
+      "duration_seconds": 57,
+      "energy_wh": 3.0,
+      "avg_power_watts": 189.4,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12700",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1302555,
+      "completion_tokens": 9255,
+      "total_tokens": 1311810,
+      "turns": 66,
+      "duration_seconds": 342,
+      "energy_wh": 26.69,
+      "avg_power_watts": 280.9,
+      "total_tool_calls": 61,
+      "iteration_count": 66,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 57,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12747",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 394506,
+      "completion_tokens": 6803,
+      "total_tokens": 401309,
+      "turns": 23,
+      "duration_seconds": 256,
+      "energy_wh": 19.76,
+      "avg_power_watts": 277.9,
+      "total_tool_calls": 19,
+      "iteration_count": 23,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 16,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-12915",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 155209,
+      "completion_tokens": 2019,
+      "total_tokens": 157228,
+      "turns": 10,
+      "duration_seconds": 94,
+      "energy_wh": 6.34,
+      "avg_power_watts": 242.8,
+      "total_tool_calls": 9,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13220",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 86121,
+      "completion_tokens": 941,
+      "total_tokens": 87062,
+      "turns": 6,
+      "duration_seconds": 59,
+      "energy_wh": 3.38,
+      "avg_power_watts": 206.0,
+      "total_tool_calls": 5,
+      "iteration_count": 6,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 3,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13315",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 290284,
+      "completion_tokens": 3824,
+      "total_tokens": 294108,
+      "turns": 19,
+      "duration_seconds": 153,
+      "energy_wh": 11.47,
+      "avg_power_watts": 269.9,
+      "total_tool_calls": 15,
+      "iteration_count": 19,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 12,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-13590",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 181124,
+      "completion_tokens": 1226,
+      "total_tokens": 182350,
+      "turns": 10,
+      "duration_seconds": 67,
+      "energy_wh": 4.24,
+      "avg_power_watts": 227.6,
+      "total_tool_calls": 9,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 4,
+        "file_editor": 4,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14155",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 896627,
+      "completion_tokens": 6101,
+      "total_tokens": 902728,
+      "turns": 47,
+      "duration_seconds": 233,
+      "energy_wh": 17.84,
+      "avg_power_watts": 275.6,
+      "total_tool_calls": 44,
+      "iteration_count": 47,
+      "tool_counts": {
+        "terminal": 7,
+        "file_editor": 36,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14238",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 686870,
+      "completion_tokens": 4258,
+      "total_tokens": 691128,
+      "turns": 36,
+      "duration_seconds": 168,
+      "energy_wh": 12.67,
+      "avg_power_watts": 271.5,
+      "total_tool_calls": 34,
+      "iteration_count": 36,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 32,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14672",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 74963,
+      "completion_tokens": 382,
+      "total_tokens": 75345,
+      "turns": 5,
+      "duration_seconds": 39,
+      "energy_wh": 1.84,
+      "avg_power_watts": 170.2,
+      "total_tool_calls": 4,
+      "iteration_count": 5,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 1,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-14999",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 229194,
+      "completion_tokens": 2766,
+      "total_tokens": 231960,
+      "turns": 13,
+      "duration_seconds": 119,
+      "energy_wh": 8.47,
+      "avg_power_watts": 256.2,
+      "total_tool_calls": 11,
+      "iteration_count": 13,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 5,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15202",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 144017,
+      "completion_tokens": 1365,
+      "total_tokens": 145382,
+      "turns": 8,
+      "duration_seconds": 75,
+      "energy_wh": 4.7,
+      "avg_power_watts": 225.4,
+      "total_tool_calls": 7,
+      "iteration_count": 8,
+      "tool_counts": {
+        "terminal": 3,
+        "file_editor": 3,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15400",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 183613,
+      "completion_tokens": 964,
+      "total_tokens": 184577,
+      "turns": 12,
+      "duration_seconds": 59,
+      "energy_wh": 3.43,
+      "avg_power_watts": 209.3,
+      "total_tool_calls": 11,
+      "iteration_count": 12,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 9,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15498",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 174301,
+      "completion_tokens": 2372,
+      "total_tokens": 176673,
+      "turns": 10,
+      "duration_seconds": 106,
+      "energy_wh": 7.3,
+      "avg_power_watts": 247.8,
+      "total_tool_calls": 9,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 2,
+        "file_editor": 6,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "django__django-15695",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 434769,
+      "completion_tokens": 4329,
+      "total_tokens": 439098,
+      "turns": 24,
+      "duration_seconds": 174,
+      "energy_wh": 12.87,
+      "avg_power_watts": 266.4,
+      "total_tool_calls": 20,
+      "iteration_count": 24,
+      "tool_counts": {
+        "terminal": 8,
+        "file_editor": 11,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-14365",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 162912,
+      "completion_tokens": 1467,
+      "total_tokens": 164379,
+      "turns": 10,
+      "duration_seconds": 115,
+      "energy_wh": 5.7,
+      "avg_power_watts": 178.5,
+      "total_tool_calls": 8,
+      "iteration_count": 10,
+      "tool_counts": {
+        "terminal": 5,
+        "file_editor": 2,
+        "finish": 1
+      }
+    },
+    {
+      "instance_id": "astropy__astropy-6938",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 338090,
+      "completion_tokens": 1737,
+      "total_tokens": 339827,
+      "turns": 20,
+      "duration_seconds": 85,
+      "energy_wh": 5.63,
+      "avg_power_watts": 238.3,
+      "total_tool_calls": 19,
+      "iteration_count": 20,
+      "tool_counts": {
+        "terminal": 1,
+        "file_editor": 17,
+        "finish": 1
+      }
+    }
+  ]
+}

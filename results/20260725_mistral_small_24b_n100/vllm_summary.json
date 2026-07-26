@@ -1,0 +1,7 @@
+{
+  "total_requests": 8307,
+  "throughput_samples": 5472,
+  "avg_prompt_tps": 158.3,
+  "avg_gen_tps": 25.8,
+  "avg_kv_cache_pct": 7.9
+}

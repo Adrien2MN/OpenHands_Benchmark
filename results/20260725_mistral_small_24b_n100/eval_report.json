@@ -1,0 +1,27 @@
+{
+    "model": "mistral-small-2503",
+    "n_limit": 100,
+    "total_instances": 300,
+    "submitted_instances": 65,
+    "completed_instances": 64,
+    "resolved_instances": 10,
+    "unresolved_instances": 54,
+    "empty_patch_instances": 1,
+    "error_instances": 0,
+    "timed_out_instances": 35,
+    "resolve_rate_of_evaluated": "15.6%",
+    "resolve_rate_of_attempted": "10.0%",
+    "resolved_ids": [
+        "django__django-11039",
+        "django__django-11099",
+        "django__django-11133",
+        "django__django-12286",
+        "django__django-14382",
+        "django__django-14672",
+        "django__django-14855",
+        "django__django-14915",
+        "django__django-15347",
+        "django__django-15789"
+    ],
+    "schema_version": 2
+}
