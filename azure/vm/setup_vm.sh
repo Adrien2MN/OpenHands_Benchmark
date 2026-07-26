@@ -46,7 +46,7 @@ else
     --nsg-rule NONE \
     --public-ip-sku Standard \
     --security-type Standard \
-    --os-disk-size-gb 256
+    --os-disk-size-gb 1024
 fi
 
 # 2. Open no ports (we don't need SSH or inbound access)

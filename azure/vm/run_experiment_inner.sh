@@ -133,6 +133,25 @@ echo "n_limit: $N_LIMIT" >> "$RESULTS_DIR/system_info.txt"
 echo "max_iterations: $MAX_ITERATIONS" >> "$RESULTS_DIR/system_info.txt"
 echo "start_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$RESULTS_DIR/system_info.txt"
 
+# --- 2b. Idle GPU baseline measurement (60 seconds) ---
+echo ">>> Measuring idle GPU baseline (60s)..."
+IDLE_LOG="$RESULTS_DIR/idle_baseline.csv"
+echo "timestamp,power_draw_W,gpu_util_pct,mem_used_MiB,temperature_C" > "$IDLE_LOG"
+for i in $(seq 1 60); do
+    nvidia-smi \
+        --query-gpu=timestamp,power.draw,utilization.gpu,memory.used,temperature.gpu \
+        --format=csv,noheader,nounits >> "$IDLE_LOG" 2>/dev/null
+    sleep 1
+done
+IDLE_AVG=$(python3 -c "
+import csv
+rows = list(csv.DictReader(open('$IDLE_LOG')))
+powers = [float(r['power_draw_W']) for r in rows if r.get('power_draw_W','').strip()]
+print(round(sum(powers)/len(powers), 2) if powers else 0)
+")
+echo "idle_gpu_power_watts: $IDLE_AVG" >> "$RESULTS_DIR/system_info.txt"
+echo ">>> Idle baseline: ${IDLE_AVG}W"
+
 # --- 3. Start GPU energy monitoring ---
 echo ">>> Starting GPU energy monitoring..."
 ENERGY_LOG="$RESULTS_DIR/energy_log.csv"
@@ -348,14 +367,14 @@ from pathlib import Path
 from collections import Counter
 
 results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
-conv_dirs = glob.glob(str(results_dir / "swebench_outputs" / "**" / "conversations"), recursive=True)
+conv_dirs = glob.glob("/app/outputs/**/conversations", recursive=True) or glob.glob(str(results_dir / "swebench_outputs" / "**" / "conversations"), recursive=True)
 
 all_instances = []
 global_tool_counts = Counter()
 
 for conv_dir in conv_dirs:
     for tar_path in sorted(Path(conv_dir).glob("*.tar.gz")):
-        iid = tar_path.stem
+        iid = tar_path.stem.replace(".tar", "")
         tool_counts = Counter()
         tool_sequence = []
         try:
@@ -553,30 +572,6 @@ if benchmark_log.exists():
             "energy_wh": round(inst_energy_wh, 4),
         })
 
-# Build summary
-summary = {
-    "total": {
-        "duration_seconds": len(powers),
-        "avg_gpu_power_watts": round(total_avg, 2),
-        "max_gpu_power_watts": round(max(powers), 2),
-        "total_gpu_energy_wh": round(total_avg * len(powers) / 3600, 4),
-        "samples": len(powers),
-    },
-    "phases": {
-        "setup": {
-            "duration_seconds": len(setup_energy),
-            "avg_gpu_power_watts": round(sum(setup_energy) / max(len(setup_energy), 1), 2),
-            "energy_wh": round(sum(setup_energy) / 3600, 4),
-        } if setup_energy else None,
-        "inference": {
-            "duration_seconds": len(inference_energy),
-            "avg_gpu_power_watts": round(sum(inference_energy) / max(len(inference_energy), 1), 2),
-            "energy_wh": round(sum(inference_energy) / 3600, 4),
-        } if inference_energy else None,
-    },
-    "per_instance": instance_times,
-}
-
 # Merge token data into per-instance energy if token_summary exists
 token_file = results_dir / "token_summary.json"
 if token_file.exists():
@@ -593,13 +588,52 @@ if token_file.exists():
         if total_tok > 0 and inst["energy_wh"] > 0:
             inst["wh_per_1k_tokens"] = round(inst["energy_wh"] / (total_tok / 1000), 4)
 
+# Merge tool data if available
+tool_file = results_dir / "tool_summary.json"
+if tool_file.exists():
+    tool_data = json.loads(tool_file.read_text())
+    tool_by_id = {t["instance_id"]: t for t in tool_data.get("per_instance", [])}
+    for inst in instance_times:
+        t = tool_by_id.get(inst["instance_id"], {})
+        inst["tool_counts"] = t.get("tool_counts", {})
+        inst["total_tool_calls"] = t.get("total_tool_calls", 0)
+
+# Assign outcome labels from benchmark.log
+# Categories: resolved, patch_wrong, patch_empty, timeout, error
+if benchmark_log.exists():
+    content = benchmark_log.read_text(errors="ignore")
+    timed_out = set(re.findall(r"Instance (\S+) timed out", content))
+    got_stuck = set(re.findall(r"instance (.+?)\) ===.*?got stuck", content, re.DOTALL))
+    # Also check for explicit error patterns
+    conv_errors = set(re.findall(r"Instance (\S+).*failed after", content))
+
+    for inst in instance_times:
+        iid = inst["instance_id"]
+        if iid in timed_out:
+            inst["outcome"] = "timeout"
+        elif not inst.get("has_patch", False):
+            inst["outcome"] = "no_patch"
+        else:
+            inst["outcome"] = "patch_produced"
+
+# Read idle baseline
+idle_file = results_dir / "idle_baseline.csv"
+idle_power = 0
+if idle_file.exists():
+    import csv as csv2
+    idle_rows = list(csv2.DictReader(idle_file.open()))
+    idle_powers = [float(r["power_draw_W"]) for r in idle_rows if r.get("power_draw_W","").strip()]
+    idle_power = round(sum(idle_powers) / max(len(idle_powers), 1), 2) if idle_powers else 0
+
 # Build summary
 summary = {
+    "idle_baseline_watts": idle_power,
     "total": {
         "duration_seconds": len(powers),
         "avg_gpu_power_watts": round(total_avg, 2),
         "max_gpu_power_watts": round(max(powers), 2),
         "total_gpu_energy_wh": round(total_avg * len(powers) / 3600, 4),
+        "net_energy_wh": round((total_avg - idle_power) * len(powers) / 3600, 4) if idle_power else None,
         "samples": len(powers),
     },
     "phases": {
@@ -612,6 +646,7 @@ summary = {
             "duration_seconds": len(inference_energy),
             "avg_gpu_power_watts": round(sum(inference_energy) / max(len(inference_energy), 1), 2),
             "energy_wh": round(sum(inference_energy) / 3600, 4),
+            "net_energy_wh": round((sum(inference_energy)/max(len(inference_energy),1) - idle_power) * len(inference_energy) / 3600, 4) if idle_power else None,
         } if inference_energy else None,
     },
     "per_instance": instance_times,
