@@ -1,0 +1,24 @@
+{
+    "model": "gemma3-27b",
+    "n_limit": 100,
+    "total_instances": 300,
+    "submitted_instances": 97,
+    "completed_instances": 92,
+    "resolved_instances": 8,
+    "unresolved_instances": 84,
+    "empty_patch_instances": 15,
+    "error_instances": 0,
+    "resolve_rate_of_evaluated": "8.7%",
+    "resolve_rate_of_attempted": "8.2%",
+    "resolved_ids": [
+        "django__django-11039",
+        "django__django-11099",
+        "django__django-13658",
+        "django__django-14382",
+        "django__django-14672",
+        "django__django-15061",
+        "django__django-15347",
+        "django__django-15814"
+    ],
+    "schema_version": 2
+}

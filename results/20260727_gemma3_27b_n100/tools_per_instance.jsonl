@@ -1,0 +1,100 @@
+{"instance_id": "astropy__astropy-12907", "total_tool_calls": 7, "tool_counts": {"FileEditorAction": 5, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "astropy__astropy-14182", "total_tool_calls": 7, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 2, "FinishAction": 1}}
+{"instance_id": "astropy__astropy-14365", "total_tool_calls": 6, "tool_counts": {"FileEditorAction": 4, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "astropy__astropy-14995", "total_tool_calls": 33, "tool_counts": {"FileEditorAction": 17, "FinishAction": 1, "TerminalAction": 15}}
+{"instance_id": "astropy__astropy-6938", "total_tool_calls": 5, "tool_counts": {"FileEditorAction": 3, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "astropy__astropy-7746", "total_tool_calls": 19, "tool_counts": {"FileEditorAction": 11, "TerminalAction": 8}}
+{"instance_id": "django__django-10914", "total_tool_calls": 12, "tool_counts": {"FileEditorAction": 6, "FinishAction": 1, "TerminalAction": 5}}
+{"instance_id": "django__django-10924", "total_tool_calls": 25, "tool_counts": {"FileEditorAction": 16, "TerminalAction": 8, "FinishAction": 1}}
+{"instance_id": "django__django-11001", "total_tool_calls": 9, "tool_counts": {"FileEditorAction": 6, "TerminalAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-11019", "total_tool_calls": 12, "tool_counts": {"FileEditorAction": 7, "TerminalAction": 4, "FinishAction": 1}}
+{"instance_id": "django__django-11039", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-11049", "total_tool_calls": 32, "tool_counts": {"TaskTrackerAction": 2, "unknown": 1, "FileEditorAction": 11, "TerminalAction": 17, "FinishAction": 1}}
+{"instance_id": "django__django-11099", "total_tool_calls": 14, "tool_counts": {"TerminalAction": 5, "FileEditorAction": 8, "FinishAction": 1}}
+{"instance_id": "django__django-11133", "total_tool_calls": 21, "tool_counts": {"FileEditorAction": 11, "FinishAction": 1, "TerminalAction": 9}}
+{"instance_id": "django__django-11179", "total_tool_calls": 33, "tool_counts": {"TerminalAction": 21, "FileEditorAction": 11, "FinishAction": 1}}
+{"instance_id": "django__django-11283", "total_tool_calls": 7, "tool_counts": {"FinishAction": 1, "FileEditorAction": 4, "TerminalAction": 2}}
+{"instance_id": "django__django-11422", "total_tool_calls": 68, "tool_counts": {"TerminalAction": 57, "FileEditorAction": 8, "TaskTrackerAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-11564", "total_tool_calls": 13, "tool_counts": {"TerminalAction": 11, "FileEditorAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-11583", "total_tool_calls": 8, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 4}}
+{"instance_id": "django__django-11620", "total_tool_calls": 22, "tool_counts": {"TerminalAction": 8, "FileEditorAction": 13, "FinishAction": 1}}
+{"instance_id": "django__django-11630", "total_tool_calls": 11, "tool_counts": {"TerminalAction": 9, "FinishAction": 1, "FileEditorAction": 1}}
+{"instance_id": "django__django-11742", "total_tool_calls": 18, "tool_counts": {"TerminalAction": 8, "FileEditorAction": 6, "unknown": 1, "TaskTrackerAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-11797", "total_tool_calls": 17, "tool_counts": {"TerminalAction": 11, "FinishAction": 1, "FileEditorAction": 5}}
+{"instance_id": "django__django-11815", "total_tool_calls": 13, "tool_counts": {"FileEditorAction": 7, "TerminalAction": 5, "FinishAction": 1}}
+{"instance_id": "django__django-11848", "total_tool_calls": 11, "tool_counts": {"FileEditorAction": 6, "TerminalAction": 4, "FinishAction": 1}}
+{"instance_id": "django__django-11905", "total_tool_calls": 21, "tool_counts": {"TerminalAction": 12, "FileEditorAction": 8, "FinishAction": 1}}
+{"instance_id": "django__django-11910", "total_tool_calls": 13, "tool_counts": {"TerminalAction": 8, "TaskTrackerAction": 3, "unknown": 1, "FinishAction": 1}}
+{"instance_id": "django__django-11964", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "django__django-11999", "total_tool_calls": 30, "tool_counts": {"FileEditorAction": 15, "TerminalAction": 14, "FinishAction": 1}}
+{"instance_id": "django__django-12113", "total_tool_calls": 7, "tool_counts": {"TerminalAction": 3, "FileEditorAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-12125", "total_tool_calls": 78, "tool_counts": {"FileEditorAction": 21, "TerminalAction": 53, "FinishAction": 1, "unknown": 1, "TaskTrackerAction": 2}}
+{"instance_id": "django__django-12184", "total_tool_calls": 21, "tool_counts": {"TerminalAction": 12, "FinishAction": 1, "FileEditorAction": 8}}
+{"instance_id": "django__django-12284", "total_tool_calls": 15, "tool_counts": {"TerminalAction": 14, "FinishAction": 1}}
+{"instance_id": "django__django-12286", "total_tool_calls": 4, "tool_counts": {"FinishAction": 1, "FileEditorAction": 2, "TerminalAction": 1}}
+{"instance_id": "django__django-12308", "total_tool_calls": 4, "tool_counts": {"FinishAction": 1, "TerminalAction": 1, "FileEditorAction": 2}}
+{"instance_id": "django__django-12453", "total_tool_calls": 8, "tool_counts": {"FileEditorAction": 5, "FinishAction": 1, "TerminalAction": 2}}
+{"instance_id": "django__django-12470", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "django__django-12497", "total_tool_calls": 18, "tool_counts": {"FileEditorAction": 12, "TerminalAction": 5, "FinishAction": 1}}
+{"instance_id": "django__django-12589", "total_tool_calls": 18, "tool_counts": {"TerminalAction": 14, "FileEditorAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-12700", "total_tool_calls": 9, "tool_counts": {"FileEditorAction": 7, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-12708", "total_tool_calls": 11, "tool_counts": {"TerminalAction": 3, "FileEditorAction": 7, "FinishAction": 1}}
+{"instance_id": "django__django-12747", "total_tool_calls": 11, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 6, "FinishAction": 1}}
+{"instance_id": "django__django-12856", "total_tool_calls": 7, "tool_counts": {"FileEditorAction": 5, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-12908", "total_tool_calls": 53, "tool_counts": {"TerminalAction": 24, "FileEditorAction": 28, "FinishAction": 1}}
+{"instance_id": "django__django-12915", "total_tool_calls": 5, "tool_counts": {"FileEditorAction": 3, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-12983", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "django__django-13028", "total_tool_calls": 12, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 7, "FinishAction": 1}}
+{"instance_id": "django__django-13033", "total_tool_calls": 19, "tool_counts": {"TerminalAction": 18, "FinishAction": 1}}
+{"instance_id": "django__django-13158", "total_tool_calls": 92, "tool_counts": {"FileEditorAction": 39, "TerminalAction": 27, "ThinkAction": 25, "FinishAction": 1}}
+{"instance_id": "django__django-13220", "total_tool_calls": 8, "tool_counts": {"TerminalAction": 1, "FileEditorAction": 6, "FinishAction": 1}}
+{"instance_id": "django__django-13230", "total_tool_calls": 8, "tool_counts": {"TerminalAction": 3, "FinishAction": 1, "FileEditorAction": 4}}
+{"instance_id": "django__django-13265", "total_tool_calls": 44, "tool_counts": {"TerminalAction": 34, "FileEditorAction": 9, "FinishAction": 1}}
+{"instance_id": "django__django-13315", "total_tool_calls": 18, "tool_counts": {"TerminalAction": 4, "FileEditorAction": 13, "FinishAction": 1}}
+{"instance_id": "django__django-13321", "total_tool_calls": 28, "tool_counts": {"FileEditorAction": 9, "TerminalAction": 18, "FinishAction": 1}}
+{"instance_id": "django__django-13401", "total_tool_calls": 10, "tool_counts": {"FileEditorAction": 7, "TerminalAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-13447", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FinishAction": 1, "FileEditorAction": 2}}
+{"instance_id": "django__django-13448", "total_tool_calls": 49, "tool_counts": {"TerminalAction": 41, "FinishAction": 1, "FileEditorAction": 7}}
+{"instance_id": "django__django-13551", "total_tool_calls": 5, "tool_counts": {"TerminalAction": 2, "FinishAction": 1, "FileEditorAction": 2}}
+{"instance_id": "django__django-13590", "total_tool_calls": 8, "tool_counts": {"FileEditorAction": 5, "TerminalAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-13658", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "django__django-13660", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FinishAction": 1, "FileEditorAction": 2}}
+{"instance_id": "django__django-13710", "total_tool_calls": 13, "tool_counts": {"TerminalAction": 10, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-13757", "total_tool_calls": 10, "tool_counts": {"FileEditorAction": 6, "TerminalAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-13768", "total_tool_calls": 11, "tool_counts": {"TerminalAction": 5, "FileEditorAction": 5, "FinishAction": 1}}
+{"instance_id": "django__django-13925", "total_tool_calls": 6, "tool_counts": {"TerminalAction": 2, "FileEditorAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-13933", "total_tool_calls": 19, "tool_counts": {"FileEditorAction": 11, "TerminalAction": 7, "FinishAction": 1}}
+{"instance_id": "django__django-13964", "total_tool_calls": 13, "tool_counts": {"TerminalAction": 10, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-14016", "total_tool_calls": 43, "tool_counts": {"FileEditorAction": 10, "TerminalAction": 29, "TaskTrackerAction": 2, "FinishAction": 1, "unknown": 1}}
+{"instance_id": "django__django-14017", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-14155", "total_tool_calls": 6, "tool_counts": {"TerminalAction": 3, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-14238", "total_tool_calls": 12, "tool_counts": {"TerminalAction": 8, "FileEditorAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-14382", "total_tool_calls": 5, "tool_counts": {"FinishAction": 1, "TerminalAction": 3, "FileEditorAction": 1}}
+{"instance_id": "django__django-14411", "total_tool_calls": 7, "tool_counts": {"TerminalAction": 1, "FileEditorAction": 5, "FinishAction": 1}}
+{"instance_id": "django__django-14534", "total_tool_calls": 4, "tool_counts": {"FinishAction": 1, "FileEditorAction": 2, "TerminalAction": 1}}
+{"instance_id": "django__django-14580", "total_tool_calls": 10, "tool_counts": {"TerminalAction": 2, "FileEditorAction": 7, "FinishAction": 1}}
+{"instance_id": "django__django-14608", "total_tool_calls": 10, "tool_counts": {"FileEditorAction": 5, "TerminalAction": 4, "FinishAction": 1}}
+{"instance_id": "django__django-14667", "total_tool_calls": 55, "tool_counts": {"TerminalAction": 54, "FileEditorAction": 1}}
+{"instance_id": "django__django-14672", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-14730", "total_tool_calls": 11, "tool_counts": {"FileEditorAction": 7, "FinishAction": 1, "TerminalAction": 3}}
+{"instance_id": "django__django-14752", "total_tool_calls": 14, "tool_counts": {"FileEditorAction": 11, "FinishAction": 1, "TerminalAction": 2}}
+{"instance_id": "django__django-14787", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FinishAction": 1, "FileEditorAction": 2}}
+{"instance_id": "django__django-14855", "total_tool_calls": 3, "tool_counts": {"FileEditorAction": 1, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-14915", "total_tool_calls": 21, "tool_counts": {"FileEditorAction": 18, "FinishAction": 1, "TerminalAction": 1, "ThinkAction": 1}}
+{"instance_id": "django__django-14997", "total_tool_calls": 18, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 13, "FinishAction": 1}}
+{"instance_id": "django__django-14999", "total_tool_calls": 44, "tool_counts": {"ThinkAction": 6, "TerminalAction": 20, "FinishAction": 1, "FileEditorAction": 17}}
+{"instance_id": "django__django-15061", "total_tool_calls": 43, "tool_counts": {"ThinkAction": 4, "TerminalAction": 13, "FileEditorAction": 25, "FinishAction": 1}}
+{"instance_id": "django__django-15202", "total_tool_calls": 7, "tool_counts": {"FileEditorAction": 3, "TerminalAction": 3, "FinishAction": 1}}
+{"instance_id": "django__django-15213", "total_tool_calls": 8, "tool_counts": {"TerminalAction": 4, "FileEditorAction": 4}}
+{"instance_id": "django__django-15252", "total_tool_calls": 4, "tool_counts": {"FileEditorAction": 2, "FinishAction": 1, "TerminalAction": 1}}
+{"instance_id": "django__django-15320", "total_tool_calls": 9, "tool_counts": {"TerminalAction": 4, "FileEditorAction": 4, "FinishAction": 1}}
+{"instance_id": "django__django-15347", "total_tool_calls": 5, "tool_counts": {"FinishAction": 1, "TerminalAction": 2, "FileEditorAction": 2}}
+{"instance_id": "django__django-15388", "total_tool_calls": 7, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-15400", "total_tool_calls": 4, "tool_counts": {"TerminalAction": 1, "FileEditorAction": 2, "FinishAction": 1}}
+{"instance_id": "django__django-15498", "total_tool_calls": 10, "tool_counts": {"FileEditorAction": 7, "FinishAction": 1, "TerminalAction": 2}}
+{"instance_id": "django__django-15695", "total_tool_calls": 16, "tool_counts": {"FileEditorAction": 10, "TerminalAction": 5, "FinishAction": 1}}
+{"instance_id": "django__django-15738", "total_tool_calls": 21, "tool_counts": {"TerminalAction": 12, "FinishAction": 1, "FileEditorAction": 7, "TaskTrackerAction": 1}}
+{"instance_id": "django__django-15781", "total_tool_calls": 22, "tool_counts": {"FileEditorAction": 12, "TerminalAction": 8, "TaskTrackerAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-15789", "total_tool_calls": 5, "tool_counts": {"FileEditorAction": 3, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-15790", "total_tool_calls": 6, "tool_counts": {"FileEditorAction": 4, "TerminalAction": 1, "FinishAction": 1}}
+{"instance_id": "django__django-15814", "total_tool_calls": 3, "tool_counts": {"FileEditorAction": 1, "FinishAction": 1, "TerminalAction": 1}}

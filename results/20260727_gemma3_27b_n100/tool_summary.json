@@ -1,0 +1,21 @@
+{
+  "total_tool_calls": 1531,
+  "total_instances": 97,
+  "avg_tool_calls_per_instance": 15.8,
+  "global_tool_counts": {
+    "terminal": 742,
+    "file_editor": 637,
+    "finish": 96,
+    "think": 36,
+    "task_tracker": 15,
+    "unknown": 5
+  },
+  "tool_distribution_pct": {
+    "terminal": 48.5,
+    "file_editor": 41.6,
+    "finish": 6.3,
+    "think": 2.4,
+    "task_tracker": 1.0,
+    "unknown": 0.3
+  }
+}

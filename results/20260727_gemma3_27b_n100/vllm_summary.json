@@ -1,0 +1,6 @@
+{
+  "throughput_samples": 3257,
+  "avg_prompt_tps": 188.4,
+  "avg_gen_tps": 17.9,
+  "avg_kv_cache_pct": 5.6
+}

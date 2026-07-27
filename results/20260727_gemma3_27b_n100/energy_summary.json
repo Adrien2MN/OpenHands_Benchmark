@@ -1,0 +1,16 @@
+{
+  "idle_baseline_watts": 43.05,
+  "total": {
+    "duration_seconds": 30027,
+    "avg_gpu_power_watts": 198.3,
+    "total_gpu_energy_wh": 1653.8,
+    "net_energy_wh": 1294.7,
+    "samples": 30027
+  },
+  "derived_metrics": {
+    "energy_per_resolved_wh": 206.7,
+    "net_energy_per_resolved_wh": 161.8,
+    "energy_per_evaluated_instance_wh": 18.0,
+    "energy_per_attempted_instance_wh": 17.0
+  }
+}

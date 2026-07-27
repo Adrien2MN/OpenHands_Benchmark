@@ -1,0 +1,24 @@
+{
+    "model": "qwen-coder-32b",
+    "n_limit": 100,
+    "note": "Partial run - vLLM crashed after 55 instances due to OOM",
+    "total_instances": 300,
+    "submitted_instances": 55,
+    "completed_instances": 51,
+    "resolved_instances": 6,
+    "unresolved_instances": 45,
+    "empty_patch_instances": 4,
+    "error_instances": 0,
+    "timed_out_instances": 45,
+    "resolve_rate_of_evaluated": "11.8%",
+    "resolve_rate_of_attempted": "6.0%",
+    "resolved_ids": [
+        "django__django-10914",
+        "django__django-11039",
+        "django__django-13658",
+        "django__django-14238",
+        "django__django-14382",
+        "django__django-14855"
+    ],
+    "schema_version": 2
+}

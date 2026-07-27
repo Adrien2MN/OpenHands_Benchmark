@@ -1,0 +1,16 @@
+{
+  "idle_baseline_watts": 43.21,
+  "note": "Partial run - vLLM crashed after ~21h, 55 instances completed",
+  "total": {
+    "duration_seconds": 78892,
+    "avg_gpu_power_watts": 266.7,
+    "total_gpu_energy_wh": 5844.6,
+    "net_energy_wh": 4899.5,
+    "samples": 78892
+  },
+  "derived_metrics": {
+    "energy_per_resolved_wh": 974.1,
+    "energy_per_evaluated_instance_wh": 114.6,
+    "energy_per_attempted_instance_wh": 106.3
+  }
+}

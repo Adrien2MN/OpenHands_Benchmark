@@ -1,0 +1,556 @@
+{
+  "total_instances": 55,
+  "total_tokens": 20869523,
+  "per_instance": [
+    {
+      "instance_id": "astropy__astropy-14365",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 76916,
+      "completion_tokens": 524,
+      "total_tokens": 77440,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "astropy__astropy-6938",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 72751,
+      "completion_tokens": 544,
+      "total_tokens": 73295,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-10914",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 130743,
+      "completion_tokens": 1277,
+      "total_tokens": 132020,
+      "turns": 9,
+      "iteration_count": 9
+    },
+    {
+      "instance_id": "django__django-10924",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 139090,
+      "completion_tokens": 1040,
+      "total_tokens": 140130,
+      "turns": 8,
+      "iteration_count": 8
+    },
+    {
+      "instance_id": "django__django-11019",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 204667,
+      "completion_tokens": 2171,
+      "total_tokens": 206838,
+      "turns": 12,
+      "iteration_count": 12
+    },
+    {
+      "instance_id": "django__django-11039",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 71117,
+      "completion_tokens": 541,
+      "total_tokens": 71658,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-11133",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 257401,
+      "completion_tokens": 2878,
+      "total_tokens": 260279,
+      "turns": 17,
+      "iteration_count": 17
+    },
+    {
+      "instance_id": "django__django-11422",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 81046,
+      "completion_tokens": 866,
+      "total_tokens": 81912,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-11564",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 187476,
+      "completion_tokens": 2334,
+      "total_tokens": 189810,
+      "turns": 12,
+      "iteration_count": 12
+    },
+    {
+      "instance_id": "django__django-11742",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 176043,
+      "completion_tokens": 1983,
+      "total_tokens": 178026,
+      "turns": 11,
+      "iteration_count": 11
+    },
+    {
+      "instance_id": "django__django-11797",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 853815,
+      "completion_tokens": 8097,
+      "total_tokens": 861912,
+      "turns": 48,
+      "iteration_count": 48
+    },
+    {
+      "instance_id": "django__django-11815",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 70788,
+      "completion_tokens": 574,
+      "total_tokens": 71362,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-11905",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 427085,
+      "completion_tokens": 4308,
+      "total_tokens": 431393,
+      "turns": 24,
+      "iteration_count": 24
+    },
+    {
+      "instance_id": "django__django-11964",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 559564,
+      "completion_tokens": 6321,
+      "total_tokens": 565885,
+      "turns": 33,
+      "iteration_count": 33
+    },
+    {
+      "instance_id": "django__django-11999",
+      "resolved": false,
+      "has_patch": false,
+      "prompt_tokens": 913687,
+      "completion_tokens": 10179,
+      "total_tokens": 923866,
+      "turns": 54,
+      "iteration_count": 54
+    },
+    {
+      "instance_id": "django__django-12125",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1349844,
+      "completion_tokens": 15344,
+      "total_tokens": 1365188,
+      "turns": 74,
+      "iteration_count": 74
+    },
+    {
+      "instance_id": "django__django-12284",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 375276,
+      "completion_tokens": 4071,
+      "total_tokens": 379347,
+      "turns": 20,
+      "iteration_count": 20
+    },
+    {
+      "instance_id": "django__django-12308",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 136617,
+      "completion_tokens": 1099,
+      "total_tokens": 137716,
+      "turns": 8,
+      "iteration_count": 8
+    },
+    {
+      "instance_id": "django__django-12470",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 163887,
+      "completion_tokens": 1336,
+      "total_tokens": 165223,
+      "turns": 10,
+      "iteration_count": 10
+    },
+    {
+      "instance_id": "django__django-12589",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 951597,
+      "completion_tokens": 11956,
+      "total_tokens": 963553,
+      "turns": 51,
+      "iteration_count": 51
+    },
+    {
+      "instance_id": "django__django-12700",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 74685,
+      "completion_tokens": 820,
+      "total_tokens": 75505,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-12747",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 209724,
+      "completion_tokens": 1563,
+      "total_tokens": 211287,
+      "turns": 11,
+      "iteration_count": 11
+    },
+    {
+      "instance_id": "django__django-12908",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 459848,
+      "completion_tokens": 5970,
+      "total_tokens": 465818,
+      "turns": 26,
+      "iteration_count": 26
+    },
+    {
+      "instance_id": "django__django-12915",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 63893,
+      "completion_tokens": 757,
+      "total_tokens": 64650,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-12983",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 115025,
+      "completion_tokens": 809,
+      "total_tokens": 115834,
+      "turns": 7,
+      "iteration_count": 7
+    },
+    {
+      "instance_id": "django__django-13028",
+      "resolved": false,
+      "has_patch": false,
+      "prompt_tokens": 1656910,
+      "completion_tokens": 18202,
+      "total_tokens": 1675112,
+      "turns": 90,
+      "iteration_count": 90
+    },
+    {
+      "instance_id": "django__django-13033",
+      "resolved": false,
+      "has_patch": false,
+      "prompt_tokens": 989186,
+      "completion_tokens": 8066,
+      "total_tokens": 997252,
+      "turns": 52,
+      "iteration_count": 52
+    },
+    {
+      "instance_id": "django__django-13220",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 68898,
+      "completion_tokens": 560,
+      "total_tokens": 69458,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-13315",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1065336,
+      "completion_tokens": 10707,
+      "total_tokens": 1076043,
+      "turns": 61,
+      "iteration_count": 61
+    },
+    {
+      "instance_id": "django__django-13321",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 67101,
+      "completion_tokens": 520,
+      "total_tokens": 67621,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-13401",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 148983,
+      "completion_tokens": 1969,
+      "total_tokens": 150952,
+      "turns": 10,
+      "iteration_count": 10
+    },
+    {
+      "instance_id": "django__django-13447",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 114183,
+      "completion_tokens": 832,
+      "total_tokens": 115015,
+      "turns": 7,
+      "iteration_count": 7
+    },
+    {
+      "instance_id": "django__django-13551",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 63812,
+      "completion_tokens": 495,
+      "total_tokens": 64307,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-13658",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 72496,
+      "completion_tokens": 669,
+      "total_tokens": 73165,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-13660",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 83295,
+      "completion_tokens": 604,
+      "total_tokens": 83899,
+      "turns": 6,
+      "iteration_count": 6
+    },
+    {
+      "instance_id": "django__django-13964",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 805680,
+      "completion_tokens": 9421,
+      "total_tokens": 815101,
+      "turns": 51,
+      "iteration_count": 51
+    },
+    {
+      "instance_id": "django__django-14017",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 233205,
+      "completion_tokens": 2835,
+      "total_tokens": 236040,
+      "turns": 15,
+      "iteration_count": 15
+    },
+    {
+      "instance_id": "django__django-14155",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1476101,
+      "completion_tokens": 26999,
+      "total_tokens": 1503100,
+      "turns": 78,
+      "iteration_count": 78
+    },
+    {
+      "instance_id": "django__django-14238",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 259841,
+      "completion_tokens": 1777,
+      "total_tokens": 261618,
+      "turns": 13,
+      "iteration_count": 13
+    },
+    {
+      "instance_id": "django__django-14382",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 69652,
+      "completion_tokens": 488,
+      "total_tokens": 70140,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-14411",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 217977,
+      "completion_tokens": 3914,
+      "total_tokens": 221891,
+      "turns": 15,
+      "iteration_count": 15
+    },
+    {
+      "instance_id": "django__django-14534",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 69505,
+      "completion_tokens": 593,
+      "total_tokens": 70098,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-14672",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 163874,
+      "completion_tokens": 1510,
+      "total_tokens": 165384,
+      "turns": 10,
+      "iteration_count": 10
+    },
+    {
+      "instance_id": "django__django-14730",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 697451,
+      "completion_tokens": 8200,
+      "total_tokens": 705651,
+      "turns": 40,
+      "iteration_count": 40
+    },
+    {
+      "instance_id": "django__django-14752",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 101186,
+      "completion_tokens": 852,
+      "total_tokens": 102038,
+      "turns": 7,
+      "iteration_count": 7
+    },
+    {
+      "instance_id": "django__django-14787",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 105580,
+      "completion_tokens": 1191,
+      "total_tokens": 106771,
+      "turns": 7,
+      "iteration_count": 7
+    },
+    {
+      "instance_id": "django__django-14855",
+      "resolved": true,
+      "has_patch": true,
+      "prompt_tokens": 72154,
+      "completion_tokens": 520,
+      "total_tokens": 72674,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-14915",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 342488,
+      "completion_tokens": 4615,
+      "total_tokens": 347103,
+      "turns": 22,
+      "iteration_count": 22
+    },
+    {
+      "instance_id": "django__django-14997",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1579758,
+      "completion_tokens": 16697,
+      "total_tokens": 1596455,
+      "turns": 78,
+      "iteration_count": 78
+    },
+    {
+      "instance_id": "django__django-14999",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 136125,
+      "completion_tokens": 1070,
+      "total_tokens": 137195,
+      "turns": 8,
+      "iteration_count": 8
+    },
+    {
+      "instance_id": "django__django-15061",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 257542,
+      "completion_tokens": 1846,
+      "total_tokens": 259388,
+      "turns": 13,
+      "iteration_count": 13
+    },
+    {
+      "instance_id": "django__django-15202",
+      "resolved": false,
+      "has_patch": false,
+      "prompt_tokens": 251064,
+      "completion_tokens": 2619,
+      "total_tokens": 253683,
+      "turns": 16,
+      "iteration_count": 16
+    },
+    {
+      "instance_id": "django__django-15213",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 1197790,
+      "completion_tokens": 13875,
+      "total_tokens": 1211665,
+      "turns": 65,
+      "iteration_count": 65
+    },
+    {
+      "instance_id": "django__django-15252",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 64935,
+      "completion_tokens": 871,
+      "total_tokens": 65806,
+      "turns": 5,
+      "iteration_count": 5
+    },
+    {
+      "instance_id": "django__django-15347",
+      "resolved": false,
+      "has_patch": true,
+      "prompt_tokens": 84210,
+      "completion_tokens": 741,
+      "total_tokens": 84951,
+      "turns": 6,
+      "iteration_count": 6
+    }
+  ]
+}
