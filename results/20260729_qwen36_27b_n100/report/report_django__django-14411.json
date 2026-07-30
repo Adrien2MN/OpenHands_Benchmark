@@ -1,0 +1,235 @@
+{
+  "instance_id": "django__django-14411",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 520
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 203.031,
+  "timings": {
+    "workspace_generation_seconds": 11.154,
+    "agent_generation_seconds": 192.505,
+    "total_generation_seconds": 203.659
+  },
+  "iterations": 17,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15491,
+      "completion_tokens": 96,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15587,
+      "response_id": "chatcmpl-8fbae979e6fe1b0b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15689,
+      "completion_tokens": 100,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15789,
+      "response_id": "chatcmpl-81da48b6a5b2f43c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15871,
+      "completion_tokens": 96,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15967,
+      "response_id": "chatcmpl-9346834915e5eef0"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16362,
+      "completion_tokens": 231,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16593,
+      "response_id": "chatcmpl-95e757a5eee492b9"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16529,
+      "completion_tokens": 155,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16684,
+      "response_id": "chatcmpl-867a221f491b601c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16810,
+      "completion_tokens": 225,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17035,
+      "response_id": "chatcmpl-858def2a9e3cf017"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17085,
+      "completion_tokens": 116,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17201,
+      "response_id": "chatcmpl-92fadf7d7f423f23"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17463,
+      "completion_tokens": 218,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17681,
+      "response_id": "chatcmpl-9a43570dbb212913"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17693,
+      "completion_tokens": 110,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17803,
+      "response_id": "chatcmpl-8d50b17564cebecb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18008,
+      "completion_tokens": 96,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18104,
+      "response_id": "chatcmpl-84fe0554cb78f422"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 477,
+      "completion_tokens": 1725,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 2202,
+      "response_id": "chatcmpl-aacde26ba17d2293"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18164,
+      "completion_tokens": 119,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18283,
+      "response_id": "chatcmpl-8e7f2185ac69899d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19101,
+      "completion_tokens": 481,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19582,
+      "response_id": "chatcmpl-9c9af7bef4eed8ba"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19673,
+      "completion_tokens": 164,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19837,
+      "response_id": "chatcmpl-848f852dcf60e49c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20052,
+      "completion_tokens": 126,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20178,
+      "response_id": "chatcmpl-818678dc7ee4749c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20222,
+      "completion_tokens": 131,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20353,
+      "response_id": "chatcmpl-8040244f77879653"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20702,
+      "completion_tokens": 328,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21030,
+      "response_id": "chatcmpl-90ac990b82e38397"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 285392,
+    "completion_tokens": 4517,
+    "total_tokens": 289909
+  },
+  "token_footprint": {
+    "output_tokens_used": 4517,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nLabel for ReadOnlyPasswordHashWidget points to non-labelable element.\nDescription\n\t \n\t\t(last modified by David Sanders)\n\t \nIn the admin, the label element for the ReadOnlyPasswordHashWidget widget has a 'for' attribute which points to a non-labelable element, since the widget just renders text, not an input. There's no labelable element for the widget, so the label shouldn't have a 'for' attribute.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/contrib/auth/forms.py b/django/contrib/auth/forms.py\nindex 20d8922799..29dd57145f 100644\n--- a/django/contrib/auth/forms.py\n+++ b/django/contrib/auth/forms.py\n@@ -34,6 +34,9 @@ class ReadOnlyPasswordHashWidget(forms.Widget):\n     template_name = 'auth/widgets/read_only_password_hash.html'\n     read_only = True\n \n+    def id_for_label(self, id_):\n+        return None\n+\n     def get_context(self, name, value, attrs):\n         context = super().get_context(name, value, attrs)\n         summary = []\n",
+    "iteration_count": 17,
+    "timings": {
+      "workspace_generation_seconds": 11.154,
+      "agent_generation_seconds": 192.505,
+      "total_generation_seconds": 203.659
+    }
+  }
+}

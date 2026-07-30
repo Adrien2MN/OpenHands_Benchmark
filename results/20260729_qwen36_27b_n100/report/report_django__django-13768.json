@@ -1,0 +1,224 @@
+{
+  "instance_id": "django__django-13768",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 937
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 200.498,
+  "timings": {
+    "workspace_generation_seconds": 10.433,
+    "agent_generation_seconds": 190.69,
+    "total_generation_seconds": 201.123
+  },
+  "iterations": 16,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15532,
+      "completion_tokens": 91,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15623,
+      "response_id": "chatcmpl-8132a7f799121d79"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15713,
+      "completion_tokens": 75,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15788,
+      "response_id": "chatcmpl-8e84d86ad2229f20"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19558,
+      "completion_tokens": 278,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19836,
+      "response_id": "chatcmpl-9e5474ba45294092"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19816,
+      "completion_tokens": 87,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19903,
+      "response_id": "chatcmpl-aa2e3073888126a7"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19969,
+      "completion_tokens": 82,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20051,
+      "response_id": "chatcmpl-81126414d133c35e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20120,
+      "completion_tokens": 179,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20299,
+      "response_id": "chatcmpl-90c5237a3021aca8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20666,
+      "completion_tokens": 294,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20960,
+      "response_id": "chatcmpl-a4a5b4b0e4097e6d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21088,
+      "completion_tokens": 233,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21321,
+      "response_id": "chatcmpl-b680f2591c35ccb3"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 471,
+      "completion_tokens": 1637,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 2108,
+      "response_id": "chatcmpl-b1668a4a392a6820"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21559,
+      "completion_tokens": 270,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21829,
+      "response_id": "chatcmpl-8447a576131a00c9"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21933,
+      "completion_tokens": 79,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22012,
+      "response_id": "chatcmpl-b2e8146d654ee828"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22218,
+      "completion_tokens": 81,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22299,
+      "response_id": "chatcmpl-95271e3d19855b1a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22821,
+      "completion_tokens": 182,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23003,
+      "response_id": "chatcmpl-b5c119506e062a24"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23294,
+      "completion_tokens": 143,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23437,
+      "response_id": "chatcmpl-bc349fbbfe256745"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23474,
+      "completion_tokens": 111,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23585,
+      "response_id": "chatcmpl-8ef5b6403bd41885"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23618,
+      "completion_tokens": 297,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23915,
+      "response_id": "chatcmpl-8c6bc9e438535d58"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311850,
+    "completion_tokens": 4119,
+    "total_tokens": 315969
+  },
+  "token_footprint": {
+    "output_tokens_used": 4119,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nLog exceptions handled in Signal.send_robust()\nDescription\n\t\nAs pointed out by \u200bHaki Benita on Twitter, by default Signal.send_robust() doesn't have any log messages for exceptions raised in receivers. Since Django logs exceptions in other similar situations, such as missing template variables, I think it would be worth adding a logger.exception() call in the except clause of send_robust() . Users would then see such exceptions in their error handling tools, e.g. Sentry, and be able to figure out what action to take from there. Ultimately any *expected* exception should be caught with a try in the receiver function.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/dispatch/dispatcher.py b/django/dispatch/dispatcher.py\nindex b7d9d26389..78351763dc 100644\n--- a/django/dispatch/dispatcher.py\n+++ b/django/dispatch/dispatcher.py\n@@ -1,3 +1,4 @@\n+import logging\n import threading\n import warnings\n import weakref\n@@ -5,6 +6,8 @@ import weakref\n from django.utils.deprecation import RemovedInDjango40Warning\n from django.utils.inspect import func_accepts_kwargs\n \n+logger = logging.getLogger('django.signals')\n+\n \n def _make_id(target):\n     if hasattr(target, '__func__'):\n@@ -208,6 +211,7 @@ class Signal:\n             try:\n                 response = receiver(signal=self, sender=sender, **named)\n             except Exception as err:\n+                logger.exception('Exception raised in receiver \"%s\" of signal \"%s\"', receiver, self.__class__.__name__)\n                 responses.append((receiver, err))\n             else:\n                 responses.append((receiver, response))\n",
+    "iteration_count": 16,
+    "timings": {
+      "workspace_generation_seconds": 10.433,
+      "agent_generation_seconds": 190.69,
+      "total_generation_seconds": 201.123
+    }
+  }
+}

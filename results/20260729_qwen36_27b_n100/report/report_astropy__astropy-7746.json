@@ -1,0 +1,191 @@
+{
+  "instance_id": "astropy__astropy-7746",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 988
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 212.824,
+  "timings": {
+    "workspace_generation_seconds": 7.068,
+    "agent_generation_seconds": 206.38,
+    "total_generation_seconds": 213.448
+  },
+  "iterations": 13,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16679,
+      "completion_tokens": 127,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16806,
+      "response_id": "chatcmpl-b58c75af459ab0db"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16893,
+      "completion_tokens": 135,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17028,
+      "response_id": "chatcmpl-82a2f23a24531f1c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17706,
+      "completion_tokens": 109,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17815,
+      "response_id": "chatcmpl-9006aabd4c8c2d26"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 545,
+      "completion_tokens": 1252,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1797,
+      "response_id": "chatcmpl-acb9e29ceacd201e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19017,
+      "completion_tokens": 896,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19913,
+      "response_id": "chatcmpl-8e22c105fd413578"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19375,
+      "completion_tokens": 443,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19818,
+      "response_id": "chatcmpl-b325130d8846d8eb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20167,
+      "completion_tokens": 336,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20503,
+      "response_id": "chatcmpl-b214084b64c874fa"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20841,
+      "completion_tokens": 390,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21231,
+      "response_id": "chatcmpl-bd0522c78034a7df"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21708,
+      "completion_tokens": 82,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21790,
+      "response_id": "chatcmpl-ad10714cc78e6bfb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21886,
+      "completion_tokens": 195,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22081,
+      "response_id": "chatcmpl-ae7d98eefb14a005"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22080,
+      "completion_tokens": 96,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22176,
+      "response_id": "chatcmpl-98883adda5ac8ca5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22279,
+      "completion_tokens": 153,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22432,
+      "response_id": "chatcmpl-9fa2214accd6fa55"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23017,
+      "completion_tokens": 522,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23539,
+      "response_id": "chatcmpl-a721b4dc14f6f791"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 242193,
+    "completion_tokens": 4736,
+    "total_tokens": 246929
+  },
+  "token_footprint": {
+    "output_tokens_used": 4736,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/astropy/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nIssue when passing empty lists/arrays to WCS transformations\nThe following should not fail but instead should return empty lists/arrays:\r\n\r\n```\r\nIn [1]: from astropy.wcs import WCS\r\n\r\nIn [2]: wcs = WCS('2MASS_h.fits')\r\n\r\nIn [3]: wcs.wcs_pix2world([], [], 0)\r\n---------------------------------------------------------------------------\r\nInconsistentAxisTypesError                Traceback (most recent call last)\r\n<ipython-input-3-e2cc0e97941a> in <module>()\r\n----> 1 wcs.wcs_pix2world([], [], 0)\r\n\r\n~/Dropbox/Code/Astropy/astropy/astropy/wcs/wcs.py in wcs_pix2world(self, *args, **kwargs)\r\n   1352         return self._array_converter(\r\n   1353             lambda xy, o: self.wcs.p2s(xy, o)['world'],\r\n-> 1354             'output', *args, **kwargs)\r\n   1355     wcs_pix2world.__doc__ = \"\"\"\r\n   1356         Transforms pixel coordinates to world coordinates by doing\r\n\r\n~/Dropbox/Code/Astropy/astropy/astropy/wcs/wcs.py in _array_converter(self, func, sky, ra_dec_order, *args)\r\n   1267                     \"a 1-D array for each axis, followed by an origin.\")\r\n   1268 \r\n-> 1269             return _return_list_of_arrays(axes, origin)\r\n   1270 \r\n   1271         raise TypeError(\r\n\r\n~/Dropbox/Code/Astropy/astropy/astropy/wcs/wcs.py in _return_list_of_arrays(axes, origin)\r\n   1223             if ra_dec_order and sky == 'input':\r\n   1224                 xy = self._denormalize_sky(xy)\r\n-> 1225             output = func(xy, origin)\r\n   1226             if ra_dec_order and sky == 'output':\r\n   1227                 output = self._normalize_sky(output)\r\n\r\n~/Dropbox/Code/Astropy/astropy/astropy/wcs/wcs.py in <lambda>(xy, o)\r\n   1351             raise ValueError(\"No basic WCS settings were created.\")\r\n   1352         return self._array_converter(\r\n-> 1353             lambda xy, o: self.wcs.p2s(xy, o)['world'],\r\n   1354             'output', *args, **kwargs)\r\n   1355     wcs_pix2world.__doc__ = \"\"\"\r\n\r\nInconsistentAxisTypesError: ERROR 4 in wcsp2s() at line 2646 of file cextern/wcslib/C/wcs.c:\r\nncoord and/or nelem inconsistent with the wcsprm.\r\n```\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/astropy/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/astropy/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/astropy/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/astropy/wcs/wcs.py b/astropy/wcs/wcs.py\nindex d3a06f2b31..952c45237f 100644\n--- a/astropy/wcs/wcs.py\n+++ b/astropy/wcs/wcs.py\n@@ -1220,6 +1220,9 @@ reduce these to 2 dimensions using the naxis kwarg.\n \n             xy = np.hstack([x.reshape((x.size, 1)) for x in axes])\n \n+            if xy.size == 0:\n+                return [np.empty(axes[0].shape) for _ in range(self.naxis)]\n+\n             if ra_dec_order and sky == 'input':\n                 xy = self._denormalize_sky(xy)\n             output = func(xy, origin)\n@@ -1235,6 +1238,8 @@ reduce these to 2 dimensions using the naxis kwarg.\n                 raise ValueError(\n                     \"When providing two arguments, the array must be \"\n                     \"of shape (N, {0})\".format(self.naxis))\n+            if xy.size == 0:\n+                return np.empty((0, self.naxis))\n             if ra_dec_order and sky == 'input':\n                 xy = self._denormalize_sky(xy)\n             result = func(xy, origin)\n",
+    "iteration_count": 13,
+    "timings": {
+      "workspace_generation_seconds": 7.068,
+      "agent_generation_seconds": 206.38,
+      "total_generation_seconds": 213.448
+    }
+  }
+}

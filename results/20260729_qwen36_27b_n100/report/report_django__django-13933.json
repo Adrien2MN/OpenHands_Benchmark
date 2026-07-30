@@ -1,0 +1,180 @@
+{
+  "instance_id": "django__django-13933",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1271
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 243.71,
+  "timings": {
+    "workspace_generation_seconds": 2.361,
+    "agent_generation_seconds": 241.965,
+    "total_generation_seconds": 244.326
+  },
+  "iterations": 12,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15692,
+      "completion_tokens": 128,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15820,
+      "response_id": "chatcmpl-9cabfe5a3c81767b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15913,
+      "completion_tokens": 68,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15981,
+      "response_id": "chatcmpl-9c13cdfc459f0d7c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21618,
+      "completion_tokens": 357,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21975,
+      "response_id": "chatcmpl-af40af72129fa12b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22083,
+      "completion_tokens": 341,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22424,
+      "response_id": "chatcmpl-bc301686a0c198bb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 483,
+      "completion_tokens": 1265,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1748,
+      "response_id": "chatcmpl-bff3041fe94f702d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23929,
+      "completion_tokens": 471,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24400,
+      "response_id": "chatcmpl-a85ab76acd9df1ec"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24472,
+      "completion_tokens": 211,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24683,
+      "response_id": "chatcmpl-a44fd8cb99bb6d30"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19125,
+      "completion_tokens": 195,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19320,
+      "response_id": "chatcmpl-933e1299ebf9cfe8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19655,
+      "completion_tokens": 147,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19802,
+      "response_id": "chatcmpl-be30e1d9acf0133a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19931,
+      "completion_tokens": 140,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20071,
+      "response_id": "chatcmpl-90f0a649f6afdfdd"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21714,
+      "completion_tokens": 307,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22021,
+      "response_id": "chatcmpl-9901e31275786eb0"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1551,
+      "completion_tokens": 2437,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 3988,
+      "response_id": "chatcmpl-9bd0829c2b722998"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 206166,
+    "completion_tokens": 6067,
+    "total_tokens": 212233
+  },
+  "token_footprint": {
+    "output_tokens_used": 6067,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nModelChoiceField does not provide value of invalid choice when raising ValidationError\nDescription\n\t \n\t\t(last modified by Aaron Wiegel)\n\t \nCompared with ChoiceField and others, ModelChoiceField does not show the value of the invalid choice when raising a validation error. Passing in parameters with the invalid value and modifying the default error message for the code invalid_choice should fix this.\nFrom source code:\nclass ModelMultipleChoiceField(ModelChoiceField):\n\t\"\"\"A MultipleChoiceField whose choices are a model QuerySet.\"\"\"\n\twidget = SelectMultiple\n\thidden_widget = MultipleHiddenInput\n\tdefault_error_messages = {\n\t\t'invalid_list': _('Enter a list of values.'),\n\t\t'invalid_choice': _('Select a valid choice. %(value)s is not one of the'\n\t\t\t\t\t\t\t' available choices.'),\n\t\t'invalid_pk_value': _('\u201c%(pk)s\u201d is not a valid value.')\n\t}\n\t...\nclass ModelChoiceField(ChoiceField):\n\t\"\"\"A ChoiceField whose choices are a model QuerySet.\"\"\"\n\t# This class is a subclass of ChoiceField for purity, but it doesn't\n\t# actually use any of ChoiceField's implementation.\n\tdefault_error_messages = {\n\t\t'invalid_choice': _('Select a valid choice. That choice is not one of'\n\t\t\t\t\t\t\t' the available choices.'),\n\t}\n\t...\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/forms/models.py b/django/forms/models.py\nindex 422bc5d178..e403cf2c12 100644\n--- a/django/forms/models.py\n+++ b/django/forms/models.py\n@@ -1188,8 +1188,8 @@ class ModelChoiceField(ChoiceField):\n     # This class is a subclass of ChoiceField for purity, but it doesn't\n     # actually use any of ChoiceField's implementation.\n     default_error_messages = {\n-        'invalid_choice': _('Select a valid choice. That choice is not one of'\n-                            ' the available choices.'),\n+        'invalid_choice': _('Select a valid choice. %(value)s is not one of the'\n+                            ' available choices.'),\n     }\n     iterator = ModelChoiceIterator\n \n@@ -1284,7 +1284,11 @@ class ModelChoiceField(ChoiceField):\n                 value = getattr(value, key)\n             value = self.queryset.get(**{key: value})\n         except (ValueError, TypeError, self.queryset.model.DoesNotExist):\n-            raise ValidationError(self.error_messages['invalid_choice'], code='invalid_choice')\n+            raise ValidationError(\n+                self.error_messages['invalid_choice'],\n+                code='invalid_choice',\n+                params={'value': value},\n+            )\n         return value\n \n     def validate(self, value):\n",
+    "iteration_count": 12,
+    "timings": {
+      "workspace_generation_seconds": 2.361,
+      "agent_generation_seconds": 241.965,
+      "total_generation_seconds": 244.326
+    }
+  }
+}

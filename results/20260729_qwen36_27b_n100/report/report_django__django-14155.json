@@ -1,0 +1,246 @@
+{
+  "instance_id": "django__django-14155",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1166
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 278.288,
+  "timings": {
+    "workspace_generation_seconds": 3.181,
+    "agent_generation_seconds": 275.725,
+    "total_generation_seconds": 278.906
+  },
+  "iterations": 18,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15514,
+      "completion_tokens": 85,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15599,
+      "response_id": "chatcmpl-9189ee7cd5f54c83"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15720,
+      "completion_tokens": 98,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15818,
+      "response_id": "chatcmpl-8e0a0df4eb94e409"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15885,
+      "completion_tokens": 65,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15950,
+      "response_id": "chatcmpl-927d74131ccaad37"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17008,
+      "completion_tokens": 296,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17304,
+      "response_id": "chatcmpl-917d5681790d40b5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17213,
+      "completion_tokens": 112,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17325,
+      "response_id": "chatcmpl-b08ce7e028314490"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 469,
+      "completion_tokens": 1334,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1803,
+      "response_id": "chatcmpl-b1e90122314dd82f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17385,
+      "completion_tokens": 965,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18350,
+      "response_id": "chatcmpl-a8fa912793fe8fdb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17954,
+      "completion_tokens": 97,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18051,
+      "response_id": "chatcmpl-a944ea6ca71dc101"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18813,
+      "completion_tokens": 798,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19611,
+      "response_id": "chatcmpl-8e15edad36877357"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19422,
+      "completion_tokens": 223,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19645,
+      "response_id": "chatcmpl-8b5080a02b115b15"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19934,
+      "completion_tokens": 268,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20202,
+      "response_id": "chatcmpl-b99f962f05428866"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20433,
+      "completion_tokens": 264,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20697,
+      "response_id": "chatcmpl-996b0aefa8fbd8d7"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20796,
+      "completion_tokens": 399,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21195,
+      "response_id": "chatcmpl-a882684085958c1a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21468,
+      "completion_tokens": 241,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21709,
+      "response_id": "chatcmpl-8f588ee069343f63"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21949,
+      "completion_tokens": 110,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22059,
+      "response_id": "chatcmpl-b612126fe4ffb820"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22654,
+      "completion_tokens": 115,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22769,
+      "response_id": "chatcmpl-8db914be5c49c962"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22823,
+      "completion_tokens": 96,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22919,
+      "response_id": "chatcmpl-aa2d5400c3ab6ea8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23091,
+      "completion_tokens": 390,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23481,
+      "response_id": "chatcmpl-a7a3b2b6b5d18e9b"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 328531,
+    "completion_tokens": 5956,
+    "total_tokens": 334487
+  },
+  "token_footprint": {
+    "output_tokens_used": 5956,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nResolverMatch.__repr__() doesn't handle functools.partial() nicely.\nDescription\n\t \n\t\t(last modified by Nick Pope)\n\t \nWhen a partial function is passed as the view, the __repr__ shows the func argument as functools.partial which isn't very helpful, especially as it doesn't reveal the underlying function or arguments provided.\nBecause a partial function also has arguments provided up front, we need to handle those specially so that they are accessible in __repr__.\nISTM that we can simply unwrap functools.partial objects in ResolverMatch.__init__().\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/urls/resolvers.py b/django/urls/resolvers.py\nindex 9b00e24509..c6df924809 100644\n--- a/django/urls/resolvers.py\n+++ b/django/urls/resolvers.py\n@@ -45,12 +45,17 @@ class ResolverMatch:\n         self.namespaces = [x for x in namespaces if x] if namespaces else []\n         self.namespace = ':'.join(self.namespaces)\n \n-        if not hasattr(func, '__name__'):\n+        # Unwrap functools.partial objects to get the underlying function\n+        view_func = func\n+        while isinstance(view_func, functools.partial):\n+            view_func = view_func.func\n+\n+        if not hasattr(view_func, '__name__'):\n             # A class-based view\n-            self._func_path = func.__class__.__module__ + '.' + func.__class__.__name__\n+            self._func_path = view_func.__class__.__module__ + '.' + view_func.__class__.__name__\n         else:\n             # A function-based view\n-            self._func_path = func.__module__ + '.' + func.__name__\n+            self._func_path = view_func.__module__ + '.' + view_func.__name__\n \n         view_path = url_name or self._func_path\n         self.view_name = ':'.join(self.namespaces + [view_path])\n",
+    "iteration_count": 18,
+    "timings": {
+      "workspace_generation_seconds": 3.181,
+      "agent_generation_seconds": 275.725,
+      "total_generation_seconds": 278.906
+    }
+  }
+}

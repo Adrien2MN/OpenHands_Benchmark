@@ -1,0 +1,257 @@
+{
+  "instance_id": "django__django-11564",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1070
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 443.574,
+  "timings": {
+    "workspace_generation_seconds": 11.779,
+    "agent_generation_seconds": 432.437,
+    "total_generation_seconds": 444.216
+  },
+  "iterations": 19,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15621,
+      "completion_tokens": 163,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15784,
+      "response_id": "chatcmpl-9a821f5a719575c8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16135,
+      "completion_tokens": 120,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16255,
+      "response_id": "chatcmpl-b7a17601c6d6e2cb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18146,
+      "completion_tokens": 66,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18212,
+      "response_id": "chatcmpl-bf3c6ca8e83046d1"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23167,
+      "completion_tokens": 56,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23223,
+      "response_id": "chatcmpl-8772586a31126326"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 497,
+      "completion_tokens": 1005,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1502,
+      "response_id": "chatcmpl-8658bfc8c9ea4058"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23306,
+      "completion_tokens": 300,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23606,
+      "response_id": "chatcmpl-be79eb63ac41fb84"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23698,
+      "completion_tokens": 110,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23808,
+      "response_id": "chatcmpl-9a80edb39bebd394"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23932,
+      "completion_tokens": 165,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24097,
+      "response_id": "chatcmpl-902b881fb7752c52"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24173,
+      "completion_tokens": 78,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24251,
+      "response_id": "chatcmpl-90cecf4c29ac8943"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24400,
+      "completion_tokens": 94,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24494,
+      "response_id": "chatcmpl-ad7679f92df1390e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24554,
+      "completion_tokens": 173,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24727,
+      "response_id": "chatcmpl-8127abdf8139f1a0"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20545,
+      "completion_tokens": 1234,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21779,
+      "response_id": "chatcmpl-a895e29c80166c3c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21102,
+      "completion_tokens": 281,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21383,
+      "response_id": "chatcmpl-b7bcce2ef58c420f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21718,
+      "completion_tokens": 119,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21837,
+      "response_id": "chatcmpl-8a435bf7380bfb46"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21888,
+      "completion_tokens": 108,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21996,
+      "response_id": "chatcmpl-81db2f6533060ca4"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22357,
+      "completion_tokens": 86,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22443,
+      "response_id": "chatcmpl-9a2965e587eec1d9"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24446,
+      "completion_tokens": 649,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 25095,
+      "response_id": "chatcmpl-b1c9d3a7efed1b67"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1211,
+      "completion_tokens": 2192,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 3403,
+      "response_id": "chatcmpl-996f593bf401b258"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1652,
+      "completion_tokens": 2702,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 4354,
+      "response_id": "chatcmpl-83e4ddf7dfba1dd6"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 352548,
+    "completion_tokens": 9701,
+    "total_tokens": 362249
+  },
+  "token_footprint": {
+    "output_tokens_used": 9701,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nAdd support for SCRIPT_NAME in STATIC_URL and MEDIA_URL\nDescription\n\t \n\t\t(last modified by Rostyslav Bryzgunov)\n\t \nBy default, {% static '...' %} tag just appends STATIC_URL in the path. When running on sub-path, using SCRIPT_NAME WSGI param, it results in incorrect static URL - it doesn't prepend SCRIPT_NAME prefix.\nThis problem can be solved with prepending SCRIPT_NAME to STATIC_URL in settings.py but that doesn't work when SCRIPT_NAME is a dynamic value.\nThis can be easily added into default Django static tag and django.contrib.staticfiles tag as following:\ndef render(self, context):\n\turl = self.url(context)\n\t# Updating url here with request.META['SCRIPT_NAME'] \n\tif self.varname is None:\n\t\treturn url\n\tcontext[self.varname] = url\n\t\treturn ''\nOn more research I found that FileSystemStorage and StaticFilesStorage ignores SCRIPT_NAME as well. \nWe might have to do a lot of changes but I think it's worth the efforts.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/templatetags/static.py b/django/templatetags/static.py\nindex 39712aaba0..7ff71770af 100644\n--- a/django/templatetags/static.py\n+++ b/django/templatetags/static.py\n@@ -48,6 +48,11 @@ class PrefixNode(template.Node):\n \n     def render(self, context):\n         prefix = self.handle_simple(self.name)\n+        request = context.get(\"request\")\n+        if request is not None:\n+            script_name = request.META.get(\"SCRIPT_NAME\", \"\")\n+            if script_name:\n+                prefix = script_name + prefix\n         if self.varname is None:\n             return prefix\n         context[self.varname] = prefix\n@@ -104,6 +109,11 @@ class StaticNode(template.Node):\n \n     def render(self, context):\n         url = self.url(context)\n+        request = context.get(\"request\")\n+        if request is not None:\n+            script_name = request.META.get(\"SCRIPT_NAME\", \"\")\n+            if script_name:\n+                url = script_name + url\n         if context.autoescape:\n             url = conditional_escape(url)\n         if self.varname is None:\n",
+    "iteration_count": 19,
+    "timings": {
+      "workspace_generation_seconds": 11.779,
+      "agent_generation_seconds": 432.437,
+      "total_generation_seconds": 444.216
+    }
+  }
+}

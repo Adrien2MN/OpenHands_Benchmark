@@ -1,0 +1,2 @@
+name, memory.total [MiB], driver_version, power.max_limit [W]
+NVIDIA A100 80GB PCIe, 81920 MiB, 580.173.02, 300.00 W

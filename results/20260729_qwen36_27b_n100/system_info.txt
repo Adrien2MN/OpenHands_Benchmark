@@ -1,0 +1,15 @@
+kernel: 6.8.0-1062-azure
+arch: x86_64
+model_id: Qwen/Qwen3.6-27B
+llm_config: litellm-qwen36-27b.json
+n_limit: 100
+max_iterations: 100
+start_utc: 2026-07-28T10:22:21Z
+gpu: NVIDIA A100 80GB PCIe
+gpu_memory: 81920 MiB
+driver: 580.173.02
+power_limit: 300 W
+idle_gpu_power_watts: 44.58
+dtype: bfloat16
+max_model_len: 32768
+native_tool_calling: false

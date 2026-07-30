@@ -1,0 +1,279 @@
+{
+  "instance_id": "django__django-11848",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 632
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 635.049,
+  "timings": {
+    "workspace_generation_seconds": 2.366,
+    "agent_generation_seconds": 633.301,
+    "total_generation_seconds": 635.667
+  },
+  "iterations": 21,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17967,
+      "completion_tokens": 183,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18150,
+      "response_id": "chatcmpl-8bd8f0bdc62ac15d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18257,
+      "completion_tokens": 107,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18364,
+      "response_id": "chatcmpl-a379bd1f3ff85121"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18966,
+      "completion_tokens": 188,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19154,
+      "response_id": "chatcmpl-8c3537afc481c65d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19701,
+      "completion_tokens": 402,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20103,
+      "response_id": "chatcmpl-9d95088c6d77fc8b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 523,
+      "completion_tokens": 1138,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1661,
+      "response_id": "chatcmpl-8caf4b17cc59d8a4"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20121,
+      "completion_tokens": 392,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20513,
+      "response_id": "chatcmpl-9e54251f15906f89"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20633,
+      "completion_tokens": 1909,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22542,
+      "response_id": "chatcmpl-8f0858d57fe2aa1e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21169,
+      "completion_tokens": 206,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21375,
+      "response_id": "chatcmpl-b0daa7bbe349d947"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21631,
+      "completion_tokens": 545,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22176,
+      "response_id": "chatcmpl-8d7433a29c97cd8c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22806,
+      "completion_tokens": 476,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23282,
+      "response_id": "chatcmpl-9035cee3d5f42ec6"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23743,
+      "completion_tokens": 781,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24524,
+      "response_id": "chatcmpl-93965f97cc0452de"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24356,
+      "completion_tokens": 136,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24492,
+      "response_id": "chatcmpl-a7f892b2d453df54"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24546,
+      "completion_tokens": 95,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24641,
+      "response_id": "chatcmpl-8ab1260662febc4d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23585,
+      "completion_tokens": 725,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24310,
+      "response_id": "chatcmpl-9985315c837835f5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22403,
+      "completion_tokens": 125,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22528,
+      "response_id": "chatcmpl-bc5ebc1062060fd0"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23680,
+      "completion_tokens": 82,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23762,
+      "response_id": "chatcmpl-b1183c353df6e38e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23845,
+      "completion_tokens": 97,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23942,
+      "response_id": "chatcmpl-8b53e21cde3550b4"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20909,
+      "completion_tokens": 629,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21538,
+      "response_id": "chatcmpl-83ec3336cfd20718"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 2683,
+      "completion_tokens": 2243,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 4926,
+      "response_id": "chatcmpl-9eccb9639efc5bf0"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1813,
+      "completion_tokens": 2349,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 4162,
+      "response_id": "chatcmpl-ac919bef4711c0a2"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1436,
+      "completion_tokens": 2203,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 3639,
+      "response_id": "chatcmpl-99aadcc73421de4c"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 374773,
+    "completion_tokens": 15011,
+    "total_tokens": 389784
+  },
+  "token_footprint": {
+    "output_tokens_used": 15011,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\ndjango.utils.http.parse_http_date two digit year check is incorrect\nDescription\n\t \n\t\t(last modified by Ad Timmering)\n\t \nRFC 850 does not mention this, but in RFC 7231 (and there's something similar in RFC 2822), there's the following quote:\nRecipients of a timestamp value in rfc850-date format, which uses a\ntwo-digit year, MUST interpret a timestamp that appears to be more\nthan 50 years in the future as representing the most recent year in\nthe past that had the same last two digits.\nCurrent logic is hard coded to consider 0-69 to be in 2000-2069, and 70-99 to be 1970-1999, instead of comparing versus the current year.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/utils/http.py b/django/utils/http.py\nindex 572cfb4347..431ef1e3e3 100644\n--- a/django/utils/http.py\n+++ b/django/utils/http.py\n@@ -176,10 +176,8 @@ def parse_http_date(date):\n     try:\n         year = int(m.group('year'))\n         if year < 100:\n-            if year < 70:\n-                year += 2000\n-            else:\n-                year += 1900\n+            current_year = datetime.datetime.now().year\n+            year += 2000 if year <= (current_year + 50) % 100 else 1900\n         month = MONTHS.index(m.group('mon').lower()) + 1\n         day = int(m.group('day'))\n         hour = int(m.group('hour'))\n",
+    "iteration_count": 21,
+    "timings": {
+      "workspace_generation_seconds": 2.366,
+      "agent_generation_seconds": 633.301,
+      "total_generation_seconds": 635.667
+    }
+  }
+}

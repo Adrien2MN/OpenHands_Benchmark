@@ -1,0 +1,180 @@
+{
+  "instance_id": "django__django-11999",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 896
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 148.656,
+  "timings": {
+    "workspace_generation_seconds": 2.349,
+    "agent_generation_seconds": 146.911,
+    "total_generation_seconds": 149.26
+  },
+  "iterations": 12,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15552,
+      "completion_tokens": 147,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15699,
+      "response_id": "chatcmpl-81b49ad28e6e77a8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15792,
+      "completion_tokens": 160,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15952,
+      "response_id": "chatcmpl-aec546e0f745c71f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16029,
+      "completion_tokens": 84,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16113,
+      "response_id": "chatcmpl-ab25480cd16004ee"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 515,
+      "completion_tokens": 677,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1192,
+      "response_id": "chatcmpl-a1f71f1031c8e4e9"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16998,
+      "completion_tokens": 209,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17207,
+      "response_id": "chatcmpl-b90767c2bb970971"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17204,
+      "completion_tokens": 92,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17296,
+      "response_id": "chatcmpl-ac06853ca2442915"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17371,
+      "completion_tokens": 75,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17446,
+      "response_id": "chatcmpl-947891fb739b63a1"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17926,
+      "completion_tokens": 567,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18493,
+      "response_id": "chatcmpl-9c3b0d76ab144cb5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18558,
+      "completion_tokens": 324,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18882,
+      "response_id": "chatcmpl-8cd3fae95fa1836f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19289,
+      "completion_tokens": 142,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19431,
+      "response_id": "chatcmpl-bdc66c67ab312d93"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19700,
+      "completion_tokens": 95,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19795,
+      "response_id": "chatcmpl-9df6ce556d273152"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20104,
+      "completion_tokens": 401,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20505,
+      "response_id": "chatcmpl-9f2475d85c04fa24"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 195038,
+    "completion_tokens": 2973,
+    "total_tokens": 198011
+  },
+  "token_footprint": {
+    "output_tokens_used": 2973,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nCannot override get_FOO_display() in Django 2.2+.\nDescription\n\t\nI cannot override the get_FIELD_display function on models since version 2.2. It works in version 2.1.\nExample:\nclass FooBar(models.Model):\n\tfoo_bar = models.CharField(_(\"foo\"), choices=[(1, 'foo'), (2, 'bar')])\n\tdef __str__(self):\n\t\treturn self.get_foo_bar_display() # This returns 'foo' or 'bar' in 2.2, but 'something' in 2.1\n\tdef get_foo_bar_display(self):\n\t\treturn \"something\"\nWhat I expect is that I should be able to override this function.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py\nindex ee45bb941e..160c0de5ee 100644\n--- a/django/db/models/fields/__init__.py\n+++ b/django/db/models/fields/__init__.py\n@@ -763,8 +763,10 @@ class Field(RegisterLookupMixin):\n             if not getattr(cls, self.attname, None):\n                 setattr(cls, self.attname, self.descriptor_class(self))\n         if self.choices is not None:\n-            setattr(cls, 'get_%s_display' % self.name,\n-                    partialmethod(cls._get_FIELD_display, field=self))\n+            # Don't override user-defined get_FIELD_display methods.\n+            if not getattr(cls, 'get_%s_display' % self.name, None):\n+                setattr(cls, 'get_%s_display' % self.name,\n+                        partialmethod(cls._get_FIELD_display, field=self))\n \n     def get_filter_kwargs_for_object(self, obj):\n         \"\"\"\n",
+    "iteration_count": 12,
+    "timings": {
+      "workspace_generation_seconds": 2.349,
+      "agent_generation_seconds": 146.911,
+      "total_generation_seconds": 149.26
+    }
+  }
+}

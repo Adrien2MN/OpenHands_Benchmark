@@ -1,0 +1,268 @@
+{
+  "instance_id": "astropy__astropy-14995",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 669
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 578.757,
+  "timings": {
+    "workspace_generation_seconds": 1.368,
+    "agent_generation_seconds": 578.031,
+    "total_generation_seconds": 579.399
+  },
+  "iterations": 20,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16173,
+      "completion_tokens": 145,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16318,
+      "response_id": "chatcmpl-8758726672e5519c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16488,
+      "completion_tokens": 115,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16603,
+      "response_id": "chatcmpl-a4300ad58be1b477"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16702,
+      "completion_tokens": 84,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16786,
+      "response_id": "chatcmpl-a1aee95a90dd7221"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22640,
+      "completion_tokens": 116,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22756,
+      "response_id": "chatcmpl-94f9876b9893237f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 507,
+      "completion_tokens": 558,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1065,
+      "response_id": "chatcmpl-a576c4007379c691"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23066,
+      "completion_tokens": 85,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23151,
+      "response_id": "chatcmpl-b7c03fb899da7a3b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23950,
+      "completion_tokens": 2543,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 26493,
+      "response_id": "chatcmpl-9abce5a444dd4d64"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24355,
+      "completion_tokens": 434,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24789,
+      "response_id": "chatcmpl-8b2b3b78f7abddde"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20207,
+      "completion_tokens": 406,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20613,
+      "response_id": "chatcmpl-b281127c259d810f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21005,
+      "completion_tokens": 99,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21104,
+      "response_id": "chatcmpl-8260dd3d985f42fb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21183,
+      "completion_tokens": 153,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21336,
+      "response_id": "chatcmpl-9b52d09b0ef30fae"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22684,
+      "completion_tokens": 654,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23338,
+      "response_id": "chatcmpl-823ec57b45a2c3f8"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23839,
+      "completion_tokens": 400,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24239,
+      "response_id": "chatcmpl-97fced9f1a66b323"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21030,
+      "completion_tokens": 345,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21375,
+      "response_id": "chatcmpl-a9191508b0c19214"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21856,
+      "completion_tokens": 275,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22131,
+      "response_id": "chatcmpl-967843c65ff8e713"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22584,
+      "completion_tokens": 262,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22846,
+      "response_id": "chatcmpl-8b1eba9ed53d4edf"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22782,
+      "completion_tokens": 329,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23111,
+      "response_id": "chatcmpl-b4f87200ee2a3bc4"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23375,
+      "completion_tokens": 532,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23907,
+      "response_id": "chatcmpl-9c2c98225ea866d9"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1650,
+      "completion_tokens": 2761,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 4411,
+      "response_id": "chatcmpl-8d193b245d3e9bfb"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1862,
+      "completion_tokens": 2536,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 4398,
+      "response_id": "chatcmpl-ae589879775450d0"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 367938,
+    "completion_tokens": 12832,
+    "total_tokens": 380770
+  },
+  "token_footprint": {
+    "output_tokens_used": 12832,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/astropy/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nIn v5.3, NDDataRef mask propagation fails when one of the operand does not have a mask\n### Description\n\nThis applies to v5.3. \r\n\r\nIt looks like when one of the operand does not have a mask, the mask propagation when doing arithmetic, in particular with `handle_mask=np.bitwise_or` fails.  This is not a problem in v5.2.\r\n\r\nI don't know enough about how all that works, but it seems from the error that the operand without a mask is set as a mask of None's and then the bitwise_or tries to operate on an integer and a None and fails.\n\n### Expected behavior\n\nWhen one of the operand does not have mask, the mask that exists should just be copied over to the output.  Or whatever was done in that situation in v5.2 where there's no problem.\n\n### How to Reproduce\n\nThis is with v5.3.   With v5.2, there are no errors.\r\n\r\n```\r\n>>> import numpy as np\r\n>>> from astropy.nddata import NDDataRef\r\n\r\n>>> array = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])\r\n>>> mask = np.array([[0, 1, 64], [8, 0, 1], [2, 1, 0]])\r\n\r\n>>> nref_nomask = NDDataRef(array)\r\n>>> nref_mask = NDDataRef(array, mask=mask)\r\n\r\n# multiply no mask by constant (no mask * no mask)\r\n>>> nref_nomask.multiply(1., handle_mask=np.bitwise_or).mask   # returns nothing, no mask,  OK\r\n\r\n# multiply no mask by itself (no mask * no mask)\r\n>>> nref_nomask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask # return nothing, no mask, OK\r\n\r\n# multiply mask by constant (mask * no mask)\r\n>>> nref_mask.multiply(1., handle_mask=np.bitwise_or).mask\r\n...\r\nTypeError: unsupported operand type(s) for |: 'int' and 'NoneType'\r\n\r\n# multiply mask by itself (mask * mask)\r\n>>> nref_mask.multiply(nref_mask, handle_mask=np.bitwise_or).mask\r\narray([[ 0,  1, 64],\r\n       [ 8,  0,  1],\r\n       [ 2,  1,  0]])\r\n\r\n# multiply mask by no mask (mask * no mask)\r\n>>> nref_mask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask\r\n...\r\nTypeError: unsupported operand type(s) for |: 'int' and 'NoneType'\r\n```\r\n\n\n### Versions\n\n>>> import sys; print(\"Python\", sys.version)\r\nPython 3.10.11 | packaged by conda-forge | (main, May 10 2023, 19:07:22) [Clang 14.0.6 ]\r\n>>> import astropy; print(\"astropy\", astropy.__version__)\r\nastropy 5.3\r\n>>> import numpy; print(\"Numpy\", numpy.__version__)\r\nNumpy 1.24.3\r\n>>> import erfa; print(\"pyerfa\", erfa.__version__)\r\npyerfa 2.0.0.3\r\n>>> import scipy; print(\"Scipy\", scipy.__version__)\r\nScipy 1.10.1\r\n>>> import matplotlib; print(\"Matplotlib\", matplotlib.__version__)\r\nMatplotlib 3.7.1\r\n\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/astropy/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/astropy/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/astropy/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/astropy/nddata/mixins/ndarithmetic.py b/astropy/nddata/mixins/ndarithmetic.py\nindex 4153dfccb..2e178aab5 100644\n--- a/astropy/nddata/mixins/ndarithmetic.py\n+++ b/astropy/nddata/mixins/ndarithmetic.py\n@@ -522,6 +522,9 @@ class NDArithmeticMixin:\n             return deepcopy(operand.mask)\n         elif operand is None:\n             return deepcopy(self.mask)\n+        elif operand.mask is None:\n+            # self.mask is not None but operand.mask is None\n+            return deepcopy(self.mask)\n         else:\n             # Now lets calculate the resulting mask (operation enforces copy)\n             return handle_mask(self.mask, operand.mask, **kwds)\n",
+    "iteration_count": 20,
+    "timings": {
+      "workspace_generation_seconds": 1.368,
+      "agent_generation_seconds": 578.031,
+      "total_generation_seconds": 579.399
+    }
+  }
+}

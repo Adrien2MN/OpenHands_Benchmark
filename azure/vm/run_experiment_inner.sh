@@ -166,7 +166,159 @@ echo "timestamp,power_draw_W,gpu_util_pct,mem_used_MiB,temperature_C" > "$ENERGY
 ) &
 ENERGY_PID=$!
 
-# --- 3b. Start periodic results sync (crash protection) ---
+# --- 3b. Incremental per-instance extraction script ---
+cat > "$RESULTS_DIR/extract_incremental.py" << 'EXTRACTEOF'
+import json, csv, re, os, tarfile, glob
+from pathlib import Path
+from collections import Counter
+
+results_dir = Path(os.environ.get("RESULTS_DIR", "/results"))
+app_outputs = Path(os.environ.get("REPO_ROOT", "/app")) / "outputs"
+
+# Find output.jsonl (prefer app copy, fall back to synced)
+output_candidates = list(app_outputs.rglob("output.jsonl")) + list((results_dir / "swebench_outputs").rglob("output.jsonl"))
+if not output_candidates:
+    exit(0)
+output_file = output_candidates[0]
+
+# --- Parse output.jsonl for tokens and timing ---
+instances = {}
+seen = set()
+for line in output_file.open(errors="ignore"):
+    try:
+        obj = json.loads(line.strip())
+    except json.JSONDecodeError:
+        continue
+    iid = obj.get("instance_id", "")
+    if not iid or iid in seen:
+        continue
+    seen.add(iid)
+
+    metrics = obj.get("metrics", {})
+    tr = obj.get("test_result", {})
+    timings = tr.get("timings", {})
+    token_usages = metrics.get("token_usages", [])
+    lats = metrics.get("response_latencies", [])
+
+    prompt_tokens = sum(tu.get("prompt_tokens", 0) or tu.get("input_tokens", 0) for tu in token_usages)
+    completion_tokens = sum(tu.get("completion_tokens", 0) or tu.get("output_tokens", 0) for tu in token_usages)
+    duration = timings.get("total_generation_seconds", sum(l.get("latency", 0) for l in lats))
+
+    instances[iid] = {
+        "instance_id": iid,
+        "has_patch": bool(tr.get("git_patch", "").strip()),
+        "prompt_tokens": prompt_tokens,
+        "completion_tokens": completion_tokens,
+        "total_tokens": prompt_tokens + completion_tokens,
+        "turns": len(lats),
+        "iteration_count": tr.get("iteration_count", 0),
+        "duration_seconds": round(duration, 1),
+        "total_tool_calls": 0,
+        "tool_counts": {},
+    }
+
+# --- Extract tool calls from conversation archives ---
+conv_dirs = list(app_outputs.rglob("conversations")) + list((results_dir / "swebench_outputs").rglob("conversations"))
+for conv_dir in conv_dirs:
+    for tar_path in conv_dir.glob("*.tar.gz"):
+        iid = tar_path.stem.replace(".tar", "")
+        if iid not in instances:
+            continue
+        tool_counts = Counter()
+        try:
+            with tarfile.open(tar_path, "r:gz") as tar:
+                for member in tar.getmembers():
+                    if "event-" not in member.name or not member.name.endswith(".json"):
+                        continue
+                    f = tar.extractfile(member)
+                    if f is None:
+                        continue
+                    ev = json.loads(f.read().decode("utf-8", errors="ignore"))
+                    if ev.get("kind") == "ActionEvent":
+                        action = ev.get("action", {})
+                        kind = action.get("kind", "unknown") if isinstance(action, dict) else "unknown"
+                        key = kind.replace("Action", "").lower()
+                        if key == "fileeditor":
+                            key = "file_editor"
+                        elif key == "tasktracker":
+                            key = "task_tracker"
+                        tool_counts[key] += 1
+        except Exception:
+            continue
+        instances[iid]["total_tool_calls"] = sum(tool_counts.values())
+        instances[iid]["tool_counts"] = dict(tool_counts)
+
+# --- Compute per-instance energy (proportional by duration) ---
+energy_log = results_dir / "energy_log.csv"
+idle_file = results_dir / "idle_baseline.csv"
+idle_watts = 0
+if idle_file.exists():
+    idle_rows = list(csv.DictReader(idle_file.open()))
+    idle_powers = [float(r["power_draw_W"]) for r in idle_rows if r.get("power_draw_W", "").strip()]
+    idle_watts = sum(idle_powers) / len(idle_powers) if idle_powers else 0
+
+if energy_log.exists():
+    powers = [float(r["power_draw_W"]) for r in csv.DictReader(energy_log.open()) if r.get("power_draw_W", "").strip()]
+    total_energy_wh = sum(powers) / 3600.0
+    net_energy_wh = sum(max(0, p - idle_watts) for p in powers) / 3600.0
+    avg_power = sum(powers) / len(powers) if powers else 0
+    total_dur = sum(inst["duration_seconds"] for inst in instances.values())
+    for inst in instances.values():
+        frac = inst["duration_seconds"] / total_dur if total_dur > 0 else 1.0 / max(len(instances), 1)
+        inst["energy_wh"] = round(total_energy_wh * frac, 2)
+        inst["net_energy_wh"] = round(net_energy_wh * frac, 2)
+        inst["avg_power_watts"] = round(avg_power, 1)
+
+# --- Write per_instance_full.json ---
+sorted_instances = sorted(instances.values(), key=lambda x: x["instance_id"])
+output = {
+    "total_instances": len(sorted_instances),
+    "total_tokens": sum(i["total_tokens"] for i in sorted_instances),
+    "per_instance": sorted_instances,
+}
+(results_dir / "per_instance_full.json").write_text(json.dumps(output, indent=2))
+
+# --- Write tool_summary.json ---
+all_tools = Counter()
+for inst in sorted_instances:
+    for t, c in inst["tool_counts"].items():
+        all_tools[t] += c
+total_calls = sum(all_tools.values())
+tool_summary = {
+    "total_tool_calls": total_calls,
+    "total_instances": len(sorted_instances),
+    "avg_tool_calls_per_instance": round(total_calls / max(len(sorted_instances), 1), 1),
+    "global_tool_counts": dict(all_tools.most_common()),
+    "tool_distribution_pct": {k: round(100 * v / max(total_calls, 1), 1) for k, v in all_tools.most_common()},
+}
+(results_dir / "tool_summary.json").write_text(json.dumps(tool_summary, indent=2))
+
+# --- Write vllm_summary.json ---
+vllm_log = results_dir / "vllm_stats.log"
+if vllm_log.exists():
+    prompt_tps, gen_tps, kv_cache = [], [], []
+    for line in vllm_log.open(errors="ignore"):
+        m = re.search(r"Avg prompt throughput: ([\d.]+) tokens/s", line)
+        if m:
+            prompt_tps.append(float(m.group(1)))
+        m2 = re.search(r"Avg generation throughput: ([\d.]+) tokens/s", line)
+        if m2:
+            gen_tps.append(float(m2.group(1)))
+        m3 = re.search(r"GPU KV cache usage: ([\d.]+)%", line)
+        if m3:
+            kv_cache.append(float(m3.group(1)))
+    vllm_summary = {
+        "throughput_samples": len(prompt_tps),
+        "avg_prompt_tps": round(sum(prompt_tps) / max(len(prompt_tps), 1), 1),
+        "avg_gen_tps": round(sum(gen_tps) / max(len(gen_tps), 1), 1),
+        "avg_kv_cache_pct": round(sum(kv_cache) / max(len(kv_cache), 1), 1),
+    }
+    (results_dir / "vllm_summary.json").write_text(json.dumps(vllm_summary, indent=2))
+
+print(f"Incremental extraction: {len(sorted_instances)} instances, {total_calls} tool calls")
+EXTRACTEOF
+
+# --- 3c. Start periodic results sync (crash protection + incremental extraction) ---
 (
     while true; do
         sleep 120
@@ -176,6 +328,8 @@ ENERGY_PID=$!
         fi
         # Extract vLLM throughput stats
         grep -E "Added request|throughput|Avg prompt" "$RESULTS_DIR/vllm.log" > "$RESULTS_DIR/vllm_stats.log" 2>/dev/null || true
+        # Run incremental per-instance extraction
+        python3 "$RESULTS_DIR/extract_incremental.py" 2>/dev/null || true
     done
 ) &
 SYNC_PID=$!
@@ -224,14 +378,18 @@ print('Download complete')
     elif echo "$MODEL_ID" | grep -qi "gemma"; then
         VLLM_MAX_LEN=32768
         VLLM_DTYPE="bfloat16"
+    elif echo "$MODEL_ID" | grep -qi "Qwen3"; then
+        VLLM_MAX_LEN=32768
+        VLLM_DTYPE="bfloat16"
     fi
 
+    VLLM_GPU_UTIL="${VLLM_GPU_UTIL:-0.92}"
     .venv/bin/python -m vllm.entrypoints.openai.api_server \
         --model "$MODEL_CACHE" \
         --served-model-name "$SERVED_NAME" \
         --host 0.0.0.0 \
         --port 8000 \
-        --gpu-memory-utilization 0.96 \
+        --gpu-memory-utilization "$VLLM_GPU_UTIL" \
         --max-model-len "$VLLM_MAX_LEN" \
         --dtype "$VLLM_DTYPE" \
         $VLLM_EXTRA_ARGS \

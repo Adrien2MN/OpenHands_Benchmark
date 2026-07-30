@@ -1,0 +1,246 @@
+{
+  "instance_id": "django__django-13028",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 644
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 265.661,
+  "timings": {
+    "workspace_generation_seconds": 2.399,
+    "agent_generation_seconds": 263.893,
+    "total_generation_seconds": 266.292
+  },
+  "iterations": 18,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16122,
+      "completion_tokens": 161,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16283,
+      "response_id": "chatcmpl-b8b461728099a965"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16365,
+      "completion_tokens": 101,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16466,
+      "response_id": "chatcmpl-a2348756d93e6ab3"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16675,
+      "completion_tokens": 100,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16775,
+      "response_id": "chatcmpl-8fd607c6aa34bb18"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 500,
+      "completion_tokens": 886,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1386,
+      "response_id": "chatcmpl-8d1718636dc3116a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17218,
+      "completion_tokens": 471,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17689,
+      "response_id": "chatcmpl-8bd97042a95d344d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17488,
+      "completion_tokens": 276,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17764,
+      "response_id": "chatcmpl-8c53b1da6da00205"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17944,
+      "completion_tokens": 376,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18320,
+      "response_id": "chatcmpl-90fb44c4f3ded61d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18787,
+      "completion_tokens": 340,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19127,
+      "response_id": "chatcmpl-8268ffadfc0c0047"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19028,
+      "completion_tokens": 492,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19520,
+      "response_id": "chatcmpl-a62610f88d2380b5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19746,
+      "completion_tokens": 126,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19872,
+      "response_id": "chatcmpl-91fd00da8314de55"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19901,
+      "completion_tokens": 429,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20330,
+      "response_id": "chatcmpl-97ec5fb215c0350d"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20907,
+      "completion_tokens": 131,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21038,
+      "response_id": "chatcmpl-b3d922bc6c22aa14"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21084,
+      "completion_tokens": 82,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21166,
+      "response_id": "chatcmpl-adc04b4772a0ba5b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21338,
+      "completion_tokens": 97,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21435,
+      "response_id": "chatcmpl-a61249f7c827b19c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21589,
+      "completion_tokens": 306,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21895,
+      "response_id": "chatcmpl-a3e28b1065f82a58"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22115,
+      "completion_tokens": 117,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22232,
+      "response_id": "chatcmpl-89bd3b609e9612a3"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22424,
+      "completion_tokens": 315,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22739,
+      "response_id": "chatcmpl-bd37c9f74e4baa9b"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22701,
+      "completion_tokens": 340,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23041,
+      "response_id": "chatcmpl-97427d498f739086"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 331932,
+    "completion_tokens": 5146,
+    "total_tokens": 337078
+  },
+  "token_footprint": {
+    "output_tokens_used": 5146,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nQueryset raises NotSupportedError when RHS has filterable=False attribute.\nDescription\n\t \n\t\t(last modified by Nicolas Baccelli)\n\t \nI'm migrating my app to django 3.0.7 and I hit a strange behavior using a model class with a field labeled filterable\nclass ProductMetaDataType(models.Model):\n\tlabel = models.CharField(max_length=255, unique=True, blank=False, null=False)\n\tfilterable = models.BooleanField(default=False, verbose_name=_(\"filterable\"))\n\tclass Meta:\n\t\tapp_label = \"adminpricing\"\n\t\tverbose_name = _(\"product meta data type\")\n\t\tverbose_name_plural = _(\"product meta data types\")\n\tdef __str__(self):\n\t\treturn self.label\nclass ProductMetaData(models.Model):\n\tid = models.BigAutoField(primary_key=True)\n\tproduct = models.ForeignKey(\n\t\tProduit, null=False, blank=False, on_delete=models.CASCADE\n\t)\n\tvalue = models.TextField(null=False, blank=False)\n\tmarketplace = models.ForeignKey(\n\t\tPlateforme, null=False, blank=False, on_delete=models.CASCADE\n\t)\n\tdate_created = models.DateTimeField(null=True, default=timezone.now)\n\tmetadata_type = models.ForeignKey(\n\t\tProductMetaDataType, null=False, blank=False, on_delete=models.CASCADE\n\t)\n\tclass Meta:\n\t\tapp_label = \"adminpricing\"\n\t\tverbose_name = _(\"product meta data\")\n\t\tverbose_name_plural = _(\"product meta datas\")\nError happened when filtering ProductMetaData with a metadata_type :\nProductMetaData.objects.filter(value=\"Dark Vador\", metadata_type=self.brand_metadata)\nError traceback :\nTraceback (most recent call last):\n File \"/backoffice/backoffice/adminpricing/tests/test_pw.py\", line 481, in test_checkpolicywarning_by_fields\n\tfor p in ProductMetaData.objects.filter(\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/manager.py\", line 82, in manager_method\n\treturn getattr(self.get_queryset(), name)(*args, **kwargs)\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/query.py\", line 904, in filter\n\treturn self._filter_or_exclude(False, *args, **kwargs)\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/query.py\", line 923, in _filter_or_exclude\n\tclone.query.add_q(Q(*args, **kwargs))\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py\", line 1351, in add_q\n\tclause, _ = self._add_q(q_object, self.used_aliases)\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py\", line 1378, in _add_q\n\tchild_clause, needed_inner = self.build_filter(\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py\", line 1264, in build_filter\n\tself.check_filterable(value)\n File \"/usr/local/lib/python3.8/site-packages/django/db/models/sql/query.py\", line 1131, in check_filterable\n\traise NotSupportedError(\ndjango.db.utils.NotSupportedError: ProductMetaDataType is disallowed in the filter clause.\nI changed label to filterable_test and it fixed this issue\nThis should be documented or fix.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/db/models/sql/query.py b/django/db/models/sql/query.py\nindex ce18098fd2..12a01541c4 100644\n--- a/django/db/models/sql/query.py\n+++ b/django/db/models/sql/query.py\n@@ -1124,7 +1124,7 @@ class Query(BaseExpression):\n \n     def check_filterable(self, expression):\n         \"\"\"Raise an error if expression cannot be used in a WHERE clause.\"\"\"\n-        if not getattr(expression, 'filterable', True):\n+        if isinstance(expression, BaseExpression) and not expression.filterable:\n             raise NotSupportedError(\n                 expression.__class__.__name__ + ' is disallowed in the filter '\n                 'clause.'\n",
+    "iteration_count": 18,
+    "timings": {
+      "workspace_generation_seconds": 2.399,
+      "agent_generation_seconds": 263.893,
+      "total_generation_seconds": 266.292
+    }
+  }
+}

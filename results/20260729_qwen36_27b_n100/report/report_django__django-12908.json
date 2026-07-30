@@ -1,0 +1,257 @@
+{
+  "instance_id": "django__django-12908",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 514
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 253.141,
+  "timings": {
+    "workspace_generation_seconds": 9.441,
+    "agent_generation_seconds": 244.352,
+    "total_generation_seconds": 253.793
+  },
+  "iterations": 19,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15706,
+      "completion_tokens": 149,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15855,
+      "response_id": "chatcmpl-a3b1c0080fb11c14"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15925,
+      "completion_tokens": 99,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16024,
+      "response_id": "chatcmpl-a199fe2509de555e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16124,
+      "completion_tokens": 71,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16195,
+      "response_id": "chatcmpl-b0913457a7a9552f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17501,
+      "completion_tokens": 82,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 17583,
+      "response_id": "chatcmpl-986361968c800e35"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18307,
+      "completion_tokens": 115,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18422,
+      "response_id": "chatcmpl-b0ffe415dd1fc246"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18659,
+      "completion_tokens": 75,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18734,
+      "response_id": "chatcmpl-9535f3d157c3b5fe"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 540,
+      "completion_tokens": 909,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1449,
+      "response_id": "chatcmpl-81f58a4632fafffd"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19075,
+      "completion_tokens": 285,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19360,
+      "response_id": "chatcmpl-b19a723a0509b87e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19314,
+      "completion_tokens": 83,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19397,
+      "response_id": "chatcmpl-962f9bf4d2f23fe5"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19469,
+      "completion_tokens": 72,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19541,
+      "response_id": "chatcmpl-b7d8aff06c72a700"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20033,
+      "completion_tokens": 470,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20503,
+      "response_id": "chatcmpl-8e7b87e810afcb8c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20691,
+      "completion_tokens": 285,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20976,
+      "response_id": "chatcmpl-9c4f469c191bc481"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21422,
+      "completion_tokens": 134,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21556,
+      "response_id": "chatcmpl-bcbf84a3db888097"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21687,
+      "completion_tokens": 112,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21799,
+      "response_id": "chatcmpl-897d86efeedc6a00"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22045,
+      "completion_tokens": 234,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22279,
+      "response_id": "chatcmpl-ac00261cf19fe1ec"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22211,
+      "completion_tokens": 264,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22475,
+      "response_id": "chatcmpl-8d4aad9f7eeb4c3a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22557,
+      "completion_tokens": 138,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22695,
+      "response_id": "chatcmpl-a4d6ffea5788cd5a"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 22762,
+      "completion_tokens": 232,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22994,
+      "response_id": "chatcmpl-9bbf7f1d90a2b689"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23048,
+      "completion_tokens": 584,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23632,
+      "response_id": "chatcmpl-9d2d4ff86e196176"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 357076,
+    "completion_tokens": 4393,
+    "total_tokens": 361469
+  },
+  "token_footprint": {
+    "output_tokens_used": 4393,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nUnion queryset should raise on distinct().\nDescription\n\t \n\t\t(last modified by Sielc Technologies)\n\t \nAfter using\n.annotate() on 2 different querysets\nand then .union()\n.distinct() will not affect the queryset\n\tdef setUp(self) -> None:\n\t\tuser = self.get_or_create_admin_user()\n\t\tSample.h.create(user, name=\"Sam1\")\n\t\tSample.h.create(user, name=\"Sam2 acid\")\n\t\tSample.h.create(user, name=\"Sam3\")\n\t\tSample.h.create(user, name=\"Sam4 acid\")\n\t\tSample.h.create(user, name=\"Dub\")\n\t\tSample.h.create(user, name=\"Dub\")\n\t\tSample.h.create(user, name=\"Dub\")\n\t\tself.user = user\n\tdef test_union_annotated_diff_distinct(self):\n\t\tqs = Sample.objects.filter(user=self.user)\n\t\tqs1 = qs.filter(name='Dub').annotate(rank=Value(0, IntegerField()))\n\t\tqs2 = qs.filter(name='Sam1').annotate(rank=Value(1, IntegerField()))\n\t\tqs = qs1.union(qs2)\n\t\tqs = qs.order_by('name').distinct('name') # THIS DISTINCT DOESN'T WORK\n\t\tself.assertEqual(qs.count(), 2)\nexpected to get wrapped union\n\tSELECT DISTINCT ON (siebox_sample.name) * FROM (SELECT ... UNION SELECT ...) AS siebox_sample\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/db/models/query.py b/django/db/models/query.py\nindex e0eeccefa6..5c70229263 100644\n--- a/django/db/models/query.py\n+++ b/django/db/models/query.py\n@@ -1138,6 +1138,7 @@ class QuerySet:\n         \"\"\"\n         Return a new QuerySet instance that will select only distinct results.\n         \"\"\"\n+        self._not_support_combined_queries('distinct')\n         assert not self.query.is_sliced, \\\n             \"Cannot create distinct fields once a slice has been taken.\"\n         obj = self._chain()\n",
+    "iteration_count": 19,
+    "timings": {
+      "workspace_generation_seconds": 9.441,
+      "agent_generation_seconds": 244.352,
+      "total_generation_seconds": 253.793
+    }
+  }
+}

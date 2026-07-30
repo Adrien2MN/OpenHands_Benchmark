@@ -1,0 +1,180 @@
+{
+  "instance_id": "astropy__astropy-14365",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 474
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 244.752,
+  "timings": {
+    "workspace_generation_seconds": 1.351,
+    "agent_generation_seconds": 244.029,
+    "total_generation_seconds": 245.38
+  },
+  "iterations": 12,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15884,
+      "completion_tokens": 103,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15987,
+      "response_id": "chatcmpl-bb3da103729acb07"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16107,
+      "completion_tokens": 83,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16190,
+      "response_id": "chatcmpl-bd688c678671d57e"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23269,
+      "completion_tokens": 796,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24065,
+      "response_id": "chatcmpl-befe7ee692c88e32"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 574,
+      "completion_tokens": 1115,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 1689,
+      "response_id": "chatcmpl-b018f1c51b986f35"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 23539,
+      "completion_tokens": 339,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 23878,
+      "response_id": "chatcmpl-a85109d542626f18"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 24014,
+      "completion_tokens": 207,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 24221,
+      "response_id": "chatcmpl-b4b8fc7a4b53625c"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18773,
+      "completion_tokens": 332,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19105,
+      "response_id": "chatcmpl-a50a3bb11ee94171"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19137,
+      "completion_tokens": 173,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19310,
+      "response_id": "chatcmpl-a7b63bd7ee1632b3"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19525,
+      "completion_tokens": 193,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19718,
+      "response_id": "chatcmpl-ab50dbfafb2b78e1"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19703,
+      "completion_tokens": 170,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19873,
+      "response_id": "chatcmpl-b02a06cee50a718f"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19981,
+      "completion_tokens": 234,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20215,
+      "response_id": "chatcmpl-af15a7ac4bbc85df"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 1573,
+      "completion_tokens": 2234,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 3807,
+      "response_id": "chatcmpl-bbe98786c9c94de9"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 202079,
+    "completion_tokens": 5979,
+    "total_tokens": 208058
+  },
+  "token_footprint": {
+    "output_tokens_used": 5979,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/astropy/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nascii.qdp Table format assumes QDP commands are upper case\n### Description\n\nascii.qdp assumes that commands in a QDP file are upper case, for example, for errors they must be \"READ SERR 1 2\" whereas QDP itself is not case sensitive and case use \"read serr 1 2\". \r\n\r\nAs many QDP files are created by hand, the expectation that all commands be all-caps should be removed.\n\n### Expected behavior\n\nThe following qdp file should read into a `Table` with errors, rather than crashing.\r\n```\r\nread serr 1 2 \r\n1 0.5 1 0.5\r\n```\n\n### How to Reproduce\n\nCreate a QDP file:\r\n```\r\n> cat > test.qdp\r\nread serr 1 2 \r\n1 0.5 1 0.5\r\n<EOF>\r\n\r\n > python\r\nPython 3.10.9 (main, Dec  7 2022, 02:03:23) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin\r\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\r\n>>> from astropy.table import Table\r\n>>> Table.read('test.qdp',format='ascii.qdp')\r\nWARNING: table_id not specified. Reading the first available table [astropy.io.ascii.qdp]\r\nTraceback (most recent call last):\r\n...\r\n    raise ValueError(f'Unrecognized QDP line: {line}')\r\nValueError: Unrecognized QDP line: read serr 1 2\r\n```\r\n\r\nRunning \"qdp test.qdp\" works just fine.\r\n\n\n### Versions\n\nPython 3.10.9 (main, Dec  7 2022, 02:03:23) [Clang 13.0.0 (clang-1300.0.29.30)]\r\nastropy 5.1\r\nNumpy 1.24.1\r\npyerfa 2.0.0.1\r\nScipy 1.10.0\r\nMatplotlib 3.6.3\r\n\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/astropy/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/astropy/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/astropy/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/astropy/io/ascii/qdp.py b/astropy/io/ascii/qdp.py\nindex 83a4f004a..5f3a3621e 100644\n--- a/astropy/io/ascii/qdp.py\n+++ b/astropy/io/ascii/qdp.py\n@@ -60,7 +60,7 @@ def _line_type(line, delimiter=None):\n     ValueError: Unrecognized QDP line...\n     \"\"\"\n     _decimal_re = r\"[+-]?(\\d+(\\.\\d*)?|\\.\\d+)([eE][+-]?\\d+)?\"\n-    _command_re = r\"READ [TS]ERR(\\s+[0-9]+)+\"\n+    _command_re = r\"(?i)READ [TS]ERR(\\s+[0-9]+)+\"\n \n     sep = delimiter\n     if delimiter is None:\n",
+    "iteration_count": 12,
+    "timings": {
+      "workspace_generation_seconds": 1.351,
+      "agent_generation_seconds": 244.029,
+      "total_generation_seconds": 245.38
+    }
+  }
+}

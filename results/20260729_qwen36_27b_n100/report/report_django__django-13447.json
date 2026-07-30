@@ -1,0 +1,202 @@
+{
+  "instance_id": "django__django-13447",
+  "model": "20260729_qwen36_27b_n100",
+  "status": "ok",
+  "error": null,
+  "output": {
+    "has_patch": true,
+    "patch_chars": 1701
+  },
+  "cost": {
+    "accumulated_cost_usd": 0.0,
+    "proxy_cost_usd": null,
+    "effective_cost_usd": 0.0
+  },
+  "generation_seconds": 205.275,
+  "timings": {
+    "workspace_generation_seconds": 9.939,
+    "agent_generation_seconds": 195.967,
+    "total_generation_seconds": 205.906
+  },
+  "iterations": 14,
+  "iteration_token_usage": [
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15492,
+      "completion_tokens": 162,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15654,
+      "response_id": "chatcmpl-a93a1eaed0154867"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 15725,
+      "completion_tokens": 98,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 15823,
+      "response_id": "chatcmpl-be6ee0ce0a2f0299"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 16121,
+      "completion_tokens": 105,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 16226,
+      "response_id": "chatcmpl-9c1d7e45e81af724"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17801,
+      "completion_tokens": 260,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18061,
+      "response_id": "chatcmpl-9ab1e0750e4d4fbc"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 17957,
+      "completion_tokens": 124,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18081,
+      "response_id": "chatcmpl-bc7d4a8606495cd1"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18141,
+      "completion_tokens": 453,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 18594,
+      "response_id": "chatcmpl-ae1d3c53b2dfdd13"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 18617,
+      "completion_tokens": 710,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 19327,
+      "response_id": "chatcmpl-ab3219e3bfa941d6"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 19950,
+      "completion_tokens": 149,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20099,
+      "response_id": "chatcmpl-b83066b5a39ea3df"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20261,
+      "completion_tokens": 134,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20395,
+      "response_id": "chatcmpl-8ab8fc4afbfc9e33"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20610,
+      "completion_tokens": 107,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20717,
+      "response_id": "chatcmpl-b7357c715d4aa671"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 20805,
+      "completion_tokens": 123,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 20928,
+      "response_id": "chatcmpl-8b2bf554c76e1f01"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21109,
+      "completion_tokens": 157,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21266,
+      "response_id": "chatcmpl-8b52d652ceefb910"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21581,
+      "completion_tokens": 134,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 21715,
+      "response_id": "chatcmpl-ba59c95ab8dd97af"
+    },
+    {
+      "model": "openai/qwen36-27b",
+      "prompt_tokens": 21742,
+      "completion_tokens": 301,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 32768,
+      "per_turn_token": 22043,
+      "response_id": "chatcmpl-b8973a184fcf8159"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 265912,
+    "completion_tokens": 3017,
+    "total_tokens": 268929
+  },
+  "token_footprint": {
+    "output_tokens_used": 3017,
+    "energy_consumption_kwh": null,
+    "carbon_footprint_kg_co2e": null,
+    "scenario_file": null,
+    "scenario_path": null,
+    "electricity_grid_source": null
+  },
+  "attempt": 1,
+  "instruction": "I have access to a python code repository in the directory /workspace/django/ . You can explore and modify files using the available tools. Consider the following issue description:\n\n<issue_description>\nAdded model class to app_list context\nDescription\n\t \n\t\t(last modified by Raffaele Salmaso)\n\t \nI need to manipulate the app_list in my custom admin view, and the easiest way to get the result is to have access to the model class (currently the dictionary is a serialized model).\nIn addition I would make the _build_app_dict method public, as it is used by the two views index and app_index.\n\n</issue_description>\n\nCan you help me implement the necessary changes to the repository so that the requirements specified in the <issue_description> are met?\nI've already taken care of all changes to any of the test files described in the <issue_description>. This means you DON'T have to modify the testing logic or any of the tests in any way!\nAlso the development Python environment is already set up for you (i.e., all dependencies already installed), so you don't need to install other packages.\nYour task is to make the minimal changes to non-test files in the /workspace/django/ directory to ensure the <issue_description> is satisfied.\n\nIMPORTANT RULES:\n- The environment is ALREADY SET UP. Python, all dependencies, and the repo are ready.\n- NEVER run: conda, pip install, apt-get, or modify pyproject.toml/setup.py/setup.cfg.\n- NEVER try to fix build errors or install packages. If a command fails due to missing packages, IGNORE it and proceed with the fix.\n- ONLY modify source code files (.py files) in the repository.\n\nYOUR TASK: Fix the bug described above by editing the relevant source code.\n\nSTEP 1 - FIND THE CODE: Start by using grep to locate the relevant source files.\n   Example: terminal command: grep -r \"ClassName\" /workspace/django/ --include=\"*.py\" -l\n   Then read the relevant file to understand the code.\n\nSTEP 2 - EDIT THE CODE: Use the file_editor tool to make the fix.\n   Make minimal, focused changes to the source code that address the issue.\n\nSTEP 3 - VERIFY (optional): Run a quick check that your fix works.\n   Example: cd /workspace/django/ && python -c \"from module import func; print(func(args))\"\n\nSTEP 4 - FINISH: Call the finish tool with a brief summary of what you changed.\n\nSTART NOW with Step 1. Your first action should be a grep or file read \u2014 NOT a shell setup command.",
+  "test_result": {
+    "git_patch": "diff --git a/django/contrib/admin/sites.py b/django/contrib/admin/sites.py\nindex 837dabfea8..7fd5515a42 100644\n--- a/django/contrib/admin/sites.py\n+++ b/django/contrib/admin/sites.py\n@@ -430,7 +430,7 @@ class AdminSite:\n                     return HttpResponsePermanentRedirect(path)\n         raise Http404\n \n-    def _build_app_dict(self, request, label=None):\n+    def build_app_dict(self, request, label=None):\n         \"\"\"\n         Build the app dictionary. The optional `label` parameter filters models\n         of a specific app.\n@@ -466,6 +466,7 @@ class AdminSite:\n                 'perms': perms,\n                 'admin_url': None,\n                 'add_url': None,\n+                'model': model,\n             }\n             if perms.get('change') or perms.get('view'):\n                 model_dict['view_only'] = not perms.get('change')\n@@ -503,7 +504,7 @@ class AdminSite:\n         Return a sorted list of all the installed apps that have been\n         registered in this site.\n         \"\"\"\n-        app_dict = self._build_app_dict(request)\n+        app_dict = self.build_app_dict(request)\n \n         # Sort the apps alphabetically.\n         app_list = sorted(app_dict.values(), key=lambda x: x['name'].lower())\n@@ -534,7 +535,7 @@ class AdminSite:\n         return TemplateResponse(request, self.index_template or 'admin/index.html', context)\n \n     def app_index(self, request, app_label, extra_context=None):\n-        app_dict = self._build_app_dict(request, app_label)\n+        app_dict = self.build_app_dict(request, app_label)\n         if not app_dict:\n             raise Http404('The requested admin page does not exist.')\n         # Sort the models alphabetically within each app.\n",
+    "iteration_count": 14,
+    "timings": {
+      "workspace_generation_seconds": 9.939,
+      "agent_generation_seconds": 195.967,
+      "total_generation_seconds": 205.906
+    }
+  }
+}

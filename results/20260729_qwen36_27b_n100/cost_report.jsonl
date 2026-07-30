@@ -1,0 +1,26 @@
+{
+  "directory": "results/20260729_qwen36_27b_n100",
+  "timestamp": "2026-07-30T10:22:51.473269",
+  "main_output": {
+    "filename": "output.jsonl",
+    "lines": 87,
+    "cost": 0.0,
+    "time_statistics": {
+      "average_duration": 396.4601527701149,
+      "total_duration": 34492.033291,
+      "total_lines": 87,
+      "lines_with_duration": 87
+    }
+  },
+  "critic_files": [],
+  "summary": {
+    "total_cost": 0.0,
+    "total_duration": 34492.033291,
+    "only_main_output_cost": 0.0
+  },
+  "proxy_cost_summary": {
+    "total_proxy_cost": 0.0,
+    "zero_proxy_cost_instances": 0,
+    "only_main_output_proxy_cost": 0.0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "idle_baseline_watts": 44.58,
+  "total": {
+    "duration_seconds": 153659,
+    "avg_gpu_power_watts": 284.65,
+    "max_gpu_power_watts": 445.2,
+    "total_gpu_energy_wh": 12149.5528,
+    "net_energy_wh": 10246.6212,
+    "samples": 153659
+  },
+  "phases": {
+    "setup": {
+      "duration_seconds": 9970,
+      "avg_gpu_power_watts": 211.42,
+      "energy_wh": 585.5203
+    },
+    "inference": {
+      "duration_seconds": 143689,
+      "avg_gpu_power_watts": 289.73,
+      "energy_wh": 11564.0325,
+      "net_energy_wh": 9784.5706
+    }
+  }
+}
